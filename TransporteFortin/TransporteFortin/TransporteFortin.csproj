@@ -61,6 +61,12 @@
     <Compile Include="ControladoraUnidades.cs" />
     <Compile Include="Empresas.cs" />
     <Compile Include="Fleteros.cs" />
+    <Compile Include="frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     <Compile Include="TiposCamion.cs" />
     <Compile Include="TiposIVA.cs" />
     <Compile Include="Unidades.cs" />
+    <EmbeddedResource Include="frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,7 +94,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Imagenes\Thumbs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,6 +109,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Imagenes\Background-Image41.jpg" />
+    <Content Include="Imagenes\Background-Spa.jpg" />
+    <Content Include="Imagenes\cash.ico" />
+    <Content Include="Imagenes\Document.ico" />
+    <Content Include="Imagenes\Edit.ico" />
+    <Content Include="Imagenes\Hopstarter-Soft-Scraps-Clock.ico" />
+    <Content Include="Imagenes\Principal.ico" />
+    <Content Include="Imagenes\Printer.ico" />
+    <Content Include="Imagenes\Recycle Bin Empty.ico" />
+    <Content Include="Imagenes\Recycle Bin Full.ico" />
+    <Content Include="Imagenes\Save.ico" />
+    <Content Include="Imagenes\Search.ico" />
+    <Content Include="Imagenes\Symbol-Add.ico" />
+    <Content Include="Imagenes\Symbol-Check.ico" />
+    <Content Include="Imagenes\Symbol-Delete.ico" />
+    <Content Include="Imagenes\Undo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
