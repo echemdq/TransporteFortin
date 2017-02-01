@@ -22,5 +22,11 @@ namespace TransporteFortin
             frmClientes frm = new frmClientes();
             frm.ShowDialog();
         }
+
+        private void aBMProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProveedores frm = new frmProveedores();
+            frm.ShowDialog();
+        }
     }
 }

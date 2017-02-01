@@ -52,7 +52,7 @@ namespace TransporteFortin
         }
         public Acceso_BD()
         {
-            buscarEnXML();
+            //buscarEnXML();
             if (tipo == "sql")
             {
                 uid = "sa";
@@ -63,6 +63,7 @@ namespace TransporteFortin
                 uid = "root";
                 password = "romeo1";
                 database = "transportefortin";
+                server = "localhost";
                 cn1 = new MySqlConnection("Server=" + server + ";" + "DATABASE=" + database + ";" + "User ID=" + Uid + ";" + "PASSWORD=" + Password + ";");
             }
         }

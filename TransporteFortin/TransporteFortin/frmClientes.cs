@@ -107,11 +107,15 @@ namespace TransporteFortin
             {
                 if (txtCliente.Text != "")
                 {
-                    Clientes r = new Clientes(0, txtCliente.Text, txtDomicilio.Text,txtLocalidad.Text,Convert.ToInt32(txtCP.Text),txtTelefono.Text,txtCelular.Text,txtFax.Text,txtMail.Text,txtContacto.Text,maskedTextBox1.Text,null,txtComentarios.Text);
-                    
+                    TiposIVA tipoiva = new TiposIVA(Convert.ToInt32(cmbTipoIva.SelectedValue), "", "");
+                    if (txtCP.Text == "")
+                    {
+                        txtCP.Text = "0";
+                    }
+                    Clientes r = new Clientes(0, txtCliente.Text, txtDomicilio.Text,txtLocalidad.Text,Convert.ToInt32(txtCP.Text),txtTelefono.Text,txtCelular.Text,txtFax.Text,txtMail.Text,txtContacto.Text,maskedTextBox1.Text,tipoiva,txtComentarios.Text);                    
                     if (lblId.Text == "")
                     {
-                        controlc.Agregar(r);
+                        controlc.Agregar(r);                        
                         MessageBox.Show("Cliente guardado correctamente");
                     }
                     else
@@ -132,6 +136,101 @@ namespace TransporteFortin
             {
                 MessageBox.Show("Error al Guardar: " + ex.Message);
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                deshabilitar();
+                limpiar();
+                frmBuscaClientes frm = new frmBuscaClientes();
+                frm.ShowDialog();
+                Clientes u = frm.u;
+                if (u != null)
+                {
+                    lblId.Text = Convert.ToString(u.Idclientes);
+                    txtCliente.Text = u.Cliente;
+                    txtDomicilio.Text = u.Direccion;
+                    txtLocalidad.Text = u.Localidad;
+                    txtTelefono.Text = u.Telefono;
+                    txtCelular.Text = u.Celular;
+                    txtFax.Text = u.Fax;
+                    txtComentarios.Text = u.Comentario;
+                    txtMail.Text = u.Mail;
+                    cmbTipoIva.SelectedValue = u.TiposIVA.IdTiposIVA;
+                    maskedTextBox1.Text = u.Cuit;
+                    txtCP.Text = u.Cp.ToString();
+                    txtContacto.Text = u.Contacto;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Guardar: " + ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblId.Text != "")
+                {
+                    Clientes c = new Clientes(Convert.ToInt32(lblId.Text), "", "", "", 0, "", "", "", "", "", "", null, "");
+                    DialogResult dialogResult = MessageBox.Show("Esta seguro de eliminar el Cliente: " + txtCliente.Text, "Eliminar Cliente", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        controlc.Borrar(c);
+                        limpiar();
+                        deshabilitar();
+                        MessageBox.Show("Cliente eliminado correctamente");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un Cliente para eliminarlo");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar: " + ex.Message);
+            }
+        }
+
+        private void txtCP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+                return;
+            }
+
+            bool IsDec = false;
+            int nroDec = 0;
+            
+            for (int i = 0; i < txtCP.Text.Length; i++)
+            {
+                if (txtCP.Text[i] == '.')
+                    IsDec = true;
+
+                if (IsDec && nroDec++ >= 2)
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                e.Handled = false;
+            else if (e.KeyChar == 46)
+                e.Handled = (IsDec) ? true : false;
+            else
+                e.Handled = true;
         }
     }
 }

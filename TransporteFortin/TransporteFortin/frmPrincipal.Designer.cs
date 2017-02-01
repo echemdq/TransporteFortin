@@ -89,7 +89,7 @@
             // aBMClientesToolStripMenuItem
             // 
             this.aBMClientesToolStripMenuItem.Name = "aBMClientesToolStripMenuItem";
-            this.aBMClientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aBMClientesToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.aBMClientesToolStripMenuItem.Text = "ABM Clientes";
             this.aBMClientesToolStripMenuItem.Click += new System.EventHandler(this.aBMClientesToolStripMenuItem_Click);
             // 
@@ -134,6 +134,7 @@
             this.aBMProveedoresToolStripMenuItem.Name = "aBMProveedoresToolStripMenuItem";
             this.aBMProveedoresToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.aBMProveedoresToolStripMenuItem.Text = "ABM Proveedores";
+            this.aBMProveedoresToolStripMenuItem.Click += new System.EventHandler(this.aBMProveedoresToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
