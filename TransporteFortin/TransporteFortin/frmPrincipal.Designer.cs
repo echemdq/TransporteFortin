@@ -31,15 +31,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iniciarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMFleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMFleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,8 +69,14 @@
             // iniciarSesionToolStripMenuItem
             // 
             this.iniciarSesionToolStripMenuItem.Name = "iniciarSesionToolStripMenuItem";
-            this.iniciarSesionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iniciarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.iniciarSesionToolStripMenuItem.Text = "Iniciar Sesion";
+            // 
+            // bancosToolStripMenuItem
+            // 
+            this.bancosToolStripMenuItem.Name = "bancosToolStripMenuItem";
+            this.bancosToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.bancosToolStripMenuItem.Text = "Bancos";
             // 
             // clientesToolStripMenuItem
             // 
@@ -80,6 +86,13 @@
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
+            // aBMClientesToolStripMenuItem
+            // 
+            this.aBMClientesToolStripMenuItem.Name = "aBMClientesToolStripMenuItem";
+            this.aBMClientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aBMClientesToolStripMenuItem.Text = "ABM Clientes";
+            this.aBMClientesToolStripMenuItem.Click += new System.EventHandler(this.aBMClientesToolStripMenuItem_Click);
+            // 
             // empresasToolStripMenuItem
             // 
             this.empresasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -87,6 +100,12 @@
             this.empresasToolStripMenuItem.Name = "empresasToolStripMenuItem";
             this.empresasToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.empresasToolStripMenuItem.Text = "Empresas";
+            // 
+            // aBMEmpresasToolStripMenuItem
+            // 
+            this.aBMEmpresasToolStripMenuItem.Name = "aBMEmpresasToolStripMenuItem";
+            this.aBMEmpresasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.aBMEmpresasToolStripMenuItem.Text = "ABM Empresas";
             // 
             // fleterosToolStripMenuItem
             // 
@@ -96,6 +115,12 @@
             this.fleterosToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.fleterosToolStripMenuItem.Text = "Fleteros";
             // 
+            // aBMFleterosToolStripMenuItem
+            // 
+            this.aBMFleterosToolStripMenuItem.Name = "aBMFleterosToolStripMenuItem";
+            this.aBMFleterosToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.aBMFleterosToolStripMenuItem.Text = "ABM Fleteros";
+            // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -104,35 +129,11 @@
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             // 
-            // aBMClientesToolStripMenuItem
-            // 
-            this.aBMClientesToolStripMenuItem.Name = "aBMClientesToolStripMenuItem";
-            this.aBMClientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aBMClientesToolStripMenuItem.Text = "ABM Clientes";
-            // 
-            // aBMEmpresasToolStripMenuItem
-            // 
-            this.aBMEmpresasToolStripMenuItem.Name = "aBMEmpresasToolStripMenuItem";
-            this.aBMEmpresasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.aBMEmpresasToolStripMenuItem.Text = "ABM Empresas";
-            // 
-            // aBMFleterosToolStripMenuItem
-            // 
-            this.aBMFleterosToolStripMenuItem.Name = "aBMFleterosToolStripMenuItem";
-            this.aBMFleterosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aBMFleterosToolStripMenuItem.Text = "ABM Fleteros";
-            // 
             // aBMProveedoresToolStripMenuItem
             // 
             this.aBMProveedoresToolStripMenuItem.Name = "aBMProveedoresToolStripMenuItem";
             this.aBMProveedoresToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.aBMProveedoresToolStripMenuItem.Text = "ABM Proveedores";
-            // 
-            // bancosToolStripMenuItem
-            // 
-            this.bancosToolStripMenuItem.Name = "bancosToolStripMenuItem";
-            this.bancosToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.bancosToolStripMenuItem.Text = "Bancos";
             // 
             // frmPrincipal
             // 

@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace TransporteFortin
 {
     public class BdClientes : IDAO<Clientes>
     {
+        
+
         public void Agregar(Clientes dato)
         {
-            throw new NotImplementedException();
-        }
+            Acceso_BD oacceso = new Acceso_BD();
+            oacceso.ActualizarBD("insert into clientes (cliente, direccion, localidad, cp, telefono, celular, fax, mail, contacto, cuit, idtiposiva, comentario) values ('" + dato.Cliente.ToUpper() + "','" + dato.Direccion.ToUpper() + "','" + dato.Localidad.ToUpper() + "','" + dato.Cp + "','" + dato.Telefono + "','" + dato.Celular + "','" + dato.Fax + "','" + dato.Mail.ToUpper() + "','" + dato.Contacto.ToUpper() + "','" + dato.Cuit + "','" + dato.TiposIVA.IdTiposIVA + "','" + dato.Comentario + "')");
+        } 
 
         public List<Clientes> TraerTodos()
         {

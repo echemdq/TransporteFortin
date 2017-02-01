@@ -8,9 +8,10 @@ namespace TransporteFortin
 {
     public class ControladoraClientes : IDAO<Clientes>
     {
+        BdClientes bd = new BdClientes();
         public void Agregar(Clientes dato)
         {
-            throw new NotImplementedException();
+            bd.Agregar(dato);
         }
 
         public List<Clientes> TraerTodos()
@@ -20,7 +21,7 @@ namespace TransporteFortin
 
         public void Borrar(Clientes dato)
         {
-            throw new NotImplementedException();
+            bd.Borrar(dato);
         }
 
         public Clientes Buscar(string dato)
@@ -35,7 +36,7 @@ namespace TransporteFortin
 
         public void Modificar(Clientes dato)
         {
-            throw new NotImplementedException();
+            bd.Modificar(dato);
         }
 
         public int traerSigID()

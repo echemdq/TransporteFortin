@@ -34,7 +34,7 @@
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
-            this.txtPaciente = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,6 +57,9 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtContacto = new System.Windows.Forms.TextBox();
+            this.lblcont = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtComentarios
@@ -64,11 +67,11 @@
             this.txtComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtComentarios.Enabled = false;
             this.txtComentarios.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComentarios.Location = new System.Drawing.Point(137, 282);
+            this.txtComentarios.Location = new System.Drawing.Point(135, 306);
             this.txtComentarios.Multiline = true;
             this.txtComentarios.Name = "txtComentarios";
             this.txtComentarios.Size = new System.Drawing.Size(318, 87);
-            this.txtComentarios.TabIndex = 48;
+            this.txtComentarios.TabIndex = 11;
             // 
             // txtMail
             // 
@@ -78,7 +81,7 @@
             this.txtMail.Location = new System.Drawing.Point(137, 198);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(253, 21);
-            this.txtMail.TabIndex = 47;
+            this.txtMail.TabIndex = 7;
             // 
             // txtCelular
             // 
@@ -88,7 +91,7 @@
             this.txtCelular.Location = new System.Drawing.Point(137, 143);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(253, 21);
-            this.txtCelular.TabIndex = 46;
+            this.txtCelular.TabIndex = 5;
             // 
             // txtTelefono
             // 
@@ -98,7 +101,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(137, 114);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(253, 21);
-            this.txtTelefono.TabIndex = 45;
+            this.txtTelefono.TabIndex = 4;
             // 
             // txtDomicilio
             // 
@@ -108,23 +111,23 @@
             this.txtDomicilio.Location = new System.Drawing.Point(138, 32);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(253, 21);
-            this.txtDomicilio.TabIndex = 44;
+            this.txtDomicilio.TabIndex = 1;
             // 
-            // txtPaciente
+            // txtCliente
             // 
-            this.txtPaciente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPaciente.Enabled = false;
-            this.txtPaciente.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaciente.Location = new System.Drawing.Point(138, 5);
-            this.txtPaciente.Name = "txtPaciente";
-            this.txtPaciente.Size = new System.Drawing.Size(253, 21);
-            this.txtPaciente.TabIndex = 41;
+            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(138, 5);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(253, 21);
+            this.txtCliente.TabIndex = 0;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(51, 286);
+            this.label8.Location = new System.Drawing.Point(49, 310);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 13);
             this.label8.TabIndex = 61;
@@ -188,7 +191,7 @@
             this.txtLocalidad.Location = new System.Drawing.Point(138, 59);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(253, 21);
-            this.txtLocalidad.TabIndex = 63;
+            this.txtLocalidad.TabIndex = 2;
             // 
             // label2
             // 
@@ -208,7 +211,7 @@
             this.txtCP.Location = new System.Drawing.Point(138, 87);
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(111, 21);
-            this.txtCP.TabIndex = 65;
+            this.txtCP.TabIndex = 3;
             // 
             // label3
             // 
@@ -228,7 +231,7 @@
             this.txtFax.Location = new System.Drawing.Point(137, 170);
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(253, 21);
-            this.txtFax.TabIndex = 67;
+            this.txtFax.TabIndex = 6;
             // 
             // label9
             // 
@@ -247,8 +250,8 @@
             this.cmbTipoIva.FormattingEnabled = true;
             this.cmbTipoIva.Location = new System.Drawing.Point(137, 225);
             this.cmbTipoIva.Name = "cmbTipoIva";
-            this.cmbTipoIva.Size = new System.Drawing.Size(159, 21);
-            this.cmbTipoIva.TabIndex = 69;
+            this.cmbTipoIva.Size = new System.Drawing.Size(254, 21);
+            this.cmbTipoIva.TabIndex = 8;
             // 
             // label10
             // 
@@ -278,7 +281,7 @@
             this.maskedTextBox1.Mask = "00-00000000-0";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(112, 21);
-            this.maskedTextBox1.TabIndex = 73;
+            this.maskedTextBox1.TabIndex = 9;
             // 
             // btnBuscar
             // 
@@ -288,65 +291,100 @@
             this.btnBuscar.Location = new System.Drawing.Point(414, 2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(41, 38);
-            this.btnBuscar.TabIndex = 62;
+            this.btnBuscar.TabIndex = 17;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
             this.button1.BackgroundImage = global::TransporteFortin.Properties.Resources.Undo;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(323, 375);
+            this.button1.Location = new System.Drawing.Point(323, 413);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(41, 38);
-            this.button1.TabIndex = 53;
+            this.button1.TabIndex = 16;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.BackgroundImage = global::TransporteFortin.Properties.Resources.Edit;
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditar.Location = new System.Drawing.Point(276, 375);
+            this.btnEditar.Location = new System.Drawing.Point(276, 413);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(41, 38);
-            this.btnEditar.TabIndex = 52;
+            this.btnEditar.TabIndex = 15;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackgroundImage = global::TransporteFortin.Properties.Resources.Recycle_Bin_Full;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(229, 375);
+            this.btnEliminar.Location = new System.Drawing.Point(229, 413);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(41, 38);
-            this.btnEliminar.TabIndex = 51;
+            this.btnEliminar.TabIndex = 14;
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackgroundImage = global::TransporteFortin.Properties.Resources.Save;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardar.Location = new System.Drawing.Point(182, 375);
+            this.btnGuardar.Location = new System.Drawing.Point(182, 413);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(41, 38);
-            this.btnGuardar.TabIndex = 49;
+            this.btnGuardar.TabIndex = 12;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.SystemColors.Control;
             this.btnNuevo.BackgroundImage = global::TransporteFortin.Properties.Resources.Document;
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevo.Location = new System.Drawing.Point(135, 375);
+            this.btnNuevo.Location = new System.Drawing.Point(135, 413);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(41, 38);
-            this.btnNuevo.TabIndex = 50;
+            this.btnNuevo.TabIndex = 13;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(17, 346);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 13);
+            this.lblId.TabIndex = 73;
+            // 
+            // txtContacto
+            // 
+            this.txtContacto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContacto.Enabled = false;
+            this.txtContacto.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContacto.Location = new System.Drawing.Point(135, 279);
+            this.txtContacto.Name = "txtContacto";
+            this.txtContacto.Size = new System.Drawing.Size(253, 21);
+            this.txtContacto.TabIndex = 10;
+            // 
+            // lblcont
+            // 
+            this.lblcont.AutoSize = true;
+            this.lblcont.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcont.Location = new System.Drawing.Point(71, 281);
+            this.lblcont.Name = "lblcont";
+            this.lblcont.Size = new System.Drawing.Size(58, 13);
+            this.lblcont.TabIndex = 75;
+            this.lblcont.Text = "Contacto";
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 425);
+            this.ClientSize = new System.Drawing.Size(477, 463);
+            this.Controls.Add(this.txtContacto);
+            this.Controls.Add(this.lblcont);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cmbTipoIva);
@@ -363,7 +401,7 @@
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDomicilio);
-            this.Controls.Add(this.txtPaciente);
+            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -377,6 +415,7 @@
             this.Controls.Add(this.btnNuevo);
             this.Name = "frmClientes";
             this.Text = "ABM Clientes";
+            this.Load += new System.EventHandler(this.frmClientes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,7 +429,7 @@
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtDomicilio;
-        private System.Windows.Forms.TextBox txtPaciente;
+        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -412,5 +451,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.TextBox txtContacto;
+        private System.Windows.Forms.Label lblcont;
     }
 }

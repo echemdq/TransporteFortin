@@ -16,5 +16,11 @@ namespace TransporteFortin
         {
             InitializeComponent();
         }
+
+        private void aBMClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClientes frm = new frmClientes();
+            frm.ShowDialog();
+        }
     }
 }
