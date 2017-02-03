@@ -106,6 +106,7 @@
             this.aBMEmpresasToolStripMenuItem.Name = "aBMEmpresasToolStripMenuItem";
             this.aBMEmpresasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.aBMEmpresasToolStripMenuItem.Text = "ABM Empresas";
+            this.aBMEmpresasToolStripMenuItem.Click += new System.EventHandler(this.aBMEmpresasToolStripMenuItem_Click);
             // 
             // fleterosToolStripMenuItem
             // 

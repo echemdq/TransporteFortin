@@ -1,6 +1,6 @@
 ﻿namespace TransporteFortin
 {
-    partial class frmBuscaClientes
+    partial class frmBuscaEmpresas
     {
         /// <summary>
         /// Required designer variable.
@@ -49,18 +49,18 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(757, 265);
-            this.dataGridView1.TabIndex = 31;
+            this.dataGridView1.TabIndex = 35;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // txtCliente
             // 
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCliente.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(134, 15);
+            this.txtCliente.Location = new System.Drawing.Point(79, 15);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(463, 21);
-            this.txtCliente.TabIndex = 28;
-            this.txtCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaciente_KeyPress);
+            this.txtCliente.Size = new System.Drawing.Size(518, 21);
+            this.txtCliente.TabIndex = 32;
+            this.txtCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCliente_KeyPress);
             // 
             // label1
             // 
@@ -68,9 +68,9 @@
             this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Nombre o Apellido";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Empresa";
             // 
             // btnTraer
             // 
@@ -80,11 +80,11 @@
             this.btnTraer.Location = new System.Drawing.Point(617, 8);
             this.btnTraer.Name = "btnTraer";
             this.btnTraer.Size = new System.Drawing.Size(41, 38);
-            this.btnTraer.TabIndex = 29;
+            this.btnTraer.TabIndex = 33;
             this.btnTraer.UseVisualStyleBackColor = false;
             this.btnTraer.Click += new System.EventHandler(this.btnTraer_Click);
             // 
-            // frmBuscaClientes
+            // frmBuscaEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,12 +93,12 @@
             this.Controls.Add(this.btnTraer);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label1);
-            this.Location = new System.Drawing.Point(797, 367);
             this.MaximumSize = new System.Drawing.Size(797, 367);
-            this.Name = "frmBuscaClientes";
+            this.MinimumSize = new System.Drawing.Size(797, 367);
+            this.Name = "frmBuscaEmpresas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Buscador de Clientes";
-            this.Load += new System.EventHandler(this.frmBuscaClientes_Load);
+            this.Text = "Buscador de Empresas";
+            this.Load += new System.EventHandler(this.frmBuscaEmpresas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -113,6 +113,5 @@
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource bindingSource1;
-
     }
 }

@@ -72,6 +72,12 @@
     <Compile Include="frmBuscaClientes.Designer.cs">
       <DependentUpon>frmBuscaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscaEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscaEmpresas.Designer.cs">
+      <DependentUpon>frmBuscaEmpresas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBuscaProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,18 @@
     </Compile>
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpresas.Designer.cs">
+      <DependentUpon>frmEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFleteros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFleteros.Designer.cs">
+      <DependentUpon>frmFleteros.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -106,11 +124,20 @@
     <EmbeddedResource Include="frmBuscaClientes.resx">
       <DependentUpon>frmBuscaClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscaEmpresas.resx">
+      <DependentUpon>frmBuscaEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBuscaProveedores.resx">
       <DependentUpon>frmBuscaProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpresas.resx">
+      <DependentUpon>frmEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFleteros.resx">
+      <DependentUpon>frmFleteros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
