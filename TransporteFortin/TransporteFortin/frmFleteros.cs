@@ -77,7 +77,7 @@ namespace TransporteFortin
         {
             limpiar();
             habilitar();
-            txtCliente.Focus();
+            txtDocumento.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -100,6 +100,10 @@ namespace TransporteFortin
             {
                 if (txtDocumento.Text != "" && txtCliente.Text != "" && lblIdEmpresa.Text != "")
                 {
+                    if (txtCP.Text == "")
+                    {
+                        txtCP.Text = "0";
+                    }
                     Empresas em = new Empresas(Convert.ToInt32(lblIdEmpresa.Text), "", "", "", "", "", "", "", "");
                     TiposCamion t = new TiposCamion(Convert.ToInt32(cmbTipoCamion.SelectedValue), "");
                     Fleteros r = new Fleteros(0, Convert.ToInt32(txtDocumento.Text), txtCliente.Text, txtDomicilio.Text, txtLocalidad.Text, txtCP.Text, txtTelefono.Text, txtCelular.Text, txtFax.Text, txtMail.Text, em, txtModelo.Text, t, txtChapaC.Text, txtChapaA.Text);
@@ -119,7 +123,7 @@ namespace TransporteFortin
                 }
                 else
                 {
-                    MessageBox.Show("Debe completar el nombre y documento del Fletero");
+                    MessageBox.Show("Debe completar el nombre, documento y empresa del Fletero");
                 }
             }
             catch (Exception ex)
@@ -171,7 +175,7 @@ namespace TransporteFortin
             {
                 if (lblIdFletero.Text != "")
                 {
-                    Fleteros c = new Fleteros(0, Convert.ToInt32(lblIdFletero.Text), "", "", "", "", "", "", "", "", null, "", null, "", "");
+                    Fleteros c = new Fleteros(Convert.ToInt32(lblIdFletero.Text),0, "", "", "", "", "", "", "", "", null, "", null, "", "");
                     DialogResult dialogResult = MessageBox.Show("Esta seguro de eliminar el Fletero: " + txtCliente.Text, "Eliminar Fletero", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
@@ -189,6 +193,85 @@ namespace TransporteFortin
             catch (Exception ex)
             {
                 MessageBox.Show("Error al Eliminar: " + ex.Message);
+            }
+        }
+
+        private void txtCP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+                return;
+            }
+
+            bool IsDec = false;
+            int nroDec = 0;
+
+            for (int i = 0; i < txtCP.Text.Length; i++)
+            {
+                if (txtCP.Text[i] == '.')
+                    IsDec = true;
+
+                if (IsDec && nroDec++ >= 2)
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                e.Handled = false;
+            else if (e.KeyChar == 46)
+                e.Handled = (IsDec) ? true : false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) )
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                deshabilitar();
+                limpiar();
+                frmBuscaFleteros frm = new frmBuscaFleteros();
+                frm.ShowDialog();
+                Fleteros u = frm.u;
+                if (u != null)
+                {
+                    lblIdFletero.Text = Convert.ToString(u.Idfleteros);
+                    lblIdEmpresa.Text = u.Empresas.Idempresas.ToString();
+                    txtEmpresa.Text = u.Empresas.Empresa;
+                    txtCliente.Text = u.Fletero;
+                    txtDomicilio.Text = u.Direccion;
+                    txtLocalidad.Text = u.Localidad;
+                    txtTelefono.Text = u.Telefono;
+                    txtCelular.Text = u.Celular;
+                    txtFax.Text = u.Fax;
+                    txtModelo.Text = u.Camion;
+                    txtMail.Text = u.Mail;
+                    cmbTipoCamion.SelectedValue = u.Tiposcamion.Idtiposcamion;
+                    txtCP.Text = u.Cp.ToString();
+                    txtChapaA.Text = u.Chapaacoplado;
+                    txtChapaC.Text = u.Chapacamion;
+                    txtDocumento.Text = u.Documento.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Guardar: " + ex.Message);
             }
         }
     }

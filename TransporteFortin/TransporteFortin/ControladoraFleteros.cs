@@ -31,7 +31,7 @@ namespace TransporteFortin
 
         public List<Fleteros> BuscarEspecial(string dato)
         {
-            throw new NotImplementedException();
+            return bd.BuscarEspecial(dato);
         }
 
         public void Modificar(Fleteros dato)

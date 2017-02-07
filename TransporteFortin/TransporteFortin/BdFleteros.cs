@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace TransporteFortin
 {
@@ -31,7 +32,20 @@ namespace TransporteFortin
 
         public List<Fleteros> BuscarEspecial(string dato)
         {
-            throw new NotImplementedException();
+            string cmdtext = "select * from fleteros c left join empresas e on c.idempresas = e.idempresas where fletero " + dato + " or documento " + dato +" order by fletero";
+            DataTable dt = oacceso.leerDatos(cmdtext);
+            Fleteros fletero = null;
+            Empresas emp = null;
+            TiposCamion tip = null;
+            List<Fleteros> lista = new List<Fleteros>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                tip = new TiposCamion(Convert.ToInt32(dr["idtiposcamion"]), "");
+                emp = new Empresas(Convert.ToInt32(dr["idempresas"]), Convert.ToString(dr["empresa"]), "", "", "", "", "", "", "");
+                fletero = new Fleteros(Convert.ToInt32(dr["idfleteros"]), Convert.ToInt32(dr["documento"]), Convert.ToString(dr["fletero"]), Convert.ToString(dr["direccion"]), Convert.ToString(dr["localidad"]), Convert.ToString(dr["cp"]), Convert.ToString(dr["telefono"]), Convert.ToString(dr["celular"]), Convert.ToString(dr["fax"]), Convert.ToString(dr["mail"]), emp, Convert.ToString(dr["camion"]), tip, Convert.ToString(dr["chapacamion"]), Convert.ToString(dr["chapaacoplado"]));
+                lista.Add(fletero);
+            }
+            return lista;
         }
 
         public void Modificar(Fleteros dato)

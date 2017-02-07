@@ -47,13 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -65,9 +59,15 @@
             this.txtChapaC = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.lblIdFletero = new System.Windows.Forms.Label();
             this.lblIdEmpresa = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -101,6 +101,7 @@
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(111, 21);
             this.txtCP.TabIndex = 4;
+            this.txtCP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCP_KeyPress);
             // 
             // label3
             // 
@@ -241,6 +242,7 @@
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(111, 21);
             this.txtDocumento.TabIndex = 0;
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // label8
             // 
@@ -251,62 +253,6 @@
             this.label8.Size = new System.Drawing.Size(72, 13);
             this.label8.TabIndex = 86;
             this.label8.Text = "Documento";
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::TransporteFortin.Properties.Resources.Undo;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(304, 263);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 38);
-            this.button1.TabIndex = 91;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackgroundImage = global::TransporteFortin.Properties.Resources.Edit;
-            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditar.Location = new System.Drawing.Point(257, 263);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(41, 38);
-            this.btnEditar.TabIndex = 90;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackgroundImage = global::TransporteFortin.Properties.Resources.Recycle_Bin_Full;
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(210, 263);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(41, 38);
-            this.btnEliminar.TabIndex = 89;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackgroundImage = global::TransporteFortin.Properties.Resources.Save;
-            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardar.Location = new System.Drawing.Point(163, 263);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(41, 38);
-            this.btnGuardar.TabIndex = 11;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNuevo.BackgroundImage = global::TransporteFortin.Properties.Resources.Document;
-            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevo.Location = new System.Drawing.Point(116, 263);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(41, 38);
-            this.btnNuevo.TabIndex = 88;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // groupBox1
             // 
@@ -320,18 +266,6 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Empresa";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(227, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(41, 38);
-            this.button2.TabIndex = 0;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtEmpresa
             // 
@@ -452,6 +386,24 @@
             this.label14.TabIndex = 90;
             this.label14.Text = "Tipo Camion";
             // 
+            // lblIdFletero
+            // 
+            this.lblIdFletero.AutoSize = true;
+            this.lblIdFletero.Location = new System.Drawing.Point(439, 264);
+            this.lblIdFletero.Name = "lblIdFletero";
+            this.lblIdFletero.Size = new System.Drawing.Size(0, 13);
+            this.lblIdFletero.TabIndex = 95;
+            this.lblIdFletero.Visible = false;
+            // 
+            // lblIdEmpresa
+            // 
+            this.lblIdEmpresa.AutoSize = true;
+            this.lblIdEmpresa.Location = new System.Drawing.Point(532, 253);
+            this.lblIdEmpresa.Name = "lblIdEmpresa";
+            this.lblIdEmpresa.Size = new System.Drawing.Size(0, 13);
+            this.lblIdEmpresa.TabIndex = 96;
+            this.lblIdEmpresa.Visible = false;
+            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
@@ -462,26 +414,75 @@
             this.btnBuscar.Size = new System.Drawing.Size(41, 38);
             this.btnBuscar.TabIndex = 94;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // lblIdFletero
+            // button2
             // 
-            this.lblIdFletero.AutoSize = true;
-            this.lblIdFletero.Location = new System.Drawing.Point(439, 264);
-            this.lblIdFletero.Name = "lblIdFletero";
-            this.lblIdFletero.Size = new System.Drawing.Size(41, 13);
-            this.lblIdFletero.TabIndex = 95;
-            this.lblIdFletero.Text = "label15";
-            this.lblIdFletero.Visible = false;
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(227, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(41, 38);
+            this.button2.TabIndex = 0;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // lblIdEmpresa
+            // button1
             // 
-            this.lblIdEmpresa.AutoSize = true;
-            this.lblIdEmpresa.Location = new System.Drawing.Point(532, 253);
-            this.lblIdEmpresa.Name = "lblIdEmpresa";
-            this.lblIdEmpresa.Size = new System.Drawing.Size(41, 13);
-            this.lblIdEmpresa.TabIndex = 96;
-            this.lblIdEmpresa.Text = "label16";
-            this.lblIdEmpresa.Visible = false;
+            this.button1.BackgroundImage = global::TransporteFortin.Properties.Resources.Undo;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(304, 263);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(41, 38);
+            this.button1.TabIndex = 91;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackgroundImage = global::TransporteFortin.Properties.Resources.Edit;
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.Location = new System.Drawing.Point(257, 263);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(41, 38);
+            this.btnEditar.TabIndex = 90;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackgroundImage = global::TransporteFortin.Properties.Resources.Recycle_Bin_Full;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.Location = new System.Drawing.Point(210, 263);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(41, 38);
+            this.btnEliminar.TabIndex = 89;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackgroundImage = global::TransporteFortin.Properties.Resources.Save;
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.Location = new System.Drawing.Point(163, 263);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(41, 38);
+            this.btnGuardar.TabIndex = 11;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNuevo.BackgroundImage = global::TransporteFortin.Properties.Resources.Document;
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevo.Location = new System.Drawing.Point(116, 263);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(41, 38);
+            this.btnNuevo.TabIndex = 88;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // frmFleteros
             // 
