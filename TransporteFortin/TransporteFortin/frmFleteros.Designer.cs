@@ -53,11 +53,11 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbTipoCamion = new System.Windows.Forms.ComboBox();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtChapaA = new System.Windows.Forms.TextBox();
@@ -65,9 +65,9 @@
             this.txtChapaC = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.lblIdFletero = new System.Windows.Forms.Label();
             this.lblIdEmpresa = new System.Windows.Forms.Label();
-            this.cmbTipoCamion = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -283,6 +283,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(41, 38);
             this.btnEliminar.TabIndex = 89;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnGuardar
             // 
@@ -293,6 +294,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(41, 38);
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
@@ -319,34 +321,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Empresa";
             // 
-            // groupBox2
+            // button2
             // 
-            this.groupBox2.Controls.Add(this.cmbTipoCamion);
-            this.groupBox2.Controls.Add(this.txtModelo);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txtChapaA);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txtChapaC);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.groupBox2.Location = new System.Drawing.Point(389, 73);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(332, 157);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Camión";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(329, 4);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(41, 38);
-            this.btnBuscar.TabIndex = 94;
-            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(227, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(41, 38);
+            this.button2.TabIndex = 0;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtEmpresa
             // 
@@ -369,16 +354,33 @@
             this.label10.TabIndex = 79;
             this.label10.Text = "Empresa";
             // 
-            // button2
+            // groupBox2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(227, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(41, 38);
-            this.button2.TabIndex = 0;
-            this.button2.UseVisualStyleBackColor = false;
+            this.groupBox2.Controls.Add(this.cmbTipoCamion);
+            this.groupBox2.Controls.Add(this.txtModelo);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtChapaA);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.txtChapaC);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.groupBox2.Location = new System.Drawing.Point(389, 73);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(332, 157);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Camión";
+            // 
+            // cmbTipoCamion
+            // 
+            this.cmbTipoCamion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoCamion.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbTipoCamion.FormattingEnabled = true;
+            this.cmbTipoCamion.Location = new System.Drawing.Point(110, 57);
+            this.cmbTipoCamion.Name = "cmbTipoCamion";
+            this.cmbTipoCamion.Size = new System.Drawing.Size(216, 21);
+            this.cmbTipoCamion.TabIndex = 95;
             // 
             // txtModelo
             // 
@@ -450,6 +452,17 @@
             this.label14.TabIndex = 90;
             this.label14.Text = "Tipo Camion";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(329, 4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(41, 38);
+            this.btnBuscar.TabIndex = 94;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // lblIdFletero
             // 
             this.lblIdFletero.AutoSize = true;
@@ -458,6 +471,7 @@
             this.lblIdFletero.Size = new System.Drawing.Size(41, 13);
             this.lblIdFletero.TabIndex = 95;
             this.lblIdFletero.Text = "label15";
+            this.lblIdFletero.Visible = false;
             // 
             // lblIdEmpresa
             // 
@@ -467,16 +481,7 @@
             this.lblIdEmpresa.Size = new System.Drawing.Size(41, 13);
             this.lblIdEmpresa.TabIndex = 96;
             this.lblIdEmpresa.Text = "label16";
-            // 
-            // cmbTipoCamion
-            // 
-            this.cmbTipoCamion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoCamion.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.cmbTipoCamion.FormattingEnabled = true;
-            this.cmbTipoCamion.Location = new System.Drawing.Point(110, 57);
-            this.cmbTipoCamion.Name = "cmbTipoCamion";
-            this.cmbTipoCamion.Size = new System.Drawing.Size(216, 21);
-            this.cmbTipoCamion.TabIndex = 95;
+            this.lblIdEmpresa.Visible = false;
             // 
             // frmFleteros
             // 
@@ -514,7 +519,9 @@
             this.MaximumSize = new System.Drawing.Size(749, 345);
             this.MinimumSize = new System.Drawing.Size(749, 345);
             this.Name = "frmFleteros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Fleteros";
+            this.Load += new System.EventHandler(this.frmFleteros_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

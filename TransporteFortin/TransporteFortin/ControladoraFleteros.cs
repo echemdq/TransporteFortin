@@ -8,9 +8,10 @@ namespace TransporteFortin
 {
     public class ControladoraFleteros : IDAO<Fleteros>
     {
+        BdFleteros bd = new BdFleteros();
         public void Agregar(Fleteros dato)
         {
-            throw new NotImplementedException();
+            bd.Agregar(dato);
         }
 
         public List<Fleteros> TraerTodos()
@@ -20,7 +21,7 @@ namespace TransporteFortin
 
         public void Borrar(Fleteros dato)
         {
-            throw new NotImplementedException();
+            bd.Borrar(dato);
         }
 
         public Fleteros Buscar(string dato)
@@ -35,7 +36,7 @@ namespace TransporteFortin
 
         public void Modificar(Fleteros dato)
         {
-            throw new NotImplementedException();
+            bd.Modificar(dato);
         }
 
         public int traerSigID()

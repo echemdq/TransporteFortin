@@ -119,8 +119,9 @@
             // aBMFleterosToolStripMenuItem
             // 
             this.aBMFleterosToolStripMenuItem.Name = "aBMFleterosToolStripMenuItem";
-            this.aBMFleterosToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.aBMFleterosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aBMFleterosToolStripMenuItem.Text = "ABM Fleteros";
+            this.aBMFleterosToolStripMenuItem.Click += new System.EventHandler(this.aBMFleterosToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 

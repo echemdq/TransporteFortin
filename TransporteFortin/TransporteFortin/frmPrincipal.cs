@@ -34,5 +34,11 @@ namespace TransporteFortin
             frmEmpresas frm = new frmEmpresas();
             frm.ShowDialog();
         }
+
+        private void aBMFleterosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFleteros frm = new frmFleteros();
+            frm.ShowDialog();
+        }
     }
 }
