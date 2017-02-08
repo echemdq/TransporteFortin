@@ -40,6 +40,8 @@
             this.aBMFleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDeCargaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emitirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +49,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
+            this.ordenesDeCargaToolStripMenuItem,
             this.bancosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.empresasToolStripMenuItem,
@@ -119,7 +122,7 @@
             // aBMFleterosToolStripMenuItem
             // 
             this.aBMFleterosToolStripMenuItem.Name = "aBMFleterosToolStripMenuItem";
-            this.aBMFleterosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aBMFleterosToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.aBMFleterosToolStripMenuItem.Text = "ABM Fleteros";
             this.aBMFleterosToolStripMenuItem.Click += new System.EventHandler(this.aBMFleterosToolStripMenuItem_Click);
             // 
@@ -137,6 +140,20 @@
             this.aBMProveedoresToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.aBMProveedoresToolStripMenuItem.Text = "ABM Proveedores";
             this.aBMProveedoresToolStripMenuItem.Click += new System.EventHandler(this.aBMProveedoresToolStripMenuItem_Click);
+            // 
+            // ordenesDeCargaToolStripMenuItem
+            // 
+            this.ordenesDeCargaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emitirToolStripMenuItem});
+            this.ordenesDeCargaToolStripMenuItem.Name = "ordenesDeCargaToolStripMenuItem";
+            this.ordenesDeCargaToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+            this.ordenesDeCargaToolStripMenuItem.Text = "Ordenes de Carga";
+            // 
+            // emitirToolStripMenuItem
+            // 
+            this.emitirToolStripMenuItem.Name = "emitirToolStripMenuItem";
+            this.emitirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.emitirToolStripMenuItem.Text = "Emitir";
             // 
             // frmPrincipal
             // 
@@ -172,6 +189,8 @@
         private System.Windows.Forms.ToolStripMenuItem bancosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMFleterosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMProveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenesDeCargaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem emitirToolStripMenuItem;
     }
 }
 

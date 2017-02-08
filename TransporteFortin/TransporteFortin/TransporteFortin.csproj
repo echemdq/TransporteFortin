@@ -96,6 +96,12 @@
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmitirOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmitirOC.Designer.cs">
+      <DependentUpon>frmEmitirOC.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmitirOC.resx">
+      <DependentUpon>frmEmitirOC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpresas.resx">
       <DependentUpon>frmEmpresas.cs</DependentUpon>
