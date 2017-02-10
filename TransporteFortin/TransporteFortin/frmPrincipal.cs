@@ -40,5 +40,11 @@ namespace TransporteFortin
             frmFleteros frm = new frmFleteros();
             frm.ShowDialog();
         }
+
+        private void emitirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmitirOC frm = new frmEmitirOC();
+            frm.ShowDialog();
+        }
     }
 }
