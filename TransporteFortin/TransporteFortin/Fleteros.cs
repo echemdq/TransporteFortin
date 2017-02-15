@@ -114,7 +114,23 @@ namespace TransporteFortin
             set { chapaacoplado = value; }
         }
 
-        public Fleteros(int i, int d, string f, string dir, string l, string cp1, string t, string c, string fa, string m, Empresas e, string cam, TiposCamion tc, string chc, string cha)
+        TiposIVA tiposIVA;
+
+        public TiposIVA TiposIVA
+        {
+            get { return tiposIVA; }
+            set { tiposIVA = value; }
+        }
+
+        string cuit;
+
+        public string Cuit
+        {
+            get { return cuit; }
+            set { cuit = value; }
+        }
+
+        public Fleteros(int i, int d, string f, string dir, string l, string cp1, string t, string c, string fa, string m, Empresas e, string cam, TiposCamion tc, string chc, string cha, string cuitt, TiposIVA ti)
         {
             idfleteros = i;
             documento = d;
@@ -131,6 +147,8 @@ namespace TransporteFortin
             tiposcamion = tc;
             chapacamion = chc;
             chapaacoplado = cha;
+            cuit = cuitt;
+            tiposIVA = ti;
         }
     }
 }

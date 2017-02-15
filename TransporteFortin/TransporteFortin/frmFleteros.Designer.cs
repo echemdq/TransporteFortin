@@ -68,6 +68,10 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cmbTipoIva = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -138,7 +142,7 @@
             this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMail.Enabled = false;
             this.txtMail.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMail.Location = new System.Drawing.Point(117, 237);
+            this.txtMail.Location = new System.Drawing.Point(116, 290);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(253, 21);
             this.txtMail.TabIndex = 8;
@@ -187,7 +191,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(70, 239);
+            this.label7.Location = new System.Drawing.Point(69, 292);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 81;
@@ -432,7 +436,7 @@
             // 
             this.button1.BackgroundImage = global::TransporteFortin.Properties.Resources.Undo;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(304, 263);
+            this.button1.Location = new System.Drawing.Point(303, 316);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(41, 38);
             this.button1.TabIndex = 91;
@@ -443,7 +447,7 @@
             // 
             this.btnEditar.BackgroundImage = global::TransporteFortin.Properties.Resources.Edit;
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditar.Location = new System.Drawing.Point(257, 263);
+            this.btnEditar.Location = new System.Drawing.Point(256, 316);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(41, 38);
             this.btnEditar.TabIndex = 90;
@@ -454,7 +458,7 @@
             // 
             this.btnEliminar.BackgroundImage = global::TransporteFortin.Properties.Resources.Recycle_Bin_Full;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(210, 263);
+            this.btnEliminar.Location = new System.Drawing.Point(209, 316);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(41, 38);
             this.btnEliminar.TabIndex = 89;
@@ -465,7 +469,7 @@
             // 
             this.btnGuardar.BackgroundImage = global::TransporteFortin.Properties.Resources.Save;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardar.Location = new System.Drawing.Point(163, 263);
+            this.btnGuardar.Location = new System.Drawing.Point(162, 316);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(41, 38);
             this.btnGuardar.TabIndex = 11;
@@ -477,18 +481,62 @@
             this.btnNuevo.BackColor = System.Drawing.SystemColors.Control;
             this.btnNuevo.BackgroundImage = global::TransporteFortin.Properties.Resources.Document;
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevo.Location = new System.Drawing.Point(116, 263);
+            this.btnNuevo.Location = new System.Drawing.Point(115, 316);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(41, 38);
             this.btnNuevo.TabIndex = 88;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.maskedTextBox1.Location = new System.Drawing.Point(116, 263);
+            this.maskedTextBox1.Mask = "00-00000000-0";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(112, 21);
+            this.maskedTextBox1.TabIndex = 98;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(74, 265);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(36, 13);
+            this.label15.TabIndex = 100;
+            this.label15.Text = "CUIT";
+            // 
+            // cmbTipoIva
+            // 
+            this.cmbTipoIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoIva.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbTipoIva.FormattingEnabled = true;
+            this.cmbTipoIva.Location = new System.Drawing.Point(116, 236);
+            this.cmbTipoIva.Name = "cmbTipoIva";
+            this.cmbTipoIva.Size = new System.Drawing.Size(254, 21);
+            this.cmbTipoIva.TabIndex = 97;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(52, 239);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(56, 13);
+            this.label16.TabIndex = 99;
+            this.label16.Text = "Tipo IVA";
+            // 
             // frmFleteros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 307);
+            this.ClientSize = new System.Drawing.Size(733, 362);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.cmbTipoIva);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.lblIdEmpresa);
             this.Controls.Add(this.lblIdFletero);
             this.Controls.Add(this.btnBuscar);
@@ -517,8 +565,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(749, 345);
-            this.MinimumSize = new System.Drawing.Size(749, 345);
+            this.MaximumSize = new System.Drawing.Size(749, 400);
+            this.MinimumSize = new System.Drawing.Size(749, 400);
             this.Name = "frmFleteros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Fleteros";
@@ -573,5 +621,9 @@
         private System.Windows.Forms.Label lblIdFletero;
         private System.Windows.Forms.Label lblIdEmpresa;
         private System.Windows.Forms.ComboBox cmbTipoCamion;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cmbTipoIva;
+        private System.Windows.Forms.Label label16;
     }
 }

@@ -103,6 +103,8 @@ namespace TransporteFortin
                         dataGridView1.Rows[x].Cells[13].Value = aux.Chapacamion;
                         dataGridView1.Rows[x].Cells[14].Value = aux.Chapaacoplado;
                         dataGridView1.Rows[x].Cells[15].Value = aux.Empresas.Empresa;
+                        dataGridView1.Rows[x].Cells[16].Value = aux.Cuit;
+                        dataGridView1.Rows[x].Cells[17].Value = aux.TiposIVA.IdTiposIVA;
                         x++;
                     }
                 }
@@ -111,7 +113,7 @@ namespace TransporteFortin
 
         private void frmBuscaFleteros_Load(object sender, EventArgs e)
         {
-            dataGridView1.ColumnCount = 16;
+            dataGridView1.ColumnCount = 18;
             dataGridView1.Columns[0].Name = "idfleteros";
             dataGridView1.Columns[1].Name = "Fletero";
             dataGridView1.Columns[2].Name = "Direccion";
@@ -128,8 +130,12 @@ namespace TransporteFortin
             dataGridView1.Columns[13].Name = "Chapa Camion";
             dataGridView1.Columns[14].Name = "Chapa Acoplado";
             dataGridView1.Columns[15].Name = "Empresa";
+            dataGridView1.Columns[16].Name = "Cuit";
+            dataGridView1.Columns[17].Name = "TipoIva";
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[12].Visible = false;
+            dataGridView1.Columns[16].Visible = false;
+            dataGridView1.Columns[17].Visible = false;
             dataGridView1.Columns[10].Visible = false;
         }
 
@@ -139,6 +145,8 @@ namespace TransporteFortin
             int idfletero = Convert.ToInt32(dataGridView1[0, filaseleccionada].Value);
             string fletero = dataGridView1[1, filaseleccionada].Value.ToString();
             int idtipocamion = Convert.ToInt32(dataGridView1[12, filaseleccionada].Value);
+            int idtipoiva = Convert.ToInt32(dataGridView1[17, filaseleccionada].Value);
+            TiposIVA ti = new TiposIVA(idtipoiva, "", "");
             string direccion = dataGridView1[2, filaseleccionada].Value.ToString();
             TiposCamion tipoiv = new TiposCamion(idtipocamion, "");
             int idempresa = Convert.ToInt32(dataGridView1[10, filaseleccionada].Value);
@@ -153,7 +161,8 @@ namespace TransporteFortin
             string camion = dataGridView1[11, filaseleccionada].Value.ToString();
             string chapacamion = dataGridView1[13, filaseleccionada].Value.ToString();
             string chapaacoplado = dataGridView1[14, filaseleccionada].Value.ToString();
-            u = new Fleteros(idfletero, documento, fletero, direccion, localidad, cp.ToString(), telefono, celular, fax, mail, emp, camion, tipoiv, chapacamion, chapaacoplado);
+            string cuit = dataGridView1[16, filaseleccionada].Value.ToString();
+            u = new Fleteros(idfletero, documento, fletero, direccion, localidad, cp.ToString(), telefono, celular, fax, mail, emp, camion, tipoiv, chapacamion, chapaacoplado,cuit,ti);
             this.Close();
         }
 

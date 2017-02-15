@@ -31,10 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmitirOC));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.lblSucursal = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtSucursal = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnOrdenCte = new System.Windows.Forms.Button();
             this.txtSaldoCte = new System.Windows.Forms.TextBox();
@@ -88,50 +85,53 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtProductos = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtUnidad = new System.Windows.Forms.TextBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtValorUni = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.txtImporteCte = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtComision = new System.Windows.Forms.TextBox();
+            this.txtIvaViaje = new System.Windows.Forms.TextBox();
+            this.txtTotalViaje = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txtValorFijo = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtPorcentaje = new System.Windows.Forms.TextBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtValorUni = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtValorUniCte = new System.Windows.Forms.TextBox();
+            this.txtIVACte = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cmbSucursal = new System.Windows.Forms.ComboBox();
+            this.cmbUnidades = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.chkPagoDest.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbSucursal);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.lblSucursal);
             this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.txtSucursal);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1, 0);
             this.groupBox1.Name = "groupBox1";
@@ -150,16 +150,6 @@
             this.label15.TabIndex = 105;
             this.label15.Text = "Fecha";
             // 
-            // lblSucursal
-            // 
-            this.lblSucursal.AutoSize = true;
-            this.lblSucursal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursal.Location = new System.Drawing.Point(355, 17);
-            this.lblSucursal.Name = "lblSucursal";
-            this.lblSucursal.Size = new System.Drawing.Size(69, 13);
-            this.lblSucursal.TabIndex = 82;
-            this.lblSucursal.Text = "lblSucursal";
-            // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,29 +159,6 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(83, 21);
             this.maskedTextBox1.TabIndex = 81;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(285, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(33, 35);
-            this.button2.TabIndex = 79;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // txtSucursal
-            // 
-            this.txtSucursal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSucursal.Enabled = false;
-            this.txtSucursal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSucursal.Location = new System.Drawing.Point(11, 17);
-            this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.ReadOnly = true;
-            this.txtSucursal.Size = new System.Drawing.Size(268, 21);
-            this.txtSucursal.TabIndex = 80;
             // 
             // groupBox2
             // 
@@ -274,6 +241,7 @@
             this.button1.Size = new System.Drawing.Size(33, 35);
             this.button1.TabIndex = 81;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtCliente
             // 
@@ -662,6 +630,7 @@
             this.button4.Size = new System.Drawing.Size(33, 35);
             this.button4.TabIndex = 81;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // txtFletero
             // 
@@ -739,6 +708,7 @@
             this.txtValorDec.Name = "txtValorDec";
             this.txtValorDec.Size = new System.Drawing.Size(161, 21);
             this.txtValorDec.TabIndex = 101;
+            this.txtValorDec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorDec_KeyPress);
             // 
             // label19
             // 
@@ -771,11 +741,13 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox7);
+            this.groupBox6.Controls.Add(this.txtIVACte);
+            this.groupBox6.Controls.Add(this.label31);
+            this.groupBox6.Controls.Add(this.txtImporteCte);
             this.groupBox6.Controls.Add(this.label29);
-            this.groupBox6.Controls.Add(this.textBox6);
-            this.groupBox6.Controls.Add(this.textBox5);
-            this.groupBox6.Controls.Add(this.textBox4);
+            this.groupBox6.Controls.Add(this.txtComision);
+            this.groupBox6.Controls.Add(this.txtIvaViaje);
+            this.groupBox6.Controls.Add(this.txtTotalViaje);
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.label27);
@@ -786,109 +758,177 @@
             this.groupBox6.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.groupBox6.Location = new System.Drawing.Point(7, 434);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(697, 135);
+            this.groupBox6.Size = new System.Drawing.Size(697, 151);
             this.groupBox6.TabIndex = 105;
             this.groupBox6.TabStop = false;
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
-            // groupBox7
+            // txtImporteCte
             // 
-            this.groupBox7.Controls.Add(this.label23);
-            this.groupBox7.Controls.Add(this.label22);
-            this.groupBox7.Controls.Add(this.label21);
-            this.groupBox7.Controls.Add(this.txtValorUni);
-            this.groupBox7.Controls.Add(this.txtCantidad);
-            this.groupBox7.Controls.Add(this.button3);
-            this.groupBox7.Controls.Add(this.txtUnidad);
-            this.groupBox7.Font = new System.Drawing.Font("Verdana", 8F);
-            this.groupBox7.Location = new System.Drawing.Point(6, 15);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(233, 97);
-            this.groupBox7.TabIndex = 106;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Unidad";
+            this.txtImporteCte.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtImporteCte.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtImporteCte.Enabled = false;
+            this.txtImporteCte.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtImporteCte.Location = new System.Drawing.Point(567, 93);
+            this.txtImporteCte.Name = "txtImporteCte";
+            this.txtImporteCte.Size = new System.Drawing.Size(115, 18);
+            this.txtImporteCte.TabIndex = 117;
+            this.txtImporteCte.Text = "0.00";
+            this.txtImporteCte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button3
+            // label29
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(194, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(33, 35);
-            this.button3.TabIndex = 83;
-            this.button3.UseVisualStyleBackColor = false;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(468, 97);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(97, 13);
+            this.label29.TabIndex = 116;
+            this.label29.Text = "Importe Cliente";
             // 
-            // txtUnidad
+            // txtComision
             // 
-            this.txtUnidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUnidad.Enabled = false;
-            this.txtUnidad.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnidad.Location = new System.Drawing.Point(6, 19);
-            this.txtUnidad.Name = "txtUnidad";
-            this.txtUnidad.ReadOnly = true;
-            this.txtUnidad.Size = new System.Drawing.Size(177, 21);
-            this.txtUnidad.TabIndex = 85;
+            this.txtComision.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtComision.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtComision.Enabled = false;
+            this.txtComision.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtComision.Location = new System.Drawing.Point(567, 66);
+            this.txtComision.Name = "txtComision";
+            this.txtComision.Size = new System.Drawing.Size(115, 18);
+            this.txtComision.TabIndex = 115;
+            this.txtComision.Text = "$0,00";
+            this.txtComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtCantidad
+            // txtIvaViaje
             // 
-            this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCantidad.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(6, 70);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(78, 21);
-            this.txtCantidad.TabIndex = 86;
+            this.txtIvaViaje.BackColor = System.Drawing.Color.White;
+            this.txtIvaViaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIvaViaje.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtIvaViaje.Location = new System.Drawing.Point(567, 36);
+            this.txtIvaViaje.Name = "txtIvaViaje";
+            this.txtIvaViaje.Size = new System.Drawing.Size(115, 25);
+            this.txtIvaViaje.TabIndex = 114;
+            this.txtIvaViaje.Text = "0.00";
+            this.txtIvaViaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIvaViaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIvaViaje_KeyPress);
             // 
-            // txtValorUni
+            // txtTotalViaje
             // 
-            this.txtValorUni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorUni.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorUni.Location = new System.Drawing.Point(122, 70);
-            this.txtValorUni.Name = "txtValorUni";
-            this.txtValorUni.Size = new System.Drawing.Size(105, 21);
-            this.txtValorUni.TabIndex = 87;
+            this.txtTotalViaje.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtTotalViaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalViaje.Enabled = false;
+            this.txtTotalViaje.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtTotalViaje.Location = new System.Drawing.Point(567, 12);
+            this.txtTotalViaje.Name = "txtTotalViaje";
+            this.txtTotalViaje.Size = new System.Drawing.Size(115, 18);
+            this.txtTotalViaje.TabIndex = 113;
+            this.txtTotalViaje.Text = "$0,00";
+            this.txtTotalViaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label21
+            // label25
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(17, 54);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(58, 13);
-            this.label21.TabIndex = 88;
-            this.label21.Text = "Cantidad";
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(497, 15);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(68, 13);
+            this.label25.TabIndex = 112;
+            this.label25.Text = "Total Viaje";
             // 
-            // label22
+            // label26
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(135, 54);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(80, 13);
-            this.label22.TabIndex = 89;
-            this.label22.Text = "Valor Unidad";
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(505, 67);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(60, 13);
+            this.label26.TabIndex = 111;
+            this.label26.Text = "Comision";
             // 
-            // label23
+            // label27
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(96, 72);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(15, 13);
-            this.label23.TabIndex = 90;
-            this.label23.Text = "X";
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(504, 41);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(61, 13);
+            this.label27.TabIndex = 110;
+            this.label27.Text = "IVA Viaje";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(431, 51);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(62, 40);
+            this.button5.TabIndex = 109;
+            this.button5.Text = "Calcular Valores";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(251, 118);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(119, 17);
+            this.checkBox2.TabIndex = 108;
+            this.checkBox2.Text = "Pago en Destino";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.textBox3);
+            this.groupBox8.Controls.Add(this.txtValorFijo);
             this.groupBox8.Controls.Add(this.label24);
-            this.groupBox8.Controls.Add(this.textBox2);
+            this.groupBox8.Controls.Add(this.txtPorcentaje);
             this.groupBox8.Controls.Add(this.radioButton2);
             this.groupBox8.Controls.Add(this.radioButton1);
             this.groupBox8.Font = new System.Drawing.Font("Verdana", 8F);
             this.groupBox8.Location = new System.Drawing.Point(245, 15);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(180, 67);
+            this.groupBox8.Size = new System.Drawing.Size(180, 85);
             this.groupBox8.TabIndex = 107;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Calcula Comision por";
+            // 
+            // txtValorFijo
+            // 
+            this.txtValorFijo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorFijo.Enabled = false;
+            this.txtValorFijo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorFijo.Location = new System.Drawing.Point(95, 54);
+            this.txtValorFijo.Name = "txtValorFijo";
+            this.txtValorFijo.Size = new System.Drawing.Size(66, 21);
+            this.txtValorFijo.TabIndex = 92;
+            this.txtValorFijo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorFijo_KeyPress);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(148, 23);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(19, 13);
+            this.label24.TabIndex = 91;
+            this.label24.Text = "%";
+            // 
+            // txtPorcentaje
+            // 
+            this.txtPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPorcentaje.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPorcentaje.Location = new System.Drawing.Point(95, 19);
+            this.txtPorcentaje.Name = "txtPorcentaje";
+            this.txtPorcentaje.Size = new System.Drawing.Size(49, 21);
+            this.txtPorcentaje.TabIndex = 87;
+            this.txtPorcentaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentaje_KeyPress);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 54);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(79, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Valor Fijo";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -903,44 +943,70 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // groupBox7
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Valor Fijo";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.groupBox7.Controls.Add(this.cmbUnidades);
+            this.groupBox7.Controls.Add(this.label30);
+            this.groupBox7.Controls.Add(this.txtValorUniCte);
+            this.groupBox7.Controls.Add(this.label23);
+            this.groupBox7.Controls.Add(this.label22);
+            this.groupBox7.Controls.Add(this.label21);
+            this.groupBox7.Controls.Add(this.txtValorUni);
+            this.groupBox7.Controls.Add(this.txtCantidad);
+            this.groupBox7.Font = new System.Drawing.Font("Verdana", 8F);
+            this.groupBox7.Location = new System.Drawing.Point(6, 15);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(233, 130);
+            this.groupBox7.TabIndex = 106;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Unidad";
             // 
-            // textBox2
+            // label23
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(95, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(49, 21);
-            this.textBox2.TabIndex = 87;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(86, 86);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(15, 13);
+            this.label23.TabIndex = 90;
+            this.label23.Text = "X";
             // 
-            // label24
+            // label22
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(148, 23);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(19, 13);
-            this.label24.TabIndex = 91;
-            this.label24.Text = "%";
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(129, 48);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(80, 13);
+            this.label22.TabIndex = 89;
+            this.label22.Text = "Valor Unidad";
             // 
-            // checkBox2
+            // label21
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(252, 88);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(119, 17);
-            this.checkBox2.TabIndex = 108;
-            this.checkBox2.Text = "Pago en Destino";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(16, 68);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(58, 13);
+            this.label21.TabIndex = 88;
+            this.label21.Text = "Cantidad";
+            // 
+            // txtValorUni
+            // 
+            this.txtValorUni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorUni.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorUni.Location = new System.Drawing.Point(117, 64);
+            this.txtValorUni.Name = "txtValorUni";
+            this.txtValorUni.Size = new System.Drawing.Size(105, 21);
+            this.txtValorUni.TabIndex = 87;
+            this.txtValorUni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorUni_KeyPress);
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCantidad.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Location = new System.Drawing.Point(5, 84);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(78, 21);
+            this.txtCantidad.TabIndex = 86;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // checkBox1
             // 
@@ -956,87 +1022,9 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(431, 42);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(62, 40);
-            this.button5.TabIndex = 109;
-            this.button5.Text = "Calcular Valores";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(497, 28);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(68, 13);
-            this.label25.TabIndex = 112;
-            this.label25.Text = "Total Viaje";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(505, 80);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(60, 13);
-            this.label26.TabIndex = 111;
-            this.label26.Text = "Comision";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(504, 54);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(61, 13);
-            this.label27.TabIndex = 110;
-            this.label27.Text = "IVA Viaje";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Verdana", 11F);
-            this.textBox4.Location = new System.Drawing.Point(567, 25);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(115, 18);
-            this.textBox4.TabIndex = 113;
-            this.textBox4.Text = "$0,00";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Verdana", 11F);
-            this.textBox5.Location = new System.Drawing.Point(567, 52);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(115, 18);
-            this.textBox5.TabIndex = 114;
-            this.textBox5.Text = "$0,00";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Verdana", 11F);
-            this.textBox6.Location = new System.Drawing.Point(567, 79);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(115, 18);
-            this.textBox6.TabIndex = 115;
-            this.textBox6.Text = "$0,00";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(8, 588);
+            this.richTextBox1.Location = new System.Drawing.Point(8, 604);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(853, 69);
             this.richTextBox1.TabIndex = 107;
@@ -1046,49 +1034,91 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(5, 572);
+            this.label28.Location = new System.Drawing.Point(5, 588);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(113, 13);
             this.label28.TabIndex = 113;
             this.label28.Text = "OBSERVACIONES";
             // 
-            // label29
+            // label30
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(468, 110);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(97, 13);
-            this.label29.TabIndex = 116;
-            this.label29.Text = "Importe Cliente";
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(105, 87);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(124, 13);
+            this.label30.TabIndex = 92;
+            this.label30.Text = "Valor Unidad Cliente";
             // 
-            // textBox7
+            // txtValorUniCte
             // 
-            this.textBox7.BackColor = System.Drawing.Color.White;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Verdana", 11F);
-            this.textBox7.Location = new System.Drawing.Point(567, 104);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(115, 25);
-            this.textBox7.TabIndex = 117;
-            this.textBox7.Text = "0.00";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtValorUniCte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorUniCte.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorUniCte.Location = new System.Drawing.Point(117, 103);
+            this.txtValorUniCte.Name = "txtValorUniCte";
+            this.txtValorUniCte.Size = new System.Drawing.Size(105, 21);
+            this.txtValorUniCte.TabIndex = 91;
+            this.txtValorUniCte.Tag = "";
+            this.txtValorUniCte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorUniCte_KeyPress);
             // 
-            // textBox3
+            // txtIVACte
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(95, 42);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(66, 21);
-            this.textBox3.TabIndex = 92;
+            this.txtIVACte.BackColor = System.Drawing.Color.White;
+            this.txtIVACte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIVACte.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtIVACte.Location = new System.Drawing.Point(567, 120);
+            this.txtIVACte.Name = "txtIVACte";
+            this.txtIVACte.Size = new System.Drawing.Size(115, 25);
+            this.txtIVACte.TabIndex = 119;
+            this.txtIVACte.Text = "0.00";
+            this.txtIVACte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIVACte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIVACte_KeyPress);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(493, 126);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(72, 13);
+            this.label31.TabIndex = 118;
+            this.label31.Text = "IVA Cliente";
+            // 
+            // cmbSucursal
+            // 
+            this.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSucursal.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbSucursal.FormattingEnabled = true;
+            this.cmbSucursal.Location = new System.Drawing.Point(11, 17);
+            this.cmbSucursal.Name = "cmbSucursal";
+            this.cmbSucursal.Size = new System.Drawing.Size(268, 21);
+            this.cmbSucursal.TabIndex = 106;
+            // 
+            // cmbUnidades
+            // 
+            this.cmbUnidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUnidades.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbUnidades.FormattingEnabled = true;
+            this.cmbUnidades.Location = new System.Drawing.Point(6, 19);
+            this.cmbUnidades.Name = "cmbUnidades";
+            this.cmbUnidades.Size = new System.Drawing.Size(216, 21);
+            this.cmbUnidades.TabIndex = 96;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(741, 441);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 114;
+            this.button2.Text = "GENERAR";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmEmitirOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 663);
+            this.ClientSize = new System.Drawing.Size(872, 685);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.checkBox1);
@@ -1121,10 +1151,10 @@
             this.groupBox4.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1133,9 +1163,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtSucursal;
-        private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtSaldoCte;
@@ -1192,12 +1219,10 @@
         private System.Windows.Forms.TextBox txtProductos;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox txtUnidad;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPorcentaje;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label23;
@@ -1206,17 +1231,24 @@
         private System.Windows.Forms.TextBox txtValorUni;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtComision;
+        private System.Windows.Forms.TextBox txtIvaViaje;
+        private System.Windows.Forms.TextBox txtTotalViaje;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtImporteCte;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtValorFijo;
+        private System.Windows.Forms.ComboBox cmbSucursal;
+        private System.Windows.Forms.TextBox txtIVACte;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtValorUniCte;
+        private System.Windows.Forms.ComboBox cmbUnidades;
+        private System.Windows.Forms.Button button2;
     }
 }

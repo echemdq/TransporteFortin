@@ -34,6 +34,7 @@ namespace TransporteFortin
             txtModelo.Enabled = false;
             txtChapaC.Enabled = false;
             txtChapaA.Enabled = false;
+            maskedTextBox1.Enabled = false;
         }
 
         public void habilitar()
@@ -51,6 +52,7 @@ namespace TransporteFortin
             txtModelo.Enabled = true;
             txtChapaC.Enabled = true;
             txtChapaA.Enabled = true;
+            maskedTextBox1.Enabled = true;
         }
 
         public void limpiar()
@@ -71,6 +73,7 @@ namespace TransporteFortin
             txtChapaC.Text = "";
             txtChapaA.Text = "";
             txtEmpresa.Text = "";
+            maskedTextBox1.Text = "";
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -106,7 +109,8 @@ namespace TransporteFortin
                     }
                     Empresas em = new Empresas(Convert.ToInt32(lblIdEmpresa.Text), "", "", "", "", "", "", "", "");
                     TiposCamion t = new TiposCamion(Convert.ToInt32(cmbTipoCamion.SelectedValue), "");
-                    Fleteros r = new Fleteros(0, Convert.ToInt32(txtDocumento.Text), txtCliente.Text, txtDomicilio.Text, txtLocalidad.Text, txtCP.Text, txtTelefono.Text, txtCelular.Text, txtFax.Text, txtMail.Text, em, txtModelo.Text, t, txtChapaC.Text, txtChapaA.Text);
+                    TiposIVA ti = new TiposIVA(Convert.ToInt32(cmbTipoIva.SelectedValue),"","");
+                    Fleteros r = new Fleteros(0, Convert.ToInt32(txtDocumento.Text), txtCliente.Text, txtDomicilio.Text, txtLocalidad.Text, txtCP.Text, txtTelefono.Text, txtCelular.Text, txtFax.Text, txtMail.Text, em, txtModelo.Text, t, txtChapaC.Text, txtChapaA.Text,maskedTextBox1.Text, ti);
                     if (lblIdFletero.Text == "")
                     {
                         controlf.Agregar(r);
@@ -148,6 +152,18 @@ namespace TransporteFortin
             cmbTipoCamion.ValueMember = "idtiposcamion";
             cmbTipoCamion.SelectedIndex = 0;
             cmbTipoCamion.Text = "full";
+            dt = oacceso.leerDatos("select * from tiposiva order by detalle asc");
+            List<TiposIVA> listat1 = new List<TiposIVA>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                TiposIVA t = new TiposIVA(Convert.ToInt32(dr["idtiposiva"]), Convert.ToString(dr["detalle"]), Convert.ToString(dr["tipo"]));
+                listat1.Add(t);
+            }
+            cmbTipoIva.DataSource = listat1;
+            cmbTipoIva.DisplayMember = "detalle";
+            cmbTipoIva.ValueMember = "idtiposiva";
+            cmbTipoIva.SelectedIndex = 0;
+            cmbTipoIva.Text = "RESPONSABLE INSCRIPTO";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -175,7 +191,7 @@ namespace TransporteFortin
             {
                 if (lblIdFletero.Text != "")
                 {
-                    Fleteros c = new Fleteros(Convert.ToInt32(lblIdFletero.Text),0, "", "", "", "", "", "", "", "", null, "", null, "", "");
+                    Fleteros c = new Fleteros(Convert.ToInt32(lblIdFletero.Text),0, "", "", "", "", "", "", "", "", null, "", null, "", "","",null);
                     DialogResult dialogResult = MessageBox.Show("Esta seguro de eliminar el Fletero: " + txtCliente.Text, "Eliminar Fletero", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
@@ -267,6 +283,8 @@ namespace TransporteFortin
                     txtChapaA.Text = u.Chapaacoplado;
                     txtChapaC.Text = u.Chapacamion;
                     txtDocumento.Text = u.Documento.ToString();
+                    cmbTipoIva.SelectedValue = u.TiposIVA.IdTiposIVA;
+                    maskedTextBox1.Text = u.Cuit;
                 }
             }
             catch (Exception ex)

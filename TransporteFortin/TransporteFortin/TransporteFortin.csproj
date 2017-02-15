@@ -52,6 +52,7 @@
     <Compile Include="BdClientes.cs" />
     <Compile Include="BdEmpresas.cs" />
     <Compile Include="BdFleteros.cs" />
+    <Compile Include="BdOrdenesCarga.cs" />
     <Compile Include="BdProveedores.cs" />
     <Compile Include="BdTiposCamion.cs" />
     <Compile Include="BdTiposIVAS.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="ControladoraClientes.cs" />
     <Compile Include="ControladoraEmpresas.cs" />
     <Compile Include="ControladoraFleteros.cs" />
+    <Compile Include="ControladoraOrdenesCarga.cs" />
     <Compile Include="ControladoraProveedores.cs" />
     <Compile Include="ControladoraTiposCamion.cs" />
     <Compile Include="ControladoraTiposIVA.cs" />
@@ -127,9 +129,11 @@
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="IDAO.cs" />
+    <Compile Include="OrdenesCarga.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedores.cs" />
+    <Compile Include="Sucursales.cs" />
     <Compile Include="TiposCamion.cs" />
     <Compile Include="TiposIVA.cs" />
     <Compile Include="Unidades.cs" />
