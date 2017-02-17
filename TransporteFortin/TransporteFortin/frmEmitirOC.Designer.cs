@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmitirOC));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbSucursal = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -85,6 +86,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtProductos = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtIVACte = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.txtImporteCte = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txtComision = new System.Windows.Forms.TextBox();
@@ -102,6 +105,9 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.cmbUnidades = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtValorUniCte = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -110,12 +116,6 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtValorUniCte = new System.Windows.Forms.TextBox();
-            this.txtIVACte = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.cmbSucursal = new System.Windows.Forms.ComboBox();
-            this.cmbUnidades = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -139,6 +139,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SUCURSAL";
+            // 
+            // cmbSucursal
+            // 
+            this.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSucursal.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbSucursal.FormattingEnabled = true;
+            this.cmbSucursal.Location = new System.Drawing.Point(11, 17);
+            this.cmbSucursal.Name = "cmbSucursal";
+            this.cmbSucursal.Size = new System.Drawing.Size(268, 21);
+            this.cmbSucursal.TabIndex = 106;
             // 
             // label15
             // 
@@ -708,6 +718,7 @@
             this.txtValorDec.Name = "txtValorDec";
             this.txtValorDec.Size = new System.Drawing.Size(161, 21);
             this.txtValorDec.TabIndex = 101;
+            this.txtValorDec.Text = "0";
             this.txtValorDec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorDec_KeyPress);
             // 
             // label19
@@ -762,6 +773,29 @@
             this.groupBox6.TabIndex = 105;
             this.groupBox6.TabStop = false;
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            // 
+            // txtIVACte
+            // 
+            this.txtIVACte.BackColor = System.Drawing.Color.White;
+            this.txtIVACte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIVACte.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtIVACte.Location = new System.Drawing.Point(567, 120);
+            this.txtIVACte.Name = "txtIVACte";
+            this.txtIVACte.Size = new System.Drawing.Size(115, 25);
+            this.txtIVACte.TabIndex = 119;
+            this.txtIVACte.Text = "0.00";
+            this.txtIVACte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIVACte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIVACte_KeyPress);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(493, 126);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(72, 13);
+            this.label31.TabIndex = 118;
+            this.label31.Text = "IVA Cliente";
             // 
             // txtImporteCte
             // 
@@ -863,6 +897,7 @@
             this.button5.TabIndex = 109;
             this.button5.Text = "Calcular Valores";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // checkBox2
             // 
@@ -898,6 +933,7 @@
             this.txtValorFijo.Name = "txtValorFijo";
             this.txtValorFijo.Size = new System.Drawing.Size(66, 21);
             this.txtValorFijo.TabIndex = 92;
+            this.txtValorFijo.Text = "0";
             this.txtValorFijo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorFijo_KeyPress);
             // 
             // label24
@@ -960,6 +996,36 @@
             this.groupBox7.TabIndex = 106;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Unidad";
+            // 
+            // cmbUnidades
+            // 
+            this.cmbUnidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUnidades.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbUnidades.FormattingEnabled = true;
+            this.cmbUnidades.Location = new System.Drawing.Point(6, 19);
+            this.cmbUnidades.Name = "cmbUnidades";
+            this.cmbUnidades.Size = new System.Drawing.Size(216, 21);
+            this.cmbUnidades.TabIndex = 96;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(105, 87);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(124, 13);
+            this.label30.TabIndex = 92;
+            this.label30.Text = "Valor Unidad Cliente";
+            // 
+            // txtValorUniCte
+            // 
+            this.txtValorUniCte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorUniCte.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorUniCte.Location = new System.Drawing.Point(117, 103);
+            this.txtValorUniCte.Name = "txtValorUniCte";
+            this.txtValorUniCte.Size = new System.Drawing.Size(105, 21);
+            this.txtValorUniCte.TabIndex = 91;
+            this.txtValorUniCte.Tag = "";
+            this.txtValorUniCte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorUniCte_KeyPress);
             // 
             // label23
             // 
@@ -1039,69 +1105,6 @@
             this.label28.Size = new System.Drawing.Size(113, 13);
             this.label28.TabIndex = 113;
             this.label28.Text = "OBSERVACIONES";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(105, 87);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(124, 13);
-            this.label30.TabIndex = 92;
-            this.label30.Text = "Valor Unidad Cliente";
-            // 
-            // txtValorUniCte
-            // 
-            this.txtValorUniCte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorUniCte.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorUniCte.Location = new System.Drawing.Point(117, 103);
-            this.txtValorUniCte.Name = "txtValorUniCte";
-            this.txtValorUniCte.Size = new System.Drawing.Size(105, 21);
-            this.txtValorUniCte.TabIndex = 91;
-            this.txtValorUniCte.Tag = "";
-            this.txtValorUniCte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorUniCte_KeyPress);
-            // 
-            // txtIVACte
-            // 
-            this.txtIVACte.BackColor = System.Drawing.Color.White;
-            this.txtIVACte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIVACte.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtIVACte.Location = new System.Drawing.Point(567, 120);
-            this.txtIVACte.Name = "txtIVACte";
-            this.txtIVACte.Size = new System.Drawing.Size(115, 25);
-            this.txtIVACte.TabIndex = 119;
-            this.txtIVACte.Text = "0.00";
-            this.txtIVACte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtIVACte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIVACte_KeyPress);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(493, 126);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(72, 13);
-            this.label31.TabIndex = 118;
-            this.label31.Text = "IVA Cliente";
-            // 
-            // cmbSucursal
-            // 
-            this.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSucursal.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.cmbSucursal.FormattingEnabled = true;
-            this.cmbSucursal.Location = new System.Drawing.Point(11, 17);
-            this.cmbSucursal.Name = "cmbSucursal";
-            this.cmbSucursal.Size = new System.Drawing.Size(268, 21);
-            this.cmbSucursal.TabIndex = 106;
-            // 
-            // cmbUnidades
-            // 
-            this.cmbUnidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUnidades.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.cmbUnidades.FormattingEnabled = true;
-            this.cmbUnidades.Location = new System.Drawing.Point(6, 19);
-            this.cmbUnidades.Name = "cmbUnidades";
-            this.cmbUnidades.Size = new System.Drawing.Size(216, 21);
-            this.cmbUnidades.TabIndex = 96;
             // 
             // button2
             // 

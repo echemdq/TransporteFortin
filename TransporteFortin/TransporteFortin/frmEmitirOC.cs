@@ -425,12 +425,7 @@ namespace TransporteFortin
                     int valorizado = 0;
                     Unidades unidad = null;
                     
-                    if (checkBox1.Checked)
-                    {
-                        valorizado = 1;
-                        
-                        unidad = new Unidades(Convert.ToInt32(cmbUnidades.SelectedValue), "");
-                    }
+                    
                     decimal valorcomision = 0;
                     
                     string tipocom = "p";
@@ -446,16 +441,48 @@ namespace TransporteFortin
                     }
                     if (radioButton1.Checked)
                     {
-                        valorcomision = Convert.ToDecimal(txtPorcentaje.Text);
+                        if (txtPorcentaje.Text == "")
+                        {
+                            valorcomision = 0;
+                        }
+                        else
+                        {
+                            valorcomision = Convert.ToDecimal(txtPorcentaje.Text);
+                        }
                     }
                     else
                     {
                         tipocom = "v";
-                        valorcomision = Convert.ToDecimal(txtValorFijo.Text);
+                        if (txtValorFijo.Text == "")
+                        {
+                            valorcomision = 0;
+                        }
+                        else
+                        {
+                            valorcomision = Convert.ToDecimal(txtValorFijo.Text);
+                        }
+                    }
+                    if (checkBox1.Checked)
+                    {
+                        valorizado = 1;
+                        unidad = new Unidades(Convert.ToInt32(cmbUnidades.SelectedValue), "");
+                        if (txtCantidad.Text == "" || txtValorUni.Text == "" || txtValorUniCte.Text == "" || txtPorcentaje.Text == "" || txtValorFijo.Text == "" || Convert.ToDecimal(txtTotalViaje.Text) <= 0)
+                        {
+                            MessageBox.Show("Debe completar todos los campos para valorizar y calcular el importe del viaje");
+                        }
+                        else
+                        {
+                            OrdenesCarga oc = new OrdenesCarga(0, 0, 0, 0, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text), Convert.ToDecimal(txtIvaViaje.Text), Convert.ToDecimal(txtIVACte.Text), Convert.ToDecimal(txtComision.Text), Convert.ToDecimal(txtImporteCte.Text), richTextBox1.Text, 0);
+                            controlo.Agregar(oc);
+                        }
+                    }
+                    else
+                    {
+                        unidad = new Unidades(Convert.ToInt32(cmbUnidades.SelectedValue), "");
+                        OrdenesCarga oc = new OrdenesCarga(0, 0, 0, 0, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.',',')), valorizado, unidad, 0, 0, 0, tipocom, valorcomision, 0, 0, 0, 0, 0, 0, richTextBox1.Text,0);
+                        controlo.Agregar(oc);
                     }
                     
-                    OrdenesCarga oc = new OrdenesCarga(0, 0, 0, 0, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text), valorizado, unidad, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(txtValorUni.Text), Convert.ToDecimal(txtValorUniCte.Text), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text), Convert.ToDecimal(txtIvaViaje.Text), Convert.ToDecimal(txtIVACte.Text), Convert.ToDecimal(txtComision.Text), Convert.ToDecimal(txtImporteCte.Text), richTextBox1.Text, 0);
-                    controlo.Agregar(oc);
                 }
                 else
                 {
@@ -465,6 +492,23 @@ namespace TransporteFortin
             catch (Exception ex)
             {
                 MessageBox.Show("Error al Guardar: " + ex.Message);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (txtCantidad.Text != "" || txtValorUni.Text != "" || txtValorUniCte.Text != "")
+            {
+                txtTotalViaje.Text = (Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')) * Convert.ToDecimal(txtValorUni.Text.Replace('.', ','))).ToString();
+                txtImporteCte.Text = (Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')) * Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ','))).ToString();
+                if (radioButton1.Checked && txtPorcentaje.Text != "")
+                {
+                    txtComision.Text = (Convert.ToDecimal(txtTotalViaje.Text.Replace('.', ',')) * Convert.ToDecimal(txtPorcentaje.Text.Replace('.', ',')) / 100).ToString();
+                }
+                else if (radioButton2.Checked && txtValorFijo.Text != "")
+                {
+                    txtComision.Text = txtValorFijo.Text;
+                }
             }
         }
     }
