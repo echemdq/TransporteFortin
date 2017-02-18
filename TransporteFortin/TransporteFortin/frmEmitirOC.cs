@@ -89,7 +89,7 @@ namespace TransporteFortin
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
+            if (chkValorizado.Checked)
             {
                 txtPorcentaje.Enabled = true;
                 txtValorFijo.Enabled = false;
@@ -412,6 +412,46 @@ namespace TransporteFortin
             }   
         }
 
+        public void limpiar()
+        {
+            txtCliente.Text = "";
+            lblDireccionCte.Text = "Direccion:";
+            lblCliente.Text = "";
+            txtSaldoCte.Text = "$0.00";
+            txtFletero.Text = "";
+            txtSaldoFlet.Text = "$0.00";
+            txtDocumento.Text = "";
+            txtCP.Text = "";
+            txtDomicilio.Text = "";
+            txtTelefono.Text = "";
+            txtLocalidad.Text = "";
+            txtCelular.Text = "";
+            lblFletero.Text = "";
+            lblEmpresa.Text = "";
+            txtModelo.Text = "";
+            txtChapaC.Text = "";
+            txtChapaA.Text = "";
+            txtEmpresa.Text = "";
+            txtSaldoEmp.Text = "";
+            txtRetiraPor.Text = "";
+            txtProductos.Text = "";
+            txtOrigen.Text = "";
+            txtDestino.Text = "";
+            txtValorDec.Text = "0";
+            chkValorizado.Checked = false;
+            txtCantidad.Text = "";
+            txtValorUni.Text = "";
+            txtValorUniCte.Text = "";
+            txtPorcentaje.Text = "";
+            txtValorFijo.Text = "0";
+            chkPagoDest.Checked = false;
+            txtTotalViaje.Text = "$0.00";
+            txtIvaViaje.Text = "0.00";
+            txtComision.Text = "$0.00";
+            txtImporteCte.Text = "0.00";
+            txtIVACte.Text = "0.00";
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -430,7 +470,7 @@ namespace TransporteFortin
                     
                     string tipocom = "p";
                     int pagodest = 0;
-                    if (checkBox2.Checked)
+                    if (chkPagoDest.Checked)
                     {
                         pagodest = 1;
 
@@ -439,7 +479,7 @@ namespace TransporteFortin
                     {
                         pagodest = 0;
                     }
-                    if (radioButton1.Checked)
+                    if (chkValorizado.Checked)
                     {
                         if (txtPorcentaje.Text == "")
                         {
@@ -474,6 +514,8 @@ namespace TransporteFortin
                         {
                             OrdenesCarga oc = new OrdenesCarga(0, 0, 0, 0, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text), Convert.ToDecimal(txtIvaViaje.Text), Convert.ToDecimal(txtIVACte.Text), Convert.ToDecimal(txtComision.Text), Convert.ToDecimal(txtImporteCte.Text), richTextBox1.Text, 0);
                             controlo.Agregar(oc);
+                            MessageBox.Show("Orden de carga generada correctamente");
+                            limpiar();
                         }
                     }
                     else
@@ -481,6 +523,8 @@ namespace TransporteFortin
                         unidad = new Unidades(Convert.ToInt32(cmbUnidades.SelectedValue), "");
                         OrdenesCarga oc = new OrdenesCarga(0, 0, 0, 0, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.',',')), valorizado, unidad, 0, 0, 0, tipocom, valorcomision, 0, 0, 0, 0, 0, 0, richTextBox1.Text,0);
                         controlo.Agregar(oc);
+                        MessageBox.Show("Orden de carga generada correctamente");
+                        limpiar();
                     }
                     
                 }
@@ -501,7 +545,7 @@ namespace TransporteFortin
             {
                 txtTotalViaje.Text = (Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')) * Convert.ToDecimal(txtValorUni.Text.Replace('.', ','))).ToString();
                 txtImporteCte.Text = (Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')) * Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ','))).ToString();
-                if (radioButton1.Checked && txtPorcentaje.Text != "")
+                if (chkValorizado.Checked && txtPorcentaje.Text != "")
                 {
                     txtComision.Text = (Convert.ToDecimal(txtTotalViaje.Text.Replace('.', ',')) * Convert.ToDecimal(txtPorcentaje.Text.Replace('.', ',')) / 100).ToString();
                 }

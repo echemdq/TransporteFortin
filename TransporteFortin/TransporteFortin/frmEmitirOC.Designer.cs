@@ -41,9 +41,9 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtCliente = new System.Windows.Forms.TextBox();
-            this.chkPagoDest = new System.Windows.Forms.GroupBox();
+            this.groupboxflet = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSaldoEmp = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -97,13 +97,13 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.chkPagoDest = new System.Windows.Forms.CheckBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.txtValorFijo = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.txtPorcentaje = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.chkValorizado = new System.Windows.Forms.RadioButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.cmbUnidades = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -119,7 +119,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.chkPagoDest.SuspendLayout();
+            this.groupboxflet.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -148,7 +148,7 @@
             this.cmbSucursal.Location = new System.Drawing.Point(11, 17);
             this.cmbSucursal.Name = "cmbSucursal";
             this.cmbSucursal.Size = new System.Drawing.Size(268, 21);
-            this.cmbSucursal.TabIndex = 106;
+            this.cmbSucursal.TabIndex = 0;
             // 
             // label15
             // 
@@ -193,7 +193,7 @@
             this.btnOrdenCte.Location = new System.Drawing.Point(697, 36);
             this.btnOrdenCte.Name = "btnOrdenCte";
             this.btnOrdenCte.Size = new System.Drawing.Size(154, 23);
-            this.btnOrdenCte.TabIndex = 87;
+            this.btnOrdenCte.TabIndex = 1;
             this.btnOrdenCte.Text = "Ordenes Pendientes: ";
             this.btnOrdenCte.UseVisualStyleBackColor = true;
             // 
@@ -249,7 +249,7 @@
             this.button1.Location = new System.Drawing.Point(285, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 35);
-            this.button1.TabIndex = 81;
+            this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -264,40 +264,40 @@
             this.txtCliente.Size = new System.Drawing.Size(268, 21);
             this.txtCliente.TabIndex = 82;
             // 
-            // chkPagoDest
+            // groupboxflet
             // 
-            this.chkPagoDest.Controls.Add(this.groupBox5);
-            this.chkPagoDest.Controls.Add(this.groupBox4);
-            this.chkPagoDest.Controls.Add(this.txtDocumento);
-            this.chkPagoDest.Controls.Add(this.label8);
-            this.chkPagoDest.Controls.Add(this.txtCP);
-            this.chkPagoDest.Controls.Add(this.label3);
-            this.chkPagoDest.Controls.Add(this.txtLocalidad);
-            this.chkPagoDest.Controls.Add(this.label4);
-            this.chkPagoDest.Controls.Add(this.txtCelular);
-            this.chkPagoDest.Controls.Add(this.txtTelefono);
-            this.chkPagoDest.Controls.Add(this.txtDomicilio);
-            this.chkPagoDest.Controls.Add(this.label6);
-            this.chkPagoDest.Controls.Add(this.label5);
-            this.chkPagoDest.Controls.Add(this.label10);
-            this.chkPagoDest.Controls.Add(this.lblEmpresa);
-            this.chkPagoDest.Controls.Add(this.btnOrdenFlet);
-            this.chkPagoDest.Controls.Add(this.txtSaldoFlet);
-            this.chkPagoDest.Controls.Add(this.label2);
-            this.chkPagoDest.Controls.Add(this.lblFletero);
-            this.chkPagoDest.Controls.Add(this.button4);
-            this.chkPagoDest.Controls.Add(this.txtFletero);
-            this.chkPagoDest.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkPagoDest.Location = new System.Drawing.Point(1, 113);
-            this.chkPagoDest.Name = "chkPagoDest";
-            this.chkPagoDest.Size = new System.Drawing.Size(859, 254);
-            this.chkPagoDest.TabIndex = 2;
-            this.chkPagoDest.TabStop = false;
-            this.chkPagoDest.Text = "DATOS DEL FLETERO";
+            this.groupboxflet.Controls.Add(this.groupBox5);
+            this.groupboxflet.Controls.Add(this.groupBox4);
+            this.groupboxflet.Controls.Add(this.txtDocumento);
+            this.groupboxflet.Controls.Add(this.label8);
+            this.groupboxflet.Controls.Add(this.txtCP);
+            this.groupboxflet.Controls.Add(this.label3);
+            this.groupboxflet.Controls.Add(this.txtLocalidad);
+            this.groupboxflet.Controls.Add(this.label4);
+            this.groupboxflet.Controls.Add(this.txtCelular);
+            this.groupboxflet.Controls.Add(this.txtTelefono);
+            this.groupboxflet.Controls.Add(this.txtDomicilio);
+            this.groupboxflet.Controls.Add(this.label6);
+            this.groupboxflet.Controls.Add(this.label5);
+            this.groupboxflet.Controls.Add(this.label10);
+            this.groupboxflet.Controls.Add(this.lblEmpresa);
+            this.groupboxflet.Controls.Add(this.btnOrdenFlet);
+            this.groupboxflet.Controls.Add(this.txtSaldoFlet);
+            this.groupboxflet.Controls.Add(this.label2);
+            this.groupboxflet.Controls.Add(this.lblFletero);
+            this.groupboxflet.Controls.Add(this.button4);
+            this.groupboxflet.Controls.Add(this.txtFletero);
+            this.groupboxflet.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupboxflet.Location = new System.Drawing.Point(1, 113);
+            this.groupboxflet.Name = "groupboxflet";
+            this.groupboxflet.Size = new System.Drawing.Size(859, 254);
+            this.groupboxflet.TabIndex = 2;
+            this.groupboxflet.TabStop = false;
+            this.groupboxflet.Text = "DATOS DEL FLETERO";
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.txtSaldoEmp);
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Controls.Add(this.txtEmpresa);
             this.groupBox5.Controls.Add(this.label7);
@@ -309,18 +309,18 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Empresa";
             // 
-            // textBox1
+            // txtSaldoEmp
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 11F);
-            this.textBox1.Location = new System.Drawing.Point(88, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 18);
-            this.textBox1.TabIndex = 88;
-            this.textBox1.Text = "$0,00";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSaldoEmp.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtSaldoEmp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSaldoEmp.Enabled = false;
+            this.txtSaldoEmp.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtSaldoEmp.Location = new System.Drawing.Point(88, 47);
+            this.txtSaldoEmp.Name = "txtSaldoEmp";
+            this.txtSaldoEmp.Size = new System.Drawing.Size(115, 18);
+            this.txtSaldoEmp.TabIndex = 88;
+            this.txtSaldoEmp.Text = "$0,00";
+            this.txtSaldoEmp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -379,7 +379,7 @@
             this.cmbTipoCamion.Location = new System.Drawing.Point(110, 40);
             this.cmbTipoCamion.Name = "cmbTipoCamion";
             this.cmbTipoCamion.Size = new System.Drawing.Size(216, 21);
-            this.cmbTipoCamion.TabIndex = 95;
+            this.cmbTipoCamion.TabIndex = 0;
             // 
             // txtModelo
             // 
@@ -595,7 +595,7 @@
             this.btnOrdenFlet.Location = new System.Drawing.Point(698, 52);
             this.btnOrdenFlet.Name = "btnOrdenFlet";
             this.btnOrdenFlet.Size = new System.Drawing.Size(154, 23);
-            this.btnOrdenFlet.TabIndex = 87;
+            this.btnOrdenFlet.TabIndex = 1;
             this.btnOrdenFlet.Text = "Ordenes Pendientes: ";
             this.btnOrdenFlet.UseVisualStyleBackColor = true;
             // 
@@ -638,7 +638,7 @@
             this.button4.Location = new System.Drawing.Point(285, 15);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(33, 35);
-            this.button4.TabIndex = 81;
+            this.button4.TabIndex = 0;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -660,7 +660,7 @@
             this.txtRetiraPor.Location = new System.Drawing.Point(158, 370);
             this.txtRetiraPor.Name = "txtRetiraPor";
             this.txtRetiraPor.Size = new System.Drawing.Size(320, 21);
-            this.txtRetiraPor.TabIndex = 95;
+            this.txtRetiraPor.TabIndex = 3;
             // 
             // label16
             // 
@@ -679,7 +679,7 @@
             this.txtOrigen.Location = new System.Drawing.Point(55, 397);
             this.txtOrigen.Name = "txtOrigen";
             this.txtOrigen.Size = new System.Drawing.Size(225, 21);
-            this.txtOrigen.TabIndex = 97;
+            this.txtOrigen.TabIndex = 5;
             // 
             // label17
             // 
@@ -698,7 +698,7 @@
             this.txtDestino.Location = new System.Drawing.Point(362, 397);
             this.txtDestino.Name = "txtDestino";
             this.txtDestino.Size = new System.Drawing.Size(211, 21);
-            this.txtDestino.TabIndex = 99;
+            this.txtDestino.TabIndex = 6;
             // 
             // label18
             // 
@@ -717,7 +717,7 @@
             this.txtValorDec.Location = new System.Drawing.Point(696, 397);
             this.txtValorDec.Name = "txtValorDec";
             this.txtValorDec.Size = new System.Drawing.Size(161, 21);
-            this.txtValorDec.TabIndex = 101;
+            this.txtValorDec.TabIndex = 7;
             this.txtValorDec.Text = "0";
             this.txtValorDec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorDec_KeyPress);
             // 
@@ -748,7 +748,7 @@
             this.txtProductos.Location = new System.Drawing.Point(553, 370);
             this.txtProductos.Name = "txtProductos";
             this.txtProductos.Size = new System.Drawing.Size(306, 21);
-            this.txtProductos.TabIndex = 104;
+            this.txtProductos.TabIndex = 4;
             // 
             // groupBox6
             // 
@@ -763,14 +763,14 @@
             this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.label27);
             this.groupBox6.Controls.Add(this.button5);
-            this.groupBox6.Controls.Add(this.checkBox2);
+            this.groupBox6.Controls.Add(this.chkPagoDest);
             this.groupBox6.Controls.Add(this.groupBox8);
             this.groupBox6.Controls.Add(this.groupBox7);
             this.groupBox6.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.groupBox6.Location = new System.Drawing.Point(7, 434);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(697, 151);
-            this.groupBox6.TabIndex = 105;
+            this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
@@ -782,7 +782,7 @@
             this.txtIVACte.Location = new System.Drawing.Point(567, 120);
             this.txtIVACte.Name = "txtIVACte";
             this.txtIVACte.Size = new System.Drawing.Size(115, 25);
-            this.txtIVACte.TabIndex = 119;
+            this.txtIVACte.TabIndex = 3;
             this.txtIVACte.Text = "0.00";
             this.txtIVACte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIVACte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIVACte_KeyPress);
@@ -841,7 +841,7 @@
             this.txtIvaViaje.Location = new System.Drawing.Point(567, 36);
             this.txtIvaViaje.Name = "txtIvaViaje";
             this.txtIvaViaje.Size = new System.Drawing.Size(115, 25);
-            this.txtIvaViaje.TabIndex = 114;
+            this.txtIvaViaje.TabIndex = 2;
             this.txtIvaViaje.Text = "0.00";
             this.txtIvaViaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIvaViaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIvaViaje_KeyPress);
@@ -894,20 +894,20 @@
             this.button5.Location = new System.Drawing.Point(431, 51);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(62, 40);
-            this.button5.TabIndex = 109;
+            this.button5.TabIndex = 3;
             this.button5.Text = "Calcular Valores";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // checkBox2
+            // chkPagoDest
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(251, 118);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(119, 17);
-            this.checkBox2.TabIndex = 108;
-            this.checkBox2.Text = "Pago en Destino";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkPagoDest.AutoSize = true;
+            this.chkPagoDest.Location = new System.Drawing.Point(251, 118);
+            this.chkPagoDest.Name = "chkPagoDest";
+            this.chkPagoDest.Size = new System.Drawing.Size(119, 17);
+            this.chkPagoDest.TabIndex = 2;
+            this.chkPagoDest.Text = "Pago en Destino";
+            this.chkPagoDest.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
@@ -915,12 +915,12 @@
             this.groupBox8.Controls.Add(this.label24);
             this.groupBox8.Controls.Add(this.txtPorcentaje);
             this.groupBox8.Controls.Add(this.radioButton2);
-            this.groupBox8.Controls.Add(this.radioButton1);
+            this.groupBox8.Controls.Add(this.chkValorizado);
             this.groupBox8.Font = new System.Drawing.Font("Verdana", 8F);
             this.groupBox8.Location = new System.Drawing.Point(245, 15);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(180, 85);
-            this.groupBox8.TabIndex = 107;
+            this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Calcula Comision por";
             // 
@@ -932,7 +932,7 @@
             this.txtValorFijo.Location = new System.Drawing.Point(95, 54);
             this.txtValorFijo.Name = "txtValorFijo";
             this.txtValorFijo.Size = new System.Drawing.Size(66, 21);
-            this.txtValorFijo.TabIndex = 92;
+            this.txtValorFijo.TabIndex = 2;
             this.txtValorFijo.Text = "0";
             this.txtValorFijo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorFijo_KeyPress);
             // 
@@ -952,7 +952,7 @@
             this.txtPorcentaje.Location = new System.Drawing.Point(95, 19);
             this.txtPorcentaje.Name = "txtPorcentaje";
             this.txtPorcentaje.Size = new System.Drawing.Size(49, 21);
-            this.txtPorcentaje.TabIndex = 87;
+            this.txtPorcentaje.TabIndex = 1;
             this.txtPorcentaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentaje_KeyPress);
             // 
             // radioButton2
@@ -966,18 +966,18 @@
             this.radioButton2.Text = "Valor Fijo";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // chkValorizado
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(86, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Porcentaje";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.chkValorizado.AutoSize = true;
+            this.chkValorizado.Checked = true;
+            this.chkValorizado.Location = new System.Drawing.Point(6, 19);
+            this.chkValorizado.Name = "chkValorizado";
+            this.chkValorizado.Size = new System.Drawing.Size(86, 17);
+            this.chkValorizado.TabIndex = 0;
+            this.chkValorizado.TabStop = true;
+            this.chkValorizado.Text = "Porcentaje";
+            this.chkValorizado.UseVisualStyleBackColor = true;
+            this.chkValorizado.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // groupBox7
             // 
@@ -993,7 +993,7 @@
             this.groupBox7.Location = new System.Drawing.Point(6, 15);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(233, 130);
-            this.groupBox7.TabIndex = 106;
+            this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Unidad";
             // 
@@ -1005,7 +1005,7 @@
             this.cmbUnidades.Location = new System.Drawing.Point(6, 19);
             this.cmbUnidades.Name = "cmbUnidades";
             this.cmbUnidades.Size = new System.Drawing.Size(216, 21);
-            this.cmbUnidades.TabIndex = 96;
+            this.cmbUnidades.TabIndex = 0;
             // 
             // label30
             // 
@@ -1023,7 +1023,7 @@
             this.txtValorUniCte.Location = new System.Drawing.Point(117, 103);
             this.txtValorUniCte.Name = "txtValorUniCte";
             this.txtValorUniCte.Size = new System.Drawing.Size(105, 21);
-            this.txtValorUniCte.TabIndex = 91;
+            this.txtValorUniCte.TabIndex = 3;
             this.txtValorUniCte.Tag = "";
             this.txtValorUniCte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorUniCte_KeyPress);
             // 
@@ -1061,7 +1061,7 @@
             this.txtValorUni.Location = new System.Drawing.Point(117, 64);
             this.txtValorUni.Name = "txtValorUni";
             this.txtValorUni.Size = new System.Drawing.Size(105, 21);
-            this.txtValorUni.TabIndex = 87;
+            this.txtValorUni.TabIndex = 2;
             this.txtValorUni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorUni_KeyPress);
             // 
             // txtCantidad
@@ -1071,7 +1071,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(5, 84);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(78, 21);
-            this.txtCantidad.TabIndex = 86;
+            this.txtCantidad.TabIndex = 1;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // checkBox1
@@ -1083,7 +1083,7 @@
             this.checkBox1.Location = new System.Drawing.Point(15, 431);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(213, 17);
-            this.checkBox1.TabIndex = 106;
+            this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "VALORIZAR ORDEN DE CARGA";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
@@ -1093,7 +1093,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(8, 604);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(853, 69);
-            this.richTextBox1.TabIndex = 107;
+            this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "";
             // 
             // label28
@@ -1111,7 +1111,7 @@
             this.button2.Location = new System.Drawing.Point(741, 441);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 114;
+            this.button2.TabIndex = 10;
             this.button2.Text = "GENERAR";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -1136,18 +1136,19 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.txtRetiraPor);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.chkPagoDest);
+            this.Controls.Add(this.groupboxflet);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmEmitirOC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ordenes de Carga";
             this.Load += new System.EventHandler(this.frmEmitirOC_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.chkPagoDest.ResumeLayout(false);
-            this.chkPagoDest.PerformLayout();
+            this.groupboxflet.ResumeLayout(false);
+            this.groupboxflet.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1175,7 +1176,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Button btnOrdenCte;
-        private System.Windows.Forms.GroupBox chkPagoDest;
+        private System.Windows.Forms.GroupBox groupboxflet;
         private System.Windows.Forms.Button btnOrdenFlet;
         private System.Windows.Forms.TextBox txtSaldoFlet;
         private System.Windows.Forms.Label label2;
@@ -1205,7 +1206,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSaldoEmp;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label label7;
@@ -1222,12 +1223,12 @@
         private System.Windows.Forms.TextBox txtProductos;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox chkPagoDest;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtPorcentaje;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton chkValorizado;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
