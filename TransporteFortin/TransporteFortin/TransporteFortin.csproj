@@ -92,6 +92,12 @@
     <Compile Include="frmBuscaProveedores.Designer.cs">
       <DependentUpon>frmBuscaProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarOrdenCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarOrdenCarga.Designer.cs">
+      <DependentUpon>frmBuscarOrdenCarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscaProveedores.resx">
       <DependentUpon>frmBuscaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarOrdenCarga.resx">
+      <DependentUpon>frmBuscarOrdenCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>

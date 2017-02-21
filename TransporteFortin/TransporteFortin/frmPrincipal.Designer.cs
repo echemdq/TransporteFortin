@@ -42,6 +42,7 @@
             this.aBMFleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,8 @@
             // ordenesDeCargaToolStripMenuItem
             // 
             this.ordenesDeCargaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emitirToolStripMenuItem});
+            this.emitirToolStripMenuItem,
+            this.consultarToolStripMenuItem});
             this.ordenesDeCargaToolStripMenuItem.Name = "ordenesDeCargaToolStripMenuItem";
             this.ordenesDeCargaToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
             this.ordenesDeCargaToolStripMenuItem.Text = "Ordenes de Carga";
@@ -156,6 +158,13 @@
             this.aBMProveedoresToolStripMenuItem.Text = "ABM Proveedores";
             this.aBMProveedoresToolStripMenuItem.Click += new System.EventHandler(this.aBMProveedoresToolStripMenuItem_Click);
             // 
+            // consultarToolStripMenuItem
+            // 
+            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultarToolStripMenuItem.Text = "Consultar";
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +201,7 @@
         private System.Windows.Forms.ToolStripMenuItem aBMProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordenesDeCargaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emitirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
     }
 }
 

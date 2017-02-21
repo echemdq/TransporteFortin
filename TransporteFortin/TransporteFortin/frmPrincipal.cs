@@ -46,5 +46,11 @@ namespace TransporteFortin
             frmEmitirOC frm = new frmEmitirOC();
             frm.ShowDialog();
         }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBuscarOrdenCarga frm = new frmBuscarOrdenCarga();
+            frm.ShowDialog();
+        }
     }
 }
