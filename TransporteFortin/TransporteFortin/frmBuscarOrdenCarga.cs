@@ -71,5 +71,181 @@ namespace TransporteFortin
                 MessageBox.Show("Error al Guardar: " + ex.Message);
             }
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            } 
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            } 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            rbValTodas.Checked = true;
+            rbEsNoAnu.Checked = true;
+            textBox1.Text = "";
+            textBox2.Text = "";
+            cmbSucursal.SelectedIndex = -1;
+            txtFletero.Text = "";
+            lblFletero.Text = "";
+            txtCliente.Text = "";
+            lblCliente.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string where = "";
+
+                if (textBox1.Text != "")
+                {
+                    if (where != "")
+                    {
+                        where = where + " and";
+                    }
+                    else
+                    {
+                        where = "where ";
+                    }
+                    where = where + " ptoventa = '"+textBox1.Text+"'";
+                }
+
+                if (textBox2.Text != "")
+                {
+                    if (where != "")
+                    {
+                        where = where + " and";
+                    }
+                    else
+                    {
+                        where = "where ";
+                    }
+                    where = where + " nrocarga = '" + textBox2.Text + "'";
+                }
+
+                if (lblCliente.Text != "")
+                {
+                    if (where != "")
+                    {
+                        where = where + " and";
+                    }
+                    where = where + " idclientes = '" + lblCliente.Text + "'";
+                }
+
+                if (lblFletero.Text != "")
+                {
+                    if (where != "")
+                    {
+                        where = where + " and";
+                    }
+                    else
+                    {
+                        where = "where ";
+                    }
+                    where = where + " idfleteros = '" + lblFletero.Text + "'";
+                }
+
+                if (cmbSucursal.SelectedIndex != -1)
+                {
+                    if (where != "")
+                    {
+                        where = where + " and";
+                    }
+                    else
+                    {
+                        where = "where ";
+                    }
+                    where = where + " idsucursales = '" + Convert.ToInt32(cmbSucursal.SelectedValue) + "'";
+                }
+
+                if (rbValVal.Checked)
+                {
+                    if (where != "")
+                    {
+                        where = where + " and";
+                    }
+                    else
+                    {
+                        where = "where ";
+                    }
+                    where = where + " valorizado = '1'";
+                }
+                else if (rbValNo.Checked)
+                {
+                    if (where != "")
+                    {
+                        where = where + " and";
+                    }
+                    else
+                    {
+                        where = "where ";
+                    }
+                    where = where + " valorizado = '0'";
+                }                
+
+                if (rbEsAnu.Checked)
+                {
+                    if (where != "")
+                    {
+                        where = where + " and";
+                    }
+                    else
+                    {
+                        where = "where ";
+                    }
+                    where = where + " anulado = '1'";
+                }
+                else if (rbEsNoAnu.Checked)
+                {
+                    if (where != "")
+                    {
+                        where = where + " and";
+                    }
+                    else
+                    {
+                        where = "where ";
+                    }
+                    where = where + " anulado = '0'";
+                }
+                DateTime fecha;
+                if (DateTime.TryParse(mskDesde.Text, out fecha) == true && DateTime.TryParse(mskHasta.Text, out fecha) == true)
+                {
+                    DateTime desde = Convert.ToDateTime(mskDesde.Text);
+                    DateTime hasta = Convert.ToDateTime(mskHasta.Text);
+                    if (desde < hasta)
+                    {
+                        if (where != "")
+                        {
+                            where = where + " and";
+                        }
+                        else
+                        {
+                            where = "where ";
+                        }
+                        where = where + " fecha between '" + desde.ToString("yyyy-MM-dd") + "' and '" + hasta.ToString("yyyy-MM-dd") + "'";
+                    }
+                    else
+                    {
+                        MessageBox.Show("La fecha desde debe ser menor a la de hasta");
+                    }
+                }
+                frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
