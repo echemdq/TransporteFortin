@@ -14,6 +14,7 @@ namespace TransporteFortin
     {
         string consulta = "";
         ControladoraOrdenesCarga controlo = new ControladoraOrdenesCarga();
+        int filaseleccionada = 0;
         public frmListaOrdenesCarga(string where)
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace TransporteFortin
 
         private void frmListaOrdenesCarga_Load(object sender, EventArgs e)
         {
-            dataGridView1.ColumnCount = 11;
+            dataGridView1.ColumnCount = 12;
             dataGridView1.Columns[0].Name = "idordenescarga";
             dataGridView1.Columns[1].Name = "Orden";
             dataGridView1.Columns[2].Name = "Sucursal";
@@ -34,9 +35,11 @@ namespace TransporteFortin
             dataGridView1.Columns[8].Name = "Viaje";
             dataGridView1.Columns[9].Name = "Comision";
             dataGridView1.Columns[10].Name = "Anulado";
+            dataGridView1.Columns[11].Name = "Valorizado";
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[4].Visible = false;
-            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[6].Visible = false; 
+            dataGridView1.Columns[11].Visible = false;
 
             List<OrdenesCarga> lista = controlo.BuscarEspecial(consulta);
             int i = 0;
@@ -61,8 +64,37 @@ namespace TransporteFortin
                     dataGridView1.Rows[x].Cells[8].Value = aux.Totalviaje;
                     dataGridView1.Rows[x].Cells[9].Value = aux.Comision;
                     dataGridView1.Rows[x].Cells[10].Value = aux.Anulado;
+                    dataGridView1.Rows[x].Cells[11].Value = aux.Valorizado;
                     x++;
                 }
+            }
+            button1.Focus();
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
+            int valorizado = Convert.ToInt32(dataGridView1[11, filaseleccionada].Value);
+            int anulado = Convert.ToInt32(dataGridView1[10, filaseleccionada].Value);
+            int idoc = Convert.ToInt32(dataGridView1[0, filaseleccionada].Value);
+            if (idoc != 0)
+            {
+                button3.Enabled = true;
+            }
+            else
+            {
+                button3.Enabled = false;
+            }
+
+            if (valorizado == 0)
+            {
+                button1.Enabled = true;
+            }
+
+            if (anulado == 0)
+            {
+                button2.Enabled = true;
             }
         }
     }

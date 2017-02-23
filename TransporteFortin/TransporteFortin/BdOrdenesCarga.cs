@@ -38,7 +38,7 @@ namespace TransporteFortin
 
         public List<OrdenesCarga> BuscarEspecial(string dato)
         {
-            DataTable dt = oacceso.leerDatos("select idordenescarga, ptoventa, nrocarga, o.idsucursales, sucursal, fecha, o.idclientes, c.cliente, o.idfleteros, f.fletero, totalviaje, comision, anulado from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join sucursales s on s.idsucursales = o.idsucursales "+dato); 
+            DataTable dt = oacceso.leerDatos("select idordenescarga, ptoventa, nrocarga, o.idsucursales, sucursal, fecha, o.idclientes, c.cliente, o.idfleteros, f.fletero, totalviaje, comision, anulado, valorizado from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join sucursales s on s.idsucursales = o.idsucursales "+dato); 
             Clientes c = null;
             Fleteros f = null;
             Sucursales s = null;
@@ -49,7 +49,7 @@ namespace TransporteFortin
                 c = new Clientes(Convert.ToInt32(dr["idclientes"]), Convert.ToString(dr["cliente"]), "", "", 0, "", "", "", "", "", "", null, "");
                 f = new Fleteros(Convert.ToInt32(dr["idfleteros"]), 0, Convert.ToString(dr["fletero"]), "", "", "", "", "", "", "", null, "", null, "", "", "", null);
                 s = new Sucursales(Convert.ToInt32(dr["idsucursales"]), Convert.ToString(dr["sucursal"]));
-                o = new OrdenesCarga(Convert.ToInt32(dr["idordenescarga"]), Convert.ToInt32(dr["nrocarga"]), Convert.ToInt32(dr["ptoventa"]), 0, Convert.ToDateTime(dr["fecha"]), s, c, f, null, "", "", "", "", 0, 0, null, 0, 0, 0, "", 0, 0, Convert.ToDecimal(dr["totalviaje"]), 0, 0, Convert.ToDecimal(dr["comision"]), 0, "", Convert.ToInt32(dr["anulado"]));
+                o = new OrdenesCarga(Convert.ToInt32(dr["idordenescarga"]), Convert.ToInt32(dr["nrocarga"]), Convert.ToInt32(dr["ptoventa"]), 0, Convert.ToDateTime(dr["fecha"]), s, c, f, null, "", "", "", "", 0, Convert.ToInt32(dr["valorizado"]), null, 0, 0, 0, "", 0, 0, Convert.ToDecimal(dr["totalviaje"]), 0, 0, Convert.ToDecimal(dr["comision"]), 0, "", Convert.ToInt32(dr["anulado"]));
                 lista.Add(o);
             }
             return lista;
