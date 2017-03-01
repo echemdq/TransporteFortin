@@ -102,8 +102,8 @@
             this.txtValorFijo = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.txtPorcentaje = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.chkValorizado = new System.Windows.Forms.RadioButton();
+            this.rbvalorfijo = new System.Windows.Forms.RadioButton();
+            this.rbporcentaje = new System.Windows.Forms.RadioButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.cmbUnidades = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -117,6 +117,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupboxflet.SuspendLayout();
@@ -294,6 +295,7 @@
             this.groupboxflet.TabIndex = 2;
             this.groupboxflet.TabStop = false;
             this.groupboxflet.Text = "DATOS DEL FLETERO";
+            this.groupboxflet.Enter += new System.EventHandler(this.groupboxflet_Enter);
             // 
             // groupBox5
             // 
@@ -914,8 +916,8 @@
             this.groupBox8.Controls.Add(this.txtValorFijo);
             this.groupBox8.Controls.Add(this.label24);
             this.groupBox8.Controls.Add(this.txtPorcentaje);
-            this.groupBox8.Controls.Add(this.radioButton2);
-            this.groupBox8.Controls.Add(this.chkValorizado);
+            this.groupBox8.Controls.Add(this.rbvalorfijo);
+            this.groupBox8.Controls.Add(this.rbporcentaje);
             this.groupBox8.Font = new System.Drawing.Font("Verdana", 8F);
             this.groupBox8.Location = new System.Drawing.Point(245, 15);
             this.groupBox8.Name = "groupBox8";
@@ -955,29 +957,29 @@
             this.txtPorcentaje.TabIndex = 1;
             this.txtPorcentaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentaje_KeyPress);
             // 
-            // radioButton2
+            // rbvalorfijo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 54);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Valor Fijo";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbvalorfijo.AutoSize = true;
+            this.rbvalorfijo.Location = new System.Drawing.Point(6, 54);
+            this.rbvalorfijo.Name = "rbvalorfijo";
+            this.rbvalorfijo.Size = new System.Drawing.Size(79, 17);
+            this.rbvalorfijo.TabIndex = 1;
+            this.rbvalorfijo.TabStop = true;
+            this.rbvalorfijo.Text = "Valor Fijo";
+            this.rbvalorfijo.UseVisualStyleBackColor = true;
             // 
-            // chkValorizado
+            // rbporcentaje
             // 
-            this.chkValorizado.AutoSize = true;
-            this.chkValorizado.Checked = true;
-            this.chkValorizado.Location = new System.Drawing.Point(6, 19);
-            this.chkValorizado.Name = "chkValorizado";
-            this.chkValorizado.Size = new System.Drawing.Size(86, 17);
-            this.chkValorizado.TabIndex = 0;
-            this.chkValorizado.TabStop = true;
-            this.chkValorizado.Text = "Porcentaje";
-            this.chkValorizado.UseVisualStyleBackColor = true;
-            this.chkValorizado.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rbporcentaje.AutoSize = true;
+            this.rbporcentaje.Checked = true;
+            this.rbporcentaje.Location = new System.Drawing.Point(6, 19);
+            this.rbporcentaje.Name = "rbporcentaje";
+            this.rbporcentaje.Size = new System.Drawing.Size(86, 17);
+            this.rbporcentaje.TabIndex = 0;
+            this.rbporcentaje.TabStop = true;
+            this.rbporcentaje.Text = "Porcentaje";
+            this.rbporcentaje.UseVisualStyleBackColor = true;
+            this.rbporcentaje.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // groupBox7
             // 
@@ -1110,17 +1112,27 @@
             // 
             this.button2.Location = new System.Drawing.Point(741, 441);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(90, 41);
             this.button2.TabIndex = 10;
             this.button2.Text = "GENERAR";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(741, 485);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(90, 41);
+            this.button3.TabIndex = 114;
+            this.button3.Text = "VALORIZAR";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // frmEmitirOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 685);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.richTextBox1);
@@ -1227,8 +1239,8 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtPorcentaje;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton chkValorizado;
+        private System.Windows.Forms.RadioButton rbvalorfijo;
+        private System.Windows.Forms.RadioButton rbporcentaje;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
@@ -1254,5 +1266,6 @@
         private System.Windows.Forms.TextBox txtValorUniCte;
         private System.Windows.Forms.ComboBox cmbUnidades;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

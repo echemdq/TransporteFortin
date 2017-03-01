@@ -15,6 +15,7 @@ namespace TransporteFortin
         string consulta = "";
         ControladoraOrdenesCarga controlo = new ControladoraOrdenesCarga();
         int filaseleccionada = 0;
+        int idoc = 0;
         public frmListaOrdenesCarga(string where)
         {
             InitializeComponent();
@@ -77,7 +78,7 @@ namespace TransporteFortin
             filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
             int valorizado = Convert.ToInt32(dataGridView1[11, filaseleccionada].Value);
             int anulado = Convert.ToInt32(dataGridView1[10, filaseleccionada].Value);
-            int idoc = Convert.ToInt32(dataGridView1[0, filaseleccionada].Value);
+            idoc = Convert.ToInt32(dataGridView1[0, filaseleccionada].Value);
             if (idoc != 0)
             {
                 button3.Enabled = true;
@@ -95,6 +96,43 @@ namespace TransporteFortin
             if (anulado == 0)
             {
                 button2.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmEmitirOC frm = new frmEmitirOC(idoc);
+            frm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (idoc != 0)
+                {
+                    
+                    DialogResult dialogResult = MessageBox.Show("Esta seguro de anular la Orden de Carga?", "Anular Orden de Carga", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Acceso_BD oacceso = new Acceso_BD();
+                        oacceso.ActualizarBD("update ordenescarga set anulado = '1', fecanula = now(), observaciones = concat(observaciones, ' ORDEN DE CARGA ANULADA ') where idordenescarga = '"+idoc+"'");
+                        MessageBox.Show("Orden de Carga anulada correctamente");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una orden para anularla");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar: " + ex.Message);
             }
         }
     }

@@ -54,7 +54,7 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(225, 308);
+            this.button1.Location = new System.Drawing.Point(327, 303);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 41);
             this.button1.TabIndex = 1;
@@ -64,22 +64,24 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(332, 308);
+            this.button2.Location = new System.Drawing.Point(430, 303);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 41);
             this.button2.TabIndex = 2;
             this.button2.Text = "ANULAR";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(439, 308);
+            this.button3.Location = new System.Drawing.Point(224, 303);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 41);
             this.button3.TabIndex = 3;
             this.button3.Text = "CONSULTAR";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmListaOrdenesCarga
             // 
@@ -90,8 +92,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximumSize = new System.Drawing.Size(789, 415);
+            this.MinimumSize = new System.Drawing.Size(789, 415);
             this.Name = "frmListaOrdenesCarga";
-            this.Text = "frmListaOrdenesCarga";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lista Ordenes Carga";
             this.Load += new System.EventHandler(this.frmListaOrdenesCarga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();

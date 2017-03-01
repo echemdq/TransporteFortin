@@ -43,7 +43,7 @@ namespace TransporteFortin
 
         private void emitirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmEmitirOC frm = new frmEmitirOC();
+            frmEmitirOC frm = new frmEmitirOC(0);
             frm.ShowDialog();
         }
 

@@ -13,54 +13,170 @@ namespace TransporteFortin
     public partial class frmEmitirOC : Form
     {
         ControladoraOrdenesCarga controlo = new ControladoraOrdenesCarga();
-        public frmEmitirOC()
+        int idordencarga = 0;
+        public frmEmitirOC(int idorden)
         {
             InitializeComponent();
+            idordencarga = idorden;
         }
 
         private void frmEmitirOC_Load(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            if (idordencarga == 0)
             {
-                checkBox1.Checked = false;
-            }
-            maskedTextBox1.Text = DateTime.Today.ToString();
-            Acceso_BD oacceso = new Acceso_BD();
-            DataTable dt = oacceso.leerDatos("select * from sucursales order by sucursal asc");
-            List<Sucursales> listat = new List<Sucursales>();
-            foreach (DataRow dr in dt.Rows)
-            {
-                Sucursales t = new Sucursales(Convert.ToInt32(dr["idsucursales"]), Convert.ToString(dr["sucursal"]));
-                listat.Add(t);
-            }
-            cmbSucursal.DataSource = listat;
-            cmbSucursal.DisplayMember = "sucursal";
-            cmbSucursal.ValueMember = "idsucursales";
-            cmbSucursal.SelectedIndex = 0;
+                button3.Enabled = false;
+                if (checkBox1.Checked)
+                {
+                    checkBox1.Checked = false;
+                }
+                maskedTextBox1.Text = DateTime.Today.ToString();
+                Acceso_BD oacceso = new Acceso_BD();
+                DataTable dt = oacceso.leerDatos("select * from sucursales order by sucursal asc");
+                List<Sucursales> listat = new List<Sucursales>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Sucursales t = new Sucursales(Convert.ToInt32(dr["idsucursales"]), Convert.ToString(dr["sucursal"]));
+                    listat.Add(t);
+                }
+                cmbSucursal.DataSource = listat;
+                cmbSucursal.DisplayMember = "sucursal";
+                cmbSucursal.ValueMember = "idsucursales";
+                cmbSucursal.SelectedIndex = 0;
 
-            dt = oacceso.leerDatos("select * from tiposcamion order by detalle asc");
-            List<TiposCamion> lista = new List<TiposCamion>();
-            foreach (DataRow dr in dt.Rows)
-            {
-                TiposCamion t = new TiposCamion(Convert.ToInt32(dr["idtiposcamion"]), Convert.ToString(dr["detalle"]));
-                lista.Add(t);
-            }
-            cmbTipoCamion.DataSource = lista;
-            cmbTipoCamion.DisplayMember = "detalle";
-            cmbTipoCamion.ValueMember = "idtiposcamion";
-            cmbTipoCamion.SelectedIndex = 0;
+                dt = oacceso.leerDatos("select * from tiposcamion order by detalle asc");
+                List<TiposCamion> lista = new List<TiposCamion>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    TiposCamion t = new TiposCamion(Convert.ToInt32(dr["idtiposcamion"]), Convert.ToString(dr["detalle"]));
+                    lista.Add(t);
+                }
+                cmbTipoCamion.DataSource = lista;
+                cmbTipoCamion.DisplayMember = "detalle";
+                cmbTipoCamion.ValueMember = "idtiposcamion";
+                cmbTipoCamion.SelectedIndex = 0;
 
-            dt = oacceso.leerDatos("select * from unidades order by detalle asc");
-            List<Unidades> lista1 = new List<Unidades>();
-            foreach (DataRow dr in dt.Rows)
-            {
-                Unidades t = new Unidades(Convert.ToInt32(dr["idunidades"]), Convert.ToString(dr["detalle"]));
-                lista1.Add(t);
+                dt = oacceso.leerDatos("select * from unidades order by detalle asc");
+                List<Unidades> lista1 = new List<Unidades>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Unidades t = new Unidades(Convert.ToInt32(dr["idunidades"]), Convert.ToString(dr["detalle"]));
+                    lista1.Add(t);
+                }
+                cmbUnidades.DataSource = lista1;
+                cmbUnidades.DisplayMember = "detalle";
+                cmbUnidades.ValueMember = "idunidades";
+                cmbUnidades.SelectedIndex = 0;
             }
-            cmbUnidades.DataSource = lista1;
-            cmbUnidades.DisplayMember = "detalle";
-            cmbUnidades.ValueMember = "idunidades";
-            cmbUnidades.SelectedIndex = 0;
+            else
+            {
+                Acceso_BD oacceso = new Acceso_BD();
+                button2.Enabled = false;
+                if (checkBox1.Checked)
+                {
+                    checkBox1.Checked = false;
+                }
+
+                DataTable dt = oacceso.leerDatos("select * from sucursales order by sucursal asc");
+                List<Sucursales> listat = new List<Sucursales>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Sucursales t = new Sucursales(Convert.ToInt32(dr["idsucursales"]), Convert.ToString(dr["sucursal"]));
+                    listat.Add(t);
+                }
+                cmbSucursal.DataSource = listat;
+                cmbSucursal.DisplayMember = "sucursal";
+                cmbSucursal.ValueMember = "idsucursales";
+                cmbSucursal.SelectedIndex = 0;
+
+                dt = oacceso.leerDatos("select * from tiposcamion order by detalle asc");
+                List<TiposCamion> lista = new List<TiposCamion>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    TiposCamion t = new TiposCamion(Convert.ToInt32(dr["idtiposcamion"]), Convert.ToString(dr["detalle"]));
+                    lista.Add(t);
+                }
+                cmbTipoCamion.DataSource = lista;
+                cmbTipoCamion.DisplayMember = "detalle";
+                cmbTipoCamion.ValueMember = "idtiposcamion";
+                cmbTipoCamion.SelectedIndex = 0;
+
+                dt = oacceso.leerDatos("select * from unidades order by detalle asc");
+                List<Unidades> lista1 = new List<Unidades>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Unidades t = new Unidades(Convert.ToInt32(dr["idunidades"]), Convert.ToString(dr["detalle"]));
+                    lista1.Add(t);
+                }
+                cmbUnidades.DataSource = lista1;
+                cmbUnidades.DisplayMember = "detalle";
+                cmbUnidades.ValueMember = "idunidades";
+                cmbUnidades.SelectedIndex = 0;
+
+                dt = oacceso.leerDatos("select idsucursales, c.cliente, c.direccion, f.fletero, f.documento, f.camion, f.idtiposcamion, f.chapacamion, f.chapaacoplado, e.empresa, porcuentade, productos, origen, destino, valordeclarado, valorizado, idunidades, cantidad, valorunidad, tipocomision, valorcomision, pagodestino, totalviaje, ivaviaje, comision, importecliente, observaciones, valorunidadcte, ivacliente, ptoventa, puesto, anulado, fecanula, fecha from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on o.idfleteros = f.idfleteros inner join empresas e on o.idempresas = e.idempresas where idordenescarga = '" + idordencarga + "'");
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    cmbSucursal.SelectedValue = Convert.ToInt32(dr["idsucursales"]);
+                    cmbTipoCamion.SelectedValue = Convert.ToInt32(dr["idtiposcamion"]);
+                    int valorizado = 0;
+                    valorizado = Convert.ToInt32(dr["valorizado"]);
+                    int anulado = 0;
+                    anulado = Convert.ToInt32(dr["anulado"]);
+                    txtCliente.Text = Convert.ToString(dr["cliente"]);
+                    lblDireccionCte.Text = "Direccion "+Convert.ToString(dr["direccion"]);
+                    txtFletero.Text = Convert.ToString(dr["fletero"]);
+                    txtDocumento.Text = Convert.ToString(dr["documento"]);
+                    txtModelo.Text = Convert.ToString(dr["camion"]);
+                    txtChapaA.Text = Convert.ToString(dr["chapaacoplado"]);
+                    txtChapaC.Text = Convert.ToString(dr["chapacamion"]);
+                    txtEmpresa.Text = Convert.ToString(dr["empresa"]);
+                    txtRetiraPor.Text = Convert.ToString(dr["porcuentade"]);
+                    txtOrigen.Text = Convert.ToString(dr["origen"]);
+                    txtDestino.Text = Convert.ToString(dr["destino"]);
+                    txtProductos.Text = Convert.ToString(dr["productos"]);
+                    txtValorDec.Text = Convert.ToString(dr["valordeclarado"]);
+                    if (valorizado != 0)
+                    {
+                        checkBox1.Enabled = false;
+                        richTextBox1.Text = Convert.ToString(dr["observaciones"]);
+                        cmbUnidades.SelectedValue = Convert.ToInt32(dr["idunidades"]);
+                        txtCantidad.Text = Convert.ToString(dr["cantidad"]);
+                        txtValorUni.Text = Convert.ToString(dr["valorunidad"]);
+                        string tipocom = "";
+                        tipocom = Convert.ToString(dr["tipocomision"]);
+                        if (tipocom == "p")
+                        {
+                           rbporcentaje.Checked = true;
+                            txtPorcentaje.Text = Convert.ToString(dr["valorcomision"]);
+                        }
+                        else if (tipocom == "v")
+                        {
+                            rbvalorfijo.Checked = true;
+                            txtValorFijo.Text = Convert.ToString(dr["valorcomision"]);
+                        }
+                        int pagodest = Convert.ToInt32(dr["pagodestino"]);
+                        if (pagodest != 0)
+                        {
+                            chkPagoDest.Checked = true;
+                        }
+                        txtTotalViaje.Text = Convert.ToString(dr["totalviaje"]);
+                        txtIvaViaje.Text = Convert.ToString(dr["ivaviaje"]);
+                        txtComision.Text = Convert.ToString(dr["comision"]);
+                        txtImporteCte.Text = Convert.ToString(dr["importecliente"]);
+                        richTextBox1.Text = Convert.ToString(dr["observaciones"]);
+                        txtValorUniCte.Text = Convert.ToString(dr["valorunidadcte"]);
+                        txtIVACte.Text = Convert.ToString(dr["ivacliente"]);
+                        maskedTextBox1.Text = Convert.ToDateTime(dr["fecha"]).ToString("dd/MM/yyyy");
+                    }
+                    if (anulado != 0)
+                    {
+                        checkBox1.Enabled = false;
+                        string obs = Convert.ToString(dr["observaciones"]);
+                        richTextBox1.Text = obs;
+                        button3.Enabled = false;
+                    }
+                }
+            }
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
@@ -89,12 +205,12 @@ namespace TransporteFortin
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkValorizado.Checked)
+            if (rbporcentaje.Checked)
             {
                 txtPorcentaje.Enabled = true;
                 txtValorFijo.Enabled = false;
             }
-            else if (radioButton2.Checked)
+            else if (rbvalorfijo.Checked)
             {
                 txtPorcentaje.Enabled = false;
                 txtValorFijo.Enabled = true;
@@ -438,7 +554,7 @@ namespace TransporteFortin
             txtOrigen.Text = "";
             txtDestino.Text = "";
             txtValorDec.Text = "0";
-            chkValorizado.Checked = false;
+            rbporcentaje.Checked = false;
             txtCantidad.Text = "";
             txtValorUni.Text = "";
             txtValorUniCte.Text = "";
@@ -479,7 +595,7 @@ namespace TransporteFortin
                     {
                         pagodest = 0;
                     }
-                    if (chkValorizado.Checked)
+                    if (rbporcentaje.Checked)
                     {
                         if (txtPorcentaje.Text == "")
                         {
@@ -545,15 +661,20 @@ namespace TransporteFortin
             {
                 txtTotalViaje.Text = (Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')) * Convert.ToDecimal(txtValorUni.Text.Replace('.', ','))).ToString();
                 txtImporteCte.Text = (Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')) * Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ','))).ToString();
-                if (chkValorizado.Checked && txtPorcentaje.Text != "")
+                if (rbporcentaje.Checked && txtPorcentaje.Text != "")
                 {
                     txtComision.Text = (Convert.ToDecimal(txtTotalViaje.Text.Replace('.', ',')) * Convert.ToDecimal(txtPorcentaje.Text.Replace('.', ',')) / 100).ToString();
                 }
-                else if (radioButton2.Checked && txtValorFijo.Text != "")
+                else if (rbvalorfijo.Checked && txtValorFijo.Text != "")
                 {
                     txtComision.Text = txtValorFijo.Text;
                 }
             }
+        }
+
+        private void groupboxflet_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
