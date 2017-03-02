@@ -52,5 +52,11 @@ namespace TransporteFortin
             frmBuscarOrdenCarga frm = new frmBuscarOrdenCarga();
             frm.ShowDialog();
         }
+
+        private void aBMUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frm = new frmUsuarios();
+            frm.ShowDialog();
+        }
     }
 }

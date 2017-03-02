@@ -49,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acceso BD.cs" />
+    <Compile Include="Accesos.cs" />
+    <Compile Include="AccesosUsuarios.cs" />
+    <Compile Include="BdAccesosUsuarios.cs" />
     <Compile Include="BdClientes.cs" />
     <Compile Include="BdEmpresas.cs" />
     <Compile Include="BdFleteros.cs" />
@@ -57,7 +60,9 @@
     <Compile Include="BdTiposCamion.cs" />
     <Compile Include="BdTiposIVAS.cs" />
     <Compile Include="BdUnidades.cs" />
+    <Compile Include="BdUsuarios.cs" />
     <Compile Include="Clientes.cs" />
+    <Compile Include="ControladoraAccesosUsuarios.cs" />
     <Compile Include="ControladoraClientes.cs" />
     <Compile Include="ControladoraEmpresas.cs" />
     <Compile Include="ControladoraFleteros.cs" />
@@ -66,6 +71,7 @@
     <Compile Include="ControladoraTiposCamion.cs" />
     <Compile Include="ControladoraTiposIVA.cs" />
     <Compile Include="ControladoraUnidades.cs" />
+    <Compile Include="ControladoraUsuarios.cs" />
     <Compile Include="Empresas.cs" />
     <Compile Include="Fleteros.cs" />
     <Compile Include="frmBuscaClientes.cs">
@@ -140,6 +146,12 @@
     <Compile Include="frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="IDAO.cs" />
     <Compile Include="OrdenesCarga.cs" />
     <Compile Include="Program.cs" />
@@ -149,6 +161,7 @@
     <Compile Include="TiposCamion.cs" />
     <Compile Include="TiposIVA.cs" />
     <Compile Include="Unidades.cs" />
+    <Compile Include="Usuarios.cs" />
     <EmbeddedResource Include="frmBuscaClientes.resx">
       <DependentUpon>frmBuscaClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
