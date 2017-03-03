@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iniciarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeCargaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emitirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +44,6 @@
             this.aBMFleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,14 @@
             this.iniciarSesionToolStripMenuItem.Name = "iniciarSesionToolStripMenuItem";
             this.iniciarSesionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.iniciarSesionToolStripMenuItem.Text = "Iniciar Sesion";
+            this.iniciarSesionToolStripMenuItem.Click += new System.EventHandler(this.iniciarSesionToolStripMenuItem_Click);
+            // 
+            // aBMUsuariosToolStripMenuItem
+            // 
+            this.aBMUsuariosToolStripMenuItem.Name = "aBMUsuariosToolStripMenuItem";
+            this.aBMUsuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aBMUsuariosToolStripMenuItem.Text = "ABM Usuarios";
+            this.aBMUsuariosToolStripMenuItem.Click += new System.EventHandler(this.aBMUsuariosToolStripMenuItem_Click);
             // 
             // ordenesDeCargaToolStripMenuItem
             // 
@@ -167,13 +175,6 @@
             this.aBMProveedoresToolStripMenuItem.Text = "ABM Proveedores";
             this.aBMProveedoresToolStripMenuItem.Click += new System.EventHandler(this.aBMProveedoresToolStripMenuItem_Click);
             // 
-            // aBMUsuariosToolStripMenuItem
-            // 
-            this.aBMUsuariosToolStripMenuItem.Name = "aBMUsuariosToolStripMenuItem";
-            this.aBMUsuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aBMUsuariosToolStripMenuItem.Text = "ABM Usuarios";
-            this.aBMUsuariosToolStripMenuItem.Click += new System.EventHandler(this.aBMUsuariosToolStripMenuItem_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +188,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transporte El Fortin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

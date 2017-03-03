@@ -175,6 +175,7 @@ namespace TransporteFortin
         {
             limpiar();
             habilitar();
+            frmUsuarios_Load(sender, e);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -224,7 +225,7 @@ namespace TransporteFortin
         {
             try
             {
-                if (txtUsuario.Text != "")
+                if (txtUsuario.Text != "" && txtPassword.Text != "")
                 {
                     //Clientes r = new Clientes(0, txtCliente.Text, txtDomicilio.Text, txtLocalidad.Text, Convert.ToInt32(txtCP.Text), txtTelefono.Text, txtCelular.Text, txtFax.Text, txtMail.Text, txtContacto.Text, maskedTextBox1.Text, tipoiva, txtComentarios.Text);
                     if (lblUsuario.Text == "")
@@ -232,18 +233,49 @@ namespace TransporteFortin
                         //controlc.Agregar(r);
                         Acceso_BD oacceso = new Acceso_BD();
                         List<AccesosUsuarios> lista = new List<AccesosUsuarios>();
-                        foreach (var listBoxItem in listBox2.Items)
+                        DataTable dt = oacceso.leerDatos("begin; insert into usuarios (usuario, contrasena) values ('" + txtUsuario.Text + "','" + txtPassword.Text + "'); select max(idusuarios) as idusuarios from usuarios; commit;");
+                        int id = 0;
+                        foreach (DataRow dr in dt.Rows)
                         {
-                            Accesos a = new Accesos(0, listBox2.Items.ToString());
-                            AccesosUsuarios au = new AccesosUsuarios(0, null, a);
-                            lista.Add(au);
+                            id = Convert.ToInt32(dr["idusuarios"]);
                         }
+                        dt = oacceso.leerDatos("select * from accesos");
+
+                        for (int i = 0; i < listBox2.Items.Count; i++)
+                        {
+                            string info = listBox2.Items[i].ToString();
+                            foreach (DataRow dr in dt.Rows)
+                            {
+
+                                if (Convert.ToString(dr["acceso"]) == info)
+                                {
+                                    oacceso.ActualizarBD("insert into accesosusuario (idusuarios, idaccesos) values ('" + id + "','" + Convert.ToInt32(dr["idaccesos"]) + "')");
+
+                                }
+                            }
+                        }                        
                         MessageBox.Show("Usuario guardado correctamente");
                     }
                     else
                     {
                         //r.Idclientes = Convert.ToInt32(lblId.Text);
                         //controlu.Modificar(r);
+                        Acceso_BD oacceso = new Acceso_BD();
+                        oacceso.ActualizarBD("begin; update usuarios set contrasena = '" + txtPassword.Text + "' where idusuarios = '" + lblUsuario.Text + "'; delete from accesosusuario where idusuarios = '" + lblUsuario.Text + "'; commit;");
+                        DataTable dt = oacceso.leerDatos("select * from accesos");
+
+                        for (int i = 0; i < listBox2.Items.Count; i++)
+                        {
+                            string info = listBox2.Items[i].ToString();
+                            foreach (DataRow dr in dt.Rows)
+                            {
+
+                                if (Convert.ToString(dr["acceso"]) == info)
+                                {
+                                    oacceso.ActualizarBD("insert into accesosusuario (idusuarios, idaccesos) values ('" + lblUsuario.Text + "','" + Convert.ToInt32(dr["idaccesos"]) + "')");
+                                }
+                            }
+                        }   
                         MessageBox.Show("Cliente modificado correctamente");
                     }
                     limpiar();
@@ -251,7 +283,7 @@ namespace TransporteFortin
                 }
                 else
                 {
-                    MessageBox.Show("Debe completar el nombre y apellido del Cliente");
+                    MessageBox.Show("Debe completar el usuario y contraseña");
                 }
             }
             catch (Exception ex)

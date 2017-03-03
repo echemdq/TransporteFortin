@@ -224,7 +224,10 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(535, 393);
+            this.MinimumSize = new System.Drawing.Size(535, 393);
             this.Name = "frmUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Usuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             this.ResumeLayout(false);

@@ -12,6 +12,8 @@ namespace TransporteFortin
 {
     public partial class frmPrincipal : Form
     {
+        Funciones f = new Funciones();
+        int idusuario = 0;
         public frmPrincipal()
         {
             InitializeComponent();
@@ -19,44 +21,163 @@ namespace TransporteFortin
 
         private void aBMClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmClientes frm = new frmClientes();
-            frm.ShowDialog();
+            
+            if (f.acceder(2, idusuario))
+            {
+                frmClientes frm = new frmClientes();
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
         }
 
         private void aBMProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProveedores frm = new frmProveedores();
-            frm.ShowDialog();
+            
+            if (f.acceder(4, idusuario))
+            {
+                frmProveedores frm = new frmProveedores();
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
         }
 
         private void aBMEmpresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmEmpresas frm = new frmEmpresas();
-            frm.ShowDialog();
+            
+            if (f.acceder(3, idusuario))
+            {
+                frmEmpresas frm = new frmEmpresas();
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
+
         }
 
         private void aBMFleterosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmFleteros frm = new frmFleteros();
-            frm.ShowDialog();
+            
+            if (f.acceder(1, idusuario))
+            {
+                frmFleteros frm = new frmFleteros();
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
         }
 
         private void emitirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmEmitirOC frm = new frmEmitirOC(0);
-            frm.ShowDialog();
+            
+            if (f.acceder(5, idusuario))
+            {
+                frmEmitirOC frm = new frmEmitirOC(0);
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmBuscarOrdenCarga frm = new frmBuscarOrdenCarga();
-            frm.ShowDialog();
+            
+            if (f.acceder(6, idusuario))
+            {
+                frmBuscarOrdenCarga frm = new frmBuscarOrdenCarga();
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
         }
 
         private void aBMUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUsuarios frm = new frmUsuarios();
+           
+            
+            if (f.acceder(7, idusuario))
+            {
+                frmUsuarios frm = new frmUsuarios();
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
+        }
+
+        private void iniciarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIniciarSesion frm = new frmIniciarSesion();
             frm.ShowDialog();
+            idusuario = frm.idusu;
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

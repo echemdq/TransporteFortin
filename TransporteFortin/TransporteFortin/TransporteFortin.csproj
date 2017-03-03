@@ -134,6 +134,12 @@
     <Compile Include="frmFleteros.Designer.cs">
       <DependentUpon>frmFleteros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmIniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIniciarSesion.Designer.cs">
+      <DependentUpon>frmIniciarSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListaOrdenesCarga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,7 @@
     <Compile Include="frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funciones.cs" />
     <Compile Include="IDAO.cs" />
     <Compile Include="OrdenesCarga.cs" />
     <Compile Include="Program.cs" />
@@ -197,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFleteros.resx">
       <DependentUpon>frmFleteros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIniciarSesion.resx">
+      <DependentUpon>frmIniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaOrdenesCarga.resx">
       <DependentUpon>frmListaOrdenesCarga.cs</DependentUpon>

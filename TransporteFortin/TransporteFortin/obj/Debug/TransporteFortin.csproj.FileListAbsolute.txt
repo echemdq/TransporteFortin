@@ -20,3 +20,4 @@ C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteF
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmListaOrdenesCarga.resources
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmUsuarios.resources
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmBuscaUsuarios.resources
+C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmIniciarSesion.resources
