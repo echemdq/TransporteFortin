@@ -104,6 +104,12 @@
     <Compile Include="frmBuscarOrdenCarga.Designer.cs">
       <DependentUpon>frmBuscarOrdenCarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscaUsuarios.Designer.cs">
+      <DependentUpon>frmBuscaUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarOrdenCarga.resx">
       <DependentUpon>frmBuscarOrdenCarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscaUsuarios.resx">
+      <DependentUpon>frmBuscaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>

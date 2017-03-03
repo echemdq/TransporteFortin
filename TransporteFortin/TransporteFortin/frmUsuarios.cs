@@ -32,27 +32,41 @@ namespace TransporteFortin
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             Acceso_BD oacceso = new Acceso_BD();
-            DataTable dt = oacceso.leerDatos("select * from acessos order by acceso asc");
-            List<Accesos> listat1 = new List<Accesos>();
+            DataTable dt = oacceso.leerDatos("select a.idaccesos, a.acceso, ifnull(au.idaccesosusuario,0) as idaccesosusuario, ifnull(au.idusuarios,0) as idusuarios from accesos a left join accesosusuario au on a.idaccesos = au.idaccesos");
+            List<AccesosUsuarios> listat1 = new List<AccesosUsuarios>();
             foreach (DataRow dr in dt.Rows)
             {
-                Accesos t = new Accesos(Convert.ToInt32(dr["idaccesos"]), Convert.ToString(dr["acceso"]));
-                listat1.Add(t);
-            }
-
-            dt = oacceso.leerDatos("select * from acessosusuario order by acceso asc where idusuarios = 1");
-            List<AccesosUsuarios> listat2 = new List<AccesosUsuarios>();
-            foreach (DataRow dr in dt.Rows)
-            {
-                Accesos a = new Accesos(Convert.ToInt32(dr["idaccesos"]), "");
+                Accesos a = new Accesos(Convert.ToInt32(dr["idaccesos"]), Convert.ToString(dr["acceso"]));
                 Usuarios u = new Usuarios(Convert.ToInt32(dr["idusuarios"]), "", "");
                 AccesosUsuarios t = new AccesosUsuarios(Convert.ToInt32(dr["idaccesosusuario"]), u, a);
-                listat2.Add(t);
+                listat1.Add(t);
+                listBox1.Items.Add(t.Accesos.Acceso);
             }
+        }
 
-            List<Accesos> otorg = new List<Accesos>();
-            List<Accesos> disp = new List<Accesos>();
+        public void limpiar()
+        {
+            txtPassword.Text = "";
+            txtUsuario.Text = "";
+            lblUsuario.Text = "";
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+        }
 
+        public void deshabilitar()
+        {
+            txtPassword.Enabled = false;
+            txtUsuario.Enabled = false;
+            listBox1.Enabled = false;
+            listBox2.Enabled = false;
+        }
+
+        public void habilitar()
+        {
+            txtPassword.Enabled = true;
+            txtUsuario.Enabled = true;
+            listBox1.Enabled = true;
+            listBox2.Enabled = true;
         }
 
         private Point mDownPos;
@@ -113,6 +127,137 @@ namespace TransporteFortin
             public ListBox source;
             public object item;
             public DragObject(ListBox box, object data) { source = box; item = data; }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                limpiar();
+                deshabilitar();
+                frmBuscaUsuarios frm = new frmBuscaUsuarios();
+                frm.ShowDialog();
+                Usuarios us = frm.u;
+                if (us != null)
+                {
+                    txtUsuario.Text = us.Usuario;
+                    lblUsuario.Text = us.Idusuarios.ToString();
+                    txtPassword.Text = us.Password;
+
+                    Acceso_BD oacceso = new Acceso_BD();
+                    DataTable dt = oacceso.leerDatos("select a.idaccesos, a.acceso, ifnull(au.idaccesosusuario,0) as idaccesosusuario, ifnull(au.idusuarios,0) as idusuarios from accesos a left join accesosusuario au on a.idaccesos = au.idaccesos and au.idusuarios = '"+us.Idusuarios+"'");
+                    List<AccesosUsuarios> listat1 = new List<AccesosUsuarios>();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        Accesos a = new Accesos(Convert.ToInt32(dr["idaccesos"]), Convert.ToString(dr["acceso"]));
+                        Usuarios u = new Usuarios(Convert.ToInt32(dr["idusuarios"]), "", "");
+                        AccesosUsuarios t = new AccesosUsuarios(Convert.ToInt32(dr["idaccesosusuario"]), u, a);
+                        listat1.Add(t);
+                        if (t.Idaccesosusuarios == 0)
+                        {
+                            listBox1.Items.Add(t.Accesos.Acceso);
+                        }
+                        else
+                        {
+                            listBox2.Items.Add(t.Accesos.Acceso);
+                        }
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            limpiar();
+            habilitar();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            limpiar();
+            deshabilitar();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (lblUsuario.Text != "")
+            {
+                habilitar();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lblUsuario.Text != "")
+                {
+                    Usuarios u = new Usuarios(Convert.ToInt32(lblUsuario.Text), "", "");
+                    DialogResult dialogResult = MessageBox.Show("Esta seguro de eliminar el Usuario: " + txtUsuario.Text, "Eliminar Usuario", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        //controlc.Borrar(c);
+                        Acceso_BD oacceso = new Acceso_BD();
+                        oacceso.ActualizarBD("begin; delete from accesosusuario where idusuarios='" + lblUsuario.Text + "'; delete from usuarios where idusuarios = '" + lblUsuario.Text + "'; commit;");
+                        limpiar();
+                        deshabilitar();
+                        MessageBox.Show("Usuario eliminado correctamente");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un Usuario para eliminarlo");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar: " + ex.Message);
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtUsuario.Text != "")
+                {
+                    //Clientes r = new Clientes(0, txtCliente.Text, txtDomicilio.Text, txtLocalidad.Text, Convert.ToInt32(txtCP.Text), txtTelefono.Text, txtCelular.Text, txtFax.Text, txtMail.Text, txtContacto.Text, maskedTextBox1.Text, tipoiva, txtComentarios.Text);
+                    if (lblUsuario.Text == "")
+                    {
+                        //controlc.Agregar(r);
+                        Acceso_BD oacceso = new Acceso_BD();
+                        List<AccesosUsuarios> lista = new List<AccesosUsuarios>();
+                        foreach (var listBoxItem in listBox2.Items)
+                        {
+                            Accesos a = new Accesos(0, listBox2.Items.ToString());
+                            AccesosUsuarios au = new AccesosUsuarios(0, null, a);
+                            lista.Add(au);
+                        }
+                        MessageBox.Show("Usuario guardado correctamente");
+                    }
+                    else
+                    {
+                        //r.Idclientes = Convert.ToInt32(lblId.Text);
+                        //controlu.Modificar(r);
+                        MessageBox.Show("Cliente modificado correctamente");
+                    }
+                    limpiar();
+                    deshabilitar();
+                }
+                else
+                {
+                    MessageBox.Show("Debe completar el nombre y apellido del Cliente");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Guardar: " + ex.Message);
+            }
         }
     }
 }

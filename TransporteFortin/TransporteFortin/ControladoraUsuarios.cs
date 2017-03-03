@@ -8,6 +8,7 @@ namespace TransporteFortin
 {
     public class ControladoraUsuarios : IDAO<Usuarios>
     {
+        BdUsuarios bd = new BdUsuarios();
         public void Agregar(Usuarios dato)
         {
             throw new NotImplementedException();
@@ -30,7 +31,7 @@ namespace TransporteFortin
 
         public List<Usuarios> BuscarEspecial(string dato)
         {
-            throw new NotImplementedException();
+            return bd.BuscarEspecial(dato);
         }
 
         public void Modificar(Usuarios dato)
