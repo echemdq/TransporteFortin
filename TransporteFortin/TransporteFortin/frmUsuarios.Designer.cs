@@ -55,7 +55,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(253, 21);
-            this.txtPassword.TabIndex = 96;
+            this.txtPassword.TabIndex = 3;
             // 
             // txtUsuario
             // 
@@ -65,7 +65,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(94, 7);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(253, 21);
-            this.txtUsuario.TabIndex = 95;
+            this.txtUsuario.TabIndex = 2;
             // 
             // label4
             // 
@@ -135,7 +135,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(378, 11);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(41, 38);
-            this.btnBuscar.TabIndex = 99;
+            this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -188,7 +188,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(182, 305);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(41, 38);
-            this.btnGuardar.TabIndex = 105;
+            this.btnGuardar.TabIndex = 4;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -200,7 +200,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(135, 305);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(41, 38);
-            this.btnNuevo.TabIndex = 106;
+            this.btnNuevo.TabIndex = 1;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 

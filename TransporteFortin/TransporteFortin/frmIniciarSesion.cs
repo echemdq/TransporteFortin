@@ -14,6 +14,7 @@ namespace TransporteFortin
     {
         List<Usuarios> listat = new List<Usuarios>();
         public int idusu = 0;
+        public string usuario = "";
         public frmIniciarSesion()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace TransporteFortin
                     {
                         x = 1;
                         idusu = u.Idusuarios;
+                        usuario = cmbUsuarios.Text;
                         break;
                     }
                 }

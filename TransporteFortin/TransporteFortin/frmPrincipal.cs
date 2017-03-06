@@ -173,11 +173,22 @@ namespace TransporteFortin
             frmIniciarSesion frm = new frmIniciarSesion();
             frm.ShowDialog();
             idusuario = frm.idusu;
+            if (idusuario != 0)
+            {
+                toolStripStatusLabel1.Text = "USUARIO: " + frm.usuario.ToUpper();
+            }
+            else
+            {
+                toolStripStatusLabel1.Text = "USUARIO: ";
+            }
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            this.Location = new Point(0, 0);
 
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            
         }
     }
 }
