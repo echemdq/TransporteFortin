@@ -14,10 +14,19 @@ namespace TransporteFortin
     {
         ControladoraOrdenesCarga controlo = new ControladoraOrdenesCarga();
         int idordencarga = 0;
-        public frmEmitirOC(int idorden)
+        int idsucursal = 0;
+        int idusuario = 0;
+        int idptoventa = 0;
+        int idpuesto = 0;
+        public frmEmitirOC(int idorden, int idusu, int idpue, int idsuc, int talon)
         {
             InitializeComponent();
             idordencarga = idorden;
+            idusuario = idusu;
+            idpuesto = idpue;
+            idsucursal = idsuc;
+            idptoventa = talon;
+            this.Text = "Ordenes de Carga | TALON: " + idptoventa;
         }
 
         private void frmEmitirOC_Load(object sender, EventArgs e)
@@ -41,7 +50,19 @@ namespace TransporteFortin
                 cmbSucursal.DataSource = listat;
                 cmbSucursal.DisplayMember = "sucursal";
                 cmbSucursal.ValueMember = "idsucursales";
-                cmbSucursal.SelectedIndex = 0;
+                cmbSucursal.SelectedValue = idsucursal;
+
+                dt = oacceso.leerDatos("select ifnull(ptoventa,0) as ok from contadores where detalle = 'ocarga' and ptoventa = '" + idptoventa + "'");
+                int OK = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    OK = Convert.ToInt32(dr["ok"]);
+                }
+                if (OK == 0)
+                {
+                    MessageBox.Show("Comprobantes sin configurar");
+                    this.Close();
+                }
 
                 dt = oacceso.leerDatos("select * from tiposcamion order by detalle asc");
                 List<TiposCamion> lista = new List<TiposCamion>();
@@ -66,6 +87,12 @@ namespace TransporteFortin
                 cmbUnidades.DisplayMember = "detalle";
                 cmbUnidades.ValueMember = "idunidades";
                 cmbUnidades.SelectedIndex = 0;
+
+                dt = oacceso.leerDatos("select * from configuraciones where detalle = 'porcentaje'");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    txtPorcentaje.Text = Convert.ToString(dr["valor"]);
+                }
             }
             else
             {
@@ -578,6 +605,7 @@ namespace TransporteFortin
                     Clientes cliente = new Clientes(Convert.ToInt32(lblCliente.Text), "", "", "", 0, "", "", "", "", "", "", null, "");
                     Fleteros fletero = new Fleteros(Convert.ToInt32(lblFletero.Text), 0, "", "", "", "", "", "", "", "", null, "", null, "", "", "", null);
                     Empresas empresa = new Empresas(Convert.ToInt32(lblEmpresa.Text), "", "", "", "", "", "", "", "");
+                    Usuarios usuario = new Usuarios(idusuario, "", "");
                     int valorizado = 0;
                     Unidades unidad = null;
                     
@@ -628,7 +656,7 @@ namespace TransporteFortin
                         }
                         else
                         {
-                            OrdenesCarga oc = new OrdenesCarga(0, 0, 0, 0, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text), Convert.ToDecimal(txtIvaViaje.Text), Convert.ToDecimal(txtIVACte.Text), Convert.ToDecimal(txtComision.Text), Convert.ToDecimal(txtImporteCte.Text), richTextBox1.Text, 0);
+                            OrdenesCarga oc = new OrdenesCarga(0, 0, idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text), Convert.ToDecimal(txtIvaViaje.Text), Convert.ToDecimal(txtIVACte.Text), Convert.ToDecimal(txtComision.Text), Convert.ToDecimal(txtImporteCte.Text), richTextBox1.Text, 0, usuario);
                             controlo.Agregar(oc);
                             MessageBox.Show("Orden de carga generada correctamente");
                             limpiar();
@@ -637,7 +665,7 @@ namespace TransporteFortin
                     else
                     {
                         unidad = new Unidades(Convert.ToInt32(cmbUnidades.SelectedValue), "");
-                        OrdenesCarga oc = new OrdenesCarga(0, 0, 0, 0, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.',',')), valorizado, unidad, 0, 0, 0, tipocom, valorcomision, 0, 0, 0, 0, 0, 0, richTextBox1.Text,0);
+                        OrdenesCarga oc = new OrdenesCarga(0, 0, idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.',',')), valorizado, unidad, 0, 0, 0, tipocom, valorcomision, 0, 0, 0, 0, 0, 0, richTextBox1.Text,0,usuario);
                         controlo.Agregar(oc);
                         MessageBox.Show("Orden de carga generada correctamente");
                         limpiar();

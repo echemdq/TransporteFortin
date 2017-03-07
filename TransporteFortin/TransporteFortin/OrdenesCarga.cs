@@ -216,8 +216,14 @@ namespace TransporteFortin
             get { return anulado; }
             set { anulado = value; }
         }
- 
-        public OrdenesCarga(int id, int nro, int pto, int pue, DateTime fe,Sucursales suc, Clientes cli, Fleteros fle, Empresas emp, string porcta, string prod, string or, string dest, decimal valordec, int valoriz, Unidades uni, int cant, decimal valoru, decimal valoructe, string tipocom, decimal valorcom, int pagodes, decimal totalvia, decimal ivav, decimal ivacte, decimal comi, decimal impcli, string obs, int anu)
+        Usuarios usu;
+
+        public Usuarios Usu
+        {
+            get { return usu; }
+            set { usu = value; }
+        }
+        public OrdenesCarga(int id, int nro, int pto, int pue, DateTime fe,Sucursales suc, Clientes cli, Fleteros fle, Empresas emp, string porcta, string prod, string or, string dest, decimal valordec, int valoriz, Unidades uni, int cant, decimal valoru, decimal valoructe, string tipocom, decimal valorcom, int pagodes, decimal totalvia, decimal ivav, decimal ivacte, decimal comi, decimal impcli, string obs, int anu, Usuarios us)
         {
             anulado = anu;
             fecha = fe;
@@ -236,6 +242,7 @@ namespace TransporteFortin
             unidades = uni;
             cantidad = cant;
             valorunidad = valoru;
+            usu = us;
             tipocomision = tipocom;
             valorcomision = valorcom;
             pagodestino = pagodes;

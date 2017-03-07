@@ -105,7 +105,7 @@ namespace TransporteFortin
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmEmitirOC frm = new frmEmitirOC(idoc);
+            frmEmitirOC frm = new frmEmitirOC(idoc,0,0,0,0);
             frm.ShowDialog();
         }
 

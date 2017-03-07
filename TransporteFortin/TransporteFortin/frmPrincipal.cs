@@ -14,6 +14,9 @@ namespace TransporteFortin
     {
         Funciones f = new Funciones();
         int idusuario = 0;
+        int sucursal = 0;
+        int talon = 0;
+        int puesto = 0;
         public frmPrincipal()
         {
             InitializeComponent();
@@ -109,7 +112,7 @@ namespace TransporteFortin
             
             if (f.acceder(5, idusuario))
             {
-                frmEmitirOC frm = new frmEmitirOC(0);
+                frmEmitirOC frm = new frmEmitirOC(0, idusuario, puesto, sucursal, talon);
                 frm.ShowDialog();
             }
             else
@@ -185,8 +188,32 @@ namespace TransporteFortin
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            puesto = Convert.ToInt32(Environment.GetEnvironmentVariable("fvpuesto"));
+            sucursal = Convert.ToInt32(Environment.GetEnvironmentVariable("fvsucursal"));
+            Acceso_BD oacc = new Acceso_BD();
+            DataTable dt = oacc.leerDatos("select ifnull(p.puesto, 0) as puesto, ifnull(s.sucursal,0) as sucursales, s.ptoventa as ptoventa from puestos p inner join sucursales s on p.idsucursales = s.idsucursales where idpuestos = '" + puesto + "' and p.idsucursales = '" + sucursal + "'");
+            string puesto1 = "";
+            string sucursal1 = "";
+            string talon1 = "";
+            foreach (DataRow dr in dt.Rows)
+            {
+                puesto1 = Convert.ToString(dr["puesto"]);
+                sucursal1 = Convert.ToString(dr["sucursales"]);
+                talon1 = Convert.ToString(dr["ptoventa"]);
+            }
+            if (puesto1 == "")
+            {
+                MessageBox.Show("PUESTO NO VERIFICADO, COMUNIQUESE CON EL PROGRAMADOR");
+                this.Close();
+            }
+            else
+            {
+                talon = Convert.ToInt32(talon1);
+                toolStripStatusLabel2.Text = "PUESTO: "+puesto1.ToUpper();
+                toolStripStatusLabel3.Text = "SUCURSAL: " + sucursal1.ToUpper();
+                toolStripStatusLabel4.Text = "TALON :" + talon1.ToUpper();
+            }
             this.Location = new Point(0, 0);
-
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             
         }
