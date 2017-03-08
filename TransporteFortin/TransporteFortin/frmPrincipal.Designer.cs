@@ -43,6 +43,7 @@
             this.aBMEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMFleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaCteCteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -53,7 +54,7 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.consultaCteCteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -172,6 +173,13 @@
             this.aBMFleterosToolStripMenuItem.Text = "ABM Fleteros";
             this.aBMFleterosToolStripMenuItem.Click += new System.EventHandler(this.aBMFleterosToolStripMenuItem_Click);
             // 
+            // consultaCteCteToolStripMenuItem
+            // 
+            this.consultaCteCteToolStripMenuItem.Name = "consultaCteCteToolStripMenuItem";
+            this.consultaCteCteToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.consultaCteCteToolStripMenuItem.Text = "Consulta Cte Cte";
+            this.consultaCteCteToolStripMenuItem.Click += new System.EventHandler(this.consultaCteCteToolStripMenuItem_Click);
+            // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -245,18 +253,22 @@
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(52, 17);
             this.toolStripStatusLabel4.Text = "TALON: ";
             // 
-            // consultaCteCteToolStripMenuItem
+            // button1
             // 
-            this.consultaCteCteToolStripMenuItem.Name = "consultaCteCteToolStripMenuItem";
-            this.consultaCteCteToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.consultaCteCteToolStripMenuItem.Text = "Consulta Cte Cte";
-            this.consultaCteCteToolStripMenuItem.Click += new System.EventHandler(this.consultaCteCteToolStripMenuItem_Click);
+            this.button1.Location = new System.Drawing.Point(376, 152);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 395);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -303,6 +315,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripMenuItem consultaCteCteToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

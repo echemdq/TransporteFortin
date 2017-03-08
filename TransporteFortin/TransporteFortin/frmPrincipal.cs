@@ -220,7 +220,13 @@ namespace TransporteFortin
 
         private void consultaCteCteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCtaCteFleteros frm = new frmCtaCteFleteros();
+            frmCtaCteFleteros frm = new frmCtaCteFleteros(talon);
+            frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmprueba frm = new frmprueba();
             frm.ShowDialog();
         }
     }
