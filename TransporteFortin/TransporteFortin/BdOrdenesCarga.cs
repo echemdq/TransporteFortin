@@ -60,7 +60,7 @@ namespace TransporteFortin
 
         public List<OrdenesCarga> BuscarEspecial(string dato)
         {
-            DataTable dt = oacceso.leerDatos("select idusuarios, idordenescarga, ptoventa, nrocarga, o.idsucursales, sucursal, fecha, o.idclientes, c.cliente, o.idfleteros, f.fletero, totalviaje, comision, anulado, valorizado from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join sucursales s on s.idsucursales = o.idsucursales "+dato); 
+            DataTable dt = oacceso.leerDatos("select idusuarios, idordenescarga, o.ptoventa, nrocarga, o.idsucursales, sucursal, fecha, o.idclientes, c.cliente, o.idfleteros, f.fletero, totalviaje, comision, anulado, valorizado from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join sucursales s on s.idsucursales = o.idsucursales "+dato); 
             Clientes c = null;
             Fleteros f = null;
             Sucursales s = null;
@@ -81,7 +81,23 @@ namespace TransporteFortin
 
         public void Modificar(OrdenesCarga dato)
         {
-            throw new NotImplementedException();
+            oacceso.ActualizarBD("update ordenescarga set valorizado = '1', idunidades = '" + dato.Unidades.Idunidades + "', cantidad = '" + dato.Cantidad + "', valorunidad ='" + dato.Valorunidad.ToString().Replace(',', '.') + "', tipocomision = '" + dato.Tipocomision + "', valorcomision = '" + dato.Valorcomision.ToString().Replace(',', '.') + "', pagodestino = '" + dato.Pagodestino + "', totalviaje = '" + dato.Totalviaje.ToString().Replace(',', '.') + "', ivaviaje = '" + dato.Ivaviaje.ToString().Replace(',', '.')+"', comision = '"+dato.Comision.ToString().Replace(',', '.')+"', importecliente = '"+dato.Importecliente.ToString().Replace(',', '.')+"', valorunidadcte = '"+dato.Valorunidadcte.ToString().Replace(',', '.')+"', ivacliente = '"+dato.Ivacliente.ToString().Replace(',', '.')+"' where idordenescarga = '"+dato.Idordenescarga+"'");
+            if (dato.Valorizado == 1)
+            {
+
+                if (dato.Totalviaje > 0 && dato.Pagodestino == 0)
+                {
+                    oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','999','GS - Orden de Carga','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','0','" + dato.Totalviaje.ToString().Replace(',', '.') + "','0')");
+                    if (dato.Ivaviaje > 0)
+                    {
+                        oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','17','GS - IVA','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','0','" + dato.Ivaviaje.ToString().Replace(',', '.') + "','0')");
+                    }
+                }
+                if (dato.Comision > 0)
+                {
+                    oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','948','GS - Comision','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Comision.ToString().Replace(',', '.') + "','0','0')");
+                }
+            }
         }
 
         public int traerSigID()

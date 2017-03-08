@@ -69,7 +69,6 @@ namespace TransporteFortin
                     x++;
                 }
             }
-            button1.Focus();
 
         }
 
@@ -90,7 +89,7 @@ namespace TransporteFortin
 
             if (valorizado == 0)
             {
-                button1.Enabled = true;
+                //button1.Enabled = true;
             }
 
             if (anulado == 0)
@@ -99,7 +98,7 @@ namespace TransporteFortin
             }
             else
             {
-                button1.Enabled = false;
+                //button1.Enabled = false;
             }
         }
 
@@ -120,7 +119,7 @@ namespace TransporteFortin
                     if (dialogResult == DialogResult.Yes)
                     {
                         Acceso_BD oacceso = new Acceso_BD();
-                        oacceso.ActualizarBD("update ordenescarga set anulado = '1', fecanula = now(), observaciones = concat(observaciones, ' ORDEN DE CARGA ANULADA ') where idordenescarga = '"+idoc+"'");
+                        oacceso.ActualizarBD("begin; update ordenescarga set anulado = '1', fecanula = now(), observaciones = concat(observaciones, ' ORDEN DE CARGA ANULADA ') where idordenescarga = '"+idoc+"'; insert into ctactefleteros (idfleteros, idempresas, fecha, fecactual, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) select idfleteros, idempresas, now(), now(), case when idconceptos = 999 then 947 else case when idconceptos = 17 then 15 else 997 end end, concat(descripcion, ' anulacion'), ptoventa, idordenescarga, case when debe = 0 then haber else 0 end, case when haber = 0 then debe else 0 end, idrecibos from ctactefleteros where idordenescarga = '"+idoc+"'; commit;");
                         MessageBox.Show("Orden de Carga anulada correctamente");
                         this.Close();
                     }
@@ -134,6 +133,11 @@ namespace TransporteFortin
             {
                 MessageBox.Show("Error al Eliminar: " + ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

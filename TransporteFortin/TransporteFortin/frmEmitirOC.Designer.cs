@@ -1126,6 +1126,7 @@
             this.button3.TabIndex = 114;
             this.button3.Text = "VALORIZAR";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmEmitirOC
             // 

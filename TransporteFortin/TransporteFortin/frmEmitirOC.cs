@@ -139,10 +139,15 @@ namespace TransporteFortin
                 cmbUnidades.ValueMember = "idunidades";
                 cmbUnidades.SelectedIndex = 0;
 
-                dt = oacceso.leerDatos("select idsucursales, c.cliente, c.direccion, f.fletero, f.documento, f.camion, f.idtiposcamion, f.chapacamion, f.chapaacoplado, e.empresa, porcuentade, productos, origen, destino, valordeclarado, valorizado, idunidades, cantidad, valorunidad, tipocomision, valorcomision, pagodestino, totalviaje, ivaviaje, comision, importecliente, observaciones, valorunidadcte, ivacliente, ptoventa, puesto, anulado, fecanula, fecha from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on o.idfleteros = f.idfleteros inner join empresas e on o.idempresas = e.idempresas where idordenescarga = '" + idordencarga + "'");
+                dt = oacceso.leerDatos("select o.idclientes, o.idfleteros, o.idempresas, idsucursales, c.cliente, c.direccion, f.fletero, f.documento, f.camion, f.idtiposcamion, f.chapacamion, f.chapaacoplado, e.empresa, porcuentade, productos, origen, destino, valordeclarado, valorizado, idunidades, cantidad, valorunidad, tipocomision, valorcomision, pagodestino, totalviaje, ivaviaje, comision, importecliente, observaciones, valorunidadcte, ivacliente, ptoventa, puesto, anulado, fecanula, fecha from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on o.idfleteros = f.idfleteros inner join empresas e on o.idempresas = e.idempresas where idordenescarga = '" + idordencarga + "'");
 
                 foreach (DataRow dr in dt.Rows)
                 {
+                    this.Text = "Ordenes de Carga | TALON: " + Convert.ToString(dr["ptoventa"]);
+                    idptoventa = Convert.ToInt32(dr["ptoventa"]);
+                    lblCliente.Text = Convert.ToString(dr["idclientes"]);
+                    lblFletero.Text = Convert.ToString(dr["idfleteros"]);
+                    lblEmpresa.Text = Convert.ToString(dr["idempresas"]);                    
                     cmbSucursal.SelectedValue = Convert.ToInt32(dr["idsucursales"]);
                     cmbTipoCamion.SelectedValue = Convert.ToInt32(dr["idtiposcamion"]);
                     int valorizado = 0;
@@ -162,8 +167,10 @@ namespace TransporteFortin
                     txtDestino.Text = Convert.ToString(dr["destino"]);
                     txtProductos.Text = Convert.ToString(dr["productos"]);
                     txtValorDec.Text = Convert.ToString(dr["valordeclarado"]);
+                    maskedTextBox1.Text = Convert.ToDateTime(dr["fecha"]).ToString("dd/MM/yyyy");
                     if (valorizado != 0)
                     {
+                        button3.Enabled = false;
                         checkBox1.Enabled = false;
                         richTextBox1.Text = Convert.ToString(dr["observaciones"]);
                         cmbUnidades.SelectedValue = Convert.ToInt32(dr["idunidades"]);
@@ -173,7 +180,7 @@ namespace TransporteFortin
                         tipocom = Convert.ToString(dr["tipocomision"]);
                         if (tipocom == "p")
                         {
-                           rbporcentaje.Checked = true;
+                            rbporcentaje.Checked = true;
                             txtPorcentaje.Text = Convert.ToString(dr["valorcomision"]);
                         }
                         else if (tipocom == "v")
@@ -194,6 +201,11 @@ namespace TransporteFortin
                         txtValorUniCte.Text = Convert.ToString(dr["valorunidadcte"]);
                         txtIVACte.Text = Convert.ToString(dr["ivacliente"]);
                         maskedTextBox1.Text = Convert.ToDateTime(dr["fecha"]).ToString("dd/MM/yyyy");
+                    }
+                    else
+                    {
+                        checkBox1.Checked = true;
+                        checkBox1.Enabled = false;
                     }
                     if (anulado != 0)
                     {
@@ -703,6 +715,70 @@ namespace TransporteFortin
         private void groupboxflet_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal valorcomision = 0;
+                Sucursales sucursales = new Sucursales(Convert.ToInt32(cmbSucursal.SelectedValue), "");
+                Clientes cliente = new Clientes(Convert.ToInt32(lblCliente.Text), "", "", "", 0, "", "", "", "", "", "", null, "");
+                Fleteros fletero = new Fleteros(Convert.ToInt32(lblFletero.Text), 0, "", "", "", "", "", "", "", "", null, "", null, "", "", "", null);
+                Empresas empresa = new Empresas(Convert.ToInt32(lblEmpresa.Text), "", "", "", "", "", "", "", "");
+                Usuarios usuario = new Usuarios(idusuario, "", "");
+                string tipocom = "p";
+                int pagodest = 0;
+                if (chkPagoDest.Checked)
+                {
+                    pagodest = 1;
+
+                }
+                else
+                {
+                    pagodest = 0;
+                }
+                if (rbporcentaje.Checked)
+                {
+                    if (txtPorcentaje.Text == "")
+                    {
+                        valorcomision = 0;
+                    }
+                    else
+                    {
+                        valorcomision = Convert.ToDecimal(txtPorcentaje.Text);
+                    }
+                }
+                else
+                {
+                    tipocom = "v";
+                    if (txtValorFijo.Text == "")
+                    {
+                        valorcomision = 0;
+                    }
+                    else
+                    {
+                        valorcomision = Convert.ToDecimal(txtValorFijo.Text);
+                    }
+                }
+                int valorizado = 1;
+                Unidades unidad = new Unidades(Convert.ToInt32(cmbUnidades.SelectedValue), "");
+                if (txtCantidad.Text == "" || txtValorUni.Text == "" || txtValorUniCte.Text == "" || txtPorcentaje.Text == "" || txtValorFijo.Text == "" || Convert.ToDecimal(txtTotalViaje.Text) <= 0)
+                {
+                    MessageBox.Show("Debe completar todos los campos para valorizar y calcular el importe del viaje");
+                }
+                else
+                {
+                    OrdenesCarga oc = new OrdenesCarga(idordencarga, 0, idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text),sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text), Convert.ToDecimal(txtIvaViaje.Text), Convert.ToDecimal(txtIVACte.Text), Convert.ToDecimal(txtComision.Text), Convert.ToDecimal(txtImporteCte.Text), richTextBox1.Text, 0, null);
+                    controlo.Modificar(oc);
+                    MessageBox.Show("Orden de carga valorizada correctamente");
+                    limpiar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

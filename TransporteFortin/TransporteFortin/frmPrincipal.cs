@@ -217,5 +217,11 @@ namespace TransporteFortin
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             
         }
+
+        private void consultaCteCteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCtaCteFleteros frm = new frmCtaCteFleteros();
+            frm.ShowDialog();
+        }
     }
 }

@@ -47,12 +47,13 @@
             this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.consultaCteCteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -85,14 +86,14 @@
             // iniciarSesionToolStripMenuItem
             // 
             this.iniciarSesionToolStripMenuItem.Name = "iniciarSesionToolStripMenuItem";
-            this.iniciarSesionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iniciarSesionToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.iniciarSesionToolStripMenuItem.Text = "Iniciar Sesion";
             this.iniciarSesionToolStripMenuItem.Click += new System.EventHandler(this.iniciarSesionToolStripMenuItem_Click);
             // 
             // aBMUsuariosToolStripMenuItem
             // 
             this.aBMUsuariosToolStripMenuItem.Name = "aBMUsuariosToolStripMenuItem";
-            this.aBMUsuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aBMUsuariosToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.aBMUsuariosToolStripMenuItem.Text = "ABM Usuarios";
             this.aBMUsuariosToolStripMenuItem.Click += new System.EventHandler(this.aBMUsuariosToolStripMenuItem_Click);
             // 
@@ -158,7 +159,8 @@
             // fleterosToolStripMenuItem
             // 
             this.fleterosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aBMFleterosToolStripMenuItem});
+            this.aBMFleterosToolStripMenuItem,
+            this.consultaCteCteToolStripMenuItem});
             this.fleterosToolStripMenuItem.Name = "fleterosToolStripMenuItem";
             this.fleterosToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.fleterosToolStripMenuItem.Text = "Fleteros";
@@ -166,7 +168,7 @@
             // aBMFleterosToolStripMenuItem
             // 
             this.aBMFleterosToolStripMenuItem.Name = "aBMFleterosToolStripMenuItem";
-            this.aBMFleterosToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.aBMFleterosToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.aBMFleterosToolStripMenuItem.Text = "ABM Fleteros";
             this.aBMFleterosToolStripMenuItem.Click += new System.EventHandler(this.aBMFleterosToolStripMenuItem_Click);
             // 
@@ -207,11 +209,23 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(59, 17);
             this.toolStripStatusLabel1.Text = "USUARIO:";
             // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel5.Text = "|";
+            // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(53, 17);
             this.toolStripStatusLabel2.Text = "PUESTO:";
+            // 
+            // toolStripStatusLabel7
+            // 
+            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel7.Text = "|";
             // 
             // toolStripStatusLabel3
             // 
@@ -219,29 +233,24 @@
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(67, 17);
             this.toolStripStatusLabel3.Text = "SUCURSAL:";
             // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(52, 17);
-            this.toolStripStatusLabel4.Text = "TALON: ";
-            // 
-            // toolStripStatusLabel5
-            // 
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel5.Text = "|";
-            // 
             // toolStripStatusLabel6
             // 
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
             this.toolStripStatusLabel6.Size = new System.Drawing.Size(10, 17);
             this.toolStripStatusLabel6.Text = "|";
             // 
-            // toolStripStatusLabel7
+            // toolStripStatusLabel4
             // 
-            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel7.Text = "|";
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(52, 17);
+            this.toolStripStatusLabel4.Text = "TALON: ";
+            // 
+            // consultaCteCteToolStripMenuItem
+            // 
+            this.consultaCteCteToolStripMenuItem.Name = "consultaCteCteToolStripMenuItem";
+            this.consultaCteCteToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.consultaCteCteToolStripMenuItem.Text = "Consulta Cte Cte";
+            this.consultaCteCteToolStripMenuItem.Click += new System.EventHandler(this.consultaCteCteToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -293,6 +302,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
+        private System.Windows.Forms.ToolStripMenuItem consultaCteCteToolStripMenuItem;
     }
 }
 

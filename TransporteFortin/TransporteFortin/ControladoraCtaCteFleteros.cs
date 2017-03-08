@@ -6,37 +6,38 @@ using System.Threading.Tasks;
 
 namespace TransporteFortin
 {
-    public class ControladoraOrdenesCarga : IDAO<OrdenesCarga>
+    public class ControladoraCtaCteFleteros : IDAO<CtaCteFleteros>
     {
-        BdOrdenesCarga bd = new BdOrdenesCarga();
-        public void Agregar(OrdenesCarga dato)
-        {
-            bd.Agregar(dato);
-        }
+        BdCtaCteFleteros bd = new BdCtaCteFleteros();
 
-        public List<OrdenesCarga> TraerTodos()
+        public void Agregar(CtaCteFleteros dato)
         {
             throw new NotImplementedException();
         }
 
-        public void Borrar(OrdenesCarga dato)
+        public List<CtaCteFleteros> TraerTodos()
         {
             throw new NotImplementedException();
         }
 
-        public OrdenesCarga Buscar(string dato)
+        public void Borrar(CtaCteFleteros dato)
         {
             throw new NotImplementedException();
         }
 
-        public List<OrdenesCarga> BuscarEspecial(string dato)
+        public CtaCteFleteros Buscar(string dato)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CtaCteFleteros> BuscarEspecial(string dato)
         {
             return bd.BuscarEspecial(dato);
         }
 
-        public void Modificar(OrdenesCarga dato)
+        public void Modificar(CtaCteFleteros dato)
         {
-            bd.Modificar(dato);
+            throw new NotImplementedException();
         }
 
         public int traerSigID()
