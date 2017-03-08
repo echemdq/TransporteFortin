@@ -587,9 +587,9 @@
             this.lblEmpresa.AutoSize = true;
             this.lblEmpresa.Location = new System.Drawing.Point(737, 105);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(80, 13);
+            this.lblEmpresa.Size = new System.Drawing.Size(15, 13);
             this.lblEmpresa.TabIndex = 88;
-            this.lblEmpresa.Text = "lblEmpresa";
+            this.lblEmpresa.Text = "0";
             // 
             // btnOrdenFlet
             // 

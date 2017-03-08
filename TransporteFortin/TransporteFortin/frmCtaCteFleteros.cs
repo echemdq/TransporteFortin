@@ -22,18 +22,52 @@ namespace TransporteFortin
             ptoventa = pto;
             InitializeComponent();
         }
-        public void buscar()
+
+        public void buscar1()
+        {
+            if (u != null)
+            {
+                Acceso_BD oacceso = new Acceso_BD();
+                DataTable dt = oacceso.leerDatos("select idfleteros, c.idempresas, ifnull(e.empresa, 'SIN EMPRESA') as empresa, sum(debe-haber) as saldo, case when c.idempresas = e.idempresas then 1 else 0 end as activo from ctactefleteros c left join empresas e on c.idempresas = e.idempresas where idfleteros = '" + u.Idfleteros + "' group by idfleteros, c.idempresas, empresa order by activo desc");
+               
+                int i = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    i++;
+                }
+                int x = 0;
+                if (i > 0)
+                {
+                    dataGridView2.Rows.Add(i);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        dataGridView2.Rows[x].Cells[0].Value = Convert.ToString(dr["idfleteros"]);
+                        dataGridView2.Rows[x].Cells[1].Value = Convert.ToString(dr["idempresas"]);
+                        dataGridView2.Rows[x].Cells[2].Value = Convert.ToString(dr["empresa"]);
+                        dataGridView2.Rows[x].Cells[3].Value = Convert.ToString(dr["saldo"]);
+                        if (x == 0)
+                        {
+                            label2.Text = Convert.ToString(dr["saldo"]);
+                        }
+                        x++;
+                    }
+                }
+            }
+        }
+
+        public void buscar(int idem)
         {
             if (u != null)
             {
                 em = new Empresas(u.Empresas.Idempresas, u.Empresas.Empresa, "", "", "", "", "", "", "");
-                txtEmpresa.Text = u.Empresas.Empresa;
+                
                 txtCliente.Text = u.Fletero;
                 txtDomicilio.Text = u.Direccion;
                 txtTelefono.Text = u.Telefono;
                 txtDocumento.Text = u.Documento.ToString();
                 ControladoraCtaCteFleteros controlc = new ControladoraCtaCteFleteros();
-                List<CtaCteFleteros> lista = controlc.BuscarEspecial(u.Idfleteros.ToString());
+                string where = "f.idfleteros = '" + u.Idfleteros + "' and f.idempresas = '" + idem + "'";
+                List<CtaCteFleteros> lista = controlc.BuscarEspecial(where);
                 int i = 0;
                 foreach (CtaCteFleteros aux in lista)
                 {
@@ -50,14 +84,11 @@ namespace TransporteFortin
                         dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
                         dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;
                         dataGridView1.Rows[x].Cells[4].Value = aux.Debe;
-                        debe = debe + aux.Debe;
                         dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
-                        haber = haber + aux.Haber;
                         x++;
                     }
                 }
             }
-            label2.Text = Convert.ToString(debe - haber);
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -66,7 +97,8 @@ namespace TransporteFortin
                 frmBuscaFleteros frm = new frmBuscaFleteros();
                 frm.ShowDialog();
                 u = frm.u;
-                buscar();
+                buscar1();
+                buscar(u.Empresas.Idempresas);
             }
             catch (Exception ex)
             {
@@ -83,6 +115,14 @@ namespace TransporteFortin
             dataGridView1.Columns[3].Name = "Referencia (Talon - Orden Carga)";
             dataGridView1.Columns[4].Name = "Debe";
             dataGridView1.Columns[5].Name = "Haber";
+
+            dataGridView2.ColumnCount = 4;
+            dataGridView2.Columns[0].Name = "idfleteros";
+            dataGridView2.Columns[1].Name = "idempresas";
+            dataGridView2.Columns[2].Name = "Empresa";
+            dataGridView2.Columns[3].Name = "Saldo";
+            dataGridView2.Columns[0].Visible = false;
+            dataGridView2.Columns[1].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -94,7 +134,7 @@ namespace TransporteFortin
                 dataGridView1.Rows.Clear();
                 debe = 0;
                 haber = 0;
-                buscar();                
+                buscar(em.Idempresas);                
             }
             catch (Exception EX)
             {
@@ -111,12 +151,23 @@ namespace TransporteFortin
                 dataGridView1.Rows.Clear();
                 debe = 0;
                 haber = 0;
-                buscar();
+                buscar(em.Idempresas);
             }
             catch (Exception EX)
             {
                 MessageBox.Show(EX.Message);
             }
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int filaseleccionada = Convert.ToInt32(this.dataGridView2.CurrentRow.Index);
+            int idfletero = Convert.ToInt32(dataGridView2[0, filaseleccionada].Value);
+            int idempresa = Convert.ToInt32(dataGridView2[1, filaseleccionada].Value);
+            dataGridView1.Rows.Clear();
+            label2.Text = Convert.ToString(dataGridView2[3, filaseleccionada].Value);
+            buscar(idempresa);
+            //u = new Fleteros(idfletero, documento, fletero, direccion, localidad, cp.ToString(), telefono, celular, fax, mail, emp, camion, tipoiv, chapacamion, chapaacoplado, cuit, ti);
         }
     }
 }

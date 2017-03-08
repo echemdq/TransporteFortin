@@ -101,13 +101,21 @@ namespace TransporteFortin
         {
             try
             {
-                if (txtDocumento.Text != "" && txtCliente.Text != "" && lblIdEmpresa.Text != "")
+                if (txtDocumento.Text != "" && txtCliente.Text != "")
                 {
                     if (txtCP.Text == "")
                     {
                         txtCP.Text = "0";
                     }
-                    Empresas em = new Empresas(Convert.ToInt32(lblIdEmpresa.Text), "", "", "", "", "", "", "", "");
+                    Empresas em = null;
+                    if (lblIdEmpresa.Text != "")
+                    {
+                        em = new Empresas(Convert.ToInt32(lblIdEmpresa.Text), "", "", "", "", "", "", "", "");
+                    }
+                    else
+                    {
+                        em = new Empresas(0, "", "", "", "", "", "", "", "");
+                    }
                     TiposCamion t = new TiposCamion(Convert.ToInt32(cmbTipoCamion.SelectedValue), "");
                     TiposIVA ti = new TiposIVA(Convert.ToInt32(cmbTipoIva.SelectedValue),"","");
                     Fleteros r = new Fleteros(0, Convert.ToInt32(txtDocumento.Text), txtCliente.Text, txtDomicilio.Text, txtLocalidad.Text, txtCP.Text, txtTelefono.Text, txtCelular.Text, txtFax.Text, txtMail.Text, em, txtModelo.Text, t, txtChapaC.Text, txtChapaA.Text,maskedTextBox1.Text, ti);
@@ -127,7 +135,7 @@ namespace TransporteFortin
                 }
                 else
                 {
-                    MessageBox.Show("Debe completar el nombre, documento y empresa del Fletero");
+                    MessageBox.Show("Debe completar el nombre, documento");
                 }
             }
             catch (Exception ex)

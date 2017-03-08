@@ -139,7 +139,7 @@ namespace TransporteFortin
                 cmbUnidades.ValueMember = "idunidades";
                 cmbUnidades.SelectedIndex = 0;
 
-                dt = oacceso.leerDatos("select o.idclientes, o.idfleteros, o.idempresas, idsucursales, c.cliente, c.direccion, f.fletero, f.documento, f.camion, f.idtiposcamion, f.chapacamion, f.chapaacoplado, e.empresa, porcuentade, productos, origen, destino, valordeclarado, valorizado, idunidades, cantidad, valorunidad, tipocomision, valorcomision, pagodestino, totalviaje, ivaviaje, comision, importecliente, observaciones, valorunidadcte, ivacliente, ptoventa, puesto, anulado, fecanula, fecha from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on o.idfleteros = f.idfleteros inner join empresas e on o.idempresas = e.idempresas where idordenescarga = '" + idordencarga + "'");
+                dt = oacceso.leerDatos("select o.idclientes, o.idfleteros, o.idempresas, idsucursales, c.cliente, c.direccion, f.fletero, f.documento, f.camion, f.idtiposcamion, f.chapacamion, f.chapaacoplado, e.empresa, porcuentade, productos, origen, destino, valordeclarado, valorizado, idunidades, cantidad, valorunidad, tipocomision, valorcomision, pagodestino, totalviaje, ivaviaje, comision, importecliente, observaciones, valorunidadcte, ivacliente, ptoventa, puesto, anulado, fecanula, fecha from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on o.idfleteros = f.idfleteros left join empresas e on o.idempresas = e.idempresas where idordenescarga = '" + idordencarga + "'");
 
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -582,7 +582,7 @@ namespace TransporteFortin
             txtLocalidad.Text = "";
             txtCelular.Text = "";
             lblFletero.Text = "";
-            lblEmpresa.Text = "";
+            lblEmpresa.Text = "0";
             txtModelo.Text = "";
             txtChapaC.Text = "";
             txtChapaA.Text = "";

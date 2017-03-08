@@ -33,7 +33,7 @@ namespace TransporteFortin
 
         public List<CtaCteFleteros> BuscarEspecial(string dato)
         {
-            DataTable dt = oacceso.leerDatos("select f.fecha, c.descripcion as concepto, f.descripcion as descripcion, f.ptoventa, ifnull(o.nrocarga,0) as nrocarga, debe, haber from ctactefleteros f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga where f.idfleteros = '" + dato + "'");
+            DataTable dt = oacceso.leerDatos("select f.fecha, c.descripcion as concepto, f.descripcion as descripcion, f.ptoventa, ifnull(o.nrocarga,0) as nrocarga, debe, haber from ctactefleteros f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga where " + dato + "");
             List<CtaCteFleteros> lista = new List<CtaCteFleteros>();
             foreach (DataRow dr in dt.Rows)
             {
