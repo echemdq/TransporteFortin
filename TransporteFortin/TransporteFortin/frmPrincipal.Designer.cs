@@ -55,6 +55,8 @@
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
+            this.ordenesCombustibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emitirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +66,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.ordenesDeCargaToolStripMenuItem,
+            this.ordenesCombustibleToolStripMenuItem,
             this.bancosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.empresasToolStripMenuItem,
@@ -263,6 +266,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ordenesCombustibleToolStripMenuItem
+            // 
+            this.ordenesCombustibleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emitirToolStripMenuItem1});
+            this.ordenesCombustibleToolStripMenuItem.Name = "ordenesCombustibleToolStripMenuItem";
+            this.ordenesCombustibleToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
+            this.ordenesCombustibleToolStripMenuItem.Text = "Ordenes Combustible";
+            // 
+            // emitirToolStripMenuItem1
+            // 
+            this.emitirToolStripMenuItem1.Name = "emitirToolStripMenuItem1";
+            this.emitirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.emitirToolStripMenuItem1.Text = "Emitir";
+            this.emitirToolStripMenuItem1.Click += new System.EventHandler(this.emitirToolStripMenuItem1_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +334,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripMenuItem consultaCteCteToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem ordenesCombustibleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem emitirToolStripMenuItem1;
     }
 }
 

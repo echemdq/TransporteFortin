@@ -30,3 +30,4 @@ C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteF
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\bin\Debug\CrystalDecisions.Shared.dll
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmprueba.resources
+C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmEmitirOComb.resources

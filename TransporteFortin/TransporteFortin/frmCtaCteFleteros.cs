@@ -15,8 +15,6 @@ namespace TransporteFortin
         Fleteros u = null;
         Empresas em = null;
         int ptoventa = 0;
-        decimal debe = 0;
-        decimal haber = 0;
         public frmCtaCteFleteros(int pto)
         {
             ptoventa = pto;
@@ -132,9 +130,8 @@ namespace TransporteFortin
                 frmMovFleteros frm = new frmMovFleteros("d", u, em, ptoventa);
                 frm.ShowDialog();
                 dataGridView1.Rows.Clear();
-                debe = 0;
-                haber = 0;
-                buscar(em.Idempresas);                
+                buscar1();
+                buscar(em.Idempresas);              
             }
             catch (Exception EX)
             {
@@ -149,8 +146,6 @@ namespace TransporteFortin
                 frmMovFleteros frm = new frmMovFleteros("c", u, em, ptoventa);
                 frm.ShowDialog();
                 dataGridView1.Rows.Clear();
-                debe = 0;
-                haber = 0;
                 buscar(em.Idempresas);
             }
             catch (Exception EX)

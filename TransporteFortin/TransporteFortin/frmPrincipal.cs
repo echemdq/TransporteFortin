@@ -229,5 +229,11 @@ namespace TransporteFortin
             frmprueba frm = new frmprueba();
             frm.ShowDialog();
         }
+
+        private void emitirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmEmitirOComb frm = new frmEmitirOComb(talon);
+            frm.ShowDialog();
+        }
     }
 }
