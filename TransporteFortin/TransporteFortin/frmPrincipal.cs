@@ -241,5 +241,11 @@ namespace TransporteFortin
             frmCtaCteProveedores frm = new frmCtaCteProveedores(talon);
             frm.ShowDialog();
         }
+
+        private void consultaCtaCteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCtaCteClientes frm = new frmCtaCteClientes(talon);
+            frm.ShowDialog();
+        }
     }
 }

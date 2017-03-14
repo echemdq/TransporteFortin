@@ -39,6 +39,14 @@ namespace TransporteFortin
                {
                    oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','948','GS - Comision','" + dato.Ptoventa + "','" + idoc + "','" + dato.Comision.ToString().Replace(',', '.') + "','0','0')");
                }
+               if (dato.Importecliente > 0 && dato.Pagodestino == 0)
+               {
+                   oacceso.ActualizarBD("insert into ctacteclientes(idclientes, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, fecha) values('" + dato.Clientes.Idclientes + "','949','GS - Orden de Carga','" + dato.Ptoventa + "','" + idoc + "','" + dato.Importecliente.ToString().Replace(',', '.') + "','0','" + dato.Fecha.ToString("yyyy-MM-dd") + "')");
+                   if (dato.Ivacliente > 0)
+                   {
+                       oacceso.ActualizarBD("insert into ctacteclientes(idclientes, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, fecha) values('" + dato.Clientes.Idclientes + "','15','GS - IVA','" + dato.Ptoventa + "','" + idoc + "','" + dato.Ivacliente.ToString().Replace(',', '.') + "','0','" + dato.Fecha.ToString("yyyy-MM-dd") + "')");
+                   }   
+               }
            }
         }
 
@@ -72,7 +80,7 @@ namespace TransporteFortin
                 f = new Fleteros(Convert.ToInt32(dr["idfleteros"]), 0, Convert.ToString(dr["fletero"]), "", "", "", "", "", "", "", null, "", null, "", "", "", null);
                 s = new Sucursales(Convert.ToInt32(dr["idsucursales"]), Convert.ToString(dr["sucursal"]));
                 u = new Usuarios(Convert.ToInt32(dr["idusuarios"]), "", "");
-                o = new OrdenesCarga(Convert.ToInt32(dr["idordenescarga"]), Convert.ToString(dr["nrocarga"]), Convert.ToInt32(dr["ptoventa"]), 0, Convert.ToDateTime(dr["fecha"]), s, c, f, null, "", "", "", "", 0, Convert.ToInt32(dr["valorizado"]), null, 0, 0, 0, "", 0, 0, Convert.ToDecimal(dr["totalviaje"]), 0, 0, Convert.ToDecimal(dr["co;mision"]), 0, "", Convert.ToInt32(dr["anulado"]), u);
+                o = new OrdenesCarga(Convert.ToInt32(dr["idordenescarga"]), Convert.ToString(dr["nrocarga"]), Convert.ToInt32(dr["ptoventa"]), 0, Convert.ToDateTime(dr["fecha"]), s, c, f, null, "", "", "", "", 0, Convert.ToInt32(dr["valorizado"]), null, 0, 0, 0, "", 0, 0, Convert.ToDecimal(dr["totalviaje"]), 0, 0, Convert.ToDecimal(dr["comision"]), 0, "", Convert.ToInt32(dr["anulado"]), u);
                 lista.Add(o);
             }
             return lista;
@@ -95,6 +103,14 @@ namespace TransporteFortin
                 if (dato.Comision > 0)
                 {
                     oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','948','GS - Comision','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Comision.ToString().Replace(',', '.') + "','0','0')");
+                }
+                if (dato.Importecliente > 0 && dato.Pagodestino == 0)
+                {
+                    oacceso.ActualizarBD("insert into ctacteclientes(idclientes, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, fecha) values('" + dato.Clientes.Idclientes + "','949','GS - Orden de Carga','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Importecliente.ToString().Replace(',', '.') + "','0','" + dato.Fecha.ToString("yyyy-MM-dd") + "')");
+                    if (dato.Ivacliente > 0)
+                    {
+                        oacceso.ActualizarBD("insert into ctacteclientes(idclientes, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, fecha) values('" + dato.Clientes.Idclientes + "','15','GS - IVA','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Ivacliente.ToString().Replace(',', '.') + "','0','" + dato.Fecha.ToString("yyyy-MM-dd") + "')");
+                    }
                 }
             }
         }

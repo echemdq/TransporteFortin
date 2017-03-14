@@ -273,7 +273,7 @@
             this.MinimumSize = new System.Drawing.Size(855, 518);
             this.Name = "frmCtaCteProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCtaCteProveedores";
+            this.Text = "Cuenta Corriente Proveedores";
             this.Load += new System.EventHandler(this.frmCtaCteProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

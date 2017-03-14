@@ -76,6 +76,7 @@
     <Compile Include="AccesosUsuarios.cs" />
     <Compile Include="BdAccesosUsuarios.cs" />
     <Compile Include="BdClientes.cs" />
+    <Compile Include="BdCtaCteClientes.cs" />
     <Compile Include="BdCtaCteFleteros.cs" />
     <Compile Include="BdCtaCteProveedores.cs" />
     <Compile Include="BdEmpresas.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Conceptos.cs" />
     <Compile Include="ControladoraAccesosUsuarios.cs" />
     <Compile Include="ControladoraClientes.cs" />
+    <Compile Include="ControladoraCtaCteClientes.cs" />
     <Compile Include="ControladoraCtaCteFleteros.cs" />
     <Compile Include="ControladoraCtaCteProveedores.cs" />
     <Compile Include="ControladoraEmpresas.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="ControladoraTiposIVA.cs" />
     <Compile Include="ControladoraUnidades.cs" />
     <Compile Include="ControladoraUsuarios.cs" />
+    <Compile Include="CtaCteClientes.cs" />
     <Compile Include="CtaCteFleteros.cs" />
     <Compile Include="CtaCteProveedores.cs" />
     <Compile Include="Empresas.cs" />
@@ -147,6 +150,12 @@
     </Compile>
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCtaCteClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCtaCteClientes.Designer.cs">
+      <DependentUpon>frmCtaCteClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCtaCteFleteros.cs">
       <SubType>Form</SubType>
@@ -265,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCtaCteClientes.resx">
+      <DependentUpon>frmCtaCteClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCtaCteFleteros.resx">
       <DependentUpon>frmCtaCteFleteros.cs</DependentUpon>

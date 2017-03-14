@@ -33,3 +33,4 @@ C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteF
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmEmitirOComb.resources
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmCtaCteProveedores.resources
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmMovProveedores.resources
+C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmCtaCteClientes.resources

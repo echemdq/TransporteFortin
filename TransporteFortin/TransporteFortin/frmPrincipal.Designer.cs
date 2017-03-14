@@ -48,6 +48,7 @@
             this.consultaCteCteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaCtaCteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -57,7 +58,7 @@
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.consultaCtaCteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaCtaCteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -149,7 +150,8 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aBMClientesToolStripMenuItem});
+            this.aBMClientesToolStripMenuItem,
+            this.consultaCtaCteToolStripMenuItem1});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -157,7 +159,7 @@
             // aBMClientesToolStripMenuItem
             // 
             this.aBMClientesToolStripMenuItem.Name = "aBMClientesToolStripMenuItem";
-            this.aBMClientesToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.aBMClientesToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.aBMClientesToolStripMenuItem.Text = "ABM Clientes";
             this.aBMClientesToolStripMenuItem.Click += new System.EventHandler(this.aBMClientesToolStripMenuItem_Click);
             // 
@@ -214,6 +216,13 @@
             this.aBMProveedoresToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.aBMProveedoresToolStripMenuItem.Text = "ABM Proveedores";
             this.aBMProveedoresToolStripMenuItem.Click += new System.EventHandler(this.aBMProveedoresToolStripMenuItem_Click);
+            // 
+            // consultaCtaCteToolStripMenuItem
+            // 
+            this.consultaCtaCteToolStripMenuItem.Name = "consultaCtaCteToolStripMenuItem";
+            this.consultaCtaCteToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.consultaCtaCteToolStripMenuItem.Text = "Consulta Cta Cte";
+            this.consultaCtaCteToolStripMenuItem.Click += new System.EventHandler(this.consultaCtaCteToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -283,12 +292,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // consultaCtaCteToolStripMenuItem
+            // consultaCtaCteToolStripMenuItem1
             // 
-            this.consultaCtaCteToolStripMenuItem.Name = "consultaCtaCteToolStripMenuItem";
-            this.consultaCtaCteToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.consultaCtaCteToolStripMenuItem.Text = "Consulta Cta Cte";
-            this.consultaCtaCteToolStripMenuItem.Click += new System.EventHandler(this.consultaCtaCteToolStripMenuItem_Click);
+            this.consultaCtaCteToolStripMenuItem1.Name = "consultaCtaCteToolStripMenuItem1";
+            this.consultaCtaCteToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
+            this.consultaCtaCteToolStripMenuItem1.Text = "Consulta Cta Cte";
+            this.consultaCtaCteToolStripMenuItem1.Click += new System.EventHandler(this.consultaCtaCteToolStripMenuItem1_Click);
             // 
             // frmPrincipal
             // 
@@ -346,6 +355,7 @@
         private System.Windows.Forms.ToolStripMenuItem ordenesCombustibleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emitirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultaCtaCteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaCtaCteToolStripMenuItem1;
     }
 }
 
