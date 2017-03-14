@@ -77,6 +77,7 @@
     <Compile Include="BdAccesosUsuarios.cs" />
     <Compile Include="BdClientes.cs" />
     <Compile Include="BdCtaCteFleteros.cs" />
+    <Compile Include="BdCtaCteProveedores.cs" />
     <Compile Include="BdEmpresas.cs" />
     <Compile Include="BdFleteros.cs" />
     <Compile Include="BdOrdenesCarga.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="ControladoraAccesosUsuarios.cs" />
     <Compile Include="ControladoraClientes.cs" />
     <Compile Include="ControladoraCtaCteFleteros.cs" />
+    <Compile Include="ControladoraCtaCteProveedores.cs" />
     <Compile Include="ControladoraEmpresas.cs" />
     <Compile Include="ControladoraFleteros.cs" />
     <Compile Include="ControladoraOrdenesCarga.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="ControladoraUnidades.cs" />
     <Compile Include="ControladoraUsuarios.cs" />
     <Compile Include="CtaCteFleteros.cs" />
+    <Compile Include="CtaCteProveedores.cs" />
     <Compile Include="Empresas.cs" />
     <Compile Include="Fleteros.cs" />
     <Compile Include="frmBuscaClientes.cs">
@@ -151,6 +154,12 @@
     <Compile Include="frmCtaCteFleteros.Designer.cs">
       <DependentUpon>frmCtaCteFleteros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCtaCteProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCtaCteProveedores.Designer.cs">
+      <DependentUpon>frmCtaCteProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmitirOC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +201,12 @@
     </Compile>
     <Compile Include="frmMovFleteros.Designer.cs">
       <DependentUpon>frmMovFleteros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMovProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMovProveedores.Designer.cs">
+      <DependentUpon>frmMovProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -254,6 +269,9 @@
     <EmbeddedResource Include="frmCtaCteFleteros.resx">
       <DependentUpon>frmCtaCteFleteros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCtaCteProveedores.resx">
+      <DependentUpon>frmCtaCteProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmitirOC.resx">
       <DependentUpon>frmEmitirOC.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMovFleteros.resx">
       <DependentUpon>frmMovFleteros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMovProveedores.resx">
+      <DependentUpon>frmMovProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -301,6 +322,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Accesos.datasource" />
     <None Include="Properties\DataSources\Clientes.datasource" />
+    <None Include="Properties\DataSources\CtaCteProveedores.datasource" />
     <None Include="Properties\DataSources\Empresas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

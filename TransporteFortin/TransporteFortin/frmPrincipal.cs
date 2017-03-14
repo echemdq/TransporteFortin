@@ -235,5 +235,11 @@ namespace TransporteFortin
             frmEmitirOComb frm = new frmEmitirOComb(talon);
             frm.ShowDialog();
         }
+
+        private void consultaCtaCteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCtaCteProveedores frm = new frmCtaCteProveedores(talon);
+            frm.ShowDialog();
+        }
     }
 }

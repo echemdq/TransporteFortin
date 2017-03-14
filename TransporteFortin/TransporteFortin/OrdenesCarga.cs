@@ -16,9 +16,9 @@ namespace TransporteFortin
             set { idordenescarga = value; }
         }
 
-        int nrocarga;
+        string nrocarga;
 
-        public int Nrocarga
+        public string Nrocarga
         {
             get { return nrocarga; }
             set { nrocarga = value; }
@@ -223,7 +223,7 @@ namespace TransporteFortin
             get { return usu; }
             set { usu = value; }
         }
-        public OrdenesCarga(int id, int nro, int pto, int pue, DateTime fe,Sucursales suc, Clientes cli, Fleteros fle, Empresas emp, string porcta, string prod, string or, string dest, decimal valordec, int valoriz, Unidades uni, int cant, decimal valoru, decimal valoructe, string tipocom, decimal valorcom, int pagodes, decimal totalvia, decimal ivav, decimal ivacte, decimal comi, decimal impcli, string obs, int anu, Usuarios us)
+        public OrdenesCarga(int id, string nro, int pto, int pue, DateTime fe,Sucursales suc, Clientes cli, Fleteros fle, Empresas emp, string porcta, string prod, string or, string dest, decimal valordec, int valoriz, Unidades uni, int cant, decimal valoru, decimal valoructe, string tipocom, decimal valorcom, int pagodes, decimal totalvia, decimal ivav, decimal ivacte, decimal comi, decimal impcli, string obs, int anu, Usuarios us)
         {
             anulado = anu;
             fecha = fe;

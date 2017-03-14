@@ -121,7 +121,7 @@ namespace TransporteFortin
             {
                 if (p != null && u != null && Convert.ToDouble(txtImporteFinal.Text) > 0)
                 {
-                    OrdenesCombustible oc = new OrdenesCombustible(0, 0, Convert.ToDateTime(maskedTextBox1.Text), p, u, Convert.ToDecimal(txtPrecioComb.Text), Convert.ToDecimal(txtLitros.Text.Replace('.', ',')),ptoventa);
+                    OrdenesCombustible oc = new OrdenesCombustible(0, "0", Convert.ToDateTime(maskedTextBox1.Text), p, u, Convert.ToDecimal(txtPrecioComb.Text), Convert.ToDecimal(txtLitros.Text.Replace('.', ',')),ptoventa);
                     ControladoraOrdenesCombustible c = new ControladoraOrdenesCombustible();
                     c.Agregar(oc);
                     MessageBox.Show("Orden de combustible generada correctamente");

@@ -24,7 +24,7 @@ namespace TransporteFortin
            {
                idoc = Convert.ToInt32(dr["idordenescombustible"]);
            }
-           oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos,idordenescombustible) values('" + dato.Fleteros.Idfleteros + "','" + dato.Fleteros.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','946','GS - Orden de Combustible','" + dato.Ptoventa + "','0','"+Convert.ToString(dato.Litros*dato.Preciocombustible).Replace(',','.')+"','0','0','"+idoc+"')");
+           oacceso.ActualizarBD("begin; insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos,idordenescombustible) values('" + dato.Fleteros.Idfleteros + "','" + dato.Fleteros.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','946','GS - Orden de Combustible','" + dato.Ptoventa + "','0','" + Convert.ToString(dato.Litros * dato.Preciocombustible).Replace(',', '.') + "','0','0','" + idoc + "'); insert into ctacteproveedores(idproveedores, idordenescombustible, idrecibos, fecha, idconceptos, descripcion, debe, haber, ptoventa) values ('" + dato.Proveedores.Idproveedores + "','" + idoc + "','0','" + dato.Fecha.ToString("yyyy-MM-dd") + "','996','GS - Orden de Combustible','0','" + Convert.ToString(dato.Litros * dato.Preciocombustible).Replace(',', '.') + "','"+dato.Ptoventa+"'); commit;");
         }
 
         public List<OrdenesCombustible> TraerTodos()

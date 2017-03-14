@@ -16,9 +16,9 @@ namespace TransporteFortin
             set { idordenescombustible = value; }
         }
 
-        int nro;
+        string nro;
 
-        public int Nro
+        public string Nro
         {
             get { return nro; }
             set { nro = value; }
@@ -72,7 +72,7 @@ namespace TransporteFortin
             set { ptoventa = value; }
         }
 
-        public OrdenesCombustible(int i, int n, DateTime f, Proveedores p, Fleteros fl, decimal pr, decimal l, int pto)
+        public OrdenesCombustible(int i, string n, DateTime f, Proveedores p, Fleteros fl, decimal pr, decimal l, int pto)
         {
             idordenescombustible = i;
             nro = n;

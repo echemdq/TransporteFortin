@@ -43,6 +43,7 @@ namespace TransporteFortin
                         dataGridView2.Rows[x].Cells[1].Value = Convert.ToString(dr["idempresas"]);
                         dataGridView2.Rows[x].Cells[2].Value = Convert.ToString(dr["empresa"]);
                         dataGridView2.Rows[x].Cells[3].Value = Convert.ToString(dr["saldo"]);
+                        dataGridView2.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         if (x == 0)
                         {
                             label2.Text = Convert.ToString(dr["saldo"]);
@@ -58,7 +59,8 @@ namespace TransporteFortin
             if (u != null)
             {
                 em = new Empresas(u.Empresas.Idempresas, u.Empresas.Empresa, "", "", "", "", "", "", "");
-                
+                double debe = 0;
+                double haber = 0;
                 txtCliente.Text = u.Fletero;
                 txtDomicilio.Text = u.Direccion;
                 txtTelefono.Text = u.Telefono;
@@ -80,12 +82,18 @@ namespace TransporteFortin
                         dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
                         dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Concepto;
                         dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
+                        string prueba = aux.Ordenescarga.Nrocarga;
                         dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;
                         dataGridView1.Rows[x].Cells[4].Value = aux.Debe;
+                        debe = debe+Convert.ToDouble(aux.Debe);
+                        dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                        dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                        haber = haber+Convert.ToDouble(aux.Haber);
                         x++;
                     }
                 }
+
             }
         }
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -95,6 +103,8 @@ namespace TransporteFortin
                 frmBuscaFleteros frm = new frmBuscaFleteros();
                 frm.ShowDialog();
                 u = frm.u;
+                dataGridView1.Rows.Clear();
+                dataGridView2.Rows.Clear();
                 buscar1();
                 buscar(u.Empresas.Idempresas);
             }
@@ -110,7 +120,7 @@ namespace TransporteFortin
             dataGridView1.Columns[0].Name = "Fecha";
             dataGridView1.Columns[1].Name = "Concepto";
             dataGridView1.Columns[2].Name = "Descripcion";
-            dataGridView1.Columns[3].Name = "Referencia (Talon - Orden Carga)";
+            dataGridView1.Columns[3].Name = "Referencia";
             dataGridView1.Columns[4].Name = "Debe";
             dataGridView1.Columns[5].Name = "Haber";
 
@@ -156,6 +166,7 @@ namespace TransporteFortin
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            dataGridView1.Rows.Clear();
             int filaseleccionada = Convert.ToInt32(this.dataGridView2.CurrentRow.Index);
             int idfletero = Convert.ToInt32(dataGridView2[0, filaseleccionada].Value);
             int idempresa = Convert.ToInt32(dataGridView2[1, filaseleccionada].Value);
