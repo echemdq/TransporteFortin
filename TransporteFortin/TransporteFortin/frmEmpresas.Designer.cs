@@ -143,6 +143,7 @@
             this.txtEmpresas.Name = "txtEmpresas";
             this.txtEmpresas.Size = new System.Drawing.Size(253, 21);
             this.txtEmpresas.TabIndex = 0;
+            this.txtEmpresas.TextChanged += new System.EventHandler(this.txtEmpresas_TextChanged);
             // 
             // label8
             // 
@@ -203,6 +204,7 @@
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 94;
             this.label1.Text = "Empresa";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtTelefono2
             // 

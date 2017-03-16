@@ -205,6 +205,12 @@
     <Compile Include="frmListaOrdenesCarga.Designer.cs">
       <DependentUpon>frmListaOrdenesCarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMovClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMovClientes.Designer.cs">
+      <DependentUpon>frmMovClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMovFleteros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,12 @@
     </Compile>
     <Compile Include="frmprueba.Designer.cs">
       <DependentUpon>frmprueba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSaldoEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSaldoEmpresas.Designer.cs">
+      <DependentUpon>frmSaldoEmpresas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
@@ -302,6 +314,9 @@
     <EmbeddedResource Include="frmListaOrdenesCarga.resx">
       <DependentUpon>frmListaOrdenesCarga.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMovClientes.resx">
+      <DependentUpon>frmMovClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMovFleteros.resx">
       <DependentUpon>frmMovFleteros.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmprueba.resx">
       <DependentUpon>frmprueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSaldoEmpresas.resx">
+      <DependentUpon>frmSaldoEmpresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>

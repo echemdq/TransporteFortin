@@ -91,5 +91,41 @@ namespace TransporteFortin
             dataGridView1.Columns[4].Name = "Debe";
             dataGridView1.Columns[5].Name = "Haber";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (u != null)
+                {
+                    frmMovClientes frm = new frmMovClientes("d", u, ptoventa);
+                    frm.ShowDialog();
+                    dataGridView1.Rows.Clear();
+                    buscar(u.Idclientes);
+                }
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show(EX.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (u != null)
+                {
+                    frmMovClientes frm = new frmMovClientes("c", u, ptoventa);
+                    frm.ShowDialog();
+                    dataGridView1.Rows.Clear();
+                    buscar(u.Idclientes);
+                }
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show(EX.Message);
+            }
+        }
     }
 }

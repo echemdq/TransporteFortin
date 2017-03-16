@@ -41,6 +41,7 @@
             this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaCtaCteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.empresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,7 @@
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.consultaCtaCteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saldoEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -163,10 +164,18 @@
             this.aBMClientesToolStripMenuItem.Text = "ABM Clientes";
             this.aBMClientesToolStripMenuItem.Click += new System.EventHandler(this.aBMClientesToolStripMenuItem_Click);
             // 
+            // consultaCtaCteToolStripMenuItem1
+            // 
+            this.consultaCtaCteToolStripMenuItem1.Name = "consultaCtaCteToolStripMenuItem1";
+            this.consultaCtaCteToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
+            this.consultaCtaCteToolStripMenuItem1.Text = "Consulta Cta Cte";
+            this.consultaCtaCteToolStripMenuItem1.Click += new System.EventHandler(this.consultaCtaCteToolStripMenuItem1_Click);
+            // 
             // empresasToolStripMenuItem
             // 
             this.empresasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aBMEmpresasToolStripMenuItem});
+            this.aBMEmpresasToolStripMenuItem,
+            this.saldoEmpresasToolStripMenuItem});
             this.empresasToolStripMenuItem.Name = "empresasToolStripMenuItem";
             this.empresasToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.empresasToolStripMenuItem.Text = "Empresas";
@@ -174,7 +183,7 @@
             // aBMEmpresasToolStripMenuItem
             // 
             this.aBMEmpresasToolStripMenuItem.Name = "aBMEmpresasToolStripMenuItem";
-            this.aBMEmpresasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.aBMEmpresasToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.aBMEmpresasToolStripMenuItem.Text = "ABM Empresas";
             this.aBMEmpresasToolStripMenuItem.Click += new System.EventHandler(this.aBMEmpresasToolStripMenuItem_Click);
             // 
@@ -292,12 +301,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // consultaCtaCteToolStripMenuItem1
+            // saldoEmpresasToolStripMenuItem
             // 
-            this.consultaCtaCteToolStripMenuItem1.Name = "consultaCtaCteToolStripMenuItem1";
-            this.consultaCtaCteToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
-            this.consultaCtaCteToolStripMenuItem1.Text = "Consulta Cta Cte";
-            this.consultaCtaCteToolStripMenuItem1.Click += new System.EventHandler(this.consultaCtaCteToolStripMenuItem1_Click);
+            this.saldoEmpresasToolStripMenuItem.Name = "saldoEmpresasToolStripMenuItem";
+            this.saldoEmpresasToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.saldoEmpresasToolStripMenuItem.Text = "Saldo Empresas";
+            this.saldoEmpresasToolStripMenuItem.Click += new System.EventHandler(this.saldoEmpresasToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -356,6 +365,7 @@
         private System.Windows.Forms.ToolStripMenuItem emitirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultaCtaCteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaCtaCteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem saldoEmpresasToolStripMenuItem;
     }
 }
 

@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace TransporteFortin
 {
-    public partial class frmMovProveedores : Form
+    public partial class frmMovClientes : Form
     {
-        string concepto = "";
         int ptoventa = 0;
-        Proveedores pr = null;
-
-        public frmMovProveedores(string conc, Proveedores p, int pto)
+        Clientes u = null;
+        string concepto = "";
+        public frmMovClientes(string con, Clientes c, int talon)
         {
+            concepto = con;
+            u = c;
+            ptoventa = talon;
             InitializeComponent();
-            concepto = conc;
-            ptoventa = pto;
-            pr = p;
-            txtProveedor.Text = p.Proveedor;
+            txtProveedor.Text = c.Cliente;
         }
 
-        private void frmMovProveedores_Load(object sender, EventArgs e)
+        private void frmMovClientes_Load(object sender, EventArgs e)
         {
             Acceso_BD oacceso = new Acceso_BD();
             DataTable dt = oacceso.leerDatos("select * from conceptos where doc = '" + concepto + "' order by descripcion asc");
@@ -38,6 +37,27 @@ namespace TransporteFortin
             cmbConceptos.DataSource = listat;
             cmbConceptos.DisplayMember = "concepto";
             cmbConceptos.ValueMember = "idconceptos";
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Acceso_BD oacceso = new Acceso_BD();
+            string debe = "0";
+            string haber = "0";
+            if (Convert.ToDecimal(txtValor.Text) > 0)
+            {
+                if (concepto == "d")
+                {
+                    debe = txtValor.Text;
+                }
+                else
+                {
+                    haber = txtValor.Text;
+                }
+                oacceso.ActualizarBD("insert into ctacteclientes (fecha, idclientes, idconceptos, descripcion, debe, haber, ptoventa) values (now(), '" + u.Idclientes + "','" + cmbConceptos.SelectedValue + "','" + richTextBox1.Text + "','" + debe + "','" + haber + "','" + ptoventa + "')");
+                MessageBox.Show("Movimiento cargado exitosamente");
+                this.Close();
+            }
         }
 
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
@@ -74,34 +94,6 @@ namespace TransporteFortin
                 e.Handled = (IsDec) ? true : false;
             else
                 e.Handled = true;
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Acceso_BD oacceso = new Acceso_BD();
-                string debe = "0";
-                string haber = "0";
-                if (Convert.ToDecimal(txtValor.Text) > 0)
-                {
-                    if (concepto == "d")
-                    {
-                        debe = txtValor.Text;
-                    }
-                    else
-                    {
-                        haber = txtValor.Text;
-                    }
-                    oacceso.ActualizarBD("insert into ctacteproveedores (idproveedores, idordenescombustible, fecha, idconceptos, descripcion, debe, haber, ptoventa) values ('" + pr.Idproveedores + "','0',now(),'" + cmbConceptos.SelectedValue + "','" + richTextBox1.Text + "','" + debe + "','" + haber + "','" + ptoventa + "')");
-                    MessageBox.Show("Movimiento cargado exitosamente");
-                    this.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }

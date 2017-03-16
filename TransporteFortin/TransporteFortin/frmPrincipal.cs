@@ -247,5 +247,11 @@ namespace TransporteFortin
             frmCtaCteClientes frm = new frmCtaCteClientes(talon);
             frm.ShowDialog();
         }
+
+        private void saldoEmpresasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSaldoEmpresas frm = new frmSaldoEmpresas();
+            frm.ShowDialog();
+        }
     }
 }

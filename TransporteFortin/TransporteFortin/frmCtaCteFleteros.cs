@@ -46,7 +46,7 @@ namespace TransporteFortin
                         dataGridView2.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         if (x == 0)
                         {
-                            label2.Text = Convert.ToString(dr["saldo"]);
+                            //label2.Text = Convert.ToString(dr["saldo"]);
                         }
                         x++;
                     }
@@ -90,6 +90,7 @@ namespace TransporteFortin
                         dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                         dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
                         haber = haber+Convert.ToDouble(aux.Haber);
+                        label2.Text = (debe - haber).ToString();
                         x++;
                     }
                 }
@@ -140,6 +141,7 @@ namespace TransporteFortin
                 frmMovFleteros frm = new frmMovFleteros("d", u, em, ptoventa);
                 frm.ShowDialog();
                 dataGridView1.Rows.Clear();
+                dataGridView2.Rows.Clear();
                 buscar1();
                 buscar(em.Idempresas);              
             }
@@ -156,7 +158,9 @@ namespace TransporteFortin
                 frmMovFleteros frm = new frmMovFleteros("c", u, em, ptoventa);
                 frm.ShowDialog();
                 dataGridView1.Rows.Clear();
-                buscar(em.Idempresas);
+                dataGridView2.Rows.Clear();
+                buscar1();
+                buscar(em.Idempresas);  
             }
             catch (Exception EX)
             {
