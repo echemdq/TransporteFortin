@@ -241,6 +241,12 @@
     <Compile Include="frmprueba.Designer.cs">
       <DependentUpon>frmprueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReciboCtes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReciboCtes.Designer.cs">
+      <DependentUpon>frmReciboCtes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSaldoEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmprueba.resx">
       <DependentUpon>frmprueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReciboCtes.resx">
+      <DependentUpon>frmReciboCtes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSaldoEmpresas.resx">
       <DependentUpon>frmSaldoEmpresas.cs</DependentUpon>
