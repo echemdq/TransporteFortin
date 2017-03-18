@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace TransporteFortin
 {
-    public class Conceptos
+    public class ConceptosCaja
     {
-        int codigo;
+        int idconceptoscaja;
 
-        public int Codigo
+        public int Idconceptoscaja
         {
-            get { return codigo; }
-            set { codigo = value; }
+            get { return idconceptoscaja; }
+            set { idconceptoscaja = value; }
         }
         string descripcion;
 
@@ -30,13 +30,12 @@ namespace TransporteFortin
             set { doc = value; }
         }
 
-        
-
-        public Conceptos(int i, string c, string t)
+        public ConceptosCaja(int i, string c, string t)
         {
-            codigo = i;
+            idconceptoscaja = i;
             descripcion = c;
             doc = t;
         }
+              
     }
 }

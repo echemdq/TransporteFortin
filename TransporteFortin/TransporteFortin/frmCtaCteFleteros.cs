@@ -80,7 +80,7 @@ namespace TransporteFortin
                     foreach (CtaCteFleteros aux in lista)
                     {
                         dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
-                        dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Concepto;
+                        dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
                         dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
                         string prueba = aux.Ordenescarga.Nrocarga;
                         dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;

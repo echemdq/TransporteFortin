@@ -36,7 +36,7 @@ namespace TransporteFortin
             List<CtaCteClientes> lista = new List<CtaCteClientes>();
             foreach (DataRow dr in dt.Rows)
             {
-                Conceptos c = new Conceptos(0, Convert.ToString(dr["concepto"]));
+                Conceptos c = new Conceptos(0, Convert.ToString(dr["concepto"]),"");
                 OrdenesCarga o = new OrdenesCarga(0, Convert.ToString(dr["nrocarga"]), 0, 0, DateTime.Now, null, null, null, null, "", "", "", "", 0, 0, null, 0, 0, 0, "", 0, 0, 0, 0, 0, 0, 0, "", 0, null);               
                 CtaCteClientes cp = new CtaCteClientes(0, null, c, Convert.ToString(dr["descripcion"]), Convert.ToInt32(dr["ptoventa"]), o, Convert.ToDecimal(dr["debe"]), Convert.ToDecimal(dr["haber"]), Convert.ToDateTime(dr["fecha"]), null);
                 lista.Add(cp);

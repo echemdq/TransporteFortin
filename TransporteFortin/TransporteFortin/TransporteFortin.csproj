@@ -76,10 +76,13 @@
     <Compile Include="AccesosUsuarios.cs" />
     <Compile Include="BdAccesosUsuarios.cs" />
     <Compile Include="BdClientes.cs" />
+    <Compile Include="BdConceptos.cs" />
+    <Compile Include="BdConceptosCaja.cs" />
     <Compile Include="BdCtaCteClientes.cs" />
     <Compile Include="BdCtaCteFleteros.cs" />
     <Compile Include="BdCtaCteProveedores.cs" />
     <Compile Include="BdEmpresas.cs" />
+    <Compile Include="BdEstadosCheques.cs" />
     <Compile Include="BdFleteros.cs" />
     <Compile Include="BdOrdenesCarga.cs" />
     <Compile Include="BdOrdenesCombustible.cs" />
@@ -90,12 +93,16 @@
     <Compile Include="BdUsuarios.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="Conceptos.cs" />
+    <Compile Include="ConceptosCaja.cs" />
     <Compile Include="ControladoraAccesosUsuarios.cs" />
     <Compile Include="ControladoraClientes.cs" />
+    <Compile Include="ControladoraConceptos.cs" />
+    <Compile Include="ControladoraConceptosCaja.cs" />
     <Compile Include="ControladoraCtaCteClientes.cs" />
     <Compile Include="ControladoraCtaCteFleteros.cs" />
     <Compile Include="ControladoraCtaCteProveedores.cs" />
     <Compile Include="ControladoraEmpresas.cs" />
+    <Compile Include="ControladoraEstadosCheques.cs" />
     <Compile Include="ControladoraFleteros.cs" />
     <Compile Include="ControladoraOrdenesCarga.cs" />
     <Compile Include="ControladoraOrdenesCombustible.cs" />
@@ -108,6 +115,7 @@
     <Compile Include="CtaCteFleteros.cs" />
     <Compile Include="CtaCteProveedores.cs" />
     <Compile Include="Empresas.cs" />
+    <Compile Include="EstadosCheques.cs" />
     <Compile Include="Fleteros.cs" />
     <Compile Include="frmBuscaClientes.cs">
       <SubType>Form</SubType>
@@ -151,6 +159,18 @@
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConceptos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConceptos.Designer.cs">
+      <DependentUpon>frmConceptos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConceptosCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConceptosCaja.Designer.cs">
+      <DependentUpon>frmConceptosCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCtaCteClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +206,12 @@
     </Compile>
     <Compile Include="frmEmpresas.Designer.cs">
       <DependentUpon>frmEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstadosCheques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstadosCheques.Designer.cs">
+      <DependentUpon>frmEstadosCheques.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFleteros.cs">
       <SubType>Form</SubType>
@@ -293,6 +319,12 @@
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConceptos.resx">
+      <DependentUpon>frmConceptos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConceptosCaja.resx">
+      <DependentUpon>frmConceptosCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCtaCteClientes.resx">
       <DependentUpon>frmCtaCteClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpresas.resx">
       <DependentUpon>frmEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstadosCheques.resx">
+      <DependentUpon>frmEstadosCheques.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFleteros.resx">
       <DependentUpon>frmFleteros.cs</DependentUpon>
@@ -361,8 +396,11 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Accesos.datasource" />
     <None Include="Properties\DataSources\Clientes.datasource" />
+    <None Include="Properties\DataSources\Conceptos.datasource" />
+    <None Include="Properties\DataSources\ConceptosCaja.datasource" />
     <None Include="Properties\DataSources\CtaCteProveedores.datasource" />
     <None Include="Properties\DataSources\Empresas.datasource" />
+    <None Include="Properties\DataSources\EstadosCheques.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

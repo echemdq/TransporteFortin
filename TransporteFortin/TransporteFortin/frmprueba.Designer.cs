@@ -31,22 +31,23 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.accesosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idaccesosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idaccesosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accesosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idaccesosDataGridViewTextBoxColumn,
             this.accesoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.accesosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(1, 165);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(931, 173);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -54,17 +55,19 @@
             // 
             this.accesosBindingSource.DataSource = typeof(TransporteFortin.Accesos);
             // 
-            // idaccesosDataGridViewTextBoxColumn
-            // 
-            this.idaccesosDataGridViewTextBoxColumn.DataPropertyName = "Idaccesos";
-            this.idaccesosDataGridViewTextBoxColumn.HeaderText = "Idaccesos";
-            this.idaccesosDataGridViewTextBoxColumn.Name = "idaccesosDataGridViewTextBoxColumn";
-            // 
             // accesoDataGridViewTextBoxColumn
             // 
             this.accesoDataGridViewTextBoxColumn.DataPropertyName = "Acceso";
             this.accesoDataGridViewTextBoxColumn.HeaderText = "Acceso";
             this.accesoDataGridViewTextBoxColumn.Name = "accesoDataGridViewTextBoxColumn";
+            this.accesoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idaccesosDataGridViewTextBoxColumn
+            // 
+            this.idaccesosDataGridViewTextBoxColumn.DataPropertyName = "Idaccesos";
+            this.idaccesosDataGridViewTextBoxColumn.HeaderText = "Idaccesos";
+            this.idaccesosDataGridViewTextBoxColumn.Name = "idaccesosDataGridViewTextBoxColumn";
+            this.idaccesosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmprueba
             // 

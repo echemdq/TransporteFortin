@@ -40,7 +40,7 @@ namespace TransporteFortin
                     foreach (CtaCteProveedores aux in lista)
                     {
                         dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
-                        dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Concepto;
+                        dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
                         dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
                         dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescomb.Nro;
                         dataGridView1.Rows[x].Cells[4].Value = aux.Debe;

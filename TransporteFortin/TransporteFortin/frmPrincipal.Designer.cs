@@ -42,6 +42,7 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaCtaCteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reciboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saldoEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,10 @@
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.reciboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMEstadosChequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMConceptosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMConceptosCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +79,8 @@
             this.clientesToolStripMenuItem,
             this.empresasToolStripMenuItem,
             this.fleterosToolStripMenuItem,
-            this.proveedoresToolStripMenuItem});
+            this.proveedoresToolStripMenuItem,
+            this.mantenimientoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(876, 24);
@@ -172,6 +177,13 @@
             this.consultaCtaCteToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
             this.consultaCtaCteToolStripMenuItem1.Text = "Consulta Cta Cte";
             this.consultaCtaCteToolStripMenuItem1.Click += new System.EventHandler(this.consultaCtaCteToolStripMenuItem1_Click);
+            // 
+            // reciboToolStripMenuItem
+            // 
+            this.reciboToolStripMenuItem.Name = "reciboToolStripMenuItem";
+            this.reciboToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.reciboToolStripMenuItem.Text = "Recibo";
+            this.reciboToolStripMenuItem.Click += new System.EventHandler(this.reciboToolStripMenuItem_Click);
             // 
             // empresasToolStripMenuItem
             // 
@@ -310,12 +322,35 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // reciboToolStripMenuItem
+            // mantenimientoToolStripMenuItem
             // 
-            this.reciboToolStripMenuItem.Name = "reciboToolStripMenuItem";
-            this.reciboToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.reciboToolStripMenuItem.Text = "Recibo";
-            this.reciboToolStripMenuItem.Click += new System.EventHandler(this.reciboToolStripMenuItem_Click);
+            this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aBMConceptosToolStripMenuItem,
+            this.aBMConceptosCajaToolStripMenuItem,
+            this.aBMEstadosChequesToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
+            // 
+            // aBMEstadosChequesToolStripMenuItem
+            // 
+            this.aBMEstadosChequesToolStripMenuItem.Name = "aBMEstadosChequesToolStripMenuItem";
+            this.aBMEstadosChequesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aBMEstadosChequesToolStripMenuItem.Text = "ABM Estados Cheques";
+            // 
+            // aBMConceptosToolStripMenuItem
+            // 
+            this.aBMConceptosToolStripMenuItem.Name = "aBMConceptosToolStripMenuItem";
+            this.aBMConceptosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aBMConceptosToolStripMenuItem.Text = "ABM Conceptos";
+            this.aBMConceptosToolStripMenuItem.Click += new System.EventHandler(this.aBMConceptosToolStripMenuItem_Click);
+            // 
+            // aBMConceptosCajaToolStripMenuItem
+            // 
+            this.aBMConceptosCajaToolStripMenuItem.Name = "aBMConceptosCajaToolStripMenuItem";
+            this.aBMConceptosCajaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aBMConceptosCajaToolStripMenuItem.Text = "ABM Conceptos Caja";
+            this.aBMConceptosCajaToolStripMenuItem.Click += new System.EventHandler(this.aBMConceptosCajaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -376,6 +411,10 @@
         private System.Windows.Forms.ToolStripMenuItem consultaCtaCteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem saldoEmpresasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reciboToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aBMEstadosChequesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aBMConceptosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aBMConceptosCajaToolStripMenuItem;
     }
 }
 

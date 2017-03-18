@@ -259,5 +259,17 @@ namespace TransporteFortin
             frmReciboCtes frm = new frmReciboCtes("d");
             frm.ShowDialog();
         }
+
+        private void aBMConceptosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConceptos frm = new frmConceptos();
+            frm.ShowDialog();
+        }
+
+        private void aBMConceptosCajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConceptosCaja frm = new frmConceptosCaja();
+            frm.ShowDialog();
+        }
     }
 }

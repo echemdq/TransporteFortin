@@ -31,7 +31,7 @@ namespace TransporteFortin
             List<Conceptos> listat = new List<Conceptos>();
             foreach (DataRow dr in dt.Rows)
             {
-                Conceptos c = new Conceptos(Convert.ToInt32(dr["codigo"]), Convert.ToString(dr["descripcion"]));
+                Conceptos c = new Conceptos(Convert.ToInt32(dr["codigo"]), Convert.ToString(dr["descripcion"]),"");
                 listat.Add(c);
             }
             cmbConceptos.DataSource = listat;
