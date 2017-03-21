@@ -392,6 +392,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="Imagenes\Thumbs.db" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Accesos.datasource" />

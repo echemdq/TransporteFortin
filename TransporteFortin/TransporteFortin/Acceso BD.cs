@@ -63,6 +63,7 @@ namespace TransporteFortin
                 uid = "root";
                 password = "romeo1";
                 database = "transportefortin";
+                //server = "elfortin.no-ip.info";
                 server = "localhost";
                 cn1 = new MySqlConnection("Server=" + server + ";" + "DATABASE=" + database + ";" + "User ID=" + Uid + ";" + "PASSWORD=" + Password + ";");
             }

@@ -271,5 +271,11 @@ namespace TransporteFortin
             frmConceptosCaja frm = new frmConceptosCaja();
             frm.ShowDialog();
         }
+
+        private void aBMEstadosChequesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadosCheques frm = new frmEstadosCheques();
+            frm.ShowDialog();
+        }
     }
 }

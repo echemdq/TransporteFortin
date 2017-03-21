@@ -52,6 +52,10 @@
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaCtaCteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMConceptosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMConceptosCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMEstadosChequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -61,10 +65,6 @@
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMEstadosChequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMConceptosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMConceptosCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -254,6 +254,37 @@
             this.consultaCtaCteToolStripMenuItem.Text = "Consulta Cta Cte";
             this.consultaCtaCteToolStripMenuItem.Click += new System.EventHandler(this.consultaCtaCteToolStripMenuItem_Click);
             // 
+            // mantenimientoToolStripMenuItem
+            // 
+            this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aBMConceptosToolStripMenuItem,
+            this.aBMConceptosCajaToolStripMenuItem,
+            this.aBMEstadosChequesToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
+            // 
+            // aBMConceptosToolStripMenuItem
+            // 
+            this.aBMConceptosToolStripMenuItem.Name = "aBMConceptosToolStripMenuItem";
+            this.aBMConceptosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aBMConceptosToolStripMenuItem.Text = "ABM Conceptos";
+            this.aBMConceptosToolStripMenuItem.Click += new System.EventHandler(this.aBMConceptosToolStripMenuItem_Click);
+            // 
+            // aBMConceptosCajaToolStripMenuItem
+            // 
+            this.aBMConceptosCajaToolStripMenuItem.Name = "aBMConceptosCajaToolStripMenuItem";
+            this.aBMConceptosCajaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aBMConceptosCajaToolStripMenuItem.Text = "ABM Conceptos Caja";
+            this.aBMConceptosCajaToolStripMenuItem.Click += new System.EventHandler(this.aBMConceptosCajaToolStripMenuItem_Click);
+            // 
+            // aBMEstadosChequesToolStripMenuItem
+            // 
+            this.aBMEstadosChequesToolStripMenuItem.Name = "aBMEstadosChequesToolStripMenuItem";
+            this.aBMEstadosChequesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aBMEstadosChequesToolStripMenuItem.Text = "ABM Estados Cheques";
+            this.aBMEstadosChequesToolStripMenuItem.Click += new System.EventHandler(this.aBMEstadosChequesToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -321,36 +352,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // mantenimientoToolStripMenuItem
-            // 
-            this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aBMConceptosToolStripMenuItem,
-            this.aBMConceptosCajaToolStripMenuItem,
-            this.aBMEstadosChequesToolStripMenuItem});
-            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
-            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
-            // 
-            // aBMEstadosChequesToolStripMenuItem
-            // 
-            this.aBMEstadosChequesToolStripMenuItem.Name = "aBMEstadosChequesToolStripMenuItem";
-            this.aBMEstadosChequesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.aBMEstadosChequesToolStripMenuItem.Text = "ABM Estados Cheques";
-            // 
-            // aBMConceptosToolStripMenuItem
-            // 
-            this.aBMConceptosToolStripMenuItem.Name = "aBMConceptosToolStripMenuItem";
-            this.aBMConceptosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.aBMConceptosToolStripMenuItem.Text = "ABM Conceptos";
-            this.aBMConceptosToolStripMenuItem.Click += new System.EventHandler(this.aBMConceptosToolStripMenuItem_Click);
-            // 
-            // aBMConceptosCajaToolStripMenuItem
-            // 
-            this.aBMConceptosCajaToolStripMenuItem.Name = "aBMConceptosCajaToolStripMenuItem";
-            this.aBMConceptosCajaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.aBMConceptosCajaToolStripMenuItem.Text = "ABM Conceptos Caja";
-            this.aBMConceptosCajaToolStripMenuItem.Click += new System.EventHandler(this.aBMConceptosCajaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
