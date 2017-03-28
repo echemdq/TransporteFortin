@@ -118,6 +118,8 @@
             this.label28 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtConceptoFact = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupboxflet.SuspendLayout();
@@ -754,6 +756,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.txtConceptoFact);
+            this.groupBox6.Controls.Add(this.label32);
             this.groupBox6.Controls.Add(this.txtIVACte);
             this.groupBox6.Controls.Add(this.label31);
             this.groupBox6.Controls.Add(this.txtImporteCte);
@@ -771,7 +775,7 @@
             this.groupBox6.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.groupBox6.Location = new System.Drawing.Point(7, 434);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(697, 151);
+            this.groupBox6.Size = new System.Drawing.Size(697, 182);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
@@ -1092,7 +1096,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(8, 604);
+            this.richTextBox1.Location = new System.Drawing.Point(8, 635);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(853, 69);
             this.richTextBox1.TabIndex = 10;
@@ -1102,7 +1106,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(5, 588);
+            this.label28.Location = new System.Drawing.Point(5, 619);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(113, 13);
             this.label28.TabIndex = 113;
@@ -1110,7 +1114,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(741, 441);
+            this.button2.Location = new System.Drawing.Point(741, 484);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 41);
             this.button2.TabIndex = 10;
@@ -1120,7 +1124,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(741, 485);
+            this.button3.Location = new System.Drawing.Point(741, 528);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 41);
             this.button3.TabIndex = 114;
@@ -1128,11 +1132,29 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(9, 157);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(126, 13);
+            this.label32.TabIndex = 119;
+            this.label32.Text = "Concepto a facturar:";
+            // 
+            // txtConceptoFact
+            // 
+            this.txtConceptoFact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtConceptoFact.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConceptoFact.Location = new System.Drawing.Point(138, 155);
+            this.txtConceptoFact.Name = "txtConceptoFact";
+            this.txtConceptoFact.Size = new System.Drawing.Size(544, 21);
+            this.txtConceptoFact.TabIndex = 120;
+            // 
             // frmEmitirOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 685);
+            this.ClientSize = new System.Drawing.Size(872, 711);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label28);
@@ -1268,5 +1290,7 @@
         private System.Windows.Forms.ComboBox cmbUnidades;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtConceptoFact;
+        private System.Windows.Forms.Label label32;
     }
 }
