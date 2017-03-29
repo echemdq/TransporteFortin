@@ -219,6 +219,18 @@
     <Compile Include="frmFleteros.Designer.cs">
       <DependentUpon>frmFleteros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInformeEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformeEmpresas.Designer.cs">
+      <DependentUpon>frmInformeEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInformeFleteros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformeFleteros.Designer.cs">
+      <DependentUpon>frmInformeFleteros.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,11 +273,11 @@
     <Compile Include="frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmprueba.cs">
+    <Compile Include="frmInformeCtes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmprueba.Designer.cs">
-      <DependentUpon>frmprueba.cs</DependentUpon>
+    <Compile Include="frmInformeCtes.Designer.cs">
+      <DependentUpon>frmInformeCtes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReciboCtes.cs">
       <SubType>Form</SubType>
@@ -349,6 +361,12 @@
     <EmbeddedResource Include="frmFleteros.resx">
       <DependentUpon>frmFleteros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInformeEmpresas.resx">
+      <DependentUpon>frmInformeEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformeFleteros.resx">
+      <DependentUpon>frmInformeFleteros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIniciarSesion.resx">
       <DependentUpon>frmIniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,8 +388,8 @@
     <EmbeddedResource Include="frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmprueba.resx">
-      <DependentUpon>frmprueba.cs</DependentUpon>
+    <EmbeddedResource Include="frmInformeCtes.resx">
+      <DependentUpon>frmInformeCtes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReciboCtes.resx">
       <DependentUpon>frmReciboCtes.cs</DependentUpon>
@@ -393,6 +411,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
     <None Include="Imagenes\Thumbs.db" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Accesos.datasource" />
@@ -402,6 +422,7 @@
     <None Include="Properties\DataSources\CtaCteProveedores.datasource" />
     <None Include="Properties\DataSources\Empresas.datasource" />
     <None Include="Properties\DataSources\EstadosCheques.datasource" />
+    <None Include="Properties\DataSources\Fleteros.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
