@@ -226,8 +226,8 @@ namespace TransporteFortin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //frmInformeCtes frm = new frmInformeCtes();
-            //frm.ShowDialog();
+            frmRecibo frm = new frmRecibo();
+            frm.ShowDialog();
         }
 
         private void emitirToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -293,6 +293,18 @@ namespace TransporteFortin
         private void informeGralEmpresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmInformeEmpresas frm = new frmInformeEmpresas();
+            frm.ShowDialog();
+        }
+
+        private void aBMBANCOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBancos frm = new frmBancos();
+            frm.ShowDialog();
+        }
+
+        private void cuentasPropiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCuentasBanco frm = new frmCuentasBanco();
             frm.ShowDialog();
         }
     }

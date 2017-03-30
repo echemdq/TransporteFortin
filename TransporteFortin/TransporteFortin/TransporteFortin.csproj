@@ -74,13 +74,16 @@
     <Compile Include="Acceso BD.cs" />
     <Compile Include="Accesos.cs" />
     <Compile Include="AccesosUsuarios.cs" />
+    <Compile Include="Bancos.cs" />
     <Compile Include="BdAccesosUsuarios.cs" />
+    <Compile Include="BdBancos.cs" />
     <Compile Include="BdClientes.cs" />
     <Compile Include="BdConceptos.cs" />
     <Compile Include="BdConceptosCaja.cs" />
     <Compile Include="BdCtaCteClientes.cs" />
     <Compile Include="BdCtaCteFleteros.cs" />
     <Compile Include="BdCtaCteProveedores.cs" />
+    <Compile Include="BdCuentasBanco.cs" />
     <Compile Include="BdEmpresas.cs" />
     <Compile Include="BdEstadosCheques.cs" />
     <Compile Include="BdFleteros.cs" />
@@ -95,12 +98,14 @@
     <Compile Include="Conceptos.cs" />
     <Compile Include="ConceptosCaja.cs" />
     <Compile Include="ControladoraAccesosUsuarios.cs" />
+    <Compile Include="ControladoraBancos.cs" />
     <Compile Include="ControladoraClientes.cs" />
     <Compile Include="ControladoraConceptos.cs" />
     <Compile Include="ControladoraConceptosCaja.cs" />
     <Compile Include="ControladoraCtaCteClientes.cs" />
     <Compile Include="ControladoraCtaCteFleteros.cs" />
     <Compile Include="ControladoraCtaCteProveedores.cs" />
+    <Compile Include="ControladoraCuentasBanco.cs" />
     <Compile Include="ControladoraEmpresas.cs" />
     <Compile Include="ControladoraEstadosCheques.cs" />
     <Compile Include="ControladoraFleteros.cs" />
@@ -114,9 +119,16 @@
     <Compile Include="CtaCteClientes.cs" />
     <Compile Include="CtaCteFleteros.cs" />
     <Compile Include="CtaCteProveedores.cs" />
+    <Compile Include="CuentasBanco.cs" />
     <Compile Include="Empresas.cs" />
     <Compile Include="EstadosCheques.cs" />
     <Compile Include="Fleteros.cs" />
+    <Compile Include="frmBancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBancos.Designer.cs">
+      <DependentUpon>frmBancos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBuscaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +200,12 @@
     </Compile>
     <Compile Include="frmCtaCteProveedores.Designer.cs">
       <DependentUpon>frmCtaCteProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCuentasBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCuentasBanco.Designer.cs">
+      <DependentUpon>frmCuentasBanco.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmitirOC.cs">
       <SubType>Form</SubType>
@@ -279,6 +297,12 @@
     <Compile Include="frmInformeCtes.Designer.cs">
       <DependentUpon>frmInformeCtes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecibo.Designer.cs">
+      <DependentUpon>frmRecibo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReciboCtes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +334,9 @@
     <Compile Include="TiposIVA.cs" />
     <Compile Include="Unidades.cs" />
     <Compile Include="Usuarios.cs" />
+    <EmbeddedResource Include="frmBancos.resx">
+      <DependentUpon>frmBancos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBuscaClientes.resx">
       <DependentUpon>frmBuscaClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCtaCteProveedores.resx">
       <DependentUpon>frmCtaCteProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCuentasBanco.resx">
+      <DependentUpon>frmCuentasBanco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmitirOC.resx">
       <DependentUpon>frmEmitirOC.cs</DependentUpon>
@@ -391,6 +421,9 @@
     <EmbeddedResource Include="frmInformeCtes.resx">
       <DependentUpon>frmInformeCtes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRecibo.resx">
+      <DependentUpon>frmRecibo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReciboCtes.resx">
       <DependentUpon>frmReciboCtes.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,13 +446,17 @@
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
     <None Include="Imagenes\Thumbs.db" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Accesos.datasource" />
+    <None Include="Properties\DataSources\Bancos.datasource" />
     <None Include="Properties\DataSources\Clientes.datasource" />
     <None Include="Properties\DataSources\Conceptos.datasource" />
     <None Include="Properties\DataSources\ConceptosCaja.datasource" />
     <None Include="Properties\DataSources\CtaCteProveedores.datasource" />
+    <None Include="Properties\DataSources\CuentasBanco.datasource" />
     <None Include="Properties\DataSources\Empresas.datasource" />
     <None Include="Properties\DataSources\EstadosCheques.datasource" />
     <None Include="Properties\DataSources\Fleteros.datasource" />
