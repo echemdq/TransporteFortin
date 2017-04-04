@@ -23,16 +23,16 @@ namespace TransporteFortin
         private void frmReciboCtes_Load(object sender, EventArgs e)
         {
             Acceso_BD oacceso = new Acceso_BD();
-            DataTable dt = oacceso.leerDatos("select * from conceptos where doc = '" + concepto + "' order by descripcion asc");
+            DataTable dt = oacceso.leerDatos("select * from conceptoscc where doc = '" + concepto + "' and grupo = 1 order by descripcion asc");
             List<Conceptos> listat = new List<Conceptos>();
             foreach (DataRow dr in dt.Rows)
             {
-                Conceptos c = new Conceptos(Convert.ToInt32(dr["codigo"]), Convert.ToString(dr["descripcion"]),"");
+                Conceptos c = new Conceptos(Convert.ToInt32(dr["idconceptoscc"]), Convert.ToString(dr["descripcion"]),"");
                 listat.Add(c);
             }
             cmbConceptos.DataSource = listat;
-            cmbConceptos.DisplayMember = "concepto";
-            cmbConceptos.ValueMember = "idconceptos";
+            cmbConceptos.DisplayMember = "descripcion";
+            cmbConceptos.ValueMember = "idconceptoscc";
         }
 
         public string enletras(string num)
@@ -142,6 +142,12 @@ namespace TransporteFortin
                 if (u != null)
                 {
                     txtCliente.Text = u.Cliente;
+                    Acceso_BD oa = new Acceso_BD();
+                    DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + u.Idclientes + "'");
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        txtSaldo.Text = Convert.ToString(dr["saldo"]);
+                    }
                 }
             }
             catch (Exception ex)
@@ -219,6 +225,12 @@ namespace TransporteFortin
         private void txtPesosLetras_MouseLeave(object sender, EventArgs e)
         {
             toolTip1.Hide(txtPesosLetras);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmFormasPago frm = new frmFormasPago();
+            frm.ShowDialog();
         }
     }
 }

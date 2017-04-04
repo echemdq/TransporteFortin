@@ -36,22 +36,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTalon = new System.Windows.Forms.TextBox();
             this.txtNroRec = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtEfectivo = new System.Windows.Forms.TextBox();
-            this.txtCheques = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txtTransf = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.txtCheques = new System.Windows.Forms.TextBox();
+            this.txtEfectivo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtRecibimosDe = new System.Windows.Forms.TextBox();
             this.txtPesosLetras = new System.Windows.Forms.TextBox();
@@ -60,9 +58,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtComentarios = new System.Windows.Forms.RichTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,18 +123,6 @@
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 131;
             this.label1.Text = "Cliente";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(373, 45);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(41, 38);
-            this.btnBuscar.TabIndex = 132;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label3
             // 
@@ -207,56 +195,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "FORMA DE PAGO";
             // 
-            // label5
+            // txtTotal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(57, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "EFECTIVO";
+            this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(146, 123);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(112, 21);
+            this.txtTotal.TabIndex = 146;
+            this.txtTotal.Text = "0.00";
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label6
+            // label12
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(59, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "CHEQUES";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "TRANSFERENCIA";
-            // 
-            // txtEfectivo
-            // 
-            this.txtEfectivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEfectivo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEfectivo.Location = new System.Drawing.Point(146, 27);
-            this.txtEfectivo.Name = "txtEfectivo";
-            this.txtEfectivo.Size = new System.Drawing.Size(112, 21);
-            this.txtEfectivo.TabIndex = 138;
-            this.txtEfectivo.Text = "0.00";
-            this.txtEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // txtCheques
-            // 
-            this.txtCheques.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCheques.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCheques.Location = new System.Drawing.Point(146, 59);
-            this.txtCheques.Name = "txtCheques";
-            this.txtCheques.ReadOnly = true;
-            this.txtCheques.Size = new System.Drawing.Size(112, 21);
-            this.txtCheques.TabIndex = 139;
-            this.txtCheques.Text = "0.00";
-            this.txtCheques.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(78, 125);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 13);
+            this.label12.TabIndex = 145;
+            this.label12.Text = "TOTAL";
             // 
             // txtTransf
             // 
@@ -270,39 +228,56 @@
             this.txtTransf.Text = "0.00";
             this.txtTransf.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // button2
+            // txtCheques
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(264, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 26);
-            this.button2.TabIndex = 141;
-            this.button2.UseVisualStyleBackColor = false;
+            this.txtCheques.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCheques.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCheques.Location = new System.Drawing.Point(146, 59);
+            this.txtCheques.Name = "txtCheques";
+            this.txtCheques.ReadOnly = true;
+            this.txtCheques.Size = new System.Drawing.Size(112, 21);
+            this.txtCheques.TabIndex = 139;
+            this.txtCheques.Text = "0.00";
+            this.txtCheques.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // button3
+            // txtEfectivo
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(264, 88);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 26);
-            this.button3.TabIndex = 142;
-            this.button3.UseVisualStyleBackColor = false;
+            this.txtEfectivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEfectivo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEfectivo.Location = new System.Drawing.Point(146, 27);
+            this.txtEfectivo.Name = "txtEfectivo";
+            this.txtEfectivo.Size = new System.Drawing.Size(112, 21);
+            this.txtEfectivo.TabIndex = 138;
+            this.txtEfectivo.Text = "0.00";
+            this.txtEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // button5
+            // label7
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.Control;
-            this.button5.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(341, 48);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(41, 38);
-            this.button5.TabIndex = 144;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "TRANSFERENCIA";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(59, 61);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "CHEQUES";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(57, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "EFECTIVO";
             // 
             // label8
             // 
@@ -385,26 +360,52 @@
             this.txtComentarios.TabIndex = 146;
             this.txtComentarios.Text = "";
             // 
-            // label12
+            // button5
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(78, 125);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 13);
-            this.label12.TabIndex = 145;
-            this.label12.Text = "TOTAL";
+            this.button5.BackColor = System.Drawing.SystemColors.Control;
+            this.button5.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Location = new System.Drawing.Point(341, 48);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(41, 38);
+            this.button5.TabIndex = 144;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // txtTotal
+            // button3
             // 
-            this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(146, 123);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(112, 21);
-            this.txtTotal.TabIndex = 146;
-            this.txtTotal.Text = "0.00";
-            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Location = new System.Drawing.Point(264, 88);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 26);
+            this.button3.TabIndex = 142;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(264, 57);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 26);
+            this.button2.TabIndex = 141;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(373, 45);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(41, 38);
+            this.btnBuscar.TabIndex = 132;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // frmReciboCtes
             // 
@@ -433,6 +434,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Name = "frmReciboCtes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recibo de Cobro Clientes";
             this.Load += new System.EventHandler(this.frmReciboCtes_Load);
             this.groupBox1.ResumeLayout(false);

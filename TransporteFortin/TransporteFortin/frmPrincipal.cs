@@ -256,7 +256,7 @@ namespace TransporteFortin
 
         private void reciboToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmReciboCtes frm = new frmReciboCtes("d");
+            frmReciboCtes frm = new frmReciboCtes("c");
             frm.ShowDialog();
         }
 

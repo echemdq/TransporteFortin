@@ -47,3 +47,4 @@ C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteF
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmBancos.resources
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmCuentasBanco.resources
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmRecibo.resources
+C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmFormasPago.resources
