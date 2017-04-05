@@ -10,30 +10,89 @@ using System.Windows.Forms;
 
 namespace TransporteFortin
 {
-    public partial class frmReciboCtes : Form
+    public partial class frmReciboFleteros : Form
     {
         List<FormasDePago> lista = new List<FormasDePago>();
-        Clientes u = null;
-        string concepto = "";
-        public frmReciboCtes(string con)
+        Fleteros u = null;
+        Empresas em = null;
+        public frmReciboFleteros()
         {
-            concepto = con;
             InitializeComponent();
         }
 
-        private void frmReciboCtes_Load(object sender, EventArgs e)
+        public void buscar()
+        {
+            if (u != null)
+            {
+                Acceso_BD oacceso = new Acceso_BD();
+                DataTable dt = oacceso.leerDatos("select c.idempresas as idempresas, ifnull(e.empresa, 'SIN EMPRESA') as empresa, case when c.idempresas = e.idempresas then 1 else 0 end as activo from ctactefleteros c left join empresas e on c.idempresas = e.idempresas where idfleteros = '" + u.Idfleteros + "' group by idempresas, empresa order by activo desc");
+                List<Empresas> listat = new List<Empresas>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    em = new Empresas(Convert.ToInt32(dr["idempresas"]), Convert.ToString(dr["empresa"]), "", "", "", "", "", "", "");
+                    listat.Add(em);
+                }
+                cmbemp.DataSource = listat;
+                cmbemp.DisplayMember = "empresa";
+                cmbemp.ValueMember = "idempresas";          
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmBuscaFleteros frm = new frmBuscaFleteros();
+                frm.ShowDialog();
+                u = frm.u;
+                if (u != null)
+                {
+                    txtCliente.Text = u.Fletero;
+                    txtRecibimosDe.Text = u.Fletero;
+                    txtEnConcepto.Text = cmbConceptos.Text;
+                    buscar();
+                    Acceso_BD oa = new Acceso_BD();
+                    DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctactefleteros WHERE idfleteros = '" + u.Idfleteros + "' and idempresas = '"+u.Empresas.Idempresas+"'");
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        txtSaldo.Text = Convert.ToString(dr["saldo"]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Guardar: " + ex.Message);
+            }
+        }
+
+        private void frmReciboFleteros_Load(object sender, EventArgs e)
         {
             Acceso_BD oacceso = new Acceso_BD();
-            DataTable dt = oacceso.leerDatos("select * from conceptoscc where doc = '" + concepto + "' and grupo = 1 order by descripcion asc");
+            DataTable dt = oacceso.leerDatos("select * from conceptoscc where doc = 'c' and grupo = 1 order by descripcion asc");
             List<Conceptos> listat = new List<Conceptos>();
             foreach (DataRow dr in dt.Rows)
             {
-                Conceptos c = new Conceptos(Convert.ToInt32(dr["idconceptoscc"]), Convert.ToString(dr["descripcion"]),"");
+                Conceptos c = new Conceptos(Convert.ToInt32(dr["idconceptoscc"]), Convert.ToString(dr["descripcion"]), "");
                 listat.Add(c);
             }
             cmbConceptos.DataSource = listat;
             cmbConceptos.DisplayMember = "descripcion";
             cmbConceptos.ValueMember = "idconceptoscc";
+        }
+
+        private void cmbemp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Acceso_BD oa = new Acceso_BD();
+            DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctactefleteros WHERE idfleteros = '" + u.Idfleteros + "' and idempresas = '" + cmbemp.SelectedValue + "'");
+            foreach (DataRow dr in dt.Rows)
+            {
+                txtSaldo.Text = Convert.ToString(dr["saldo"]);
+            }
+        }
+
+        private void cmbConceptos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtEnConcepto.Text = cmbConceptos.Text;
         }
 
         public string enletras(string num)
@@ -128,133 +187,10 @@ namespace TransporteFortin
             return Num2Text;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (u != null)
-                {
-                    if (lista.Count > 0)
-                    {
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe cargar al menos una forma de pago");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Debe elegir un cliente al cual acreditara el pago");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                frmBuscaClientes frm = new frmBuscaClientes();
-                frm.ShowDialog();
-                u = frm.u;
-                if (u != null)
-                {
-                    txtCliente.Text = u.Cliente;
-                    txtRecibimosDe.Text = u.Cliente;
-                    txtEnConcepto.Text = cmbConceptos.Text;
-                    Acceso_BD oa = new Acceso_BD();
-                    DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + u.Idclientes + "'");
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        txtSaldo.Text = Convert.ToString(dr["saldo"]);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al Guardar: " + ex.Message);
-            }
-        }
-
-        private void txtTalon_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtNroRec_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
-                return;
-            }
-
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtEfectivo.Text.Length; i++)
-            {
-                if (txtEfectivo.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
-
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            txtTotal.Text = (Convert.ToDecimal(txtEfectivo.Text.Replace('.', ',')) + Convert.ToDecimal(txtCheques.Text.Replace('.', ',')) + Convert.ToDecimal(txtTransf.Text.Replace('.', ','))).ToString();
-            txtPesosLetras.Text = enletras(txtTotal.Text);            
-        }
-
-        private void txtPesosLetras_MouseHover(object sender, EventArgs e)
-        {
-            if (txtPesosLetras.Text != "")
-            {
-                toolTip1.Show(txtPesosLetras.Text, txtPesosLetras);
-            }
-        }
-
-        private void txtPesosLetras_MouseLeave(object sender, EventArgs e)
-        {
-            toolTip1.Hide(txtPesosLetras);
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             frmFormasPago frm = new frmFormasPago(lista);
-            frm.ShowDialog();            
+            frm.ShowDialog();
             if (frm.lista.Count > 0)
             {
                 decimal efec = 0;
@@ -282,18 +218,8 @@ namespace TransporteFortin
                 txtCheques.Text = chequep.ToString();
                 txtTransf.Text = transf.ToString();
                 txtTotal.Text = total.ToString();
-                txtPesosLetras.Text = enletras(txtTotal.Text);  
+                txtPesosLetras.Text = enletras(txtTotal.Text);
             }
-        }
-
-        private void cmbConceptos_TextChanged(object sender, EventArgs e)
-        {
-            txtEnConcepto.Text = cmbConceptos.Text;
-        }
-
-        private void cmbConceptos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtEnConcepto.Text = cmbConceptos.Text;
         }
     }
 }

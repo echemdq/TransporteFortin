@@ -44,6 +44,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtTransf = new System.Windows.Forms.TextBox();
             this.txtCheques = new System.Windows.Forms.TextBox();
             this.txtEfectivo = new System.Windows.Forms.TextBox();
@@ -59,16 +60,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtComentarios = new System.Windows.Forms.RichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(7, 619);
+            this.button1.Location = new System.Drawing.Point(166, 611);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -93,6 +91,8 @@
             this.cmbConceptos.Name = "cmbConceptos";
             this.cmbConceptos.Size = new System.Drawing.Size(281, 21);
             this.cmbConceptos.TabIndex = 128;
+            this.cmbConceptos.SelectedIndexChanged += new System.EventHandler(this.cmbConceptos_SelectedIndexChanged);
+            this.cmbConceptos.TextChanged += new System.EventHandler(this.cmbConceptos_TextChanged);
             // 
             // label2
             // 
@@ -178,8 +178,6 @@
             // 
             this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.txtTransf);
             this.groupBox1.Controls.Add(this.txtCheques);
@@ -188,7 +186,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.groupBox1.Location = new System.Drawing.Point(7, 201);
+            this.groupBox1.Location = new System.Drawing.Point(7, 193);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(407, 155);
             this.groupBox1.TabIndex = 138;
@@ -215,6 +213,18 @@
             this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 145;
             this.label12.Text = "TOTAL";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.BackgroundImage = global::TransporteFortin.Properties.Resources.cash;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(351, 59);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(41, 37);
+            this.button2.TabIndex = 141;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtTransf
             // 
@@ -246,6 +256,7 @@
             this.txtEfectivo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEfectivo.Location = new System.Drawing.Point(146, 27);
             this.txtEfectivo.Name = "txtEfectivo";
+            this.txtEfectivo.ReadOnly = true;
             this.txtEfectivo.Size = new System.Drawing.Size(112, 21);
             this.txtEfectivo.TabIndex = 138;
             this.txtEfectivo.Text = "0.00";
@@ -283,7 +294,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(9, 374);
+            this.label8.Location = new System.Drawing.Point(9, 366);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 139;
@@ -293,7 +304,7 @@
             // 
             this.txtRecibimosDe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRecibimosDe.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecibimosDe.Location = new System.Drawing.Point(7, 390);
+            this.txtRecibimosDe.Location = new System.Drawing.Point(7, 382);
             this.txtRecibimosDe.Name = "txtRecibimosDe";
             this.txtRecibimosDe.ReadOnly = true;
             this.txtRecibimosDe.Size = new System.Drawing.Size(407, 21);
@@ -303,7 +314,7 @@
             // 
             this.txtPesosLetras.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPesosLetras.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesosLetras.Location = new System.Drawing.Point(7, 440);
+            this.txtPesosLetras.Location = new System.Drawing.Point(7, 432);
             this.txtPesosLetras.Name = "txtPesosLetras";
             this.txtPesosLetras.ReadOnly = true;
             this.txtPesosLetras.Size = new System.Drawing.Size(407, 21);
@@ -315,7 +326,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 424);
+            this.label9.Location = new System.Drawing.Point(9, 416);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(130, 13);
             this.label9.TabIndex = 141;
@@ -325,7 +336,7 @@
             // 
             this.txtEnConcepto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEnConcepto.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnConcepto.Location = new System.Drawing.Point(7, 489);
+            this.txtEnConcepto.Location = new System.Drawing.Point(7, 481);
             this.txtEnConcepto.Name = "txtEnConcepto";
             this.txtEnConcepto.ReadOnly = true;
             this.txtEnConcepto.Size = new System.Drawing.Size(407, 21);
@@ -335,7 +346,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(9, 473);
+            this.label10.Location = new System.Drawing.Point(9, 465);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 13);
             this.label10.TabIndex = 143;
@@ -345,7 +356,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(9, 519);
+            this.label11.Location = new System.Drawing.Point(9, 511);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 13);
             this.label11.TabIndex = 145;
@@ -354,46 +365,11 @@
             // txtComentarios
             // 
             this.txtComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComentarios.Location = new System.Drawing.Point(7, 539);
+            this.txtComentarios.Location = new System.Drawing.Point(7, 531);
             this.txtComentarios.Name = "txtComentarios";
             this.txtComentarios.Size = new System.Drawing.Size(407, 67);
             this.txtComentarios.TabIndex = 146;
             this.txtComentarios.Text = "";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.Control;
-            this.button5.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(341, 48);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(41, 38);
-            this.button5.TabIndex = 144;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(264, 88);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 26);
-            this.button3.TabIndex = 142;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(264, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 26);
-            this.button2.TabIndex = 141;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnBuscar
             // 
@@ -461,8 +437,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtTransf;
         private System.Windows.Forms.TextBox txtCheques;

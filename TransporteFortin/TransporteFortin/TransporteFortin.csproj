@@ -287,6 +287,12 @@
     <Compile Include="frmMovProveedores.Designer.cs">
       <DependentUpon>frmMovProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOpProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpProveedores.Designer.cs">
+      <DependentUpon>frmOpProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +322,12 @@
     </Compile>
     <Compile Include="frmReciboCtes.Designer.cs">
       <DependentUpon>frmReciboCtes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReciboFleteros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReciboFleteros.Designer.cs">
+      <DependentUpon>frmReciboFleteros.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSaldoEmpresas.cs">
       <SubType>Form</SubType>
@@ -423,6 +435,9 @@
     <EmbeddedResource Include="frmMovProveedores.resx">
       <DependentUpon>frmMovProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOpProveedores.resx">
+      <DependentUpon>frmOpProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -437,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReciboCtes.resx">
       <DependentUpon>frmReciboCtes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReciboFleteros.resx">
+      <DependentUpon>frmReciboFleteros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSaldoEmpresas.resx">
       <DependentUpon>frmSaldoEmpresas.cs</DependentUpon>

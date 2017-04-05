@@ -31,32 +31,42 @@
             this.cmbFormaPago = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbefectivo = new System.Windows.Forms.GroupBox();
-            this.txtEfectivo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnefect = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.gbtransferencia = new System.Windows.Forms.GroupBox();
-            this.cmbcuentatra = new System.Windows.Forms.ComboBox();
-            this.btntransf = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txttransf = new System.Windows.Forms.TextBox();
-            this.gbcheqt = new System.Windows.Forms.GroupBox();
-            this.txtcomtran = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtcomefe = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnefect = new System.Windows.Forms.Button();
+            this.txtEfectivo = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gbtransferencia = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtnrotransf = new System.Windows.Forms.TextBox();
+            this.mskfechatra = new System.Windows.Forms.MaskedTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtcomtran = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txttransf = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btntransf = new System.Windows.Forms.Button();
+            this.cmbcuentatra = new System.Windows.Forms.ComboBox();
+            this.gbcheqt = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtsucursal = new System.Windows.Forms.TextBox();
+            this.btncf = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtnrochequet = new System.Windows.Forms.TextBox();
+            this.mskfechachequet = new System.Windows.Forms.MaskedTextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtcomchequet = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtchequet = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbcuentaT = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.mskfechachequet = new System.Windows.Forms.MaskedTextBox();
-            this.mskfechatra = new System.Windows.Forms.MaskedTextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.gbchequep = new System.Windows.Forms.GroupBox();
+            this.btncp = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtnrochequep = new System.Windows.Forms.TextBox();
             this.mskfechacheqep = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -65,16 +75,8 @@
             this.txtchequep = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cmbcuentap = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtnrochequep = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtnrochequet = new System.Windows.Forms.TextBox();
-            this.btncp = new System.Windows.Forms.Button();
-            this.btncf = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtsucursal = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtnrotransf = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbefectivo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbtransferencia.SuspendLayout();
@@ -90,7 +92,7 @@
             this.cmbFormaPago.Location = new System.Drawing.Point(111, 12);
             this.cmbFormaPago.Name = "cmbFormaPago";
             this.cmbFormaPago.Size = new System.Drawing.Size(281, 21);
-            this.cmbFormaPago.TabIndex = 129;
+            this.cmbFormaPago.TabIndex = 0;
             this.cmbFormaPago.SelectedIndexChanged += new System.EventHandler(this.cmbFormaPago_SelectedIndexChanged);
             // 
             // label1
@@ -117,17 +119,24 @@
             this.gbefectivo.TabStop = false;
             this.gbefectivo.Text = "EFECTIVO";
             // 
-            // txtEfectivo
+            // label6
             // 
-            this.txtEfectivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEfectivo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEfectivo.Location = new System.Drawing.Point(84, 28);
-            this.txtEfectivo.Name = "txtEfectivo";
-            this.txtEfectivo.Size = new System.Drawing.Size(112, 21);
-            this.txtEfectivo.TabIndex = 139;
-            this.txtEfectivo.Text = "0.00";
-            this.txtEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEfectivo_KeyPress);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(4, 58);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.TabIndex = 156;
+            this.label6.Text = "Comentario";
+            // 
+            // txtcomefe
+            // 
+            this.txtcomefe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcomefe.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcomefe.Location = new System.Drawing.Point(84, 56);
+            this.txtcomefe.Name = "txtcomefe";
+            this.txtcomefe.Size = new System.Drawing.Size(287, 21);
+            this.txtcomefe.TabIndex = 1;
             // 
             // label2
             // 
@@ -147,17 +156,34 @@
             this.btnefect.Location = new System.Drawing.Point(330, 15);
             this.btnefect.Name = "btnefect";
             this.btnefect.Size = new System.Drawing.Size(41, 38);
-            this.btnefect.TabIndex = 145;
+            this.btnefect.TabIndex = 2;
             this.btnefect.UseVisualStyleBackColor = false;
             this.btnefect.Click += new System.EventHandler(this.btnefect_Click);
             // 
+            // txtEfectivo
+            // 
+            this.txtEfectivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEfectivo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEfectivo.Location = new System.Drawing.Point(84, 28);
+            this.txtEfectivo.Name = "txtEfectivo";
+            this.txtEfectivo.Size = new System.Drawing.Size(112, 21);
+            this.txtEfectivo.TabIndex = 0;
+            this.txtEfectivo.Text = "0.00";
+            this.txtEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEfectivo_KeyPress);
+            // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 248);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(386, 122);
             this.dataGridView1.TabIndex = 146;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // gbtransferencia
             // 
@@ -179,37 +205,65 @@
             this.gbtransferencia.TabStop = false;
             this.gbtransferencia.Text = "TRANSFERENCIA";
             // 
-            // cmbcuentatra
+            // label19
             // 
-            this.cmbcuentatra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbcuentatra.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.cmbcuentatra.FormattingEnabled = true;
-            this.cmbcuentatra.Location = new System.Drawing.Point(84, 25);
-            this.cmbcuentatra.Name = "cmbcuentatra";
-            this.cmbcuentatra.Size = new System.Drawing.Size(242, 21);
-            this.cmbcuentatra.TabIndex = 148;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(-2, 108);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(85, 13);
+            this.label19.TabIndex = 166;
+            this.label19.Text = "Transferencia";
             // 
-            // btntransf
+            // txtnrotransf
             // 
-            this.btntransf.BackColor = System.Drawing.SystemColors.Control;
-            this.btntransf.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
-            this.btntransf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btntransf.Location = new System.Drawing.Point(330, 35);
-            this.btntransf.Name = "btntransf";
-            this.btntransf.Size = new System.Drawing.Size(41, 38);
-            this.btntransf.TabIndex = 149;
-            this.btntransf.UseVisualStyleBackColor = false;
-            this.btntransf.Click += new System.EventHandler(this.btntransf_Click);
+            this.txtnrotransf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnrotransf.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnrotransf.Location = new System.Drawing.Point(84, 105);
+            this.txtnrotransf.Name = "txtnrotransf";
+            this.txtnrotransf.Size = new System.Drawing.Size(100, 21);
+            this.txtnrotransf.TabIndex = 3;
+            this.txtnrotransf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnrotransf_KeyPress);
             // 
-            // label3
+            // mskfechatra
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 150;
-            this.label3.Text = "Banco";
+            this.mskfechatra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mskfechatra.Location = new System.Drawing.Point(84, 79);
+            this.mskfechatra.Mask = "00/00/0000";
+            this.mskfechatra.Name = "mskfechatra";
+            this.mskfechatra.Size = new System.Drawing.Size(100, 20);
+            this.mskfechatra.TabIndex = 2;
+            this.mskfechatra.ValidatingType = typeof(System.DateTime);
+            this.mskfechatra.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(38, 82);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 163;
+            this.label11.Text = "Fecha";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(4, 135);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.TabIndex = 154;
+            this.label5.Text = "Comentario";
+            // 
+            // txtcomtran
+            // 
+            this.txtcomtran.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcomtran.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcomtran.Location = new System.Drawing.Point(84, 133);
+            this.txtcomtran.Name = "txtcomtran";
+            this.txtcomtran.Size = new System.Drawing.Size(287, 21);
+            this.txtcomtran.TabIndex = 4;
             // 
             // label4
             // 
@@ -228,10 +282,42 @@
             this.txttransf.Location = new System.Drawing.Point(84, 52);
             this.txttransf.Name = "txttransf";
             this.txttransf.Size = new System.Drawing.Size(112, 21);
-            this.txttransf.TabIndex = 151;
+            this.txttransf.TabIndex = 1;
             this.txttransf.Text = "0.00";
             this.txttransf.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txttransf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttransf_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(36, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 150;
+            this.label3.Text = "Banco";
+            // 
+            // btntransf
+            // 
+            this.btntransf.BackColor = System.Drawing.SystemColors.Control;
+            this.btntransf.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
+            this.btntransf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btntransf.Location = new System.Drawing.Point(330, 35);
+            this.btntransf.Name = "btntransf";
+            this.btntransf.Size = new System.Drawing.Size(41, 38);
+            this.btntransf.TabIndex = 5;
+            this.btntransf.UseVisualStyleBackColor = false;
+            this.btntransf.Click += new System.EventHandler(this.btntransf_Click);
+            // 
+            // cmbcuentatra
+            // 
+            this.cmbcuentatra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbcuentatra.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbcuentatra.FormattingEnabled = true;
+            this.cmbcuentatra.Location = new System.Drawing.Point(84, 25);
+            this.cmbcuentatra.Name = "cmbcuentatra";
+            this.cmbcuentatra.Size = new System.Drawing.Size(242, 21);
+            this.cmbcuentatra.TabIndex = 0;
             // 
             // gbcheqt
             // 
@@ -255,43 +341,79 @@
             this.gbcheqt.TabStop = false;
             this.gbcheqt.Text = "CHEQUE TERCERO";
             // 
-            // txtcomtran
+            // label18
             // 
-            this.txtcomtran.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcomtran.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcomtran.Location = new System.Drawing.Point(84, 133);
-            this.txtcomtran.Name = "txtcomtran";
-            this.txtcomtran.Size = new System.Drawing.Size(287, 21);
-            this.txtcomtran.TabIndex = 153;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(26, 52);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(56, 13);
+            this.label18.TabIndex = 169;
+            this.label18.Text = "Sucursal";
             // 
-            // label5
+            // txtsucursal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 135);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
-            this.label5.TabIndex = 154;
-            this.label5.Text = "Comentario";
+            this.txtsucursal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtsucursal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsucursal.Location = new System.Drawing.Point(85, 48);
+            this.txtsucursal.Name = "txtsucursal";
+            this.txtsucursal.Size = new System.Drawing.Size(100, 21);
+            this.txtsucursal.TabIndex = 1;
+            this.txtsucursal.TextChanged += new System.EventHandler(this.txtsucursal_TextChanged);
+            this.txtsucursal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsucursal_KeyPress);
             // 
-            // label6
+            // btncf
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 58);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
-            this.label6.TabIndex = 156;
-            this.label6.Text = "Comentario";
+            this.btncf.BackColor = System.Drawing.SystemColors.Control;
+            this.btncf.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
+            this.btncf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncf.Location = new System.Drawing.Point(314, 54);
+            this.btncf.Name = "btncf";
+            this.btncf.Size = new System.Drawing.Size(41, 38);
+            this.btncf.TabIndex = 6;
+            this.btncf.UseVisualStyleBackColor = false;
+            this.btncf.Click += new System.EventHandler(this.btncf_Click);
             // 
-            // txtcomefe
+            // label17
             // 
-            this.txtcomefe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcomefe.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcomefe.Location = new System.Drawing.Point(84, 56);
-            this.txtcomefe.Name = "txtcomefe";
-            this.txtcomefe.Size = new System.Drawing.Size(287, 21);
-            this.txtcomefe.TabIndex = 155;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(4, 107);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(75, 13);
+            this.label17.TabIndex = 166;
+            this.label17.Text = "Nro Cheque";
+            // 
+            // txtnrochequet
+            // 
+            this.txtnrochequet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnrochequet.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnrochequet.Location = new System.Drawing.Point(85, 105);
+            this.txtnrochequet.MaxLength = 8;
+            this.txtnrochequet.Name = "txtnrochequet";
+            this.txtnrochequet.Size = new System.Drawing.Size(100, 21);
+            this.txtnrochequet.TabIndex = 3;
+            this.txtnrochequet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnrochequet_KeyPress);
+            // 
+            // mskfechachequet
+            // 
+            this.mskfechachequet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mskfechachequet.Location = new System.Drawing.Point(242, 105);
+            this.mskfechachequet.Mask = "00/00/0000";
+            this.mskfechachequet.Name = "mskfechachequet";
+            this.mskfechachequet.Size = new System.Drawing.Size(100, 20);
+            this.mskfechachequet.TabIndex = 4;
+            this.mskfechachequet.ValidatingType = typeof(System.DateTime);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(196, 108);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 13);
+            this.label10.TabIndex = 161;
+            this.label10.Text = "Fecha";
             // 
             // label7
             // 
@@ -310,7 +432,7 @@
             this.txtcomchequet.Location = new System.Drawing.Point(85, 135);
             this.txtcomchequet.Name = "txtcomchequet";
             this.txtcomchequet.Size = new System.Drawing.Size(287, 21);
-            this.txtcomchequet.TabIndex = 159;
+            this.txtcomchequet.TabIndex = 5;
             // 
             // label8
             // 
@@ -329,7 +451,7 @@
             this.txtchequet.Location = new System.Drawing.Point(85, 77);
             this.txtchequet.Name = "txtchequet";
             this.txtchequet.Size = new System.Drawing.Size(112, 21);
-            this.txtchequet.TabIndex = 157;
+            this.txtchequet.TabIndex = 2;
             this.txtchequet.Text = "0.00";
             this.txtchequet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtchequet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
@@ -352,48 +474,7 @@
             this.cmbcuentaT.Location = new System.Drawing.Point(85, 21);
             this.cmbcuentaT.Name = "cmbcuentaT";
             this.cmbcuentaT.Size = new System.Drawing.Size(242, 21);
-            this.cmbcuentaT.TabIndex = 155;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(196, 108);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 13);
-            this.label10.TabIndex = 161;
-            this.label10.Text = "Fecha";
-            // 
-            // mskfechachequet
-            // 
-            this.mskfechachequet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mskfechachequet.Location = new System.Drawing.Point(242, 105);
-            this.mskfechachequet.Mask = "00/00/0000";
-            this.mskfechachequet.Name = "mskfechachequet";
-            this.mskfechachequet.Size = new System.Drawing.Size(100, 20);
-            this.mskfechachequet.TabIndex = 162;
-            this.mskfechachequet.ValidatingType = typeof(System.DateTime);
-            // 
-            // mskfechatra
-            // 
-            this.mskfechatra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mskfechatra.Location = new System.Drawing.Point(84, 79);
-            this.mskfechatra.Mask = "00/00/0000";
-            this.mskfechatra.Name = "mskfechatra";
-            this.mskfechatra.Size = new System.Drawing.Size(100, 20);
-            this.mskfechatra.TabIndex = 164;
-            this.mskfechatra.ValidatingType = typeof(System.DateTime);
-            this.mskfechatra.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(38, 82);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
-            this.label11.TabIndex = 163;
-            this.label11.Text = "Fecha";
+            this.cmbcuentaT.TabIndex = 0;
             // 
             // gbchequep
             // 
@@ -415,6 +496,39 @@
             this.gbchequep.TabStop = false;
             this.gbchequep.Text = "CHEQUE PROPIO";
             // 
+            // btncp
+            // 
+            this.btncp.BackColor = System.Drawing.SystemColors.Control;
+            this.btncp.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
+            this.btncp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncp.Location = new System.Drawing.Point(331, 52);
+            this.btncp.Name = "btncp";
+            this.btncp.Size = new System.Drawing.Size(41, 38);
+            this.btncp.TabIndex = 5;
+            this.btncp.UseVisualStyleBackColor = false;
+            this.btncp.Click += new System.EventHandler(this.btncp_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(4, 103);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(75, 13);
+            this.label16.TabIndex = 164;
+            this.label16.Text = "Nro Cheque";
+            // 
+            // txtnrochequep
+            // 
+            this.txtnrochequep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnrochequep.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnrochequep.Location = new System.Drawing.Point(85, 101);
+            this.txtnrochequep.MaxLength = 8;
+            this.txtnrochequep.Name = "txtnrochequep";
+            this.txtnrochequep.Size = new System.Drawing.Size(100, 21);
+            this.txtnrochequep.TabIndex = 3;
+            this.txtnrochequep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnrochequep_KeyPress);
+            // 
             // mskfechacheqep
             // 
             this.mskfechacheqep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -422,7 +536,7 @@
             this.mskfechacheqep.Mask = "00/00/0000";
             this.mskfechacheqep.Name = "mskfechacheqep";
             this.mskfechacheqep.Size = new System.Drawing.Size(100, 20);
-            this.mskfechacheqep.TabIndex = 162;
+            this.mskfechacheqep.TabIndex = 2;
             this.mskfechacheqep.ValidatingType = typeof(System.DateTime);
             // 
             // label12
@@ -452,7 +566,7 @@
             this.txtcomcheqp.Location = new System.Drawing.Point(85, 128);
             this.txtcomcheqp.Name = "txtcomcheqp";
             this.txtcomcheqp.Size = new System.Drawing.Size(287, 21);
-            this.txtcomcheqp.TabIndex = 159;
+            this.txtcomcheqp.TabIndex = 4;
             // 
             // label14
             // 
@@ -471,7 +585,7 @@
             this.txtchequep.Location = new System.Drawing.Point(85, 48);
             this.txtchequep.Name = "txtchequep";
             this.txtchequep.Size = new System.Drawing.Size(112, 21);
-            this.txtchequep.TabIndex = 157;
+            this.txtchequep.TabIndex = 1;
             this.txtchequep.Text = "0.00";
             this.txtchequep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -493,113 +607,35 @@
             this.cmbcuentap.Location = new System.Drawing.Point(85, 21);
             this.cmbcuentap.Name = "cmbcuentap";
             this.cmbcuentap.Size = new System.Drawing.Size(242, 21);
-            this.cmbcuentap.TabIndex = 155;
+            this.cmbcuentap.TabIndex = 0;
             // 
-            // label16
+            // label36
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(4, 103);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(75, 13);
-            this.label16.TabIndex = 164;
-            this.label16.Text = "Nro Cheque";
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(33, 373);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(344, 13);
+            this.label36.TabIndex = 155;
+            this.label36.Text = "Hacer Doble Click sobre el concepto que se desea Eliminar";
             // 
-            // txtnrochequep
+            // button1
             // 
-            this.txtnrochequep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtnrochequep.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnrochequep.Location = new System.Drawing.Point(85, 101);
-            this.txtnrochequep.Name = "txtnrochequep";
-            this.txtnrochequep.Size = new System.Drawing.Size(100, 21);
-            this.txtnrochequep.TabIndex = 163;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(4, 107);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(75, 13);
-            this.label17.TabIndex = 166;
-            this.label17.Text = "Nro Cheque";
-            // 
-            // txtnrochequet
-            // 
-            this.txtnrochequet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtnrochequet.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnrochequet.Location = new System.Drawing.Point(85, 105);
-            this.txtnrochequet.Name = "txtnrochequet";
-            this.txtnrochequet.Size = new System.Drawing.Size(100, 21);
-            this.txtnrochequet.TabIndex = 165;
-            // 
-            // btncp
-            // 
-            this.btncp.BackColor = System.Drawing.SystemColors.Control;
-            this.btncp.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
-            this.btncp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncp.Location = new System.Drawing.Point(331, 52);
-            this.btncp.Name = "btncp";
-            this.btncp.Size = new System.Drawing.Size(41, 38);
-            this.btncp.TabIndex = 165;
-            this.btncp.UseVisualStyleBackColor = false;
-            this.btncp.Click += new System.EventHandler(this.btncp_Click);
-            // 
-            // btncf
-            // 
-            this.btncf.BackColor = System.Drawing.SystemColors.Control;
-            this.btncf.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
-            this.btncf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncf.Location = new System.Drawing.Point(314, 54);
-            this.btncf.Name = "btncf";
-            this.btncf.Size = new System.Drawing.Size(41, 38);
-            this.btncf.TabIndex = 167;
-            this.btncf.UseVisualStyleBackColor = false;
-            this.btncf.Click += new System.EventHandler(this.btncf_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(26, 52);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 13);
-            this.label18.TabIndex = 169;
-            this.label18.Text = "Sucursal";
-            // 
-            // txtsucursal
-            // 
-            this.txtsucursal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtsucursal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsucursal.Location = new System.Drawing.Point(85, 48);
-            this.txtsucursal.Name = "txtsucursal";
-            this.txtsucursal.Size = new System.Drawing.Size(100, 21);
-            this.txtsucursal.TabIndex = 168;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(-2, 108);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(85, 13);
-            this.label19.TabIndex = 166;
-            this.label19.Text = "Transferencia";
-            // 
-            // txtnrotransf
-            // 
-            this.txtnrotransf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtnrotransf.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnrotransf.Location = new System.Drawing.Point(84, 105);
-            this.txtnrotransf.Name = "txtnrotransf";
-            this.txtnrotransf.Size = new System.Drawing.Size(100, 21);
-            this.txtnrotransf.TabIndex = 165;
+            this.button1.Location = new System.Drawing.Point(135, 399);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 23);
+            this.button1.TabIndex = 156;
+            this.button1.Text = "Finalizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmFormasPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 389);
+            this.ClientSize = new System.Drawing.Size(402, 434);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label36);
             this.Controls.Add(this.gbchequep);
             this.Controls.Add(this.gbtransferencia);
             this.Controls.Add(this.label1);
@@ -673,5 +709,7 @@
         private System.Windows.Forms.TextBox txtsucursal;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtnrotransf;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -39,6 +39,8 @@
             this.ordenesCombustibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emitirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMBANCOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentasPropiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaCtaCteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,8 +70,8 @@
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.aBMBANCOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuentasPropiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reciboToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -149,7 +151,7 @@
             // emitirToolStripMenuItem1
             // 
             this.emitirToolStripMenuItem1.Name = "emitirToolStripMenuItem1";
-            this.emitirToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
+            this.emitirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.emitirToolStripMenuItem1.Text = "Emitir";
             this.emitirToolStripMenuItem1.Click += new System.EventHandler(this.emitirToolStripMenuItem1_Click);
             // 
@@ -161,6 +163,20 @@
             this.bancosToolStripMenuItem.Name = "bancosToolStripMenuItem";
             this.bancosToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.bancosToolStripMenuItem.Text = "Bancos";
+            // 
+            // aBMBANCOSToolStripMenuItem
+            // 
+            this.aBMBANCOSToolStripMenuItem.Name = "aBMBANCOSToolStripMenuItem";
+            this.aBMBANCOSToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.aBMBANCOSToolStripMenuItem.Text = "ABM Bancos";
+            this.aBMBANCOSToolStripMenuItem.Click += new System.EventHandler(this.aBMBANCOSToolStripMenuItem_Click);
+            // 
+            // cuentasPropiasToolStripMenuItem
+            // 
+            this.cuentasPropiasToolStripMenuItem.Name = "cuentasPropiasToolStripMenuItem";
+            this.cuentasPropiasToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.cuentasPropiasToolStripMenuItem.Text = "Cuentas Propias";
+            this.cuentasPropiasToolStripMenuItem.Click += new System.EventHandler(this.cuentasPropiasToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -237,6 +253,7 @@
             this.fleterosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aBMFleterosToolStripMenuItem,
             this.consultaCteCteToolStripMenuItem,
+            this.reciboToolStripMenuItem1,
             this.informeGralFleterosToolStripMenuItem});
             this.fleterosToolStripMenuItem.Name = "fleterosToolStripMenuItem";
             this.fleterosToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -267,7 +284,8 @@
             // 
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aBMProveedoresToolStripMenuItem,
-            this.consultaCtaCteToolStripMenuItem});
+            this.consultaCtaCteToolStripMenuItem,
+            this.ordenDePagoToolStripMenuItem});
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
@@ -385,19 +403,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // aBMBANCOSToolStripMenuItem
+            // reciboToolStripMenuItem1
             // 
-            this.aBMBANCOSToolStripMenuItem.Name = "aBMBANCOSToolStripMenuItem";
-            this.aBMBANCOSToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.aBMBANCOSToolStripMenuItem.Text = "ABM Bancos";
-            this.aBMBANCOSToolStripMenuItem.Click += new System.EventHandler(this.aBMBANCOSToolStripMenuItem_Click);
+            this.reciboToolStripMenuItem1.Name = "reciboToolStripMenuItem1";
+            this.reciboToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
+            this.reciboToolStripMenuItem1.Text = "Recibo";
+            this.reciboToolStripMenuItem1.Click += new System.EventHandler(this.reciboToolStripMenuItem1_Click);
             // 
-            // cuentasPropiasToolStripMenuItem
+            // ordenDePagoToolStripMenuItem
             // 
-            this.cuentasPropiasToolStripMenuItem.Name = "cuentasPropiasToolStripMenuItem";
-            this.cuentasPropiasToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.cuentasPropiasToolStripMenuItem.Text = "Cuentas Propias";
-            this.cuentasPropiasToolStripMenuItem.Click += new System.EventHandler(this.cuentasPropiasToolStripMenuItem_Click);
+            this.ordenDePagoToolStripMenuItem.Name = "ordenDePagoToolStripMenuItem";
+            this.ordenDePagoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.ordenDePagoToolStripMenuItem.Text = "Orden de Pago";
+            this.ordenDePagoToolStripMenuItem.Click += new System.EventHandler(this.ordenDePagoToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -467,6 +485,8 @@
         private System.Windows.Forms.ToolStripMenuItem informeGralEmpresasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMBANCOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuentasPropiasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reciboToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ordenDePagoToolStripMenuItem;
     }
 }
 
