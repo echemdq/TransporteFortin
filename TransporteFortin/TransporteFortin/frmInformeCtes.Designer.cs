@@ -30,18 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.FleterosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.EmpresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.FleterosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EmpresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FleterosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmpresasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // FleterosBindingSource
-            // 
-            this.FleterosBindingSource.DataSource = typeof(TransporteFortin.Fleteros);
             // 
             // reportViewer1
             // 
@@ -54,14 +50,18 @@
             this.reportViewer1.Size = new System.Drawing.Size(920, 474);
             this.reportViewer1.TabIndex = 0;
             // 
-            // EmpresasBindingSource
-            // 
-            this.EmpresasBindingSource.DataSource = typeof(TransporteFortin.Empresas);
-            // 
             // ClientesBindingSource
             // 
             this.ClientesBindingSource.DataSource = typeof(TransporteFortin.Clientes);
             this.ClientesBindingSource.CurrentChanged += new System.EventHandler(this.ClientesBindingSource_CurrentChanged);
+            // 
+            // FleterosBindingSource
+            // 
+            this.FleterosBindingSource.DataSource = typeof(TransporteFortin.Fleteros);
+            // 
+            // EmpresasBindingSource
+            // 
+            this.EmpresasBindingSource.DataSource = typeof(TransporteFortin.Empresas);
             // 
             // frmInformeCtes
             // 
@@ -73,9 +73,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informes";
             this.Load += new System.EventHandler(this.frmprueba_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FleterosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmpresasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

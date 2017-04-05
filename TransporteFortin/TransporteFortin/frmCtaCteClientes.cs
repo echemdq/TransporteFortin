@@ -39,17 +39,51 @@ namespace TransporteFortin
                     dataGridView1.Rows.Add(i);
                     foreach (CtaCteClientes aux in lista)
                     {
-                        dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
-                        dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
-                        dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
-                        dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;
-                        dataGridView1.Rows[x].Cells[4].Value = aux.Debe;
-                        dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
-                        debe = debe + Convert.ToDouble(aux.Debe);
-                        haber = haber + Convert.ToDouble(aux.Haber);
-                        x++;
+                        if (checkBox1.Checked)
+                        {
+                            DateTime desde;
+                            DateTime hasta;
+                            if (DateTime.TryParse(maskedTextBox1.Text, out desde) && DateTime.TryParse(maskedTextBox2.Text, out hasta))
+                            {
+                                if (desde <= hasta)
+                                {
+                                    if (aux.Fecha.Date >= desde.Date && aux.Fecha.Date <= hasta.Date)
+                                    {
+                                        dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
+                                        dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
+                                        dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
+                                        dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;
+                                        dataGridView1.Rows[x].Cells[4].Value = aux.Debe;
+                                        dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                                        dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                                        dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                                        debe = debe + Convert.ToDouble(aux.Debe);
+                                        haber = haber + Convert.ToDouble(aux.Haber);
+                                        x++;
+                                    }
+                                }
+                                else
+                                {
+                                    dataGridView1.Rows.Clear();
+                                    MessageBox.Show("Desde debe ser menor o igual a hasta");
+                                    break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
+                            dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
+                            dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
+                            dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;
+                            dataGridView1.Rows[x].Cells[4].Value = aux.Debe;
+                            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                            debe = debe + Convert.ToDouble(aux.Debe);
+                            haber = haber + Convert.ToDouble(aux.Haber);
+                            x++;
+                        }
                     }
                 }
                 label8.Text = (debe - haber).ToString();
@@ -125,6 +159,36 @@ namespace TransporteFortin
             catch (Exception EX)
             {
                 MessageBox.Show(EX.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (u != null)
+                {
+                    int chk = 0;
+                    if (checkBox1.Checked)
+                    {
+                        chk = 1;
+                    }
+                    frmInfCtaCteCtes frm = new frmInfCtaCteCtes(u.Idclientes, chk, maskedTextBox1.Text, maskedTextBox2.Text);
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (u != null)
+            {
+                dataGridView1.Rows.Clear();
+                buscar(u.Idclientes);
             }
         }
     }

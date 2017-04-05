@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace TransporteFortin
 {
@@ -25,7 +26,7 @@ namespace TransporteFortin
             Acceso_BD oa = new Acceso_BD();
             if (tipo == "cliente")
             {
-                ClientesBindingSource.DataSource = oa.leerDatos("select cliente as Cliente, direccion as Direccion, localidad as Localidad, telefono as Telefono, celular as Celular, cuit as Cuit, t.detalle as TiposIVA from clientes c inner join tiposiva t on c.idtiposiva = t.idtiposiva");
+                ClientesBindingSource.DataSource = oa.leerDatos("select cliente as Cliente, direccion as Direccion, localidad as Localidad, telefono as Telefono, celular as Celular, cuit as Cuit, t.detalle as TiposIVA from clientes c inner join tiposiva t on c.idtiposiva = t.idtiposiva"); 
                 this.reportViewer1.RefreshReport();
             }           
             

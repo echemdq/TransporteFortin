@@ -245,6 +245,12 @@
     <Compile Include="frmFormasPago.Designer.cs">
       <DependentUpon>frmFormasPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInfCtaCteCtes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfCtaCteCtes.Designer.cs">
+      <DependentUpon>frmInfCtaCteCtes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInformeEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -414,6 +420,9 @@
     <EmbeddedResource Include="frmFormasPago.resx">
       <DependentUpon>frmFormasPago.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInfCtaCteCtes.resx">
+      <DependentUpon>frmInfCtaCteCtes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInformeEmpresas.resx">
       <DependentUpon>frmInformeEmpresas.cs</DependentUpon>
     </EmbeddedResource>
@@ -477,6 +486,7 @@
     <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="Report4.rdlc" />
     <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
     <None Include="Imagenes\Thumbs.db" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Accesos.datasource" />
@@ -484,6 +494,7 @@
     <None Include="Properties\DataSources\Clientes.datasource" />
     <None Include="Properties\DataSources\Conceptos.datasource" />
     <None Include="Properties\DataSources\ConceptosCaja.datasource" />
+    <None Include="Properties\DataSources\CtaCteClientes.datasource" />
     <None Include="Properties\DataSources\CtaCteProveedores.datasource" />
     <None Include="Properties\DataSources\CuentasBanco.datasource" />
     <None Include="Properties\DataSources\Empresas.datasource" />
