@@ -38,9 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSaldo = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTalon = new System.Windows.Forms.TextBox();
-            this.txtNroRec = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -143,36 +140,6 @@
             this.txtSaldo.ReadOnly = true;
             this.txtSaldo.Size = new System.Drawing.Size(122, 21);
             this.txtSaldo.TabIndex = 134;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 167);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 135;
-            this.label4.Text = "Recibo Nro";
-            // 
-            // txtTalon
-            // 
-            this.txtTalon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTalon.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTalon.Location = new System.Drawing.Point(78, 165);
-            this.txtTalon.Name = "txtTalon";
-            this.txtTalon.Size = new System.Drawing.Size(54, 21);
-            this.txtTalon.TabIndex = 136;
-            this.txtTalon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTalon_KeyPress);
-            // 
-            // txtNroRec
-            // 
-            this.txtNroRec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNroRec.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroRec.Location = new System.Drawing.Point(138, 165);
-            this.txtNroRec.Name = "txtNroRec";
-            this.txtNroRec.Size = new System.Drawing.Size(88, 21);
-            this.txtNroRec.TabIndex = 137;
-            this.txtNroRec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroRec_KeyPress);
             // 
             // groupBox1
             // 
@@ -397,9 +364,6 @@
             this.Controls.Add(this.txtRecibimosDe);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtNroRec);
-            this.Controls.Add(this.txtTalon);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBuscar);
@@ -431,9 +395,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSaldo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTalon;
-        private System.Windows.Forms.TextBox txtNroRec;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label12;

@@ -86,6 +86,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtProductos = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtConceptoFact = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.txtIVACte = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.txtImporteCte = new System.Windows.Forms.TextBox();
@@ -118,8 +120,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtConceptoFact = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupboxflet.SuspendLayout();
@@ -199,6 +199,7 @@
             this.btnOrdenCte.TabIndex = 1;
             this.btnOrdenCte.Text = "Ordenes Pendientes: ";
             this.btnOrdenCte.UseVisualStyleBackColor = true;
+            this.btnOrdenCte.Visible = false;
             // 
             // txtSaldoCte
             // 
@@ -242,6 +243,7 @@
             this.lblCliente.Size = new System.Drawing.Size(60, 13);
             this.lblCliente.TabIndex = 83;
             this.lblCliente.Text = "lblCliente";
+            this.lblCliente.Visible = false;
             // 
             // button1
             // 
@@ -592,6 +594,7 @@
             this.lblEmpresa.Size = new System.Drawing.Size(15, 13);
             this.lblEmpresa.TabIndex = 88;
             this.lblEmpresa.Text = "0";
+            this.lblEmpresa.Visible = false;
             // 
             // btnOrdenFlet
             // 
@@ -602,6 +605,7 @@
             this.btnOrdenFlet.TabIndex = 1;
             this.btnOrdenFlet.Text = "Ordenes Pendientes: ";
             this.btnOrdenFlet.UseVisualStyleBackColor = true;
+            this.btnOrdenFlet.Visible = false;
             // 
             // txtSaldoFlet
             // 
@@ -633,6 +637,7 @@
             this.lblFletero.Size = new System.Drawing.Size(70, 13);
             this.lblFletero.TabIndex = 83;
             this.lblFletero.Text = "lblFletero";
+            this.lblFletero.Visible = false;
             // 
             // button4
             // 
@@ -779,6 +784,24 @@
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            // 
+            // txtConceptoFact
+            // 
+            this.txtConceptoFact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtConceptoFact.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConceptoFact.Location = new System.Drawing.Point(138, 155);
+            this.txtConceptoFact.Name = "txtConceptoFact";
+            this.txtConceptoFact.Size = new System.Drawing.Size(544, 21);
+            this.txtConceptoFact.TabIndex = 120;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(9, 157);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(126, 13);
+            this.label32.TabIndex = 119;
+            this.label32.Text = "Concepto a facturar:";
             // 
             // txtIVACte
             // 
@@ -1131,24 +1154,6 @@
             this.button3.Text = "VALORIZAR";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(9, 157);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(126, 13);
-            this.label32.TabIndex = 119;
-            this.label32.Text = "Concepto a facturar:";
-            // 
-            // txtConceptoFact
-            // 
-            this.txtConceptoFact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtConceptoFact.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConceptoFact.Location = new System.Drawing.Point(138, 155);
-            this.txtConceptoFact.Name = "txtConceptoFact";
-            this.txtConceptoFact.Size = new System.Drawing.Size(544, 21);
-            this.txtConceptoFact.TabIndex = 120;
             // 
             // frmEmitirOC
             // 

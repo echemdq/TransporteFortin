@@ -329,7 +329,7 @@ namespace TransporteFortin
         {
             if (f.acceder(12, idusuario))
             {
-                frmReciboCtes frm = new frmReciboCtes("c");
+                frmReciboCtes frm = new frmReciboCtes(0, idusuario, puesto, sucursal, talon);
                 frm.ShowDialog();
             }
             else

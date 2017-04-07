@@ -71,7 +71,7 @@ namespace TransporteFortin
         private void frmSaldoEmpresas_Load(object sender, EventArgs e)
         {
             dataGridView1.ColumnCount = 3;
-            dataGridView1.Columns[0].Name = "Cliente";
+            dataGridView1.Columns[0].Name = "Fletero";
             dataGridView1.Columns[1].Name = "Deudor";
             dataGridView1.Columns[2].Name = "Acreedor";
         }

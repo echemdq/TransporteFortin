@@ -32,7 +32,7 @@ namespace TransporteFortin
 
         public List<CtaCteClientes> BuscarEspecial(string dato)
         {
-            DataTable dt = oacceso.leerDatos("select f.fecha, c.descripcion as concepto, f.descripcion as descripcion, f.ptoventa, debe, haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end  as nrocarga from ctacteclientes f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos where f.idclientes = '" + dato + "'");
+            DataTable dt = oacceso.leerDatos("select f.fecha, case when f.idrecibos = 0 then c.descripcion else cc.descripcion end as concepto , f.descripcion as descripcion, f.ptoventa, debe, haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end  as nrocarga from ctacteclientes f inner join conceptos c on f.idconceptos = c.codigo left join conceptoscc cc on f.idconceptos = cc.idconceptoscc left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos where f.idclientes = '" + dato + "'");
             List<CtaCteClientes> lista = new List<CtaCteClientes>();
             foreach (DataRow dr in dt.Rows)
             {

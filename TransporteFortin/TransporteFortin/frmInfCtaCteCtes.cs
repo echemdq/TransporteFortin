@@ -41,27 +41,39 @@ namespace TransporteFortin
                 ReportParameter p1 = new ReportParameter("Saldo", saldo);
                 ReportParameter p2 = new ReportParameter("Desde", "");
                 ReportParameter p3 = new ReportParameter("Hasta", "");
+                ReportParameter p4 = new ReportParameter("Fecha", DateTime.Now.Date.ToString("dd/MM/yyyy"));
                 this.reportViewer1.LocalReport.SetParameters(p1);
                 this.reportViewer1.LocalReport.SetParameters(p2);
                 this.reportViewer1.LocalReport.SetParameters(p3);
+                this.reportViewer1.LocalReport.SetParameters(p4);
                 this.reportViewer1.RefreshReport();
             }
             else
             {
-                CtaCteClientesBindingSource.DataSource = oa.leerDatos("select cli.cliente as Clientes, date_format(f.fecha,'%d/%m/%Y') as Fecha, c.descripcion as Conceptos, f.descripcion as Descripcion, f.ptoventa, debe as Debe, haber as Haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end  as Clientes from ctacteclientes f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos left join clientes cli on f.idclientes = cli.idclientes where f.idclientes = '" + idcli + "' and date_format(f.fecha,'%d/%m/%Y') between '"+de+"' and '"+ha+"'");
-                DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + idcli + "' and date_format(fecha,'%d/%m/%Y') between '" + de + "' and '" + ha + "'");
-                string saldo = "";
-                foreach (DataRow dr in dt.Rows)
+                DateTime desde;
+                DateTime hasta;
+                if (DateTime.TryParse(de, out desde) && DateTime.TryParse(ha, out hasta))
                 {
-                    saldo = Convert.ToString(dr["saldo"]);
+                    if (desde <= hasta)
+                    {
+                        CtaCteClientesBindingSource.DataSource = oa.leerDatos("select cli.cliente as Clientes, date_format(f.fecha,'%d/%m/%Y') as Fecha, c.descripcion as Conceptos, f.descripcion as Descripcion, f.ptoventa, debe as Debe, haber as Haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end  as Clientes from ctacteclientes f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos left join clientes cli on f.idclientes = cli.idclientes where f.idclientes = '" + idcli + "' and date_format(f.fecha,'%d/%m/%Y') between '" + de + "' and '" + ha + "'");
+                        DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + idcli + "'");
+                        string saldo = "";
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            saldo = Convert.ToString(dr["saldo"]);
+                        }
+                        ReportParameter p1 = new ReportParameter("Saldo", saldo);
+                        ReportParameter p2 = new ReportParameter("Desde", de);
+                        ReportParameter p3 = new ReportParameter("Hasta", ha);
+                        ReportParameter p4 = new ReportParameter("Fecha", DateTime.Now.Date.ToString("dd/MM/yyyy"));
+                        this.reportViewer1.LocalReport.SetParameters(p1);
+                        this.reportViewer1.LocalReport.SetParameters(p2);
+                        this.reportViewer1.LocalReport.SetParameters(p3);
+                        this.reportViewer1.LocalReport.SetParameters(p4);
+                        this.reportViewer1.RefreshReport();
+                    }
                 }
-                ReportParameter p1 = new ReportParameter("Saldo", saldo);
-                ReportParameter p2 = new ReportParameter("Desde", de);
-                ReportParameter p3 = new ReportParameter("Hasta", ha);
-                this.reportViewer1.LocalReport.SetParameters(p1);
-                this.reportViewer1.LocalReport.SetParameters(p2);
-                this.reportViewer1.LocalReport.SetParameters(p3);
-                this.reportViewer1.RefreshReport();
             }
         }
 

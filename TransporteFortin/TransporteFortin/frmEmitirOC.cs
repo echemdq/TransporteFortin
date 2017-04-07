@@ -268,6 +268,12 @@ namespace TransporteFortin
                     lblCliente.Text = Convert.ToString(u.Idclientes);
                     lblDireccionCte.Text = "Direccion: "+ u.Direccion;
                     txtCliente.Text = u.Cliente;
+                    Acceso_BD oa = new Acceso_BD();
+                    DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + u.Idclientes + "'");
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        txtSaldoCte.Text = Convert.ToString(dr["saldo"]);
+                    }
                 }
             }
             catch (Exception ex)
@@ -299,6 +305,20 @@ namespace TransporteFortin
                     txtChapaA.Text = u.Chapaacoplado;
                     txtChapaC.Text = u.Chapacamion;
                     txtDocumento.Text = u.Documento.ToString();
+                    Acceso_BD oa = new Acceso_BD();
+                    DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctactefleteros  WHERE idfleteros = '" + u.Idfleteros + "' and idempresas = '" + u.Empresas.Idempresas + "'");
+                    
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        txtSaldoFlet.Text = Convert.ToString(dr["saldo"]);
+                    }
+
+                    dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctactefleteros  WHERE idempresas = '" + u.Empresas.Idempresas + "'");
+
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        txtSaldoEmp.Text = Convert.ToString(dr["saldo"]);
+                    }
                 }
             }
             catch (Exception ex)

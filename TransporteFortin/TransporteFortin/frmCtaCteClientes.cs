@@ -61,6 +61,12 @@ namespace TransporteFortin
                                         haber = haber + Convert.ToDouble(aux.Haber);
                                         x++;
                                     }
+                                    else
+                                    {
+                                        debe = debe + Convert.ToDouble(aux.Debe);
+                                        haber = haber + Convert.ToDouble(aux.Haber);
+                                        x++;
+                                    }
                                 }
                                 else
                                 {

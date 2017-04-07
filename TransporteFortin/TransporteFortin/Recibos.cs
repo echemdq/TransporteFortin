@@ -72,7 +72,50 @@ namespace TransporteFortin
             set { ptoventa = value; }
         }
 
-        public Recibos(int i, DateTime f, Conceptos c, int n, decimal im, Fleteros fl, string co, int p)
+        Clientes clientes;
+
+        public Clientes Clientes
+        {
+            get { return clientes; }
+            set { clientes = value; }
+        }
+
+        Proveedores proveedores;
+
+        public Proveedores Proveedores
+        {
+            get { return proveedores; }
+            set { proveedores = value; }
+        }
+        int puesto;
+
+        public int Puesto
+        {
+            get { return puesto; }
+            set { puesto = value; }
+        }
+        Usuarios usuarios;
+
+        public Usuarios Usuarios
+        {
+            get { return usuarios; }
+            set { usuarios = value; }
+        }
+        Sucursales sucursales;
+
+        public Sucursales Sucursales
+        {
+            get { return sucursales; }
+            set { sucursales = value; }
+        }
+        int tipo;
+
+        public int Tipo
+        {
+            get { return tipo; }
+            set { tipo = value; }
+        }
+        public Recibos(int i, DateTime f, Conceptos c, int n, decimal im, Fleteros fl, string co, int p, Clientes cl, Proveedores prov, int pu, Usuarios usu, Sucursales suc, int t)
         {
             idrecibos = i;
             fecha = f;
@@ -82,6 +125,12 @@ namespace TransporteFortin
             fleteros = fl;
             comentarios = co;
             ptoventa = p;
+            clientes = cl;
+            proveedores = prov;
+            puesto = pu;
+            usuarios = usu;
+            sucursales = suc;
+            tipo = t;
         }
     }
 }

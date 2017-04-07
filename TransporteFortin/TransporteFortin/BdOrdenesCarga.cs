@@ -12,7 +12,7 @@ namespace TransporteFortin
         public void Agregar(OrdenesCarga dato)
         {
            DataTable dt = new DataTable();
-           dt = oacceso.leerDatos("start transaction; update contadores set nro = nro + 1 where detalle = 'ocarga' and ptoventa = '"+dato.Ptoventa+"'; select nro from contadores where detalle = 'ocarga'; commit;");
+           dt = oacceso.leerDatos("start transaction; update contadores set nro = nro + 1 where detalle = 'ocarga' and ptoventa = '" + dato.Ptoventa + "'; select nro from contadores where detalle = 'ocarga' and ptoventa = '" + dato.Ptoventa + "'; commit;");
            string nro = "";
            foreach (DataRow dr in dt.Rows)
            {

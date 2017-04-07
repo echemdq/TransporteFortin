@@ -220,6 +220,7 @@
             this.txtnrotransf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnrotransf.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnrotransf.Location = new System.Drawing.Point(84, 105);
+            this.txtnrotransf.MaxLength = 8;
             this.txtnrotransf.Name = "txtnrotransf";
             this.txtnrotransf.Size = new System.Drawing.Size(100, 21);
             this.txtnrotransf.TabIndex = 3;
@@ -398,10 +399,10 @@
             // mskfechachequet
             // 
             this.mskfechachequet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mskfechachequet.Location = new System.Drawing.Point(242, 105);
+            this.mskfechachequet.Location = new System.Drawing.Point(296, 105);
             this.mskfechachequet.Mask = "00/00/0000";
             this.mskfechachequet.Name = "mskfechachequet";
-            this.mskfechachequet.Size = new System.Drawing.Size(100, 20);
+            this.mskfechachequet.Size = new System.Drawing.Size(69, 20);
             this.mskfechachequet.TabIndex = 4;
             this.mskfechachequet.ValidatingType = typeof(System.DateTime);
             // 
@@ -411,9 +412,9 @@
             this.label10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(196, 108);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 13);
+            this.label10.Size = new System.Drawing.Size(94, 13);
             this.label10.TabIndex = 161;
-            this.label10.Text = "Fecha";
+            this.label10.Text = "Fecha Deposito";
             // 
             // label7
             // 
@@ -532,10 +533,10 @@
             // mskfechacheqep
             // 
             this.mskfechacheqep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mskfechacheqep.Location = new System.Drawing.Point(85, 74);
+            this.mskfechacheqep.Location = new System.Drawing.Point(97, 75);
             this.mskfechacheqep.Mask = "00/00/0000";
             this.mskfechacheqep.Name = "mskfechacheqep";
-            this.mskfechacheqep.Size = new System.Drawing.Size(100, 20);
+            this.mskfechacheqep.Size = new System.Drawing.Size(73, 20);
             this.mskfechacheqep.TabIndex = 2;
             this.mskfechacheqep.ValidatingType = typeof(System.DateTime);
             // 
@@ -543,11 +544,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(39, 77);
+            this.label12.Location = new System.Drawing.Point(1, 79);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 13);
+            this.label12.Size = new System.Drawing.Size(94, 13);
             this.label12.TabIndex = 161;
-            this.label12.Text = "Fecha";
+            this.label12.Text = "Fecha Deposito";
             // 
             // label13
             // 
@@ -633,7 +634,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 434);
+            this.ClientSize = new System.Drawing.Size(400, 434);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.gbchequep);

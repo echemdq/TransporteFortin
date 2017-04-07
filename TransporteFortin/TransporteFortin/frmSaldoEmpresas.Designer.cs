@@ -114,7 +114,7 @@
             this.Controls.Add(this.txtEmpresas);
             this.Controls.Add(this.label1);
             this.Name = "frmSaldoEmpresas";
-            this.Text = "frmSaldoEmpresas";
+            this.Text = "Saldo Empresas";
             this.Load += new System.EventHandler(this.frmSaldoEmpresas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

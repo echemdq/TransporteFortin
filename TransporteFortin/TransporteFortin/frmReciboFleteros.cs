@@ -53,6 +53,7 @@ namespace TransporteFortin
                     buscar();
                     Acceso_BD oa = new Acceso_BD();
                     DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctactefleteros WHERE idfleteros = '" + u.Idfleteros + "' and idempresas = '"+u.Empresas.Idempresas+"'");
+                    cmbemp.SelectedValue = u.Empresas.Idempresas;
                     foreach (DataRow dr in dt.Rows)
                     {
                         txtSaldo.Text = Convert.ToString(dr["saldo"]);

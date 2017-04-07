@@ -15,10 +15,20 @@ namespace TransporteFortin
         List<FormasDePago> lista = new List<FormasDePago>();
         Clientes u = null;
         string concepto = "";
-        public frmReciboCtes(string con)
+        int idrecibo = 0;
+        int idusuario = 0;
+        int puesto = 0;
+        int sucursal = 0;
+        int talon = 0;
+        public frmReciboCtes(int idreci, int idusu, int pue, int suc, int tal)
         {
-            concepto = con;
+            concepto = "c";
             InitializeComponent();
+            idrecibo = idreci;
+            idusuario = idusu;
+            puesto = pue;
+            sucursal = suc;
+            talon = tal;
         }
 
         private void frmReciboCtes_Load(object sender, EventArgs e)
@@ -33,7 +43,7 @@ namespace TransporteFortin
             }
             cmbConceptos.DataSource = listat;
             cmbConceptos.DisplayMember = "descripcion";
-            cmbConceptos.ValueMember = "idconceptoscc";
+            cmbConceptos.ValueMember = "codigo";
         }
 
         public string enletras(string num)
@@ -136,7 +146,16 @@ namespace TransporteFortin
                 {
                     if (lista.Count > 0)
                     {
-
+                        Conceptos conc = new Conceptos(Convert.ToInt32(cmbConceptos.SelectedValue), "", "");
+                        Fleteros flet = new Fleteros(0, 0, "", "", "", "", "", "", "", "", null, "", null, "", "", "", null);
+                        Clientes cli = u;
+                        Proveedores prov = new Proveedores(0, "", "", "", 0, "", "", "", "", "", "", null, "", 0);
+                        Sucursales suc = new Sucursales(sucursal, "");
+                        Usuarios usu = new Usuarios(idusuario, "", "");
+                        Recibos r = new Recibos(0, dateTimePicker1.Value, conc, 0, Convert.ToDecimal(txtTotal.Text), flet, txtComentarios.Text, talon, cli, prov, puesto, usu, suc, 0);
+                        BdRecibos bd = new BdRecibos();
+                        bd.Agregar(r);
+                        MessageBox.Show("OK");
                     }
                     else
                     {
@@ -145,7 +164,7 @@ namespace TransporteFortin
                 }
                 else
                 {
-                    MessageBox.Show("Debe elegir un cliente al cual acreditara el pago");
+                    MessageBox.Show("Debe elegir un cliente al cual acreditar el pago");
                 }
             }
             catch (Exception ex)

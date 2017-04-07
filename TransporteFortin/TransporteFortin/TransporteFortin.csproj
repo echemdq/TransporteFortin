@@ -90,6 +90,7 @@
     <Compile Include="BdOrdenesCarga.cs" />
     <Compile Include="BdOrdenesCombustible.cs" />
     <Compile Include="BdProveedores.cs" />
+    <Compile Include="BdRecibos.cs" />
     <Compile Include="BdTiposCamion.cs" />
     <Compile Include="BdTiposIVAS.cs" />
     <Compile Include="BdUnidades.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="ControladoraOrdenesCarga.cs" />
     <Compile Include="ControladoraOrdenesCombustible.cs" />
     <Compile Include="ControladoraProveedores.cs" />
+    <Compile Include="ControladoraRecibos.cs" />
     <Compile Include="ControladoraTiposCamion.cs" />
     <Compile Include="ControladoraTiposIVA.cs" />
     <Compile Include="ControladoraUnidades.cs" />
