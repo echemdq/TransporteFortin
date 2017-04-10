@@ -102,6 +102,7 @@ namespace TransporteFortin
                         dataGridView1.Rows[x].Cells[12].Value = aux.Comentario;
                         x++;
                     }
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
             }
         }
@@ -145,7 +146,7 @@ namespace TransporteFortin
             string direccion = dataGridView1[2, filaseleccionada].Value.ToString();
             TiposIVA tipoiv = new TiposIVA(idtipoiva, "","");
             string localidad = dataGridView1[3, filaseleccionada].Value.ToString();
-            int cp = Convert.ToInt32(dataGridView1[4, filaseleccionada].Value);
+            string cp = Convert.ToString(dataGridView1[4, filaseleccionada].Value);
             string telefono = dataGridView1[5, filaseleccionada].Value.ToString();
             string celular = dataGridView1[6, filaseleccionada].Value.ToString();
             string fax = dataGridView1[7, filaseleccionada].Value.ToString();

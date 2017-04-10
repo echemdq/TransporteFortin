@@ -51,6 +51,7 @@ namespace TransporteFortin
                         haber = haber + Convert.ToDouble(aux.Haber);
                         x++;
                     }
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
                 label8.Text = (debe - haber).ToString();
             }

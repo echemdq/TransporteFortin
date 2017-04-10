@@ -240,8 +240,18 @@ namespace TransporteFortin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmRecibo frm = new frmRecibo();
-            frm.ShowDialog();
+            //frmRecibo frm = new frmRecibo();
+            //frm.ShowDialog();
+            
+                Acceso_BD oa = new Acceso_BD();
+                DataTable dt = oa.leerDatos("select f.idfleteros as idfle,e.idempresas as idempresas from transportefortin.fleteros f left join transportefortin.empresas e on e.codigo=f.empresa  where f.empresa<>0 and e.idempresas is not null");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    int idemp = Convert.ToInt32(dr["idempresas"]);
+                    int idfle = Convert.ToInt32(dr["idfle"]);
+                    oa.ActualizarBD("update transportefortin.fleteros set idempresas = '" + idemp + "' where idfleteros = '" + idfle + "'");
+                }
+           
         }
 
         private void emitirToolStripMenuItem1_Click(object sender, EventArgs e)

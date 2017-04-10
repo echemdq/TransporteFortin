@@ -58,6 +58,8 @@
             this.txtComentarios = new System.Windows.Forms.RichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.cmbcaja = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -350,11 +352,33 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // cmbcaja
+            // 
+            this.cmbcaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbcaja.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbcaja.FormattingEnabled = true;
+            this.cmbcaja.Location = new System.Drawing.Point(80, 11);
+            this.cmbcaja.Name = "cmbcaja";
+            this.cmbcaja.Size = new System.Drawing.Size(51, 21);
+            this.cmbcaja.TabIndex = 147;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(33, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 148;
+            this.label4.Text = "Caja";
+            // 
             // frmReciboCtes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 654);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbcaja);
             this.Controls.Add(this.txtComentarios);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtEnConcepto);
@@ -414,5 +438,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RichTextBox txtComentarios;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ComboBox cmbcaja;
+        private System.Windows.Forms.Label label4;
     }
 }

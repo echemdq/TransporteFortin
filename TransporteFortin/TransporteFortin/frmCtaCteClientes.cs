@@ -92,6 +92,7 @@ namespace TransporteFortin
                         }
                     }
                 }
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 label8.Text = (debe - haber).ToString();
             }
         }

@@ -13,6 +13,7 @@ namespace TransporteFortin
     public partial class frmReciboCtes : Form
     {
         List<FormasDePago> lista = new List<FormasDePago>();
+        BdRecibos bd = new BdRecibos();
         Clientes u = null;
         string concepto = "";
         int idrecibo = 0;
@@ -44,6 +45,11 @@ namespace TransporteFortin
             cmbConceptos.DataSource = listat;
             cmbConceptos.DisplayMember = "descripcion";
             cmbConceptos.ValueMember = "codigo";
+
+            dt = oacceso.leerDatos("select * from cajas");
+            cmbcaja.DataSource = dt;
+            cmbcaja.DisplayMember = "nrocaja";
+            cmbcaja.ValueMember = "idcajas";
         }
 
         public string enletras(string num)
@@ -152,9 +158,8 @@ namespace TransporteFortin
                         Proveedores prov = new Proveedores(0, "", "", "", 0, "", "", "", "", "", "", null, "", 0);
                         Sucursales suc = new Sucursales(sucursal, "");
                         Usuarios usu = new Usuarios(idusuario, "", "");
-                        Recibos r = new Recibos(0, dateTimePicker1.Value, conc, 0, Convert.ToDecimal(txtTotal.Text), flet, txtComentarios.Text, talon, cli, prov, puesto, usu, suc, 0);
-                        BdRecibos bd = new BdRecibos();
-                        bd.Agregar(r);
+                        Recibos r = new Recibos(0, dateTimePicker1.Value, conc, 0, Convert.ToDecimal(txtTotal.Text), flet, txtComentarios.Text, talon, cli, prov, puesto, usu, suc, 0);                        
+                        bd.Agregar(r, lista,Convert.ToInt32(cmbcaja.SelectedValue));
                         MessageBox.Show("OK");
                     }
                     else

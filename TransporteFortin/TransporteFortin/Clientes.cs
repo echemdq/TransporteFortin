@@ -36,9 +36,9 @@ namespace TransporteFortin
             get { return localidad; }
             set { localidad = value; }
         }
-        int cp;
+        string cp;
 
-        public int Cp
+        public string Cp
         {
             get { return cp; }
             set { cp = value; }
@@ -102,7 +102,7 @@ namespace TransporteFortin
 
 
 
-        public Clientes(int i, string c, string d, string l, int cp1, string t, string cel, string f, string m, string cont, string cu, TiposIVA ti, string com)
+        public Clientes(int i, string c, string d, string l, string cp1, string t, string cel, string f, string m, string cont, string cu, TiposIVA ti, string com)
         {
             idclientes = i;
             cliente = c;

@@ -112,7 +112,7 @@ namespace TransporteFortin
                     {
                         txtCP.Text = "0";
                     }
-                    Clientes r = new Clientes(0, txtCliente.Text, txtDomicilio.Text,txtLocalidad.Text,Convert.ToInt32(txtCP.Text),txtTelefono.Text,txtCelular.Text,txtFax.Text,txtMail.Text,txtContacto.Text,maskedTextBox1.Text,tipoiva,txtComentarios.Text);                    
+                    Clientes r = new Clientes(0, txtCliente.Text, txtDomicilio.Text,txtLocalidad.Text,Convert.ToString(txtCP.Text),txtTelefono.Text,txtCelular.Text,txtFax.Text,txtMail.Text,txtContacto.Text,maskedTextBox1.Text,tipoiva,txtComentarios.Text);                    
                     if (lblId.Text == "")
                     {
                         controlc.Agregar(r);                        
@@ -176,7 +176,7 @@ namespace TransporteFortin
             {
                 if (lblId.Text != "")
                 {
-                    Clientes c = new Clientes(Convert.ToInt32(lblId.Text), "", "", "", 0, "", "", "", "", "", "", null, "");
+                    Clientes c = new Clientes(Convert.ToInt32(lblId.Text), "", "", "", "", "", "", "", "", "", "", null, "");
                     DialogResult dialogResult = MessageBox.Show("Esta seguro de eliminar el Cliente: " + txtCliente.Text, "Eliminar Cliente", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {

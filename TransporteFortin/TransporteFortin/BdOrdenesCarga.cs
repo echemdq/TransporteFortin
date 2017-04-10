@@ -76,7 +76,7 @@ namespace TransporteFortin
             List<OrdenesCarga> lista = new List<OrdenesCarga>();
             foreach (DataRow dr in dt.Rows)
             {
-                c = new Clientes(Convert.ToInt32(dr["idclientes"]), Convert.ToString(dr["cliente"]), "", "", 0, "", "", "", "", "", "", null, "");
+                c = new Clientes(Convert.ToInt32(dr["idclientes"]), Convert.ToString(dr["cliente"]), "", "", "", "", "", "", "", "", "", null, "");
                 f = new Fleteros(Convert.ToInt32(dr["idfleteros"]), 0, Convert.ToString(dr["fletero"]), "", "", "", "", "", "", "", null, "", null, "", "", "", null);
                 s = new Sucursales(Convert.ToInt32(dr["idsucursales"]), Convert.ToString(dr["sucursal"]));
                 u = new Usuarios(Convert.ToInt32(dr["idusuarios"]), "", "");

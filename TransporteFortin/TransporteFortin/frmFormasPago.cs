@@ -370,7 +370,6 @@ namespace TransporteFortin
                 txtchequet.Text = "0.00";
                 txtcomchequet.Text = "";
                 mskfechachequet.Text = "";
-                txtsucursal.Text = "";
                 txtnrochequet.Text = "";
                 }
                 else

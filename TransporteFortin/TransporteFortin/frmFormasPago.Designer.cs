@@ -50,8 +50,6 @@
             this.btntransf = new System.Windows.Forms.Button();
             this.cmbcuentatra = new System.Windows.Forms.ComboBox();
             this.gbcheqt = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtsucursal = new System.Windows.Forms.TextBox();
             this.btncf = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtnrochequet = new System.Windows.Forms.TextBox();
@@ -322,8 +320,6 @@
             // 
             // gbcheqt
             // 
-            this.gbcheqt.Controls.Add(this.label18);
-            this.gbcheqt.Controls.Add(this.txtsucursal);
             this.gbcheqt.Controls.Add(this.btncf);
             this.gbcheqt.Controls.Add(this.label17);
             this.gbcheqt.Controls.Add(this.txtnrochequet);
@@ -341,27 +337,6 @@
             this.gbcheqt.TabIndex = 153;
             this.gbcheqt.TabStop = false;
             this.gbcheqt.Text = "CHEQUE TERCERO";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(26, 52);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 13);
-            this.label18.TabIndex = 169;
-            this.label18.Text = "Sucursal";
-            // 
-            // txtsucursal
-            // 
-            this.txtsucursal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtsucursal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsucursal.Location = new System.Drawing.Point(85, 48);
-            this.txtsucursal.Name = "txtsucursal";
-            this.txtsucursal.Size = new System.Drawing.Size(100, 21);
-            this.txtsucursal.TabIndex = 1;
-            this.txtsucursal.TextChanged += new System.EventHandler(this.txtsucursal_TextChanged);
-            this.txtsucursal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsucursal_KeyPress);
             // 
             // btncf
             // 
@@ -399,7 +374,7 @@
             // mskfechachequet
             // 
             this.mskfechachequet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mskfechachequet.Location = new System.Drawing.Point(296, 105);
+            this.mskfechachequet.Location = new System.Drawing.Point(114, 51);
             this.mskfechachequet.Mask = "00/00/0000";
             this.mskfechachequet.Name = "mskfechachequet";
             this.mskfechachequet.Size = new System.Drawing.Size(69, 20);
@@ -410,7 +385,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(196, 108);
+            this.label10.Location = new System.Drawing.Point(14, 54);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(94, 13);
             this.label10.TabIndex = 161;
@@ -634,7 +609,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 434);
+            this.ClientSize = new System.Drawing.Size(399, 434);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.gbchequep);
@@ -706,8 +681,6 @@
         private System.Windows.Forms.TextBox txtnrochequet;
         private System.Windows.Forms.Button btncf;
         private System.Windows.Forms.Button btncp;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtsucursal;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtnrotransf;
         private System.Windows.Forms.Label label36;

@@ -42,7 +42,7 @@ namespace TransporteFortin
             foreach (DataRow dr in dt.Rows)
             {
                 tipod = new TiposIVA(Convert.ToInt32(dr["idtiposiva"]), "","");
-                cliente = new Clientes(Convert.ToInt32(dr["idclientes"]), Convert.ToString(dr["cliente"]), Convert.ToString(dr["direccion"]), Convert.ToString(dr["localidad"]), Convert.ToInt32(dr["cp"]), Convert.ToString(dr["telefono"]), Convert.ToString(dr["celular"]), Convert.ToString(dr["fax"]), Convert.ToString(dr["mail"]), Convert.ToString(dr["contacto"]), Convert.ToString(dr["cuit"]), tipod, Convert.ToString(dr["comentario"]));
+                cliente = new Clientes(Convert.ToInt32(dr["idclientes"]), Convert.ToString(dr["cliente"]), Convert.ToString(dr["direccion"]), Convert.ToString(dr["localidad"]), Convert.ToString(dr["cp"]), Convert.ToString(dr["telefono"]), Convert.ToString(dr["celular"]), Convert.ToString(dr["fax"]), Convert.ToString(dr["mail"]), Convert.ToString(dr["contacto"]), Convert.ToString(dr["cuit"]), tipod, Convert.ToString(dr["comentario"]));
                 lista.Add(cliente);
             }
             return lista;

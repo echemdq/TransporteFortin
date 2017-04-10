@@ -113,6 +113,7 @@ namespace TransporteFortin
                         dataGridView1.Rows[x].Cells[8].Value = aux.Comentario;
                         x++;
                     }
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
             }
         }

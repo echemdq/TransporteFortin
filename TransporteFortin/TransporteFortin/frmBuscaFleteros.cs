@@ -105,8 +105,10 @@ namespace TransporteFortin
                         dataGridView1.Rows[x].Cells[15].Value = aux.Empresas.Empresa;
                         dataGridView1.Rows[x].Cells[16].Value = aux.Cuit;
                         dataGridView1.Rows[x].Cells[17].Value = aux.TiposIVA.IdTiposIVA;
+
                         x++;
                     }
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
             }
         }
@@ -152,7 +154,7 @@ namespace TransporteFortin
             int idempresa = Convert.ToInt32(dataGridView1[10, filaseleccionada].Value);
             Empresas emp = new Empresas(idempresa, dataGridView1[15, filaseleccionada].Value.ToString(),"","","","","","","");
             string localidad = dataGridView1[3, filaseleccionada].Value.ToString();
-            int cp = Convert.ToInt32(dataGridView1[4, filaseleccionada].Value);
+            string cp = Convert.ToString(dataGridView1[4, filaseleccionada].Value);
             string telefono = dataGridView1[5, filaseleccionada].Value.ToString();
             string celular = dataGridView1[6, filaseleccionada].Value.ToString();
             string fax = dataGridView1[7, filaseleccionada].Value.ToString();

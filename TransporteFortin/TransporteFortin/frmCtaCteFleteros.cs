@@ -50,6 +50,7 @@ namespace TransporteFortin
                         }
                         x++;
                     }
+                    dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
             }
         }
@@ -93,6 +94,7 @@ namespace TransporteFortin
                         label2.Text = (debe - haber).ToString();
                         x++;
                     }
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
 
             }
@@ -108,6 +110,7 @@ namespace TransporteFortin
                 dataGridView2.Rows.Clear();
                 buscar1();
                 buscar(u.Empresas.Idempresas);
+
             }
             catch (Exception ex)
             {
