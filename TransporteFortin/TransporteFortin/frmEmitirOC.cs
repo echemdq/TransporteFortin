@@ -636,7 +636,7 @@ namespace TransporteFortin
                 {
                     Sucursales sucursales = new Sucursales(Convert.ToInt32(cmbSucursal.SelectedValue), "");
                     Clientes cliente = new Clientes(Convert.ToInt32(lblCliente.Text), txtCliente.Text, "", "", "", "", "", "", "", "", "", null, "");
-                    Fleteros fletero = new Fleteros(Convert.ToInt32(lblFletero.Text), 0, "", "", "", "", "", "", "", "", null, "", null, "", "", "", null);
+                    Fleteros fletero = new Fleteros(Convert.ToInt32(lblFletero.Text), 0, "", "", "", "", "", "", "", "", null, "", null, "", "", "", null,"");
                     Empresas empresa = new Empresas(Convert.ToInt32(lblEmpresa.Text), "", "", "", "", "", "", "", "");
                     Usuarios usuario = new Usuarios(idusuario, "", "");
                     int valorizado = 0;
@@ -745,7 +745,7 @@ namespace TransporteFortin
                 decimal valorcomision = 0;
                 Sucursales sucursales = new Sucursales(Convert.ToInt32(cmbSucursal.SelectedValue), "");
                 Clientes cliente = new Clientes(Convert.ToInt32(lblCliente.Text), txtCliente.Text, "", "", "", "", "", "", "", "", "", null, "");
-                Fleteros fletero = new Fleteros(Convert.ToInt32(lblFletero.Text), 0, "", "", "", "", "", "", "", "", null, "", null, "", "", "", null);
+                Fleteros fletero = new Fleteros(Convert.ToInt32(lblFletero.Text), 0, "", "", "", "", "", "", "", "", null, "", null, "", "", "", null,"");
                 Empresas empresa = new Empresas(Convert.ToInt32(lblEmpresa.Text), "", "", "", "", "", "", "", "");
                 Usuarios usuario = new Usuarios(idusuario, "", "");
                 string tipocom = "p";

@@ -502,6 +502,7 @@
     <None Include="Properties\DataSources\Empresas.datasource" />
     <None Include="Properties\DataSources\EstadosCheques.datasource" />
     <None Include="Properties\DataSources\Fleteros.datasource" />
+    <None Include="Properties\DataSources\FormasDePago.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

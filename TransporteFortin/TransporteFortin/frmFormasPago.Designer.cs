@@ -346,7 +346,7 @@
             this.btncf.Location = new System.Drawing.Point(314, 54);
             this.btncf.Name = "btncf";
             this.btncf.Size = new System.Drawing.Size(41, 38);
-            this.btncf.TabIndex = 6;
+            this.btncf.TabIndex = 5;
             this.btncf.UseVisualStyleBackColor = false;
             this.btncf.Click += new System.EventHandler(this.btncf_Click);
             // 
@@ -378,7 +378,7 @@
             this.mskfechachequet.Mask = "00/00/0000";
             this.mskfechachequet.Name = "mskfechachequet";
             this.mskfechachequet.Size = new System.Drawing.Size(69, 20);
-            this.mskfechachequet.TabIndex = 4;
+            this.mskfechachequet.TabIndex = 1;
             this.mskfechachequet.ValidatingType = typeof(System.DateTime);
             // 
             // label10
@@ -408,7 +408,7 @@
             this.txtcomchequet.Location = new System.Drawing.Point(85, 135);
             this.txtcomchequet.Name = "txtcomchequet";
             this.txtcomchequet.Size = new System.Drawing.Size(287, 21);
-            this.txtcomchequet.TabIndex = 5;
+            this.txtcomchequet.TabIndex = 4;
             // 
             // label8
             // 
@@ -564,6 +564,7 @@
             this.txtchequep.TabIndex = 1;
             this.txtchequep.Text = "0.00";
             this.txtchequep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtchequep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtchequep_KeyPress);
             // 
             // label15
             // 
@@ -609,7 +610,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 434);
+            this.ClientSize = new System.Drawing.Size(400, 434);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.gbchequep);

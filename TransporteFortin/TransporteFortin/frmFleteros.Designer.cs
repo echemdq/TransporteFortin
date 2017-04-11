@@ -72,6 +72,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.cmbTipoIva = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtcomentario = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -325,6 +327,7 @@
             // cmbTipoCamion
             // 
             this.cmbTipoCamion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoCamion.Enabled = false;
             this.cmbTipoCamion.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.cmbTipoCamion.FormattingEnabled = true;
             this.cmbTipoCamion.Location = new System.Drawing.Point(110, 57);
@@ -469,6 +472,7 @@
             // 
             this.btnGuardar.BackgroundImage = global::TransporteFortin.Properties.Resources.Save;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.Location = new System.Drawing.Point(162, 316);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(41, 38);
@@ -511,6 +515,7 @@
             // cmbTipoIva
             // 
             this.cmbTipoIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoIva.Enabled = false;
             this.cmbTipoIva.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.cmbTipoIva.FormattingEnabled = true;
             this.cmbTipoIva.Location = new System.Drawing.Point(116, 236);
@@ -528,11 +533,32 @@
             this.label16.TabIndex = 99;
             this.label16.Text = "Tipo IVA";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(386, 239);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(80, 13);
+            this.label17.TabIndex = 101;
+            this.label17.Text = "Comentarios";
+            // 
+            // txtcomentario
+            // 
+            this.txtcomentario.Enabled = false;
+            this.txtcomentario.Location = new System.Drawing.Point(389, 261);
+            this.txtcomentario.Name = "txtcomentario";
+            this.txtcomentario.Size = new System.Drawing.Size(332, 96);
+            this.txtcomentario.TabIndex = 102;
+            this.txtcomentario.Text = "";
+            // 
             // frmFleteros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 362);
+            this.Controls.Add(this.txtcomentario);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.cmbTipoIva);
@@ -625,5 +651,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmbTipoIva;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.RichTextBox txtcomentario;
     }
 }

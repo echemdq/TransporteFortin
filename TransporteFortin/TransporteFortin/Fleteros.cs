@@ -130,8 +130,17 @@ namespace TransporteFortin
             set { cuit = value; }
         }
 
-        public Fleteros(int i, int d, string f, string dir, string l, string cp1, string t, string c, string fa, string m, Empresas e, string cam, TiposCamion tc, string chc, string cha, string cuitt, TiposIVA ti)
+        string comentario;
+
+        public string Comentario
         {
+            get { return comentario; }
+            set { comentario = value; }
+        }
+
+        public Fleteros(int i, int d, string f, string dir, string l, string cp1, string t, string c, string fa, string m, Empresas e, string cam, TiposCamion tc, string chc, string cha, string cuitt, TiposIVA ti, string coment)
+        {
+            comentario = coment;
             idfleteros = i;
             documento = d;
             fletero = f;

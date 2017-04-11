@@ -44,7 +44,7 @@ namespace TransporteFortin
                 tipo = new TiposIVA(Convert.ToInt32(dr["idtiposiva"]), "", "");
                 tip = new TiposCamion(Convert.ToInt32(dr["idtiposcamion"]), "");
                 emp = new Empresas(Convert.ToInt32(dr["idempresas"]), Convert.ToString(dr["empresa"]), "", "", "", "", "", "", "");
-                fletero = new Fleteros(Convert.ToInt32(dr["idfleteros"]), Convert.ToInt32(dr["documento"]), Convert.ToString(dr["fletero"]), Convert.ToString(dr["direccion"]), Convert.ToString(dr["localidad"]), Convert.ToString(dr["cp"]), Convert.ToString(dr["telefono"]), Convert.ToString(dr["celular"]), Convert.ToString(dr["fax"]), Convert.ToString(dr["mail"]), emp, Convert.ToString(dr["camion"]), tip, Convert.ToString(dr["chapacamion"]), Convert.ToString(dr["chapaacoplado"]), Convert.ToString(dr["cuit"]),tipo);
+                fletero = new Fleteros(Convert.ToInt32(dr["idfleteros"]), Convert.ToInt32(dr["documento"]), Convert.ToString(dr["fletero"]), Convert.ToString(dr["direccion"]), Convert.ToString(dr["localidad"]), Convert.ToString(dr["cp"]), Convert.ToString(dr["telefono"]), Convert.ToString(dr["celular"]), Convert.ToString(dr["fax"]), Convert.ToString(dr["mail"]), emp, Convert.ToString(dr["camion"]), tip, Convert.ToString(dr["chapacamion"]), Convert.ToString(dr["chapaacoplado"]), Convert.ToString(dr["cuit"]), tipo, Convert.ToString(dr["comentario"]));
                 lista.Add(fletero);
             }
             return lista;

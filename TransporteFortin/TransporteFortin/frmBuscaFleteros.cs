@@ -105,17 +105,18 @@ namespace TransporteFortin
                         dataGridView1.Rows[x].Cells[15].Value = aux.Empresas.Empresa;
                         dataGridView1.Rows[x].Cells[16].Value = aux.Cuit;
                         dataGridView1.Rows[x].Cells[17].Value = aux.TiposIVA.IdTiposIVA;
-
+                        dataGridView1.Rows[x].Cells[18].Value = aux.Comentario;
                         x++;
                     }
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
+                
             }
         }
 
         private void frmBuscaFleteros_Load(object sender, EventArgs e)
         {
-            dataGridView1.ColumnCount = 18;
+            dataGridView1.ColumnCount = 19;
             dataGridView1.Columns[0].Name = "idfleteros";
             dataGridView1.Columns[1].Name = "Fletero";
             dataGridView1.Columns[2].Name = "Direccion";
@@ -134,11 +135,13 @@ namespace TransporteFortin
             dataGridView1.Columns[15].Name = "Empresa";
             dataGridView1.Columns[16].Name = "Cuit";
             dataGridView1.Columns[17].Name = "TipoIva";
+            dataGridView1.Columns[18].Name = "Comentario";
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[16].Visible = false;
             dataGridView1.Columns[17].Visible = false;
             dataGridView1.Columns[10].Visible = false;
+            dataGridView1.Columns[18].Visible = false;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -164,7 +167,8 @@ namespace TransporteFortin
             string chapacamion = dataGridView1[13, filaseleccionada].Value.ToString();
             string chapaacoplado = dataGridView1[14, filaseleccionada].Value.ToString();
             string cuit = dataGridView1[16, filaseleccionada].Value.ToString();
-            u = new Fleteros(idfletero, documento, fletero, direccion, localidad, cp.ToString(), telefono, celular, fax, mail, emp, camion, tipoiv, chapacamion, chapaacoplado,cuit,ti);
+            string comentario = dataGridView1[18, filaseleccionada].Value.ToString();
+            u = new Fleteros(idfletero, documento, fletero, direccion, localidad, cp.ToString(), telefono, celular, fax, mail, emp, camion, tipoiv, chapacamion, chapaacoplado,cuit,ti,comentario);
             this.Close();
         }
 

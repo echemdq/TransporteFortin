@@ -14,10 +14,11 @@ namespace TransporteFortin
     {
         public List<FormasDePago> lista = null;
         int id = 0;
-        public frmFormasPago(List<FormasDePago> lista1)
+        int tipo1 = 0;
+        public frmFormasPago(List<FormasDePago> lista1, int tipo)
         {
             lista = lista1;
-            
+            tipo1 = tipo;
             InitializeComponent();
         }
 
@@ -82,110 +83,44 @@ namespace TransporteFortin
 
         private void txtEfectivo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)(Keys.Enter))
+            char ch = e.KeyChar;
+            if (ch == 46 && txtEfectivo.Text.IndexOf('.') != -1)
             {
                 e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
                 return;
             }
-
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtEfectivo.Text.Length; i++)
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
             {
-                if (txtEfectivo.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
-
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
                 e.Handled = true;
+            }
         }
 
         private void txttransf_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)(Keys.Enter))
+            char ch = e.KeyChar;
+            if (ch == 46 && txttransf.Text.IndexOf('.') != -1)
             {
                 e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
                 return;
             }
-
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txttransf.Text.Length; i++)
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
             {
-                if (txttransf.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
-
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
                 e.Handled = true;
+            }
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)(Keys.Enter))
+            char ch = e.KeyChar;
+            if (ch == 46 && txtchequet.Text.IndexOf('.') != -1)
             {
                 e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
                 return;
             }
-
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtchequet.Text.Length; i++)
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
             {
-                if (txtchequet.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
-
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
                 e.Handled = true;
+            }
         }
 
         private void cmbFormaPago_SelectedIndexChanged(object sender, EventArgs e)
@@ -198,13 +133,22 @@ namespace TransporteFortin
                 gbefectivo.Visible = true;
                 gbtransferencia.Visible = false;
             }
-            else if (cmbFormaPago.SelectedValue.ToString() == "2") 
+            else if (cmbFormaPago.SelectedValue.ToString() == "2" && tipo1 == 1) 
             {
                 gbcheqt.Visible = false;
                 gbchequep.Location = new Point(12, 39);
                 gbchequep.Visible = true;
                 gbefectivo.Visible = false;
                 gbtransferencia.Visible = false;
+            }
+            else if (cmbFormaPago.SelectedValue.ToString() == "2" && tipo1 == 0)
+            {
+                gbcheqt.Visible = false;
+                gbchequep.Location = new Point(12, 39);
+                gbchequep.Visible = false;
+                gbefectivo.Visible = false;
+                gbtransferencia.Visible = false;
+                MessageBox.Show("Forma de pago no permitida");
             }
             else if (cmbFormaPago.SelectedValue.ToString() == "3")
             {
@@ -450,6 +394,20 @@ namespace TransporteFortin
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtchequep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && txtchequep.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -240,18 +240,8 @@ namespace TransporteFortin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //frmRecibo frm = new frmRecibo();
-            //frm.ShowDialog();
-            
-                Acceso_BD oa = new Acceso_BD();
-                DataTable dt = oa.leerDatos("select f.idfleteros as idfle,e.idempresas as idempresas from transportefortin.fleteros f left join transportefortin.empresas e on e.codigo=f.empresa  where f.empresa<>0 and e.idempresas is not null");
-                foreach (DataRow dr in dt.Rows)
-                {
-                    int idemp = Convert.ToInt32(dr["idempresas"]);
-                    int idfle = Convert.ToInt32(dr["idfle"]);
-                    oa.ActualizarBD("update transportefortin.fleteros set idempresas = '" + idemp + "' where idfleteros = '" + idfle + "'");
-                }
-           
+            frmRecibo frm = new frmRecibo();
+            frm.ShowDialog();           
         }
 
         private void emitirToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -540,6 +530,20 @@ namespace TransporteFortin
         {
             frmOpProveedores frm = new frmOpProveedores();
             frm.ShowDialog();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && textBox1.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

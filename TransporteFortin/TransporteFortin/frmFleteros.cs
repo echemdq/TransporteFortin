@@ -21,6 +21,8 @@ namespace TransporteFortin
 
         public void deshabilitar()
         {
+            txtcomentario.Enabled = false;
+            btnGuardar.Enabled = false;
             txtDocumento.Enabled = false;
             txtCelular.Enabled = false;
             txtDomicilio.Enabled = false;
@@ -35,10 +37,16 @@ namespace TransporteFortin
             txtChapaC.Enabled = false;
             txtChapaA.Enabled = false;
             maskedTextBox1.Enabled = false;
+            cmbTipoCamion.Enabled = false;
+            cmbTipoIva.Enabled = false;
         }
 
         public void habilitar()
         {
+            txtcomentario.Enabled = true;
+            cmbTipoCamion.Enabled = true;
+            cmbTipoIva.Enabled = true;
+            btnGuardar.Enabled = true;
             txtDocumento.Enabled = true;
             txtCelular.Enabled = true;
             txtDomicilio.Enabled = true;
@@ -118,19 +126,19 @@ namespace TransporteFortin
                     }
                     TiposCamion t = new TiposCamion(Convert.ToInt32(cmbTipoCamion.SelectedValue), "");
                     TiposIVA ti = new TiposIVA(Convert.ToInt32(cmbTipoIva.SelectedValue),"","");
-                    Fleteros r = new Fleteros(0, Convert.ToInt32(txtDocumento.Text), txtCliente.Text, txtDomicilio.Text, txtLocalidad.Text, txtCP.Text, txtTelefono.Text, txtCelular.Text, txtFax.Text, txtMail.Text, em, txtModelo.Text, t, txtChapaC.Text, txtChapaA.Text,maskedTextBox1.Text, ti);
-                    if (lblIdFletero.Text == "")
+                    Fleteros r = new Fleteros(0, Convert.ToInt32(txtDocumento.Text), txtCliente.Text, txtDomicilio.Text, txtLocalidad.Text, txtCP.Text, txtTelefono.Text, txtCelular.Text, txtFax.Text, txtMail.Text, em, txtModelo.Text, t, txtChapaC.Text, txtChapaA.Text,maskedTextBox1.Text, ti,txtcomentario.Text);
+                    if (lblIdFletero.Text == "" && txtCliente.Enabled == true)
                     {
                         controlf.Agregar(r);
                         MessageBox.Show("Fletero guardado correctamente");
                     }
-                    else
+                    else if (lblIdFletero.Text != "" && txtCliente.Enabled == true)
                     {
                         r.Idfleteros = Convert.ToInt32(lblIdFletero.Text);
                         controlf.Modificar(r);
                         MessageBox.Show("Fletero modificado correctamente");
                     }
-                    limpiar();                    
+                    limpiar();
                     deshabilitar();
                 }
                 else
@@ -199,7 +207,7 @@ namespace TransporteFortin
             {
                 if (lblIdFletero.Text != "")
                 {
-                    Fleteros c = new Fleteros(Convert.ToInt32(lblIdFletero.Text),0, "", "", "", "", "", "", "", "", null, "", null, "", "","",null);
+                    Fleteros c = new Fleteros(Convert.ToInt32(lblIdFletero.Text),0, "", "", "", "", "", "", "", "", null, "", null, "", "","",null,"");
                     DialogResult dialogResult = MessageBox.Show("Esta seguro de eliminar el Fletero: " + txtCliente.Text, "Eliminar Fletero", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
@@ -275,6 +283,7 @@ namespace TransporteFortin
                 Fleteros u = frm.u;
                 if (u != null)
                 {
+                    txtcomentario.Text = u.Comentario;
                     lblIdFletero.Text = Convert.ToString(u.Idfleteros);
                     lblIdEmpresa.Text = u.Empresas.Idempresas.ToString();
                     txtEmpresa.Text = u.Empresas.Empresa;

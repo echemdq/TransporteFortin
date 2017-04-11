@@ -190,7 +190,7 @@ namespace TransporteFortin
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmFormasPago frm = new frmFormasPago(lista);
+            frmFormasPago frm = new frmFormasPago(lista,0);
             frm.ShowDialog();
             if (frm.lista.Count > 0)
             {

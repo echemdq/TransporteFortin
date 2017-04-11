@@ -153,7 +153,7 @@ namespace TransporteFortin
                     if (lista.Count > 0)
                     {
                         Conceptos conc = new Conceptos(Convert.ToInt32(cmbConceptos.SelectedValue), "", "");
-                        Fleteros flet = new Fleteros(0, 0, "", "", "", "", "", "", "", "", null, "", null, "", "", "", null);
+                        Fleteros flet = new Fleteros(0, 0, "", "", "", "", "", "", "", "", null, "", null, "", "", "", null,"");
                         Clientes cli = u;
                         Proveedores prov = new Proveedores(0, "", "", "", 0, "", "", "", "", "", "", null, "", 0);
                         Sucursales suc = new Sucursales(sucursal, "");
@@ -277,7 +277,7 @@ namespace TransporteFortin
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmFormasPago frm = new frmFormasPago(lista);
+            frmFormasPago frm = new frmFormasPago(lista,0);
             frm.ShowDialog();            
             if (frm.lista.Count > 0)
             {

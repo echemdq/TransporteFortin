@@ -107,6 +107,7 @@
             // cmbTipoIva
             // 
             this.cmbTipoIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoIva.Enabled = false;
             this.cmbTipoIva.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.cmbTipoIva.FormattingEnabled = true;
             this.cmbTipoIva.Location = new System.Drawing.Point(138, 228);
@@ -385,6 +386,7 @@
             // 
             this.btnGuardar.BackgroundImage = global::TransporteFortin.Properties.Resources.Save;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.Location = new System.Drawing.Point(183, 446);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(41, 38);

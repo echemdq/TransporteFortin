@@ -29,9 +29,11 @@ namespace TransporteFortin
             txtTelefono.Enabled = false;
             txtLocalidad.Enabled = false;
             txtTelefono2.Enabled = false;
+            btnGuardar.Enabled = false;
         }
         public void habilitar()
         {
+            btnGuardar.Enabled = true;
             txtCelular.Enabled = true;
             txtComentarios.Enabled = true;
             txtDomicilio.Enabled = true;

@@ -53,10 +53,12 @@
             this.fleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMFleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaCteCteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reciboToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.informeGralFleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaCtaCteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMConceptosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMConceptosCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,8 +72,7 @@
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.reciboToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordenDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -151,7 +152,7 @@
             // emitirToolStripMenuItem1
             // 
             this.emitirToolStripMenuItem1.Name = "emitirToolStripMenuItem1";
-            this.emitirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.emitirToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
             this.emitirToolStripMenuItem1.Text = "Emitir";
             this.emitirToolStripMenuItem1.Click += new System.EventHandler(this.emitirToolStripMenuItem1_Click);
             // 
@@ -273,6 +274,13 @@
             this.consultaCteCteToolStripMenuItem.Text = "Consulta Cte Cte";
             this.consultaCteCteToolStripMenuItem.Click += new System.EventHandler(this.consultaCteCteToolStripMenuItem_Click);
             // 
+            // reciboToolStripMenuItem1
+            // 
+            this.reciboToolStripMenuItem1.Name = "reciboToolStripMenuItem1";
+            this.reciboToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
+            this.reciboToolStripMenuItem1.Text = "Recibo";
+            this.reciboToolStripMenuItem1.Click += new System.EventHandler(this.reciboToolStripMenuItem1_Click);
+            // 
             // informeGralFleterosToolStripMenuItem
             // 
             this.informeGralFleterosToolStripMenuItem.Name = "informeGralFleterosToolStripMenuItem";
@@ -303,6 +311,13 @@
             this.consultaCtaCteToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.consultaCtaCteToolStripMenuItem.Text = "Consulta Cta Cte";
             this.consultaCtaCteToolStripMenuItem.Click += new System.EventHandler(this.consultaCtaCteToolStripMenuItem_Click);
+            // 
+            // ordenDePagoToolStripMenuItem
+            // 
+            this.ordenDePagoToolStripMenuItem.Name = "ordenDePagoToolStripMenuItem";
+            this.ordenDePagoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.ordenDePagoToolStripMenuItem.Text = "Orden de Pago";
+            this.ordenDePagoToolStripMenuItem.Click += new System.EventHandler(this.ordenDePagoToolStripMenuItem_Click);
             // 
             // mantenimientoToolStripMenuItem
             // 
@@ -403,25 +418,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // reciboToolStripMenuItem1
+            // textBox1
             // 
-            this.reciboToolStripMenuItem1.Name = "reciboToolStripMenuItem1";
-            this.reciboToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
-            this.reciboToolStripMenuItem1.Text = "Recibo";
-            this.reciboToolStripMenuItem1.Click += new System.EventHandler(this.reciboToolStripMenuItem1_Click);
-            // 
-            // ordenDePagoToolStripMenuItem
-            // 
-            this.ordenDePagoToolStripMenuItem.Name = "ordenDePagoToolStripMenuItem";
-            this.ordenDePagoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.ordenDePagoToolStripMenuItem.Text = "Orden de Pago";
-            this.ordenDePagoToolStripMenuItem.Click += new System.EventHandler(this.ordenDePagoToolStripMenuItem_Click);
+            this.textBox1.Location = new System.Drawing.Point(327, 222);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "0.00";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 395);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -487,6 +499,7 @@
         private System.Windows.Forms.ToolStripMenuItem cuentasPropiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reciboToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ordenDePagoToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

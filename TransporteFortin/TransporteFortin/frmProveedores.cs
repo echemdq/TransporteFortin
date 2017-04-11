@@ -93,6 +93,8 @@ namespace TransporteFortin
 
         public void deshabilitar()
         {
+            cmbTipoIva.Enabled = false;
+            btnGuardar.Enabled = false;
             txtCelular.Enabled = false;
             txtComentarios.Enabled = false;
             txtDomicilio.Enabled = false;
@@ -108,6 +110,8 @@ namespace TransporteFortin
         }
         public void habilitar()
         {
+            cmbTipoIva.Enabled = true;
+            btnGuardar.Enabled = true;
             txtCelular.Enabled = true;
             txtComentarios.Enabled = true;
             txtDomicilio.Enabled = true;
