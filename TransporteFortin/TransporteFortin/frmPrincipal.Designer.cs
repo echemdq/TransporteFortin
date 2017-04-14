@@ -73,6 +73,7 @@
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.consultaRecibosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -185,6 +186,7 @@
             this.aBMClientesToolStripMenuItem,
             this.consultaCtaCteToolStripMenuItem1,
             this.reciboToolStripMenuItem,
+            this.consultaRecibosToolStripMenuItem,
             this.informeGralClientesToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -428,6 +430,13 @@
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
+            // consultaRecibosToolStripMenuItem
+            // 
+            this.consultaRecibosToolStripMenuItem.Name = "consultaRecibosToolStripMenuItem";
+            this.consultaRecibosToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.consultaRecibosToolStripMenuItem.Text = "Consulta Recibos";
+            this.consultaRecibosToolStripMenuItem.Click += new System.EventHandler(this.consultaRecibosToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,6 +509,7 @@
         private System.Windows.Forms.ToolStripMenuItem reciboToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ordenDePagoToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolStripMenuItem consultaRecibosToolStripMenuItem;
     }
 }
 

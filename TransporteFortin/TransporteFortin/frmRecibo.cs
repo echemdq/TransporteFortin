@@ -13,27 +13,45 @@ namespace TransporteFortin
 {
     public partial class frmRecibo : Form
     {
-        public frmRecibo()
+        int idrecibo = 0;
+        string total = "";
+        string cantidadde = "";
+        string concepto = "";
+        string recibimosde = "";
+        public frmRecibo(int idrec, string tot, string cantde, string conc, string recde)
         {
+            idrecibo = idrec;
+            total = tot;
+            cantidadde = cantde;
+            concepto = conc;
+            recibimosde = recde;
             InitializeComponent();
         }
 
         private void frmRecibo_Load(object sender, EventArgs e)
         {
             Acceso_BD oa = new Acceso_BD();
-
-            FormasDePagoBindingSource.DataSource = oa.leerDatos("select fo.detalle as Idformaspago, f.importe as Importe, f.cheque as Nrocheque from formasdepago f inner join formaspago fo on f.idformaspago = fo.idformaspago");
-
-
-            ReportParameter p1 = new ReportParameter("NroRecibo", "1");
-            ReportParameter p2 = new ReportParameter("RecibeDe", "1");
-            ReportParameter p3 = new ReportParameter("ConceptoDe", "1");
-            ReportParameter p4 = new ReportParameter("CantidadDe", DateTime.Now.Date.ToString("dd/MM/yyyy"));
+            DataTable dt = oa.leerDatos("select r.nro as nro, fo.detalle as Idformaspago, f.importe as Importe, r.fecha as fecha, f.cheque as Nrocheque from formasdepago f inner join formaspago fo on f.idformaspago = fo.idformaspago inner join recibos r on f.idrecibos = r.idrecibos where f.idrecibos = '"+idrecibo+"'");
+            string nrorecibo = "";
+            DateTime fecha = DateTime.Now;
+            foreach (DataRow dr in dt.Rows)
+            {
+                nrorecibo = Convert.ToString(dr["nro"]);
+                fecha = Convert.ToDateTime(dr["fecha"]);
+            }
+            FormasDePagoBindingSource.DataSource = dt;
+            ReportParameter p1 = new ReportParameter("NroRecibo", nrorecibo);
+            ReportParameter p2 = new ReportParameter("RecibeDe", recibimosde);
+            ReportParameter p3 = new ReportParameter("ConceptoDe", concepto);
+            ReportParameter p4 = new ReportParameter("CantidadDe", cantidadde);
+            ReportParameter p5 = new ReportParameter("Fecha", fecha.ToString("dd/MM/yyyy"));
+            ReportParameter p6 = new ReportParameter("Total", total);
             this.reportViewer1.LocalReport.SetParameters(p1);
             this.reportViewer1.LocalReport.SetParameters(p2);
             this.reportViewer1.LocalReport.SetParameters(p3);
             this.reportViewer1.LocalReport.SetParameters(p4);
-
+            this.reportViewer1.LocalReport.SetParameters(p5);
+            this.reportViewer1.LocalReport.SetParameters(p6);
             this.reportViewer1.RefreshReport();
         }
     }

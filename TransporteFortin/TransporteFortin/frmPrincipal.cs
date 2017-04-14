@@ -240,8 +240,8 @@ namespace TransporteFortin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmRecibo frm = new frmRecibo();
-            frm.ShowDialog();           
+            //frmRecibo frm = new frmRecibo();
+            //frm.ShowDialog();           
         }
 
         private void emitirToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -544,6 +544,12 @@ namespace TransporteFortin
             {
                 e.Handled = true;
             }
+        }
+
+        private void consultaRecibosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaRecibos frm = new frmConsultaRecibos(talon);
+            frm.ShowDialog();
         }
     }
 }

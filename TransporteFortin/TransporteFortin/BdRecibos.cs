@@ -10,7 +10,7 @@ namespace TransporteFortin
     public class BdRecibos
     {
         Acceso_BD oacceso = new Acceso_BD();
-        public void Agregar(Recibos dato, List<FormasDePago> lista, int caja)
+        public int Agregar(Recibos dato, List<FormasDePago> lista, int caja)
         {            
             DataTable dt = new DataTable();
             //obtengo nro de recibo u orden pago
@@ -123,6 +123,7 @@ namespace TransporteFortin
                     oacceso.ActualizarBD("insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idrecibos, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',15,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "')");
                 }
             }
+            return idrecibo;
         }
 
         public List<Recibos> TraerTodos()

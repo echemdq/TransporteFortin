@@ -159,8 +159,24 @@ namespace TransporteFortin
                         Sucursales suc = new Sucursales(sucursal, "");
                         Usuarios usu = new Usuarios(idusuario, "", "");
                         Recibos r = new Recibos(0, dateTimePicker1.Value, conc, 0, Convert.ToDecimal(txtTotal.Text), flet, txtComentarios.Text, talon, cli, prov, puesto, usu, suc, 0);                        
-                        bd.Agregar(r, lista,Convert.ToInt32(cmbcaja.SelectedValue));
-                        MessageBox.Show("OK");
+                        int idrecibos = bd.Agregar(r, lista,Convert.ToInt32(cmbcaja.SelectedValue));
+                        frmRecibo frm = new frmRecibo(idrecibos, txtTotal.Text, txtPesosLetras.Text, txtEnConcepto.Text, txtRecibimosDe.Text);
+                        frm.ShowDialog();
+                        //desea reimprimir
+                        for (int x = 0; x < 2; x++)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Desea reimprimir el recibo?", "Reimprime recibo", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                frm.ShowDialog();
+                                x--;
+                            }
+                            else
+                            {
+                                x = x + 10;
+                            }
+                        }
+                        this.Close();
                     }
                     else
                     {
