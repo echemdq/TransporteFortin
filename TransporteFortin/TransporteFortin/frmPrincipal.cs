@@ -510,7 +510,7 @@ namespace TransporteFortin
         {
             if (f.acceder(17, idusuario))
             {
-                frmReciboFleteros frm = new frmReciboFleteros();
+                frmReciboFleteros frm = new frmReciboFleteros(0, idusuario, puesto, sucursal, talon);
                 frm.ShowDialog();
             }
             else
@@ -548,7 +548,19 @@ namespace TransporteFortin
 
         private void consultaRecibosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmConsultaRecibos frm = new frmConsultaRecibos(talon);
+            frmConsultaRecibos frm = new frmConsultaRecibos(talon, 0);
+            frm.ShowDialog();
+        }
+
+        private void consultaRecibosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmConsultaRecibos frm = new frmConsultaRecibos(talon, 1);
+            frm.ShowDialog();
+        }
+
+        private void ordenDePagoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmOpFleteros frm = new frmOpFleteros(0, idusuario, puesto, sucursal, talon);
             frm.ShowDialog();
         }
     }

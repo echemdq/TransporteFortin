@@ -1,6 +1,6 @@
 ﻿namespace TransporteFortin
 {
-    partial class frmReciboFleteros
+    partial class frmOpFleteros
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReciboFleteros));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpFleteros));
             this.txtComentarios = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtEnConcepto = new System.Windows.Forms.TextBox();
@@ -389,7 +389,7 @@
             this.cmbcaja.Size = new System.Drawing.Size(51, 21);
             this.cmbcaja.TabIndex = 170;
             // 
-            // frmReciboFleteros
+            // frmOpFleteros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -416,9 +416,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
-            this.Name = "frmReciboFleteros";
+            this.Name = "frmOpFleteros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Recibo Fleteros";
+            this.Text = "Ordenes de Pago Fleteros";
             this.Load += new System.EventHandler(this.frmReciboFleteros_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

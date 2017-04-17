@@ -87,7 +87,7 @@ namespace TransporteFortin
             {
                 if (f.Idformaspago == 2)
                 {
-                    dt = oacceso.leerDatos("begin; insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idrecibos, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',10,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "'); select max(idformasdepago) as idforma from formasdepago; commit;");
+                    dt = oacceso.leerDatos("begin; insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idordenespago, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',12,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "'); select max(idformasdepago) as idforma from formasdepago; commit;");
                     int idforma = 0;
                     foreach (DataRow dr in dt.Rows)
                     {
@@ -115,7 +115,14 @@ namespace TransporteFortin
                 }
                 else if (f.Idformaspago == 3)
                 {
-                    oacceso.ActualizarBD("insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idrecibos, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',3,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "')");
+                    if (dato.Tipo == 0)
+                    {
+                        oacceso.ActualizarBD("insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idrecibos, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',1,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "')");
+                    }
+                    else
+                    {
+                        oacceso.ActualizarBD("update formasdepago set idestadoscheques = 3, idordenespago = '"+idrecibo+"' where idformasdepago = '"+f.Idrecibo+"'");
+                    }
                 }
 
                 else

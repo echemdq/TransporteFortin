@@ -182,5 +182,26 @@ namespace TransporteFortin
             buscar(idempresa);
             //u = new Fleteros(idfletero, documento, fletero, direccion, localidad, cp.ToString(), telefono, celular, fax, mail, emp, camion, tipoiv, chapacamion, chapaacoplado, cuit, ti);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (u != null)
+                {
+                    int chk = 0;
+                    if (checkBox1.Checked)
+                    {
+                        chk = 1;
+                    }
+                    //frmInfCtaCteCtes frm = new frmInfCtaCteCtes(u.Idclientes, chk, maskedTextBox1.Text, maskedTextBox2.Text);
+                    //frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

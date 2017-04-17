@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TransporteFortin
 {
-    public partial class frmReciboFleteros : Form
+    public partial class frmOpFleteros : Form
     {
         List<FormasDePago> lista = new List<FormasDePago>();
         Fleteros u = null;
@@ -22,7 +22,7 @@ namespace TransporteFortin
         int puesto = 0;
         int sucursal = 0;
         int talon = 0;
-        public frmReciboFleteros(int idreci, int idusu, int pue, int suc, int tal)
+        public frmOpFleteros(int idreci, int idusu, int pue, int suc, int tal)
         {
             concepto = "c";
             InitializeComponent();
@@ -208,7 +208,7 @@ namespace TransporteFortin
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmFormasPago frm = new frmFormasPago(lista,0);
+            frmFormasPagoOp frm = new frmFormasPagoOp(lista,1);
             frm.ShowDialog();
             if (frm.lista.Count > 0)
             {
@@ -255,7 +255,7 @@ namespace TransporteFortin
                         Proveedores prov = new Proveedores(0, "", "", "", 0, "", "", "", "", "", "", null, "", 0);
                         Sucursales suc = new Sucursales(sucursal, "");
                         Usuarios usu = new Usuarios(idusuario, "", "");
-                        Recibos r = new Recibos(0, dateTimePicker1.Value, conc, 0, Convert.ToDecimal(txtTotal.Text), flet, txtComentarios.Text, talon, cli, prov, puesto, usu, suc, 0);
+                        Recibos r = new Recibos(0, dateTimePicker1.Value, conc, 0, Convert.ToDecimal(txtTotal.Text), flet, txtComentarios.Text, talon, cli, prov, puesto, usu, suc, 1);
                         int idrecibos = bd.Agregar(r, lista, Convert.ToInt32(cmbcaja.SelectedValue));
                         frmRecibo frm = new frmRecibo(idrecibos, txtTotal.Text, txtPesosLetras.Text, txtEnConcepto.Text, txtRecibimosDe.Text);
                         frm.ShowDialog();

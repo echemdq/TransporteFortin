@@ -17,10 +17,12 @@ namespace TransporteFortin
         string cantidadde = "";
         string concepto = "";
         string recibimosde = "";
-        public frmConsultaRecibos(int talon)
+        int tip1o = 0;
+        public frmConsultaRecibos(int talon, int tipo)
         {
             InitializeComponent();
             textBox1.Text = talon.ToString();
+            tip1o = tipo;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -133,7 +135,15 @@ namespace TransporteFortin
                 {
                     
                     Acceso_BD oa = new Acceso_BD();
-                    DataTable dt = oa.leerDatos("select r.idrecibos as idrecibos, r.tipo as tipo, r.fecha as fecha, concat(con.descripcion, ' - ',r.comentarios) as comentarios, con.descripcion as concepto, r.importe as importe, c.cliente as cliente, f.fletero as fletero, p.proveedor as proveedor, r.idclientes as idclientes, r.idproveedores as idproveedores, r.idfleteros as idfleteros from recibos r left join clientes c on r.idclientes = c.idclientes left join fleteros f on r.idfleteros = f.idfleteros left join proveedores p on r.idproveedores = p.idproveedores left join conceptos con on r.concepto = con.codigo where ptoventa = '" + textBox1.Text + "' and nro = '" + textBox2.Text + "'");
+                    DataTable dt = new DataTable();
+                    if (tip1o == 0)
+                    {
+                        dt = oa.leerDatos("select r.idrecibos as idrecibos, r.tipo as tipo, r.fecha as fecha, concat(con.descripcion, ' - ',r.comentarios) as comentarios, con.descripcion as concepto, r.importe as importe, c.cliente as cliente, f.fletero as fletero, p.proveedor as proveedor, r.idclientes as idclientes, r.idproveedores as idproveedores, r.idfleteros as idfleteros from recibos r left join clientes c on r.idclientes = c.idclientes left join fleteros f on r.idfleteros = f.idfleteros left join proveedores p on r.idproveedores = p.idproveedores left join conceptos con on r.concepto = con.codigo where ptoventa = '" + textBox1.Text + "' and nro = '" + textBox2.Text + "' and r.idclientes <> 0");
+                    }
+                    else
+                    {
+                        dt = oa.leerDatos("select r.idrecibos as idrecibos, r.tipo as tipo, r.fecha as fecha, concat(con.descripcion, ' - ',r.comentarios) as comentarios, con.descripcion as concepto, r.importe as importe, c.cliente as cliente, f.fletero as fletero, p.proveedor as proveedor, r.idclientes as idclientes, r.idproveedores as idproveedores, r.idfleteros as idfleteros from recibos r left join clientes c on r.idclientes = c.idclientes left join fleteros f on r.idfleteros = f.idfleteros left join proveedores p on r.idproveedores = p.idproveedores left join conceptos con on r.concepto = con.codigo where ptoventa = '" + textBox1.Text + "' and nro = '" + textBox2.Text + "' and r.idfleteros <> 0");
+                    }
                     if (dt.Rows.Count > 0)
                     {
                         foreach (DataRow dr in dt.Rows)

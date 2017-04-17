@@ -253,6 +253,12 @@
     <Compile Include="frmFormasPago.Designer.cs">
       <DependentUpon>frmFormasPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFormasPagoOp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormasPagoOp.Designer.cs">
+      <DependentUpon>frmFormasPagoOp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInfCtaCteCtes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,12 @@
     </Compile>
     <Compile Include="frmMovProveedores.Designer.cs">
       <DependentUpon>frmMovProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpFleteros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpFleteros.Designer.cs">
+      <DependentUpon>frmOpFleteros.cs</DependentUpon>
     </Compile>
     <Compile Include="frmOpProveedores.cs">
       <SubType>Form</SubType>
@@ -431,6 +443,9 @@
     <EmbeddedResource Include="frmFormasPago.resx">
       <DependentUpon>frmFormasPago.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFormasPagoOp.resx">
+      <DependentUpon>frmFormasPagoOp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInfCtaCteCtes.resx">
       <DependentUpon>frmInfCtaCteCtes.cs</DependentUpon>
     </EmbeddedResource>
@@ -454,6 +469,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMovProveedores.resx">
       <DependentUpon>frmMovProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpFleteros.resx">
+      <DependentUpon>frmOpFleteros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpProveedores.resx">
       <DependentUpon>frmOpProveedores.cs</DependentUpon>
