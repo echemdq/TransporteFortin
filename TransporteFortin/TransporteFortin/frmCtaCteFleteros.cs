@@ -80,19 +80,61 @@ namespace TransporteFortin
                     dataGridView1.Rows.Add(i);
                     foreach (CtaCteFleteros aux in lista)
                     {
-                        dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
-                        dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
-                        dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
-                        string prueba = aux.Ordenescarga.Nrocarga;
-                        dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;
-                        dataGridView1.Rows[x].Cells[4].Value = aux.Debe;
-                        debe = debe+Convert.ToDouble(aux.Debe);
-                        dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                        dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
-                        haber = haber+Convert.ToDouble(aux.Haber);
-                        label2.Text = (debe - haber).ToString();
-                        x++;
+                        if (checkBox1.Checked)
+                        {
+                            DateTime desde;
+                            DateTime hasta;
+                            if (DateTime.TryParse(maskedTextBox1.Text, out desde) && DateTime.TryParse(maskedTextBox2.Text, out hasta))
+                            {
+                                if (desde <= hasta)
+                                {
+                                    if (aux.Fecha.Date >= desde.Date && aux.Fecha.Date <= hasta.Date)
+                                    {
+                                        dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
+                                        dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
+                                        dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
+                                        string prueba = aux.Ordenescarga.Nrocarga;
+                                        dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;
+                                        dataGridView1.Rows[x].Cells[4].Value = aux.Debe;
+                                        debe = debe + Convert.ToDouble(aux.Debe);
+                                        dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                                        dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                                        dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                                        haber = haber + Convert.ToDouble(aux.Haber);
+                                        label2.Text = (debe - haber).ToString();
+                                        x++;
+                                    }
+                                    else
+                                    {
+                                        haber = haber + Convert.ToDouble(aux.Haber);
+                                        label2.Text = (debe - haber).ToString();
+                                        x++;
+                                    }
+                                }
+                                else
+                                {
+                                    dataGridView1.Rows.Clear();
+                                    MessageBox.Show("Desde debe ser menor o igual a hasta");
+                                    break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
+                            dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
+                            dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
+                            string prueba = aux.Ordenescarga.Nrocarga;
+                            dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;
+                            dataGridView1.Rows[x].Cells[4].Value = aux.Debe;
+                            debe = debe + Convert.ToDouble(aux.Debe);
+                            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                            haber = haber + Convert.ToDouble(aux.Haber);
+                            label2.Text = (debe - haber).ToString();
+                            x++;
+                        }
                     }
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
