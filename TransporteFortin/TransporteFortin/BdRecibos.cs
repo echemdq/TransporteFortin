@@ -98,18 +98,25 @@ namespace TransporteFortin
                 }
                 else if (f.Idformaspago == 4)
                 {
-                    dt = oacceso.leerDatos("begin; insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idrecibos, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',14,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "'); select max(idformasdepago) as idforma from formasdepago; commit;");
-                    int idforma = 0;
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        idforma = Convert.ToInt32(dr["idforma"]);
-                    }
+                    
                     if (dato.Tipo == 0)
                     {
+                        dt = oacceso.leerDatos("begin; insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idrecibos, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',14,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "'); select max(idformasdepago) as idforma from formasdepago; commit;");
+                        int idforma = 0;
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            idforma = Convert.ToInt32(dr["idforma"]);
+                        }
                         oacceso.ActualizarBD("insert into movbancos (idcuentasbanco, idformasdepago, idconceptosbanco, descripcion, DoC, importe, fecha) values ('" + f.Idcuentabanco + "','" + idforma + "',2,'GS - Recibo Nro: " +nro + "','d','" + f.Importe.ToString().Replace(',', '.') + "','" + f.Fecha.ToString("yyyy-MM-dd") + "')");
                     }
                     else
                     {
+                        dt = oacceso.leerDatos("begin; insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idordenespago, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',14,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "'); select max(idformasdepago) as idforma from formasdepago; commit;");
+                        int idforma = 0;
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            idforma = Convert.ToInt32(dr["idforma"]);
+                        }
                         oacceso.ActualizarBD("insert into movbancos (idcuentasbanco, idformasdepago, idconceptosbanco, descripcion, DoC, importe, fecha) values ('" + f.Idcuentabanco + "','" + idforma + "',9,'GS - Orden de Pago Nro: " + nro + "','c','" + f.Importe.ToString().Replace(',', '.') + "','" + f.Fecha.ToString("yyyy-MM-dd") + "')");
                     }
                 }
@@ -127,7 +134,14 @@ namespace TransporteFortin
 
                 else
                 {
-                    oacceso.ActualizarBD("insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idrecibos, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',15,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "')");
+                    if (dato.Tipo == 0)
+                    {
+                        oacceso.ActualizarBD("insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idrecibos, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',15,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "')");
+                    }
+                    else
+                    {
+                        oacceso.ActualizarBD("insert formasdepago (idbancos, cheque, idcuentasbanco, fechaentrega, fechadeposito, importe, idestadoscheques, comentarios, idordenespago, idformaspago) values ('" + f.Idbanco + "','" + f.Nrocheque + "','" + f.Idcuentabanco + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + f.Importe.ToString().Replace(',', '.') + "',15,'" + f.Comentario + "','" + idrecibo + "','" + f.Idformaspago + "')");
+                    }
                 }
             }
             return idrecibo;

@@ -32,15 +32,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtTransf = new System.Windows.Forms.TextBox();
             this.txtCheques = new System.Windows.Forms.TextBox();
             this.txtEfectivo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtNroRec = new System.Windows.Forms.TextBox();
-            this.txtTalon = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
@@ -48,7 +46,6 @@
             this.cmbConceptos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtComentarios = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtEnConcepto = new System.Windows.Forms.TextBox();
@@ -59,6 +56,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmbcaja = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +100,18 @@
             this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 145;
             this.label12.Text = "TOTAL";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.BackgroundImage = global::TransporteFortin.Properties.Resources.cash;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(351, 59);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(41, 37);
+            this.button2.TabIndex = 141;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtTransf
             // 
@@ -164,34 +175,6 @@
             this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "EFECTIVO";
-            // 
-            // txtNroRec
-            // 
-            this.txtNroRec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNroRec.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroRec.Location = new System.Drawing.Point(138, 165);
-            this.txtNroRec.Name = "txtNroRec";
-            this.txtNroRec.Size = new System.Drawing.Size(88, 21);
-            this.txtNroRec.TabIndex = 148;
-            // 
-            // txtTalon
-            // 
-            this.txtTalon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTalon.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTalon.Location = new System.Drawing.Point(78, 165);
-            this.txtTalon.Name = "txtTalon";
-            this.txtTalon.Size = new System.Drawing.Size(54, 21);
-            this.txtTalon.TabIndex = 147;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 167);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 146;
-            this.label4.Text = "Recibo Nro";
             // 
             // txtSaldo
             // 
@@ -261,17 +244,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(224, 20);
             this.dateTimePicker1.TabIndex = 139;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.BackgroundImage = global::TransporteFortin.Properties.Resources.cash;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(351, 59);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(41, 37);
-            this.button2.TabIndex = 141;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // txtComentarios
             // 
             this.txtComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -340,7 +312,6 @@
             this.txtRecibimosDe.ReadOnly = true;
             this.txtRecibimosDe.Size = new System.Drawing.Size(407, 21);
             this.txtRecibimosDe.TabIndex = 152;
-            this.txtRecibimosDe.Text = "Transporte El Fortin";
             // 
             // label8
             // 
@@ -348,9 +319,9 @@
             this.label8.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(9, 363);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 13);
+            this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 151;
-            this.label8.Text = "Recibimos de";
+            this.label8.Text = "Recibe el Sr";
             // 
             // button1
             // 
@@ -360,6 +331,7 @@
             this.button1.TabIndex = 150;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnBuscar
             // 
@@ -373,11 +345,33 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(31, 15);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(34, 13);
+            this.label13.TabIndex = 173;
+            this.label13.Text = "Caja";
+            // 
+            // cmbcaja
+            // 
+            this.cmbcaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbcaja.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbcaja.FormattingEnabled = true;
+            this.cmbcaja.Location = new System.Drawing.Point(78, 12);
+            this.cmbcaja.Name = "cmbcaja";
+            this.cmbcaja.Size = new System.Drawing.Size(51, 21);
+            this.cmbcaja.TabIndex = 172;
+            // 
             // frmOpProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 654);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.cmbcaja);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtComentarios);
             this.Controls.Add(this.label11);
@@ -389,9 +383,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtNroRec);
-            this.Controls.Add(this.txtTalon);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtCliente);
@@ -422,9 +413,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtNroRec;
-        private System.Windows.Forms.TextBox txtTalon;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCliente;
@@ -442,5 +430,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cmbcaja;
     }
 }

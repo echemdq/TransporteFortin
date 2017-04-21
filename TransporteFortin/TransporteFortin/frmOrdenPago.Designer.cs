@@ -1,6 +1,6 @@
 ﻿namespace TransporteFortin
 {
-    partial class frmRecibo
+    partial class frmOrdenPago
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.FormasDePagoBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TransporteFortin.Report4.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TransporteFortin.Report8.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(629, 352);
@@ -51,15 +51,15 @@
             // 
             this.FormasDePagoBindingSource.DataSource = typeof(TransporteFortin.FormasDePago);
             // 
-            // frmRecibo
+            // frmOrdenPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 352);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frmRecibo";
-            this.Text = "Impresion Recibo";
-            this.Load += new System.EventHandler(this.frmRecibo_Load);
+            this.Name = "frmOrdenPago";
+            this.Text = "Impresion Orden de Pago";
+            this.Load += new System.EventHandler(this.frmOrdenPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FormasDePagoBindingSource)).EndInit();
             this.ResumeLayout(false);
 

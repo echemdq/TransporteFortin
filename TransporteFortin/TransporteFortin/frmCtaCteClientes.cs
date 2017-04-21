@@ -33,14 +33,10 @@ namespace TransporteFortin
                 {
                     i++;
                 }
-                if (dataGridView1.Rows.Count > 0)
-                {
-                    dataGridView1.Rows.Clear();
-                }
                 int x = 0;
                 if (i > 0)
                 {
-                    
+                    dataGridView1.Rows.Add(i);
                     foreach (CtaCteClientes aux in lista)
                     {
                         if (checkBox1.Checked)
@@ -53,7 +49,6 @@ namespace TransporteFortin
                                 {
                                     if (aux.Fecha.Date >= desde.Date && aux.Fecha.Date <= hasta.Date)
                                     {
-                                        dataGridView1.Rows.Add(1);
                                         dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
                                         dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
                                         dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
@@ -70,7 +65,7 @@ namespace TransporteFortin
                                     {
                                         debe = debe + Convert.ToDouble(aux.Debe);
                                         haber = haber + Convert.ToDouble(aux.Haber);
-                                        x++;
+                                        dataGridView1.Rows.RemoveAt(x);
                                     }
                                 }
                                 else
@@ -83,7 +78,6 @@ namespace TransporteFortin
                         }
                         else
                         {
-                            dataGridView1.Rows.Add(1);
                             dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
                             dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
                             dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;

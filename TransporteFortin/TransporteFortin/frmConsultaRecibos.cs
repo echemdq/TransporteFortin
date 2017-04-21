@@ -18,11 +18,13 @@ namespace TransporteFortin
         string concepto = "";
         string recibimosde = "";
         int tip1o = 0;
-        public frmConsultaRecibos(int talon, int tipo)
+        int quien1 = 0;
+        public frmConsultaRecibos(int talon, int tipo, int quien)
         {
             InitializeComponent();
             textBox1.Text = talon.ToString();
             tip1o = tipo;
+            quien1 = quien;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -138,12 +140,27 @@ namespace TransporteFortin
                     DataTable dt = new DataTable();
                     if (tip1o == 0)
                     {
-                        dt = oa.leerDatos("select r.idrecibos as idrecibos, r.tipo as tipo, r.fecha as fecha, concat(con.descripcion, ' - ',r.comentarios) as comentarios, con.descripcion as concepto, r.importe as importe, c.cliente as cliente, f.fletero as fletero, p.proveedor as proveedor, r.idclientes as idclientes, r.idproveedores as idproveedores, r.idfleteros as idfleteros from recibos r left join clientes c on r.idclientes = c.idclientes left join fleteros f on r.idfleteros = f.idfleteros left join proveedores p on r.idproveedores = p.idproveedores left join conceptos con on r.concepto = con.codigo where ptoventa = '" + textBox1.Text + "' and nro = '" + textBox2.Text + "' and r.idclientes <> 0");
+                        if (quien1 == 0)
+                        {
+                            dt = oa.leerDatos("select r.idrecibos as idrecibos, r.tipo as tipo, r.fecha as fecha, concat(con.descripcion, ' - ',r.comentarios) as comentarios, con.descripcion as concepto, r.importe as importe, c.cliente as cliente, f.fletero as fletero, p.proveedor as proveedor, r.idclientes as idclientes, r.idproveedores as idproveedores, r.idfleteros as idfleteros from recibos r left join clientes c on r.idclientes = c.idclientes left join fleteros f on r.idfleteros = f.idfleteros left join proveedores p on r.idproveedores = p.idproveedores left join conceptos con on r.concepto = con.codigo where ptoventa = '" + textBox1.Text + "' and nro = '" + textBox2.Text + "' and r.idclientes <> 0 and r.idfleteros = 0 and r.tipo = 0");
+                        }
+                        else if (quien1 == 1)
+                        {
+                            dt = oa.leerDatos("select r.idrecibos as idrecibos, r.tipo as tipo, r.fecha as fecha, concat(con.descripcion, ' - ',r.comentarios) as comentarios, con.descripcion as concepto, r.importe as importe, c.cliente as cliente, f.fletero as fletero, p.proveedor as proveedor, r.idclientes as idclientes, r.idproveedores as idproveedores, r.idfleteros as idfleteros from recibos r left join clientes c on r.idclientes = c.idclientes left join fleteros f on r.idfleteros = f.idfleteros left join proveedores p on r.idproveedores = p.idproveedores left join conceptos con on r.concepto = con.codigo where ptoventa = '" + textBox1.Text + "' and nro = '" + textBox2.Text + "' and r.idfleteros <> 0 and r.idclientes = 0 and r.tipo = 0");
+                        }
                     }
                     else
                     {
-                        dt = oa.leerDatos("select r.idrecibos as idrecibos, r.tipo as tipo, r.fecha as fecha, concat(con.descripcion, ' - ',r.comentarios) as comentarios, con.descripcion as concepto, r.importe as importe, c.cliente as cliente, f.fletero as fletero, p.proveedor as proveedor, r.idclientes as idclientes, r.idproveedores as idproveedores, r.idfleteros as idfleteros from recibos r left join clientes c on r.idclientes = c.idclientes left join fleteros f on r.idfleteros = f.idfleteros left join proveedores p on r.idproveedores = p.idproveedores left join conceptos con on r.concepto = con.codigo where ptoventa = '" + textBox1.Text + "' and nro = '" + textBox2.Text + "' and r.idfleteros <> 0");
+                        if (quien1 == 1)
+                        {
+                            dt = oa.leerDatos("select r.idrecibos as idrecibos, r.tipo as tipo, r.fecha as fecha, concat(con.descripcion, ' - ',r.comentarios) as comentarios, con.descripcion as concepto, r.importe as importe, c.cliente as cliente, f.fletero as fletero, p.proveedor as proveedor, r.idclientes as idclientes, r.idproveedores as idproveedores, r.idfleteros as idfleteros from recibos r left join clientes c on r.idclientes = c.idclientes left join fleteros f on r.idfleteros = f.idfleteros left join proveedores p on r.idproveedores = p.idproveedores left join conceptos con on r.concepto = con.codigo where ptoventa = '" + textBox1.Text + "' and nro = '" + textBox2.Text + "' and r.idfleteros <> 0 and r.idproveedores = 0 and r.tipo = 1");
+                        }
+                        else if (quien1 == 2)
+                        {
+                            dt = oa.leerDatos("select r.idrecibos as idrecibos, r.tipo as tipo, r.fecha as fecha, concat(con.descripcion, ' - ',r.comentarios) as comentarios, con.descripcion as concepto, r.importe as importe, c.cliente as cliente, f.fletero as fletero, p.proveedor as proveedor, r.idclientes as idclientes, r.idproveedores as idproveedores, r.idfleteros as idfleteros from recibos r left join clientes c on r.idclientes = c.idclientes left join fleteros f on r.idfleteros = f.idfleteros left join proveedores p on r.idproveedores = p.idproveedores left join conceptos con on r.concepto = con.codigo where ptoventa = '" + textBox1.Text + "' and nro = '" + textBox2.Text + "' and r.idproveedores <> 0 and r.idfleteros = 0 and r.tipo = 1");
+                        }
                     }
+                    int tipo = 0;
                     if (dt.Rows.Count > 0)
                     {
                         foreach (DataRow dr in dt.Rows)
@@ -188,12 +205,21 @@ namespace TransporteFortin
                             cantidadde = enletras(total);  
                             richTextBox1.Text = Convert.ToString(dr["comentarios"]);
                         }
-                        dataGridView1.DataSource = oa.leerDatos("select f1.detalle as 'FORMA DE PAGO', f.importe AS IMPORTE, f.cheque AS 'NRO CHEQUE O TRANSFERENCIA' from formasdepago f left join formaspago f1 on f.idformaspago = f1. idformaspago where idrecibos = '" + idrecibo + "'");
+                        if (tip1o == 0)
+                        {
+                            dataGridView1.DataSource = oa.leerDatos("select f1.detalle as 'FORMA DE PAGO', f.importe AS IMPORTE, f.cheque AS 'NRO CHEQUE O TRANSFERENCIA' from formasdepago f left join formaspago f1 on f.idformaspago = f1. idformaspago where idrecibos = '" + idrecibo + "'");
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = oa.leerDatos("select f1.detalle as 'FORMA DE PAGO', f.importe AS IMPORTE, f.cheque AS 'NRO CHEQUE O TRANSFERENCIA' from formasdepago f left join formaspago f1 on f.idformaspago = f1. idformaspago where idordenespago = '" + idrecibo + "'");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Recibo inexistente");
-                        dataGridView1.Rows.Clear();
+                        if (dataGridView1.Rows.Count > 0)
+                        {
+                            dataGridView1.DataSource = null;
+                        }
                         chkClientes.Checked = false;
                         chkFleteros.Checked = false;
                         chkProveedores.Checked = false;
@@ -204,6 +230,7 @@ namespace TransporteFortin
                         mskDesde.Text = "";
                         richTextBox1.Text = "";
                         idrecibo = "";
+                        MessageBox.Show("Recibo inexistente");                        
                     }
 
                 }
@@ -222,15 +249,32 @@ namespace TransporteFortin
         {
             if (idrecibo != "")
             {
-                frmRecibo frm = new frmRecibo(Convert.ToInt32(idrecibo), total, cantidadde, concepto, recibimosde);
-                frm.ShowDialog();
+                frmRecibo frm = null;
+                frmOrdenPago frm1 = null;
+                if (tip1o == 0)
+                {
+                    frm = new frmRecibo(Convert.ToInt32(idrecibo), total, cantidadde, concepto, recibimosde);
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    frm1 = new frmOrdenPago(Convert.ToInt32(idrecibo), total, cantidadde, concepto, recibimosde);
+                    frm1.ShowDialog();
+                }
                 //desea reimprimir
                 for (int x = 0; x < 2; x++)
                 {
                     DialogResult dialogResult = MessageBox.Show("Desea reimprimir el recibo?", "Reimprime recibo", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        frm.ShowDialog();
+                        if (tip1o == 0)
+                        {
+                            frm.ShowDialog();
+                        }
+                        else
+                        {
+                            frm1.ShowDialog();
+                        }
                         x--;
                     }
                     else

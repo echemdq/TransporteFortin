@@ -33,7 +33,7 @@ namespace TransporteFortin
 
         public List<CtaCteFleteros> BuscarEspecial(string dato)
         {
-            DataTable dt = oacceso.leerDatos("select f.fecha, c.descripcion as concepto, f.descripcion as descripcion, f.ptoventa, debe, haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else case when r.nro is not null then concat(cast(r.nro as char), '- Recibo') else concat(cast(oc.nro as char), '- Ordenes de Comb') end end  as nrocarga from ctactefleteros f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos left join ordenescombustible oc on f.idordenescombustible = oc.idordenescombustible where " + dato + "");
+            DataTable dt = oacceso.leerDatos("select f.fecha, c.descripcion as concepto, f.descripcion as descripcion, f.ptoventa, debe, haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else case when r.nro is not null and r.tipo = 0 then concat(cast(r.nro as char), '- Recibo') else case when r.nro is not null and r.tipo = 1 then concat(cast(r.nro as char), '- Orden de Pago') else concat(cast(oc.nro as char), '- Ordenes de Comb') end end end  as nrocarga  from ctactefleteros f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos left join ordenescombustible oc on f.idordenescombustible = oc.idordenescombustible where " + dato + "");
             List<CtaCteFleteros> lista = new List<CtaCteFleteros>();
             foreach (DataRow dr in dt.Rows)
             {

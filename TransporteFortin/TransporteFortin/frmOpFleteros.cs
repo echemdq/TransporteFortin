@@ -257,14 +257,14 @@ namespace TransporteFortin
                         Usuarios usu = new Usuarios(idusuario, "", "");
                         Recibos r = new Recibos(0, dateTimePicker1.Value, conc, 0, Convert.ToDecimal(txtTotal.Text), flet, txtComentarios.Text, talon, cli, prov, puesto, usu, suc, 1);
                         int idrecibos = bd.Agregar(r, lista, Convert.ToInt32(cmbcaja.SelectedValue));
-                        frmRecibo frm = new frmRecibo(idrecibos, txtTotal.Text, txtPesosLetras.Text, txtEnConcepto.Text, txtRecibimosDe.Text);
+                        frmOrdenPago frm = new frmOrdenPago(idrecibos, txtTotal.Text, txtPesosLetras.Text, txtEnConcepto.Text, txtRecibimosDe.Text);
                         frm.ShowDialog();
 
                         //desea reimprimir
 
                         for (int x = 0; x < 2; x++)
                         {
-                            DialogResult dialogResult = MessageBox.Show("Desea reimprimir el recibo?", "Reimprime recibo", MessageBoxButtons.YesNo);
+                            DialogResult dialogResult = MessageBox.Show("Desea reimprimir?", "Reimprime Orden de Pago", MessageBoxButtons.YesNo);
                             if (dialogResult == DialogResult.Yes)
                             {
                                 frm.ShowDialog();

@@ -528,7 +528,7 @@ namespace TransporteFortin
 
         private void ordenDePagoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmOpProveedores frm = new frmOpProveedores();
+            frmOpProveedores frm = new frmOpProveedores(0, idusuario, puesto, sucursal, talon);
             frm.ShowDialog();
         }
 
@@ -548,19 +548,25 @@ namespace TransporteFortin
 
         private void consultaRecibosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmConsultaRecibos frm = new frmConsultaRecibos(talon, 0);
+            frmConsultaRecibos frm = new frmConsultaRecibos(talon, 0, 0);
             frm.ShowDialog();
         }
 
         private void consultaRecibosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmConsultaRecibos frm = new frmConsultaRecibos(talon, 1);
+            frmConsultaRecibos frm = new frmConsultaRecibos(talon, 0, 1);
             frm.ShowDialog();
         }
 
         private void ordenDePagoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmOpFleteros frm = new frmOpFleteros(0, idusuario, puesto, sucursal, talon);
+            frm.ShowDialog();
+        }
+
+        private void consultaOrdenDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaRecibos frm = new frmConsultaRecibos(talon, 1, 1);
             frm.ShowDialog();
         }
     }

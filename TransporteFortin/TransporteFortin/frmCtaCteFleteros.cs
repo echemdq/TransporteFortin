@@ -15,6 +15,7 @@ namespace TransporteFortin
         Fleteros u = null;
         Empresas em = null;
         int ptoventa = 0;
+        int idemp = 0;
         public frmCtaCteFleteros(int pto)
         {
             ptoventa = pto;
@@ -59,9 +60,11 @@ namespace TransporteFortin
         {
             if (u != null)
             {
+                idemp = idem;
                 em = new Empresas(u.Empresas.Idempresas, u.Empresas.Empresa, "", "", "", "", "", "", "");
                 double debe = 0;
                 double haber = 0;
+                textBox1.Text = u.Empresas.Empresa;
                 txtCliente.Text = u.Fletero;
                 txtDomicilio.Text = u.Direccion;
                 txtTelefono.Text = u.Telefono;
@@ -95,20 +98,19 @@ namespace TransporteFortin
                                         dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
                                         string prueba = aux.Ordenescarga.Nrocarga;
                                         dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;
-                                        dataGridView1.Rows[x].Cells[4].Value = aux.Debe;
-                                        debe = debe + Convert.ToDouble(aux.Debe);
+                                        dataGridView1.Rows[x].Cells[4].Value = aux.Debe;                                        
                                         dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                                         dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                                         dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                                        debe = debe + Convert.ToDouble(aux.Debe);
                                         haber = haber + Convert.ToDouble(aux.Haber);
-                                        label2.Text = (debe - haber).ToString();
                                         x++;
                                     }
                                     else
                                     {
+                                        debe = debe + Convert.ToDouble(aux.Debe);
                                         haber = haber + Convert.ToDouble(aux.Haber);
-                                        label2.Text = (debe - haber).ToString();
-                                        x++;
+                                        dataGridView1.Rows.RemoveAt(x);
                                     }
                                 }
                                 else
@@ -126,16 +128,16 @@ namespace TransporteFortin
                             dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
                             string prueba = aux.Ordenescarga.Nrocarga;
                             dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescarga.Nrocarga;
-                            dataGridView1.Rows[x].Cells[4].Value = aux.Debe;
-                            debe = debe + Convert.ToDouble(aux.Debe);
+                            dataGridView1.Rows[x].Cells[4].Value = aux.Debe;                            
                             dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
-                            haber = haber + Convert.ToDouble(aux.Haber);
-                            label2.Text = (debe - haber).ToString();
+                            debe = debe + Convert.ToDouble(aux.Debe);
+                            haber = haber + Convert.ToDouble(aux.Haber);                            
                             x++;
                         }
                     }
+                    label2.Text = (debe - haber).ToString();
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
 
@@ -219,6 +221,7 @@ namespace TransporteFortin
             int filaseleccionada = Convert.ToInt32(this.dataGridView2.CurrentRow.Index);
             int idfletero = Convert.ToInt32(dataGridView2[0, filaseleccionada].Value);
             int idempresa = Convert.ToInt32(dataGridView2[1, filaseleccionada].Value);
+            u.Empresas.Empresa = Convert.ToString(dataGridView2[2, filaseleccionada].Value);
             dataGridView1.Rows.Clear();
             label2.Text = Convert.ToString(dataGridView2[3, filaseleccionada].Value);
             buscar(idempresa);
@@ -236,13 +239,22 @@ namespace TransporteFortin
                     {
                         chk = 1;
                     }
-                    //frmInfCtaCteCtes frm = new frmInfCtaCteCtes(u.Idclientes, chk, maskedTextBox1.Text, maskedTextBox2.Text);
-                    //frm.ShowDialog();
+                    frmInfCtaCteFleteros frm = new frmInfCtaCteFleteros(u.Idfleteros, chk, maskedTextBox1.Text, maskedTextBox2.Text, idemp.ToString());
+                    frm.ShowDialog();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (u != null && checkBox1.Checked)
+            {
+                dataGridView1.Rows.Clear();
+                buscar(u.Empresas.Idempresas);
             }
         }
     }

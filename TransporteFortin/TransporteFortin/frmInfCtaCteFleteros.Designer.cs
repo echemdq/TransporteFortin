@@ -1,6 +1,6 @@
 ﻿namespace TransporteFortin
 {
-    partial class frmRecibo
+    partial class frmInfCtaCteFleteros
     {
         /// <summary>
         /// Required designer variable.
@@ -31,36 +31,36 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.FormasDePagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.FormasDePagoBindingSource)).BeginInit();
+            this.CtaCteClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.CtaCteClientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.FormasDePagoBindingSource;
+            reportDataSource1.Value = this.CtaCteClientesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TransporteFortin.Report4.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TransporteFortin.Report7.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(629, 352);
+            this.reportViewer1.Size = new System.Drawing.Size(1042, 393);
             this.reportViewer1.TabIndex = 0;
             // 
-            // FormasDePagoBindingSource
+            // CtaCteClientesBindingSource
             // 
-            this.FormasDePagoBindingSource.DataSource = typeof(TransporteFortin.FormasDePago);
+            this.CtaCteClientesBindingSource.DataSource = typeof(TransporteFortin.CtaCteClientes);
             // 
-            // frmRecibo
+            // frmInfCtaCteFleteros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 352);
+            this.ClientSize = new System.Drawing.Size(1042, 393);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frmRecibo";
-            this.Text = "Impresion Recibo";
-            this.Load += new System.EventHandler(this.frmRecibo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.FormasDePagoBindingSource)).EndInit();
+            this.Name = "frmInfCtaCteFleteros";
+            this.Text = "Informe Cuenta Corriente Fleteros";
+            this.Load += new System.EventHandler(this.frmInfCtaCteFleteros_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CtaCteClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -68,6 +68,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource FormasDePagoBindingSource;
+        private System.Windows.Forms.BindingSource CtaCteClientesBindingSource;
     }
 }
