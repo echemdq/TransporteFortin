@@ -11,13 +11,14 @@ using Microsoft.Reporting.WinForms;
 
 namespace TransporteFortin
 {
-    public partial class frmInfCtaCteCtes : Form
+    public partial class frmInfCtaCteProv : Form
     {
         int idcli = 0;
         string de = "";
         string ha = "";
         int ch = 0;
-        public frmInfCtaCteCtes(int idcliente, int check, string desde, string hasta)
+
+        public frmInfCtaCteProv(int idcliente, int check, string desde, string hasta)
         {
             InitializeComponent();
             idcli = idcliente;
@@ -26,13 +27,13 @@ namespace TransporteFortin
             ha = hasta;
         }
 
-        private void frmInfCtaCteCtes_Load(object sender, EventArgs e)
+        private void frmInfCtaCteProv_Load(object sender, EventArgs e)
         {
             Acceso_BD oa = new Acceso_BD();
             if (ch == 0)
             {
-                CtaCteClientesBindingSource.DataSource = oa.leerDatos("select cli.cliente as Clientes, date_format(f.fecha,'%d/%m/%Y') as Fecha, c.descripcion as Conceptos, concat(f.descripcion, ' Nro ', case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end) as Descripcion, f.ptoventa, debe as Debe, haber as Haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end  as Clientes from ctacteclientes f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos left join clientes cli on f.idclientes = cli.idclientes where f.idclientes = '" + idcli + "'");
-                DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + idcli + "'");
+                CtaCteClientesBindingSource.DataSource = oa.leerDatos("select cli.proveedor as Clientes, date_format(f.fecha,'%d/%m/%Y') as Fecha, c.descripcion as Conceptos, f.ptoventa, debe as Debe, haber as Haber, concat(f.descripcion, ' Nro ', case when o.nro is not null then concat(cast(o.nro as char), '- Ordenes de Combustible') else case when r.nro is not null and r.tipo = 0 then concat(cast(r.nro as char), '- Recibo') else concat(cast(r.nro as char), '- Orden de Pago') end end) as Descripcion from ctacteproveedores f inner join conceptos c on f.idconceptos = c.codigo left join ordenescombustible o on f.idordenescombustible = o.idordenescombustible left join recibos r on r.idrecibos = f.idrecibos left join proveedores cli on f.idproveedores = cli.idproveedores where f.idproveedores = '" + idcli + "'");
+                DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctacteproveedores WHERE idproveedores = '" + idcli + "'");
                 string saldo = "";
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -56,8 +57,8 @@ namespace TransporteFortin
                 {
                     if (desde <= hasta)
                     {
-                        CtaCteClientesBindingSource.DataSource = oa.leerDatos("select cli.cliente as Clientes, date_format(f.fecha,'%d/%m/%Y') as Fecha, c.descripcion as Conceptos, concat(f.descripcion, ' Nro ', case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end) as Descripcion, f.ptoventa, debe as Debe, haber as Haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end  as Clientes from ctacteclientes f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos left join clientes cli on f.idclientes = cli.idclientes where f.idclientes = '" + idcli + "' and date_format(f.fecha,'%d/%m/%Y') between '" + de + "' and '" + ha + "'");
-                        DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + idcli + "'");
+                        CtaCteClientesBindingSource.DataSource = oa.leerDatos("select cli.proveedor as Clientes, date_format(f.fecha,'%d/%m/%Y') as Fecha, c.descripcion as Conceptos, f.ptoventa, debe as Debe, haber as Haber, concat(f.descripcion, ' Nro ', case when o.nro is not null then concat(cast(o.nro as char), '- Ordenes de Combustible') else case when r.nro is not null and r.tipo = 0 then concat(cast(r.nro as char), '- Recibo') else concat(cast(r.nro as char), '- Orden de Pago') end end) as Descripcion from ctacteproveedores f inner join conceptos c on f.idconceptos = c.codigo left join ordenescombustible o on f.idordenescombustible = o.idordenescombustible left join recibos r on r.idrecibos = f.idrecibos left join proveedores cli on f.idproveedores = cli.idproveedores where f.idproveedores = '"+idcli+"' and date_format(f.fecha,'%d/%m/%Y') between '" + de + "' and '" + ha + "'");
+                        DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctacteproveedores WHERE idproveedores = '" + idcli + "'");
                         string saldo = "";
                         foreach (DataRow dr in dt.Rows)
                         {
@@ -75,16 +76,6 @@ namespace TransporteFortin
                     }
                 }
             }
-        }
-
-        private void CtaCteClientesBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

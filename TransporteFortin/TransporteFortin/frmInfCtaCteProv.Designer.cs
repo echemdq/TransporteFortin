@@ -1,6 +1,6 @@
 ﻿namespace TransporteFortin
 {
-    partial class frmInfCtaCteCtes
+    partial class frmInfCtaCteProv
     {
         /// <summary>
         /// Required designer variable.
@@ -41,27 +41,25 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.CtaCteClientesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TransporteFortin.Report6.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TransporteFortin.Report9.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(1042, 393);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // CtaCteClientesBindingSource
             // 
             this.CtaCteClientesBindingSource.DataSource = typeof(TransporteFortin.CtaCteClientes);
-            this.CtaCteClientesBindingSource.CurrentChanged += new System.EventHandler(this.CtaCteClientesBindingSource_CurrentChanged);
             // 
-            // frmInfCtaCteCtes
+            // frmInfCtaCteProv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 393);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frmInfCtaCteCtes";
-            this.Text = "frmInfCtaCteCtes";
-            this.Load += new System.EventHandler(this.frmInfCtaCteCtes_Load);
+            this.Name = "frmInfCtaCteProv";
+            this.Text = "Informe Cuenta Corriente Proveedores";
+            this.Load += new System.EventHandler(this.frmInfCtaCteProv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CtaCteClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
 

@@ -102,8 +102,8 @@ namespace TransporteFortin
                 listat.Add(c);
             }
             cmbConceptos.DataSource = listat;
-            cmbConceptos.DisplayMember = "concepto";
-            cmbConceptos.ValueMember = "idconceptos";
+            cmbConceptos.DisplayMember = "descripcion";
+            cmbConceptos.ValueMember = "codigo";
         }
     }
 }

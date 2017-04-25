@@ -271,6 +271,12 @@
     <Compile Include="frmInfCtaCteFleteros.Designer.cs">
       <DependentUpon>frmInfCtaCteFleteros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInfCtaCteProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfCtaCteProv.Designer.cs">
+      <DependentUpon>frmInfCtaCteProv.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInformeEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -465,6 +471,9 @@
     <EmbeddedResource Include="frmInfCtaCteFleteros.resx">
       <DependentUpon>frmInfCtaCteFleteros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInfCtaCteProv.resx">
+      <DependentUpon>frmInfCtaCteProv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInformeEmpresas.resx">
       <DependentUpon>frmInformeEmpresas.cs</DependentUpon>
     </EmbeddedResource>
@@ -537,6 +546,7 @@
     <EmbeddedResource Include="Report6.rdlc" />
     <EmbeddedResource Include="Report7.rdlc" />
     <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc" />
     <None Include="Imagenes\Thumbs.db" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Accesos.datasource" />

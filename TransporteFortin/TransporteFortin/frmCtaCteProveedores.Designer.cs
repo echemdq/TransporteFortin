@@ -47,6 +47,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -117,10 +124,10 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 121);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(815, 288);
+            this.dataGridView1.Size = new System.Drawing.Size(815, 273);
             this.dataGridView1.TabIndex = 109;
             // 
             // txtContacto
@@ -214,7 +221,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(571, 400);
+            this.button2.Location = new System.Drawing.Point(662, 400);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 51);
             this.button2.TabIndex = 127;
@@ -224,13 +231,88 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(481, 400);
+            this.button1.Location = new System.Drawing.Point(572, 400);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 51);
             this.button1.TabIndex = 126;
             this.button1.Text = "DEBE";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(195, 91);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.TabIndex = 160;
+            this.label10.Text = "Hasta";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(40, 91);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 159;
+            this.label9.Text = "Desde";
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox2.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.maskedTextBox2.Location = new System.Drawing.Point(242, 89);
+            this.maskedTextBox2.Mask = "00/00/0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(100, 21);
+            this.maskedTextBox2.TabIndex = 158;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.maskedTextBox1.Location = new System.Drawing.Point(89, 89);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 21);
+            this.maskedTextBox1.TabIndex = 157;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(359, 90);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(101, 17);
+            this.checkBox1.TabIndex = 156;
+            this.checkBox1.Text = "Filtra por fechas";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(466, 83);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(30, 27);
+            this.button4.TabIndex = 161;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::TransporteFortin.Properties.Resources.Printer;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.Location = new System.Drawing.Point(752, 400);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 51);
+            this.button3.TabIndex = 150;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnBuscar
             // 
@@ -249,6 +331,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 480);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button2);
@@ -301,5 +390,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

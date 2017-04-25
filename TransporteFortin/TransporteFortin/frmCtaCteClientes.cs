@@ -113,6 +113,7 @@ namespace TransporteFortin
                     txtTelefono.Text = u.Telefono;
                     txtCelular.Text = u.Celular;
                     txtContacto.Text = u.Contacto;
+                    dataGridView1.Rows.Clear();
                     buscar(u.Idclientes);
                 }
             }
@@ -195,8 +196,34 @@ namespace TransporteFortin
             if (u != null)
             {
                 dataGridView1.Rows.Clear();
+                label8.Text = "0.00";
                 buscar(u.Idclientes);
             }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

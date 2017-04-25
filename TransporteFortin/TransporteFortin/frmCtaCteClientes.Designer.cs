@@ -248,6 +248,7 @@
             this.checkBox1.TabIndex = 150;
             this.checkBox1.Text = "Filtra por fechas";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // maskedTextBox1
             // 
@@ -259,6 +260,7 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 21);
             this.maskedTextBox1.TabIndex = 151;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // maskedTextBox2
             // 
@@ -270,6 +272,7 @@
             this.maskedTextBox2.Size = new System.Drawing.Size(100, 21);
             this.maskedTextBox2.TabIndex = 152;
             this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 
             // label9
             // 
@@ -280,6 +283,7 @@
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 153;
             this.label9.Text = "Desde";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -290,6 +294,7 @@
             this.label10.Size = new System.Drawing.Size(39, 13);
             this.label10.TabIndex = 154;
             this.label10.Text = "Hasta";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // button4
             // 

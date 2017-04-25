@@ -254,6 +254,7 @@ namespace TransporteFortin
             if (u != null && checkBox1.Checked)
             {
                 dataGridView1.Rows.Clear();
+                label2.Text = "0.00";
                 buscar(u.Empresas.Idempresas);
             }
         }
