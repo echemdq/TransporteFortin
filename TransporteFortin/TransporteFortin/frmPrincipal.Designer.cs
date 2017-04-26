@@ -84,6 +84,7 @@
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cuentaCorrienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -171,7 +172,8 @@
             // 
             this.bancosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aBMBANCOSToolStripMenuItem,
-            this.cuentasPropiasToolStripMenuItem});
+            this.cuentasPropiasToolStripMenuItem,
+            this.cuentaCorrienteToolStripMenuItem});
             this.bancosToolStripMenuItem.Name = "bancosToolStripMenuItem";
             this.bancosToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.bancosToolStripMenuItem.Text = "Bancos";
@@ -179,14 +181,14 @@
             // aBMBANCOSToolStripMenuItem
             // 
             this.aBMBANCOSToolStripMenuItem.Name = "aBMBANCOSToolStripMenuItem";
-            this.aBMBANCOSToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.aBMBANCOSToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.aBMBANCOSToolStripMenuItem.Text = "ABM Bancos";
             this.aBMBANCOSToolStripMenuItem.Click += new System.EventHandler(this.aBMBANCOSToolStripMenuItem_Click);
             // 
             // cuentasPropiasToolStripMenuItem
             // 
             this.cuentasPropiasToolStripMenuItem.Name = "cuentasPropiasToolStripMenuItem";
-            this.cuentasPropiasToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.cuentasPropiasToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.cuentasPropiasToolStripMenuItem.Text = "Cuentas Propias";
             this.cuentasPropiasToolStripMenuItem.Click += new System.EventHandler(this.cuentasPropiasToolStripMenuItem_Click);
             // 
@@ -513,6 +515,13 @@
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
+            // cuentaCorrienteToolStripMenuItem
+            // 
+            this.cuentaCorrienteToolStripMenuItem.Name = "cuentaCorrienteToolStripMenuItem";
+            this.cuentaCorrienteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.cuentaCorrienteToolStripMenuItem.Text = "Cuenta Corriente";
+            this.cuentaCorrienteToolStripMenuItem.Click += new System.EventHandler(this.cuentaCorrienteToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,6 +605,7 @@
         private System.Windows.Forms.ToolStripMenuItem ordenDePagoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultaOrdenDePagoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem cuentaCorrienteToolStripMenuItem;
     }
 }
 

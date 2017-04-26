@@ -52,11 +52,11 @@ namespace TransporteFortin
             //inserto cajas
             if (dato.Tipo == 0)
             {
-                oacceso.ActualizarBD("insert into movcajas (idcajas, idrecibos, idconceptoscaja, descripcion, DoC, fecha, importe) values ('" + caja + "','" + idrecibo + "',0,'GS - Recibo Nro:" + nro + "','d','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + dato.Importe.ToString().Replace(',', '.') + "')");
+                oacceso.ActualizarBD("insert into movcajas (idcajas, idrecibos, idconceptoscaja, descripcion, DoC, fecha, importe) values ('" + caja + "','" + idrecibo + "',0,'GS - Recibo Nro:" + nro + "','c','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + dato.Importe.ToString().Replace(',', '.') + "')");
             }
             else
             {
-                oacceso.ActualizarBD("insert into movcajas (idcajas, idrecibos, idconceptoscaja, descripcion, DoC, fecha, importe) values ('" + caja + "','" + idrecibo + "',0,'GS - Prden de Pago Nro:" + nro + "','c','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + dato.Importe.ToString().Replace(',', '.') + "')");
+                oacceso.ActualizarBD("insert into movcajas (idcajas, idrecibos, idconceptoscaja, descripcion, DoC, fecha, importe) values ('" + caja + "','" + idrecibo + "',0,'GS - Orden de Pago Nro:" + nro + "','d','" + dato.Fecha.ToString("yyyy-MM-dd") + "','" + dato.Importe.ToString().Replace(',', '.') + "')");
             }
 
 
@@ -93,7 +93,7 @@ namespace TransporteFortin
                     {
                         idforma = Convert.ToInt32(dr["idforma"]);
                     }
-                    oacceso.ActualizarBD("insert into movbancos (idcuentasbanco, idformasdepago, idconceptosbanco, descripcion, DoC, importe, fecha) values ('" + f.Idcuentabanco + "','" + idforma + "',8,'GS - Orden de Pago Nro: " + nro + "','c','" + f.Importe.ToString().Replace(',', '.') + "','" + f.Fecha.ToString("yyyy-MM-dd") + "')");
+                    oacceso.ActualizarBD("insert into movbancos (idcuentasbanco, idformasdepago, idconceptosbanco, descripcion, DoC, importe, fecha) values ('" + f.Idcuentabanco + "','" + idforma + "',8,'GS - Orden de Pago Nro: " + nro + "','d','" + f.Importe.ToString().Replace(',', '.') + "','" + f.Fecha.ToString("yyyy-MM-dd") + "')");
                     
                 }
                 else if (f.Idformaspago == 4)
@@ -107,7 +107,7 @@ namespace TransporteFortin
                         {
                             idforma = Convert.ToInt32(dr["idforma"]);
                         }
-                        oacceso.ActualizarBD("insert into movbancos (idcuentasbanco, idformasdepago, idconceptosbanco, descripcion, DoC, importe, fecha) values ('" + f.Idcuentabanco + "','" + idforma + "',2,'GS - Recibo Nro: " +nro + "','d','" + f.Importe.ToString().Replace(',', '.') + "','" + f.Fecha.ToString("yyyy-MM-dd") + "')");
+                        oacceso.ActualizarBD("insert into movbancos (idcuentasbanco, idformasdepago, idconceptosbanco, descripcion, DoC, importe, fecha) values ('" + f.Idcuentabanco + "','" + idforma + "',2,'GS - Recibo Nro: " +nro + "','c','" + f.Importe.ToString().Replace(',', '.') + "','" + f.Fecha.ToString("yyyy-MM-dd") + "')");
                     }
                     else
                     {
@@ -117,7 +117,7 @@ namespace TransporteFortin
                         {
                             idforma = Convert.ToInt32(dr["idforma"]);
                         }
-                        oacceso.ActualizarBD("insert into movbancos (idcuentasbanco, idformasdepago, idconceptosbanco, descripcion, DoC, importe, fecha) values ('" + f.Idcuentabanco + "','" + idforma + "',9,'GS - Orden de Pago Nro: " + nro + "','c','" + f.Importe.ToString().Replace(',', '.') + "','" + f.Fecha.ToString("yyyy-MM-dd") + "')");
+                        oacceso.ActualizarBD("insert into movbancos (idcuentasbanco, idformasdepago, idconceptosbanco, descripcion, DoC, importe, fecha) values ('" + f.Idcuentabanco + "','" + idforma + "',9,'GS - Orden de Pago Nro: " + nro + "','d','" + f.Importe.ToString().Replace(',', '.') + "','" + f.Fecha.ToString("yyyy-MM-dd") + "')");
                     }
                 }
                 else if (f.Idformaspago == 3)

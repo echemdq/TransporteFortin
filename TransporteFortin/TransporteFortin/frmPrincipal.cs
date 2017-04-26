@@ -569,5 +569,11 @@ namespace TransporteFortin
             frmConsultaRecibos frm = new frmConsultaRecibos(talon, 1, 1);
             frm.ShowDialog();
         }
+
+        private void cuentaCorrienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCtaCteBancos frm = new frmCtaCteBancos(talon);
+            frm.ShowDialog();
+        }
     }
 }
