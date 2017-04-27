@@ -575,5 +575,11 @@ namespace TransporteFortin
             frmCtaCteBancos frm = new frmCtaCteBancos(talon);
             frm.ShowDialog();
         }
+
+        private void consultaCHqueusPropiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCheques frm = new frmCheques();
+            frm.ShowDialog();
+        }
     }
 }

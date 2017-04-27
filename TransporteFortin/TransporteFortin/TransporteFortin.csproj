@@ -169,6 +169,12 @@
     <Compile Include="frmBuscaUsuarios.Designer.cs">
       <DependentUpon>frmBuscaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCheques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheques.Designer.cs">
+      <DependentUpon>frmCheques.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,12 @@
     </Compile>
     <Compile Include="frmFormasPagoOp.Designer.cs">
       <DependentUpon>frmFormasPagoOp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfCtaCteBancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfCtaCteBancos.Designer.cs">
+      <DependentUpon>frmInfCtaCteBancos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInfCtaCteCtes.cs">
       <SubType>Form</SubType>
@@ -432,6 +444,9 @@
     <EmbeddedResource Include="frmBuscaUsuarios.resx">
       <DependentUpon>frmBuscaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCheques.resx">
+      <DependentUpon>frmCheques.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -476,6 +491,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormasPagoOp.resx">
       <DependentUpon>frmFormasPagoOp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfCtaCteBancos.resx">
+      <DependentUpon>frmInfCtaCteBancos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInfCtaCteCtes.resx">
       <DependentUpon>frmInfCtaCteCtes.cs</DependentUpon>
@@ -557,6 +575,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report10.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="Report4.rdlc" />

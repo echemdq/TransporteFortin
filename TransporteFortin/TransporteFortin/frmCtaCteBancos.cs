@@ -132,5 +132,25 @@ namespace TransporteFortin
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                CuentasBanco t = new CuentasBanco(Convert.ToInt32(cmbBancos.SelectedValue), null, null, cmbBancos.Text);
+                int chk = 0;
+                if (checkBox1.Checked)
+                {
+                    chk = 1;
+                }
+                frmInfCtaCteBancos frm = new frmInfCtaCteBancos(t.Idcuentasbanco, chk, maskedTextBox1.Text, maskedTextBox2.Text);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
