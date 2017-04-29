@@ -15,7 +15,6 @@ namespace TransporteFortin
         List<FormasDePago> lista = new List<FormasDePago>();
         Proveedores u = null;
         BdRecibos bd = new BdRecibos();
-        Empresas em = null;
         string concepto = "";
         int idrecibo = 0;
         int idusuario = 0;
