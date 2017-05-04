@@ -194,7 +194,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Productos:</Value>
+                    <Value>Productos: </Value>
                     <Style>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -233,7 +233,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Cantidad a Transportar:</Value>
+                    <Value>Cantidad a Transportar: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -271,14 +271,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Valor declarado mercaderia:</Value>
+                    <Value>Valor declarado mercaderia: $</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> $</Value>
-                    <Style />
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!Declarado.Value</Value>
@@ -313,7 +309,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Importe Total Orden:</Value>
+                    <Value>Importe Total Orden: $</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -351,7 +347,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Importe Comision:</Value>
+                    <Value>Importe Comision: $</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -389,7 +385,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Origen:</Value>
+                    <Value>Origen: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -427,7 +423,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Destino:</Value>
+                    <Value>Destino: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -465,7 +461,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Observaciones:</Value>
+                    <Value>Observaciones: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -503,7 +499,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Apellido y Nombre Chofer:</Value>
+                    <Value>Apellido y Nombre Chofer: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -541,7 +537,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Domicilio:</Value>
+                    <Value>Domicilio: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -579,7 +575,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Telefono:</Value>
+                    <Value>Telefono: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -617,7 +613,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Registro:</Value>
+                    <Value>Registro: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -655,7 +651,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Celular:</Value>
+                    <Value>Celular: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -693,7 +689,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Empresa:</Value>
+                    <Value>Empresa: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -731,7 +727,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Telefono:</Value>
+                    <Value>Telefono: </Value>
                     <Style>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -770,7 +766,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Camion Marca:</Value>
+                    <Value>Camion Marca: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -808,7 +804,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Chapa Camion:</Value>
+                    <Value>Chapa Camion: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -846,7 +842,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Camion Tipo:</Value>
+                    <Value>Camion Tipo: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -884,7 +880,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Chapa Acoplado:</Value>
+                    <Value>Chapa Acoplado: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -922,7 +918,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Fecha Emision:</Value>
+                    <Value>Fecha Emision: </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -973,8 +969,8 @@
     <PageWidth>21cm</PageWidth>
     <LeftMargin>0.5cm</LeftMargin>
     <RightMargin>0.5cm</RightMargin>
-    <TopMargin>0.5cm</TopMargin>
-    <BottomMargin>0.5cm</BottomMargin>
+    <TopMargin>1.5cm</TopMargin>
+    <BottomMargin>1.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

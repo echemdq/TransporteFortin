@@ -88,6 +88,8 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -429,7 +431,9 @@
             // 
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aBMProveedoresToolStripMenuItem,
+            this.toolStripSeparator8,
             this.consultaCtaCteToolStripMenuItem,
+            this.toolStripSeparator9,
             this.ordenDePagoToolStripMenuItem});
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
@@ -545,6 +549,16 @@
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(52, 17);
             this.toolStripStatusLabel4.Text = "TALON: ";
             // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(165, 6);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(165, 6);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,6 +646,8 @@
         private System.Windows.Forms.ToolStripMenuItem consultaChequeTercerosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaTransferenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem arqueoCajaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     }
 }
 

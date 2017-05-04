@@ -62,8 +62,6 @@ namespace TransporteFortin
         {
             DateTime desde;
             DateTime hasta;
-            int nro;
-            //Int32.TryParse(textBox1.Text, out nro)
             string where = "";
             if (DateTime.TryParse(maskedTextBox1.Text, out desde) && DateTime.TryParse(maskedTextBox2.Text, out hasta))
             {

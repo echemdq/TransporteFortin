@@ -64,3 +64,4 @@ C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteF
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmCajas.resources
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmMovCajas.resources
 C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmImpOCarga.resources
+C:\Users\Ezequiel\Documents\GitHub\TransporteFortin\TransporteFortin\TransporteFortin\obj\Debug\TransporteFortin.frmImpOComb.resources

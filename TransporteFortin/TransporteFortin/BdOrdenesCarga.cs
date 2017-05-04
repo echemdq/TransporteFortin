@@ -67,21 +67,25 @@ namespace TransporteFortin
         }
 
         public List<OrdenesCarga> BuscarEspecial(string dato)
-        {
-            DataTable dt = oacceso.leerDatos("select idusuarios, idordenescarga, o.ptoventa, nrocarga, o.idsucursales, sucursal, fecha, o.idclientes, c.cliente, o.idfleteros, f.fletero, totalviaje, comision, anulado, valorizado from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join sucursales s on s.idsucursales = o.idsucursales "+dato); 
+        {            
+            DataTable dt = oacceso.leerDatos("select o.observaciones as ob, o.valordeclarado as valord, o.cantidad as cant, o.pagodestino as pagod, f.direccion as dir, o.porcuentade as porcuenta, o.productos as prod, o.origen as origen, o.destino as destino, t.detalle as tipo, f.chapacamion as chapacamion, f.camion as camion, f.chapaacoplado as chapaacoplado, e.empresa as empresa, e.telefono as teemp, idusuarios, idordenescarga, o.ptoventa, nrocarga, o.idsucursales, sucursal, fecha, o.idclientes, c.cliente, o.idfleteros, f.fletero, totalviaje, comision, anulado, valorizado from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join tiposcamion t on f.idtiposcamion = t.idtiposcamion inner join empresas e on f.idempresas = e.idempresas inner join sucursales s on s.idsucursales = o.idsucursales "+dato); 
             Clientes c = null;
             Fleteros f = null;
+            Empresas e = null;
             Sucursales s = null;
             OrdenesCarga o = null;
+            TiposCamion t = null;
             Usuarios u = null;
             List<OrdenesCarga> lista = new List<OrdenesCarga>();
             foreach (DataRow dr in dt.Rows)
             {
-                c = new Clientes(Convert.ToInt32(dr["idclientes"]), Convert.ToString(dr["cliente"]), "", "", "", "", "", "", "", "", "", null, "");
-                f = new Fleteros(Convert.ToInt32(dr["idfleteros"]), 0, Convert.ToString(dr["fletero"]), "", "", "", "", "", "", "", null, "", null, "", "", "", null,"");
+                c = new Clientes(Convert.ToInt32(dr["idclientes"]), Convert.ToString(dr["cliente"]), "", "","", "", "", "", "", "", "", null, "");
+                e = new Empresas(0, Convert.ToString(dr["empresa"]), "", "", Convert.ToString(dr["teemp"]), "", "", "", "");
+                t = new TiposCamion(0, Convert.ToString(dr["tipo"]));
+                f = new Fleteros(Convert.ToInt32(dr["idfleteros"]), 0, Convert.ToString(dr["fletero"]), Convert.ToString(dr["dir"]), "", "", "", "", "", "", e, Convert.ToString(dr["camion"]), t, Convert.ToString(dr["chapacamion"]), Convert.ToString(dr["chapaacoplado"]), "", null, "");
                 s = new Sucursales(Convert.ToInt32(dr["idsucursales"]), Convert.ToString(dr["sucursal"]));
                 u = new Usuarios(Convert.ToInt32(dr["idusuarios"]), "", "");
-                o = new OrdenesCarga(Convert.ToInt32(dr["idordenescarga"]), Convert.ToString(dr["nrocarga"]), Convert.ToInt32(dr["ptoventa"]), 0, Convert.ToDateTime(dr["fecha"]), s, c, f, null, "", "", "", "", 0, Convert.ToInt32(dr["valorizado"]), null, 0, 0, 0, "", 0, 0, Convert.ToDecimal(dr["totalviaje"]), 0, 0, Convert.ToDecimal(dr["comision"]), 0, "", Convert.ToInt32(dr["anulado"]), u,"");
+                o = new OrdenesCarga(Convert.ToInt32(dr["idordenescarga"]), Convert.ToString(dr["nrocarga"]), Convert.ToInt32(dr["ptoventa"]), 0, Convert.ToDateTime(dr["fecha"]), s, c, f, e, Convert.ToString(dr["porcuenta"]), Convert.ToString(dr["prod"]), Convert.ToString(dr["origen"]), Convert.ToString(dr["destino"]),Convert.ToDecimal(dr["valord"]), Convert.ToInt32(dr["valorizado"]), null,Convert.ToInt32(dr["cant"]), 0,0,"", 0, Convert.ToInt32(dr["pagod"]), Convert.ToDecimal(dr["totalviaje"]), 0, 0, Convert.ToDecimal(dr["comision"]), 0, Convert.ToString(dr["ob"]), Convert.ToInt32(dr["anulado"]), u,"");
                 lista.Add(o);
             }
             return lista;

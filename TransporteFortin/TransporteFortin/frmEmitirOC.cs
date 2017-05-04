@@ -805,5 +805,22 @@ namespace TransporteFortin
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void chkPagoDest_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPagoDest.Checked)
+            {
+                richTextBox1.Text = "Pago destino";
+            }
+            else
+            {
+                richTextBox1.Text = "";
+            }
+        }
     }
 }

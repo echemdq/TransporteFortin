@@ -14,7 +14,7 @@ namespace TransporteFortin
     class Acceso_BD
     {
         static string server = "";
-
+        string sv = Convert.ToString(Environment.GetEnvironmentVariable("fvservidor"));
         public static string Server
         {
             get { return Acceso_BD.server; }
@@ -64,7 +64,7 @@ namespace TransporteFortin
                 password = "romeo1";
                 database = "transportefortin";
                 //server = "elfortin.no-ip.info";
-                server = "localhost";
+                server = sv;
                 cn1 = new MySqlConnection("Server=" + server + ";" + "DATABASE=" + database + ";" + "User ID=" + Uid + ";" + "PASSWORD=" + Password + ";");
             }
         }
@@ -199,6 +199,7 @@ namespace TransporteFortin
                     desconectar1();
                 }
             }
+            
         }
     }
 }

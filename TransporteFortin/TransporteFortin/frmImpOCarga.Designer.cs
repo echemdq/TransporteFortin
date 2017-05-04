@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(841, 487);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmImpOCarga";
-            this.Text = "frmImpOCarga";
+            this.Text = "Impresion Orden de Carga";
             this.Load += new System.EventHandler(this.frmImpOCarga_Load);
             this.ResumeLayout(false);
 

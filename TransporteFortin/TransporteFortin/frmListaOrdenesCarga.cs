@@ -16,6 +16,7 @@ namespace TransporteFortin
         ControladoraOrdenesCarga controlo = new ControladoraOrdenesCarga();
         int filaseleccionada = 0;
         int idoc = 0;
+        List<OrdenesCarga> lista = new List<OrdenesCarga>();
         public frmListaOrdenesCarga(string where)
         {
             InitializeComponent();
@@ -41,8 +42,14 @@ namespace TransporteFortin
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[6].Visible = false; 
             dataGridView1.Columns[11].Visible = false;
-
-            List<OrdenesCarga> lista = controlo.BuscarEspecial(consulta);
+            try
+            {
+                lista = controlo.BuscarEspecial(consulta);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             int i = 0;
             foreach (OrdenesCarga aux in lista)
             {
@@ -78,6 +85,7 @@ namespace TransporteFortin
             int valorizado = Convert.ToInt32(dataGridView1[11, filaseleccionada].Value);
             int anulado = Convert.ToInt32(dataGridView1[10, filaseleccionada].Value);
             idoc = Convert.ToInt32(dataGridView1[0, filaseleccionada].Value);
+
             if (idoc != 0)
             {
                 button3.Enabled = true;
@@ -91,10 +99,15 @@ namespace TransporteFortin
             {
                 //button1.Enabled = true;
             }
+            else
+            {
+                button1.Enabled = true;
+            }
 
             if (anulado == 0)
             {
                 button2.Enabled = true;
+                button1.Enabled = true;
             }
             else
             {
@@ -141,6 +154,26 @@ namespace TransporteFortin
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (OrdenesCarga o in lista)
+                {
+                    if (o.Idordenescarga == idoc)
+                    {
+                        frmImpOCarga frm = new frmImpOCarga(o);
+                        frm.ShowDialog();
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -160,7 +160,6 @@ namespace TransporteFortin
                             dt = oa.leerDatos("select r.idrecibos as idrecibos, r.tipo as tipo, r.fecha as fecha, concat(con.descripcion, ' - ',r.comentarios) as comentarios, con.descripcion as concepto, r.importe as importe, c.cliente as cliente, f.fletero as fletero, p.proveedor as proveedor, r.idclientes as idclientes, r.idproveedores as idproveedores, r.idfleteros as idfleteros from recibos r left join clientes c on r.idclientes = c.idclientes left join fleteros f on r.idfleteros = f.idfleteros left join proveedores p on r.idproveedores = p.idproveedores left join conceptos con on r.concepto = con.codigo where ptoventa = '" + textBox1.Text + "' and nro = '" + textBox2.Text + "' and r.idproveedores <> 0 and r.idfleteros = 0 and r.tipo = 1");
                         }
                     }
-                    int tipo = 0;
                     if (dt.Rows.Count > 0)
                     {
                         foreach (DataRow dr in dt.Rows)

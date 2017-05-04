@@ -325,7 +325,6 @@ namespace TransporteFortin
                 int filaseleccionada = Convert.ToInt32(this.dataGridView2.CurrentRow.Index);
                 int idformasdepago = 0;
                 idformasdepago = Convert.ToInt32(dataGridView2[0, filaseleccionada].Value);
-                DateTime r;
                 if (idformasdepago != 0)
                 {
                     id = id + 1;

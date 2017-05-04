@@ -34,11 +34,13 @@
             this.label15 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label33 = new System.Windows.Forms.Label();
             this.btnOrdenCte = new System.Windows.Forms.Button();
             this.txtSaldoCte = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDireccionCte = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.groupboxflet = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -72,6 +74,7 @@
             this.txtSaldoFlet = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFletero = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.txtFletero = new System.Windows.Forms.TextBox();
             this.txtRetiraPor = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -118,9 +121,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupboxflet.SuspendLayout();
@@ -192,6 +192,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DATOS DEL CLIENTE";
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(329, 19);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(72, 13);
+            this.label33.TabIndex = 87;
+            this.label33.Text = "Direccion:";
+            // 
             // btnOrdenCte
             // 
             this.btnOrdenCte.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -247,6 +256,19 @@
             this.lblCliente.TabIndex = 83;
             this.lblCliente.Text = "lblCliente";
             this.lblCliente.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(285, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 35);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtCliente
             // 
@@ -633,6 +655,18 @@
             this.lblFletero.Text = "lblFletero";
             this.lblFletero.Visible = false;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(285, 15);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(33, 35);
+            this.button4.TabIndex = 0;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // txtFletero
             // 
             this.txtFletero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -919,6 +953,7 @@
             this.chkPagoDest.TabIndex = 2;
             this.chkPagoDest.Text = "Pago en Destino";
             this.chkPagoDest.UseVisualStyleBackColor = true;
+            this.chkPagoDest.CheckedChanged += new System.EventHandler(this.chkPagoDest_CheckedChanged);
             // 
             // groupBox8
             // 
@@ -1136,40 +1171,6 @@
             this.button3.Text = "VALORIZAR";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.Control;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(285, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(33, 35);
-            this.button4.TabIndex = 0;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(285, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 35);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(329, 19);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(72, 13);
-            this.label33.TabIndex = 87;
-            this.label33.Text = "Direccion:";
             // 
             // frmEmitirOC
             // 

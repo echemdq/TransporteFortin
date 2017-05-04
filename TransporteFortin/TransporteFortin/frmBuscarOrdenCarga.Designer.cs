@@ -185,6 +185,7 @@
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(0, 13);
             this.lblCliente.TabIndex = 66;
+            this.lblCliente.Visible = false;
             // 
             // lblFletero
             // 

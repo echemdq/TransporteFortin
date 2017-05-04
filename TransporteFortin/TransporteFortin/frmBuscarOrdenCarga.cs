@@ -117,7 +117,7 @@ namespace TransporteFortin
                     {
                         where = "where ";
                     }
-                    where = where + " ptoventa = '"+textBox1.Text+"'";
+                    where = where + " o.ptoventa = '"+textBox1.Text+"'";
                 }
 
                 if (textBox2.Text != "")
@@ -130,7 +130,7 @@ namespace TransporteFortin
                     {
                         where = "where ";
                     }
-                    where = where + " nrocarga = '" + textBox2.Text + "'";
+                    where = where + " o.nrocarga = '" + textBox2.Text + "'";
                 }
 
                 if (lblCliente.Text != "")
@@ -139,7 +139,11 @@ namespace TransporteFortin
                     {
                         where = where + " and";
                     }
-                    where = where + " idclientes = '" + lblCliente.Text + "'";
+                    else
+                    {
+                        where = "where ";
+                    }
+                    where = where + " o.idclientes = '" + lblCliente.Text + "'";
                 }
 
                 if (lblFletero.Text != "")
@@ -152,7 +156,7 @@ namespace TransporteFortin
                     {
                         where = "where ";
                     }
-                    where = where + " idfleteros = '" + lblFletero.Text + "'";
+                    where = where + " o.idfleteros = '" + lblFletero.Text + "'";
                 }
 
                 if (cmbSucursal.SelectedIndex != -1)
@@ -165,7 +169,7 @@ namespace TransporteFortin
                     {
                         where = "where ";
                     }
-                    where = where + " idsucursales = '" + Convert.ToInt32(cmbSucursal.SelectedValue) + "'";
+                    where = where + " o.idsucursales = '" + Convert.ToInt32(cmbSucursal.SelectedValue) + "'";
                 }
 
                 if (rbValVal.Checked)
@@ -178,7 +182,7 @@ namespace TransporteFortin
                     {
                         where = "where ";
                     }
-                    where = where + " valorizado = '1'";
+                    where = where + " o.valorizado = '1'";
                 }
                 else if (rbValNo.Checked)
                 {
@@ -190,7 +194,7 @@ namespace TransporteFortin
                     {
                         where = "where ";
                     }
-                    where = where + " valorizado = '0'";
+                    where = where + " o.valorizado = '0'";
                 }                
 
                 if (rbEsAnu.Checked)
@@ -203,7 +207,7 @@ namespace TransporteFortin
                     {
                         where = "where ";
                     }
-                    where = where + " anulado = '1'";
+                    where = where + " o.anulado = '1'";
                 }
                 else if (rbEsNoAnu.Checked)
                 {
@@ -215,7 +219,7 @@ namespace TransporteFortin
                     {
                         where = "where ";
                     }
-                    where = where + " anulado = '0'";
+                    where = where + " o.anulado = '0'";
                 }
                 DateTime fecha;
                 if (DateTime.TryParse(mskDesde.Text, out fecha) == true && DateTime.TryParse(mskHasta.Text, out fecha) == true)

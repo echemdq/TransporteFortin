@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TransporteFortin
 {
-    public class ControladoraOrdenesCombustible : IDAO<OrdenesCombustible>
+    public class ControladoraOrdenesCombustible
     {
         BdOrdenesCombustible bd = new BdOrdenesCombustible();
-        public void Agregar(OrdenesCombustible dato)
+        public string Agregar(OrdenesCombustible dato)
         {
-            bd.Agregar(dato);
+            return bd.Agregar(dato);
         }
 
         public List<OrdenesCombustible> TraerTodos()
