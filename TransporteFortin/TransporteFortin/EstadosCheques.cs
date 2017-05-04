@@ -16,18 +16,18 @@ namespace TransporteFortin
             set { idestadoscheques = value; }
         }
 
-        string descripcion;
+        string estado;
 
-        public string Descripcion
+        public string Estado
         {
-            get { return descripcion; }
-            set { descripcion = value; }
+            get { return estado; }
+            set { estado = value; }
         }
 
         public EstadosCheques(int i, string d)
         {
             idestadoscheques = i;
-            descripcion = d;
+            estado = d;
         }
     }
 }

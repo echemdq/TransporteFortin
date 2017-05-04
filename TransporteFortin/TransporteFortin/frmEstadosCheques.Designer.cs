@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -39,11 +38,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.estadosChequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idestadoschequesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estadosChequesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDescripcion
@@ -101,13 +96,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idestadoschequesDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.estadosChequesBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 17);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -161,26 +151,6 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // estadosChequesBindingSource
-            // 
-            this.estadosChequesBindingSource.DataSource = typeof(TransporteFortin.EstadosCheques);
-            // 
-            // idestadoschequesDataGridViewTextBoxColumn
-            // 
-            this.idestadoschequesDataGridViewTextBoxColumn.DataPropertyName = "Idestadoscheques";
-            this.idestadoschequesDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.idestadoschequesDataGridViewTextBoxColumn.Name = "idestadoschequesDataGridViewTextBoxColumn";
-            this.idestadoschequesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idestadoschequesDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 88;
-            // 
             // frmEstadosCheques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,7 +173,6 @@
             this.Text = "ABM Estados Cheques";
             this.Load += new System.EventHandler(this.frmEstadosCheques_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estadosChequesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,8 +190,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idestadoschequesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource estadosChequesBindingSource;
     }
 }

@@ -21,7 +21,8 @@ namespace TransporteFortin
 
         private void frmEstadosCheques_Load(object sender, EventArgs e)
         {
-            estadosChequesBindingSource.DataSource = oa.leerDatos("select * from estadoscheques");
+            DataTable dt = oa.leerDatos("select * from estadoscheques");
+            dataGridView1.DataSource = dt;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace TransporteFortin
                 {
                     if (txtDescripcion.Text != "" && txtCodigo.Text != "")
                     {
-                        oa.ActualizarBD("insert into estadoscheques (idestadoscheques, descripcion) values('" + txtCodigo.Text + "','" + txtDescripcion.Text + "')");
+                        oa.ActualizarBD("insert into estadoscheques (idestadoscheques, estado) values('" + txtCodigo.Text + "','" + txtDescripcion.Text + "')");
                         MessageBox.Show("Estado creado correctamente");
                         txtDescripcion.Enabled = false;
                         txtDescripcion.Text = "";
@@ -59,7 +60,7 @@ namespace TransporteFortin
                 {
                     if (txtDescripcion.Text != "" && txtCodigo.Text != "")
                     {
-                        oa.ActualizarBD("update conceptos set idestadoscheques = '" + txtCodigo.Text + "', descripcion = '" + txtDescripcion.Text + "' where idestadoscheques = '" + c.Idestadoscheques + "'");
+                        oa.ActualizarBD("update estadoscheques set idestadoscheques = '" + txtCodigo.Text + "', estado = '" + txtDescripcion.Text + "' where idestadoscheques = '" + c.Idestadoscheques + "'");
                         MessageBox.Show("Estado actualizado correctamente");
                         txtDescripcion.Enabled = false;
                         txtDescripcion.Text = "";
@@ -111,7 +112,7 @@ namespace TransporteFortin
             string novedad = dataGridView1[1, filaseleccionada].Value.ToString();
             c = new EstadosCheques(idnov, novedad);
             txtCodigo.Text = c.Idestadoscheques.ToString();
-            txtDescripcion.Text = c.Descripcion;
+            txtDescripcion.Text = c.Estado;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -133,6 +134,11 @@ namespace TransporteFortin
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void estadosChequesBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
