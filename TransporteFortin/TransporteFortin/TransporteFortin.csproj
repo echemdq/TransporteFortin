@@ -169,6 +169,12 @@
     <Compile Include="frmBuscaUsuarios.Designer.cs">
       <DependentUpon>frmBuscaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCajas.Designer.cs">
+      <DependentUpon>frmCajas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCheques.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +271,12 @@
     <Compile Include="frmFormasPagoOp.Designer.cs">
       <DependentUpon>frmFormasPagoOp.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmImpOCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImpOCarga.Designer.cs">
+      <DependentUpon>frmImpOCarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInfCtaCteBancos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +336,12 @@
     </Compile>
     <Compile Include="frmMovBancos.Designer.cs">
       <DependentUpon>frmMovBancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMovCajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMovCajas.Designer.cs">
+      <DependentUpon>frmMovCajas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMovClientes.cs">
       <SubType>Form</SubType>
@@ -444,6 +462,9 @@
     <EmbeddedResource Include="frmBuscaUsuarios.resx">
       <DependentUpon>frmBuscaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCajas.resx">
+      <DependentUpon>frmCajas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCheques.resx">
       <DependentUpon>frmCheques.cs</DependentUpon>
     </EmbeddedResource>
@@ -492,6 +513,9 @@
     <EmbeddedResource Include="frmFormasPagoOp.resx">
       <DependentUpon>frmFormasPagoOp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmImpOCarga.resx">
+      <DependentUpon>frmImpOCarga.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInfCtaCteBancos.resx">
       <DependentUpon>frmInfCtaCteBancos.cs</DependentUpon>
     </EmbeddedResource>
@@ -521,6 +545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMovBancos.resx">
       <DependentUpon>frmMovBancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMovCajas.resx">
+      <DependentUpon>frmMovCajas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMovClientes.resx">
       <DependentUpon>frmMovClientes.cs</DependentUpon>
@@ -619,6 +646,7 @@
     <Content Include="Imagenes\cash.ico" />
     <Content Include="Imagenes\Document.ico" />
     <Content Include="Imagenes\Edit.ico" />
+    <None Include="Imagenes\FONDOCAMION.jpg" />
     <Content Include="Imagenes\Hopstarter-Soft-Scraps-Clock.ico" />
     <Content Include="Imagenes\Principal.ico" />
     <Content Include="Imagenes\Printer.ico" />

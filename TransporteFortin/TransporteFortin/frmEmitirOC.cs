@@ -266,7 +266,7 @@ namespace TransporteFortin
                 if (u != null)
                 {
                     lblCliente.Text = Convert.ToString(u.Idclientes);
-                    lblDireccionCte.Text = "Direccion: "+ u.Direccion;
+                    lblDireccionCte.Text = u.Direccion;
                     txtCliente.Text = u.Cliente;
                     Acceso_BD oa = new Acceso_BD();
                     DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + u.Idclientes + "'");
@@ -635,9 +635,10 @@ namespace TransporteFortin
                 if (lblCliente.Text != "" && lblFletero.Text != "")
                 {
                     Sucursales sucursales = new Sucursales(Convert.ToInt32(cmbSucursal.SelectedValue), "");
-                    Clientes cliente = new Clientes(Convert.ToInt32(lblCliente.Text), txtCliente.Text, "", "", "", "", "", "", "", "", "", null, "");
-                    Fleteros fletero = new Fleteros(Convert.ToInt32(lblFletero.Text), 0, "", "", "", "", "", "", "", "", null, "", null, "", "", "", null,"");
-                    Empresas empresa = new Empresas(Convert.ToInt32(lblEmpresa.Text), "", "", "", "", "", "", "", "");
+                    Clientes cliente = new Clientes(Convert.ToInt32(lblCliente.Text), txtCliente.Text, lblDireccionCte.Text, "", "", "", "", "", "", "", "", null, "");
+                    TiposCamion t = new TiposCamion(0, cmbTipoCamion.Text);
+                    Fleteros fletero = new Fleteros(Convert.ToInt32(lblFletero.Text), Convert.ToInt32(txtDocumento.Text), txtFletero.Text, txtDomicilio.Text,"" , "", txtTelefono.Text, txtCelular.Text, "", "", null, txtModelo.Text, t, txtChapaC.Text, txtChapaA.Text, "", null,"");
+                    Empresas empresa = new Empresas(Convert.ToInt32(lblEmpresa.Text), txtEmpresa.Text, "", "", "", "", "", "", "");
                     Usuarios usuario = new Usuarios(idusuario, "", "");
                     int valorizado = 0;
                     Unidades unidad = null;
@@ -690,8 +691,11 @@ namespace TransporteFortin
                         else
                         {
                             OrdenesCarga oc = new OrdenesCarga(0, "0", idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text), Convert.ToDecimal(txtIvaViaje.Text), Convert.ToDecimal(txtIVACte.Text), Convert.ToDecimal(txtComision.Text), Convert.ToDecimal(txtImporteCte.Text), richTextBox1.Text, 0, usuario,txtConceptoFact.Text);
-                            controlo.Agregar(oc);
-                            MessageBox.Show("Orden de carga generada correctamente");
+                            string nro = controlo.Agregar(oc);
+                            oc.Nrocarga = nro;
+                            frmImpOCarga frm = new frmImpOCarga(oc);
+                            frm.ShowDialog();
+                            MessageBox.Show("Orden de carga generada correctamente");                            
                             limpiar();
                         }
                     }
@@ -699,7 +703,7 @@ namespace TransporteFortin
                     {
                         unidad = new Unidades(Convert.ToInt32(cmbUnidades.SelectedValue), "");
                         OrdenesCarga oc = new OrdenesCarga(0, "0", idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, 0, 0, 0, tipocom, valorcomision, 0, 0, 0, 0, 0, 0, richTextBox1.Text, 0, usuario, txtConceptoFact.Text);
-                        controlo.Agregar(oc);
+                        string nro = controlo.Agregar(oc);
                         MessageBox.Show("Orden de carga generada correctamente");
                         limpiar();
                     }

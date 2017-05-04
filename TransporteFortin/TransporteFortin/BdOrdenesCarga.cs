@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using System.Data;
 namespace TransporteFortin
 {
-    public class BdOrdenesCarga : IDAO<OrdenesCarga>
+    public class BdOrdenesCarga
     {
         Acceso_BD oacceso = new Acceso_BD();
-        public void Agregar(OrdenesCarga dato)
+        public string Agregar(OrdenesCarga dato)
         {
            DataTable dt = new DataTable();
            dt = oacceso.leerDatos("start transaction; update contadores set nro = nro + 1 where detalle = 'ocarga' and ptoventa = '" + dato.Ptoventa + "'; select nro from contadores where detalle = 'ocarga' and ptoventa = '" + dato.Ptoventa + "'; commit;");
@@ -48,6 +48,7 @@ namespace TransporteFortin
                    }   
                }
            }
+           return nro;
         }
 
         public List<OrdenesCarga> TraerTodos()

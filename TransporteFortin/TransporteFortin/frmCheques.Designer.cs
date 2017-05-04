@@ -55,6 +55,15 @@
             this.txtrecibo = new System.Windows.Forms.TextBox();
             this.txtordenpago = new System.Windows.Forms.TextBox();
             this.txtcomentarios = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.rbfechaemi = new System.Windows.Forms.RadioButton();
+            this.rbfechadep = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -330,11 +339,117 @@
             this.txtcomentarios.Size = new System.Drawing.Size(559, 21);
             this.txtcomentarios.TabIndex = 26;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(330, 34);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(45, 45);
+            this.button4.TabIndex = 166;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(147, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.TabIndex = 165;
+            this.label6.Text = "Hasta";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(143, 54);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 13);
+            this.label14.TabIndex = 164;
+            this.label14.Text = "Desde";
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox2.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.maskedTextBox2.Location = new System.Drawing.Point(192, 75);
+            this.maskedTextBox2.Mask = "00/00/0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(100, 21);
+            this.maskedTextBox2.TabIndex = 163;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.maskedTextBox1.Location = new System.Drawing.Point(192, 48);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 21);
+            this.maskedTextBox1.TabIndex = 162;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            // 
+            // rbfechaemi
+            // 
+            this.rbfechaemi.AutoSize = true;
+            this.rbfechaemi.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.rbfechaemi.Location = new System.Drawing.Point(22, 52);
+            this.rbfechaemi.Name = "rbfechaemi";
+            this.rbfechaemi.Size = new System.Drawing.Size(106, 17);
+            this.rbfechaemi.TabIndex = 167;
+            this.rbfechaemi.Text = "Fecha Emision";
+            this.rbfechaemi.UseVisualStyleBackColor = true;
+            // 
+            // rbfechadep
+            // 
+            this.rbfechadep.AutoSize = true;
+            this.rbfechadep.Checked = true;
+            this.rbfechadep.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.rbfechadep.Location = new System.Drawing.Point(22, 75);
+            this.rbfechadep.Name = "rbfechadep";
+            this.rbfechadep.Size = new System.Drawing.Size(112, 17);
+            this.rbfechadep.TabIndex = 168;
+            this.rbfechadep.TabStop = true;
+            this.rbfechadep.Text = "Fecha Deposito";
+            this.rbfechadep.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.textBox1.Location = new System.Drawing.Point(146, 18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(146, 21);
+            this.textBox1.TabIndex = 170;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label15.Location = new System.Drawing.Point(34, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(100, 13);
+            this.label15.TabIndex = 169;
+            this.label15.Text = "Numero Cheque";
+            // 
             // frmCheques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 567);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.rbfechadep);
+            this.Controls.Add(this.rbfechaemi);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.txtcomentarios);
             this.Controls.Add(this.txtordenpago);
             this.Controls.Add(this.txtrecibo);
@@ -401,5 +516,14 @@
         private System.Windows.Forms.TextBox txtrecibo;
         private System.Windows.Forms.TextBox txtordenpago;
         private System.Windows.Forms.TextBox txtcomentarios;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.RadioButton rbfechaemi;
+        private System.Windows.Forms.RadioButton rbfechadep;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label15;
     }
 }

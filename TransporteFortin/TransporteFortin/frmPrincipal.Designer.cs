@@ -38,10 +38,15 @@
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesCombustibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emitirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arqueoCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaChequeTercerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaTransferenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMBANCOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasPropiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentaCorrienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaCHqueusPropiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -83,9 +88,6 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.consultaCHqueusPropiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +98,7 @@
             this.archivoToolStripMenuItem,
             this.ordenesDeCargaToolStripMenuItem,
             this.ordenesCombustibleToolStripMenuItem,
+            this.cajasToolStripMenuItem,
             this.bancosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.empresasToolStripMenuItem,
@@ -169,6 +172,37 @@
             this.emitirToolStripMenuItem1.Text = "Emitir";
             this.emitirToolStripMenuItem1.Click += new System.EventHandler(this.emitirToolStripMenuItem1_Click);
             // 
+            // cajasToolStripMenuItem
+            // 
+            this.cajasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arqueoCajaToolStripMenuItem,
+            this.consultaChequeTercerosToolStripMenuItem,
+            this.consultaTransferenciasToolStripMenuItem});
+            this.cajasToolStripMenuItem.Name = "cajasToolStripMenuItem";
+            this.cajasToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.cajasToolStripMenuItem.Text = "Cajas";
+            // 
+            // arqueoCajaToolStripMenuItem
+            // 
+            this.arqueoCajaToolStripMenuItem.Name = "arqueoCajaToolStripMenuItem";
+            this.arqueoCajaToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.arqueoCajaToolStripMenuItem.Text = "Arqueo Caja";
+            this.arqueoCajaToolStripMenuItem.Click += new System.EventHandler(this.arqueoCajaToolStripMenuItem_Click);
+            // 
+            // consultaChequeTercerosToolStripMenuItem
+            // 
+            this.consultaChequeTercerosToolStripMenuItem.Name = "consultaChequeTercerosToolStripMenuItem";
+            this.consultaChequeTercerosToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.consultaChequeTercerosToolStripMenuItem.Text = "Consulta Cheque Terceros";
+            this.consultaChequeTercerosToolStripMenuItem.Click += new System.EventHandler(this.consultaChequeTercerosToolStripMenuItem_Click);
+            // 
+            // consultaTransferenciasToolStripMenuItem
+            // 
+            this.consultaTransferenciasToolStripMenuItem.Name = "consultaTransferenciasToolStripMenuItem";
+            this.consultaTransferenciasToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.consultaTransferenciasToolStripMenuItem.Text = "Consulta Transferencias";
+            this.consultaTransferenciasToolStripMenuItem.Click += new System.EventHandler(this.consultaTransferenciasToolStripMenuItem_Click);
+            // 
             // bancosToolStripMenuItem
             // 
             this.bancosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -183,23 +217,30 @@
             // aBMBANCOSToolStripMenuItem
             // 
             this.aBMBANCOSToolStripMenuItem.Name = "aBMBANCOSToolStripMenuItem";
-            this.aBMBANCOSToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.aBMBANCOSToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.aBMBANCOSToolStripMenuItem.Text = "ABM Bancos";
             this.aBMBANCOSToolStripMenuItem.Click += new System.EventHandler(this.aBMBANCOSToolStripMenuItem_Click);
             // 
             // cuentasPropiasToolStripMenuItem
             // 
             this.cuentasPropiasToolStripMenuItem.Name = "cuentasPropiasToolStripMenuItem";
-            this.cuentasPropiasToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.cuentasPropiasToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.cuentasPropiasToolStripMenuItem.Text = "Cuentas Propias";
             this.cuentasPropiasToolStripMenuItem.Click += new System.EventHandler(this.cuentasPropiasToolStripMenuItem_Click);
             // 
             // cuentaCorrienteToolStripMenuItem
             // 
             this.cuentaCorrienteToolStripMenuItem.Name = "cuentaCorrienteToolStripMenuItem";
-            this.cuentaCorrienteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.cuentaCorrienteToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.cuentaCorrienteToolStripMenuItem.Text = "Cuenta Corriente";
             this.cuentaCorrienteToolStripMenuItem.Click += new System.EventHandler(this.cuentaCorrienteToolStripMenuItem_Click);
+            // 
+            // consultaCHqueusPropiosToolStripMenuItem
+            // 
+            this.consultaCHqueusPropiosToolStripMenuItem.Name = "consultaCHqueusPropiosToolStripMenuItem";
+            this.consultaCHqueusPropiosToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.consultaCHqueusPropiosToolStripMenuItem.Text = "Consulta Cheques Propios";
+            this.consultaCHqueusPropiosToolStripMenuItem.Click += new System.EventHandler(this.consultaCHqueusPropiosToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -504,40 +545,13 @@
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(52, 17);
             this.toolStripStatusLabel4.Text = "TALON: ";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(376, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(327, 222);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "0.00";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // consultaCHqueusPropiosToolStripMenuItem
-            // 
-            this.consultaCHqueusPropiosToolStripMenuItem.Name = "consultaCHqueusPropiosToolStripMenuItem";
-            this.consultaCHqueusPropiosToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.consultaCHqueusPropiosToolStripMenuItem.Text = "Consulta Cheques";
-            this.consultaCHqueusPropiosToolStripMenuItem.Click += new System.EventHandler(this.consultaCHqueusPropiosToolStripMenuItem_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TransporteFortin.Properties.Resources.FONDOCAMION;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(876, 395);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -584,7 +598,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripMenuItem consultaCteCteToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem ordenesCombustibleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emitirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultaCtaCteToolStripMenuItem;
@@ -602,7 +615,6 @@
         private System.Windows.Forms.ToolStripMenuItem cuentasPropiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reciboToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ordenDePagoToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripMenuItem consultaRecibosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaRecibosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
@@ -616,6 +628,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem cuentaCorrienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaCHqueusPropiosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cajasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaChequeTercerosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaTransferenciasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem arqueoCajaToolStripMenuItem;
     }
 }
 

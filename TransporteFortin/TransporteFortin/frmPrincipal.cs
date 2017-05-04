@@ -534,16 +534,7 @@ namespace TransporteFortin
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char ch = e.KeyChar;
-            if (ch == 46 && textBox1.Text.IndexOf('.') != -1)
-            {
-                e.Handled = true;
-                return;
-            }
-            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
-            {
-                e.Handled = true;
-            }
+            
         }
 
         private void consultaRecibosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -578,7 +569,25 @@ namespace TransporteFortin
 
         private void consultaCHqueusPropiosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCheques frm = new frmCheques();
+            frmCheques frm = new frmCheques(2);
+            frm.ShowDialog();
+        }
+
+        private void consultaChequeTercerosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCheques frm = new frmCheques(3);
+            frm.ShowDialog();
+        }
+
+        private void consultaTransferenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCheques frm = new frmCheques(4);
+            frm.ShowDialog();
+        }
+
+        private void arqueoCajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCajas frm = new frmCajas();
             frm.ShowDialog();
         }
     }

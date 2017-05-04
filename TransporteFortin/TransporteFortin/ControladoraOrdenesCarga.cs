@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TransporteFortin
 {
-    public class ControladoraOrdenesCarga : IDAO<OrdenesCarga>
+    public class ControladoraOrdenesCarga
     {
         BdOrdenesCarga bd = new BdOrdenesCarga();
-        public void Agregar(OrdenesCarga dato)
+        public string Agregar(OrdenesCarga dato)
         {
-            bd.Agregar(dato);
+           return bd.Agregar(dato);
         }
 
         public List<OrdenesCarga> TraerTodos()
