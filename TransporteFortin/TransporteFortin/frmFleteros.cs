@@ -21,6 +21,8 @@ namespace TransporteFortin
 
         public void deshabilitar()
         {
+            button3.Enabled = false;
+            button2.Enabled = false;
             txtcomentario.Enabled = false;
             btnGuardar.Enabled = false;
             txtDocumento.Enabled = false;
@@ -43,7 +45,9 @@ namespace TransporteFortin
 
         public void habilitar()
         {
+            button2.Enabled = true;
             txtcomentario.Enabled = true;
+            button3.Enabled = true;
             cmbTipoCamion.Enabled = true;
             cmbTipoIva.Enabled = true;
             btnGuardar.Enabled = true;
@@ -308,6 +312,12 @@ namespace TransporteFortin
             {
                 MessageBox.Show("Error al Guardar: " + ex.Message);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            txtEmpresa.Text = "";
+            lblIdEmpresa.Text = "0";
         }
     }
 }

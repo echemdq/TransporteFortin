@@ -341,6 +341,11 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td>{15DB11DE-95D9-46BE-86F4-1E282B94A8DC}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.ReportViewer.Common.dll</td><td>{92F98856-17B9-4FA7-BB16-455EA31326C2}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.reportviewer.commo</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.ReportViewer.Design.DLL</td><td>{02D520B2-E879-48BA-A7A4-2BC61F9775F0}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.reportviewer.desig</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.ReportViewer.ProcessingObjectModel.DLL</td><td>{FF10E316-23BD-4F7A-8CEB-0CC8E4B8C6E3}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.reportviewer.proce</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.ReportViewer.WinForms.DLL</td><td>{975BC492-86C8-40DB-993C-127E7FC82AD3}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.reportviewer.winfo</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.SqlServer.Types.dll</td><td>{BAC90040-8922-46E0-8C36-14909B8730F5}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.sqlserver.types.dl</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>TransporteFortin.Resultado_principal</td><td>{56CD6FDC-9049-4EAE-B4D7-516BFF0B7899}</td><td>INSTALLDIR</td><td>2</td><td/><td>transportefortin.resultado_p</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
@@ -1051,6 +1056,11 @@
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>INSTALLDIR</td><td>IS_ININSTALL_SHORTCUT</td></row>
+		<row><td>INSTALLDIR</td><td>Microsoft.ReportViewer.Common.dll</td></row>
+		<row><td>INSTALLDIR</td><td>Microsoft.ReportViewer.Design.DLL</td></row>
+		<row><td>INSTALLDIR</td><td>Microsoft.ReportViewer.ProcessingObjectModel.DLL</td></row>
+		<row><td>INSTALLDIR</td><td>Microsoft.ReportViewer.WinForms.DLL</td></row>
+		<row><td>INSTALLDIR</td><td>Microsoft.SqlServer.Types.dll</td></row>
 		<row><td>INSTALLDIR</td><td>TransporteFortin.Resultado_principal</td></row>
 	</table>
 
@@ -1864,6 +1874,11 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>IS_ININSTALL_SHORTCUT</td></row>
+		<row><td>AlwaysInstall</td><td>Microsoft.ReportViewer.Common.dll</td></row>
+		<row><td>AlwaysInstall</td><td>Microsoft.ReportViewer.Design.DLL</td></row>
+		<row><td>AlwaysInstall</td><td>Microsoft.ReportViewer.ProcessingObjectModel.DLL</td></row>
+		<row><td>AlwaysInstall</td><td>Microsoft.ReportViewer.WinForms.DLL</td></row>
+		<row><td>AlwaysInstall</td><td>Microsoft.SqlServer.Types.dll</td></row>
 		<row><td>AlwaysInstall</td><td>TransporteFortin.Resultado_principal</td></row>
 	</table>
 
@@ -1879,6 +1894,11 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>microsoft.reportviewer.commo</td><td>Microsoft.ReportViewer.Common.dll</td><td>MICROS~1.DLL|Microsoft.ReportViewer.Common.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll</td><td>1</td><td/></row>
+		<row><td>microsoft.reportviewer.desig</td><td>Microsoft.ReportViewer.Design.DLL</td><td>MICROS~1.DLL|Microsoft.ReportViewer.Design.DLL</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Design\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Design.DLL</td><td>1</td><td/></row>
+		<row><td>microsoft.reportviewer.proce</td><td>Microsoft.ReportViewer.ProcessingObjectModel.DLL</td><td>MICROS~1.DLL|Microsoft.ReportViewer.ProcessingObjectModel.DLL</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.ProcessingObjectModel\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.ProcessingObjectModel.DLL</td><td>1</td><td/></row>
+		<row><td>microsoft.reportviewer.winfo</td><td>Microsoft.ReportViewer.WinForms.DLL</td><td>MICROS~1.DLL|Microsoft.ReportViewer.WinForms.DLL</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WinForms\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.WinForms.DLL</td><td>1</td><td/></row>
+		<row><td>microsoft.sqlserver.types.dl</td><td>Microsoft.SqlServer.Types.dll</td><td>MICROS~1.DLL|Microsoft.SqlServer.Types.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Windows\assembly\GAC_MSIL\Microsoft.SqlServer.Types\11.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.Types.dll</td><td>1</td><td/></row>
 		<row><td>transportefortin.resultado_p</td><td>TransporteFortin.Resultado_principal</td><td>TransporteFortin.Resultado principal</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;TransporteFortin&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
@@ -2024,6 +2044,11 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td/><td/><td>_48CA8FBC_2CF8_4BD9_AED9_B6CB3E908D4C_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.ReportViewer.Common.dll</td><td/><td/><td>_6AD4D4E1_35E7_4FF5_BBC4_A1FE6008E8EF_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.ReportViewer.Design.DLL</td><td/><td/><td>_972FBA0D_E199_4369_A571_86F989E465E0_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.ReportViewer.ProcessingObjectModel.DLL</td><td/><td/><td>_2A9D08AE_CEC2_42D1_964E_A71DE1454E93_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.ReportViewer.WinForms.DLL</td><td/><td/><td>_CFCE4218_A5AC_4C13_B13E_E56C26D37DEB_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.SqlServer.Types.dll</td><td/><td/><td>_FD56DBEE_B798_41A4_BE65_974DF039E5E6_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>TransporteFortin.Resultado_principal</td><td/><td/><td>_D0C1892E_A864_4CEE_AF6E_E1C784C766B0_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
@@ -2613,7 +2638,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>FV Sistemas</td><td>0</td><td/><td>581266958</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>FV Sistemas</td><td>0</td><td/><td>715501993</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>581297837</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>581297837</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION45FULL</td><td>1033</td><td>Microsoft .NET Framework 4.5 Full package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>581273389</td></row>
@@ -3717,8 +3742,8 @@
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>581297837</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>581297837</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td/><td>0</td><td/><td>581299885</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>http://www.FVSistemas.com</td><td>0</td><td/><td>581266958</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>FV Sistemas</td><td>0</td><td/><td>581266958</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>http://www.FVSistemas.com</td><td>0</td><td/><td>715501993</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>FV Sistemas</td><td>0</td><td/><td>715501993</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td/><td>0</td><td/><td>581291853</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>581283693</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>Transporte El Fortin</td><td>0</td><td/><td>581242894</td></row>

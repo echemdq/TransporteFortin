@@ -76,8 +76,9 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Sirvse entregar al Transportista Sr:</Value>
+                    <Value>Sirvase entregar al Transportista Sr:</Value>
                     <Style>
+                      <FontSize>13pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -110,7 +111,7 @@
                   <TextRun>
                     <Value>=Parameters!Fletero.Value</Value>
                     <Style>
-                      <FontSize>9pt</FontSize>
+                      <FontSize>13pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -140,7 +141,14 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Chapa Camion: </Value>
+                    <Value>Chapa Camion:</Value>
+                    <Style>
+                      <FontSize>13pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -148,7 +156,7 @@
                   <TextRun>
                     <Value>=Parameters!ChapaCamion.Value</Value>
                     <Style>
-                      <FontSize>9pt</FontSize>
+                      <FontSize>13pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -178,7 +186,14 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Litros Gas Oil: </Value>
+                    <Value>Litros Gas Oil:</Value>
+                    <Style>
+                      <FontSize>13pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -186,7 +201,7 @@
                   <TextRun>
                     <Value>=Parameters!Cantidad.Value</Value>
                     <Style>
-                      <FontSize>9pt</FontSize>
+                      <FontSize>13pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -216,7 +231,14 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Fecha Emision: </Value>
+                    <Value>Fecha Emision:</Value>
+                    <Style>
+                      <FontSize>13pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -224,7 +246,7 @@
                   <TextRun>
                     <Value>=Parameters!Fecha.Value</Value>
                     <Style>
-                      <FontSize>9pt</FontSize>
+                      <FontSize>13pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>

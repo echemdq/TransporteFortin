@@ -48,6 +48,7 @@
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -245,6 +246,7 @@
             this.txtDocumento.Enabled = false;
             this.txtDocumento.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocumento.Location = new System.Drawing.Point(118, 17);
+            this.txtDocumento.MaxLength = 8;
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(111, 21);
             this.txtDocumento.TabIndex = 0;
@@ -262,6 +264,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.txtEmpresa);
             this.groupBox1.Controls.Add(this.label10);
@@ -272,6 +275,17 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Empresa";
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::TransporteFortin.Properties.Resources.Undo;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Location = new System.Drawing.Point(274, 10);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 38);
+            this.button3.TabIndex = 103;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -653,5 +667,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RichTextBox txtcomentario;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -101,9 +101,9 @@ namespace TransporteFortin
             get { return unidades; }
             set { unidades = value; }
         }
-        int cantidad;
+        decimal cantidad;
 
-        public int Cantidad
+        public decimal Cantidad
         {
             get { return cantidad; }
             set { cantidad = value; }
@@ -232,7 +232,7 @@ namespace TransporteFortin
             set { conceptfact = value; }
         }
 
-        public OrdenesCarga(int id, string nro, int pto, int pue, DateTime fe,Sucursales suc, Clientes cli, Fleteros fle, Empresas emp, string porcta, string prod, string or, string dest, decimal valordec, int valoriz, Unidades uni, int cant, decimal valoru, decimal valoructe, string tipocom, decimal valorcom, int pagodes, decimal totalvia, decimal ivav, decimal ivacte, decimal comi, decimal impcli, string obs, int anu, Usuarios us, string cf)
+        public OrdenesCarga(int id, string nro, int pto, int pue, DateTime fe, Sucursales suc, Clientes cli, Fleteros fle, Empresas emp, string porcta, string prod, string or, string dest, decimal valordec, int valoriz, Unidades uni, decimal cant, decimal valoru, decimal valoructe, string tipocom, decimal valorcom, int pagodes, decimal totalvia, decimal ivav, decimal ivacte, decimal comi, decimal impcli, string obs, int anu, Usuarios us, string cf)
         {
             conceptfact = cf;
             anulado = anu;

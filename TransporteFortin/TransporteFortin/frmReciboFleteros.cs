@@ -38,7 +38,7 @@ namespace TransporteFortin
             if (u != null)
             {
                 Acceso_BD oacceso = new Acceso_BD();
-                DataTable dt = oacceso.leerDatos("select c.idempresas as idempresas, ifnull(e.empresa, 'SIN EMPRESA') as empresa, case when c.idempresas = e.idempresas then 1 else 0 end as activo from ctactefleteros c left join empresas e on c.idempresas = e.idempresas where idfleteros = '" + u.Idfleteros + "' group by idempresas, empresa union select f.idempresas as idempresas, ifnull(e.empresa, 'SIN EMPRESA') as empresa, case when f.idempresas = e.idempresas then 1 else 0 end as activo from fleteros f left join empresas e on f.idempresas = e.idempresas where f.idfleteros = '4353' order by activo desc");
+                DataTable dt = oacceso.leerDatos("select c.idempresas as idempresas, ifnull(e.empresa, 'SIN EMPRESA') as empresa, case when c.idempresas = e.idempresas then 1 else 0 end as activo from ctactefleteros c left join empresas e on c.idempresas = e.idempresas where idfleteros = '" + u.Idfleteros + "' group by idempresas, empresa union select f.idempresas as idempresas, ifnull(e.empresa, 'SIN EMPRESA') as empresa, case when f.idempresas = e.idempresas then 1 else 0 end as activo from fleteros f left join empresas e on f.idempresas = e.idempresas where f.idfleteros = '" + u.Idfleteros + "' order by activo desc");
                 List<Empresas> listat = new List<Empresas>();
                 foreach (DataRow dr in dt.Rows)
                 {
