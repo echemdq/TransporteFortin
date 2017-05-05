@@ -62,38 +62,16 @@ namespace TransporteFortin
 
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)(Keys.Enter))
+            char ch = e.KeyChar;
+            if (ch == 46 && txtValor.Text.IndexOf('.') != -1)
             {
                 e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
                 return;
             }
-
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtValor.Text.Length; i++)
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
             {
-                if (txtValor.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
-
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
                 e.Handled = true;
+            }
         }
     }
 }

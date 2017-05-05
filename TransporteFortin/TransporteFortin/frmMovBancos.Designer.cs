@@ -48,6 +48,7 @@
             this.txtValor.Size = new System.Drawing.Size(84, 21);
             this.txtValor.TabIndex = 132;
             this.txtValor.Text = "0.00";
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // label4
             // 

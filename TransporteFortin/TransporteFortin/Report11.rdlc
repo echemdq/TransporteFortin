@@ -50,14 +50,16 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>0.3175cm</Top>
-            <Left>16.32162cm</Left>
+            <Left>16.05704cm</Left>
             <Height>0.9175cm</Height>
-            <Width>2.97625cm</Width>
+            <Width>3.24083cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -79,7 +81,6 @@
                     <Value>Sirvase entregar al Transportista Sr:</Value>
                     <Style>
                       <FontSize>13pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -111,7 +112,8 @@
                   <TextRun>
                     <Value>=Parameters!Fletero.Value</Value>
                     <Style>
-                      <FontSize>13pt</FontSize>
+                      <FontSize>15pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -121,8 +123,8 @@
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>10.36933cm</Top>
             <Left>1.42558cm</Left>
-            <Height>0.6cm</Height>
-            <Width>9.56437cm</Width>
+            <Height>0.89616cm</Height>
+            <Width>16.26838cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -144,7 +146,6 @@
                     <Value>Chapa Camion:</Value>
                     <Style>
                       <FontSize>13pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
@@ -156,7 +157,7 @@
                   <TextRun>
                     <Value>=Parameters!ChapaCamion.Value</Value>
                     <Style>
-                      <FontSize>13pt</FontSize>
+                      <FontSize>15pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -166,7 +167,7 @@
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>11.44188cm</Top>
             <Left>1.42558cm</Left>
-            <Height>0.6cm</Height>
+            <Height>0.78521cm</Height>
             <Width>7.80171cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
@@ -189,7 +190,6 @@
                     <Value>Litros Gas Oil:</Value>
                     <Style>
                       <FontSize>13pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
@@ -201,7 +201,7 @@
                   <TextRun>
                     <Value>=Parameters!Cantidad.Value</Value>
                     <Style>
-                      <FontSize>13pt</FontSize>
+                      <FontSize>15pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -209,9 +209,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>12.04188cm</Top>
+            <Top>12.3682cm</Top>
             <Left>1.42558cm</Left>
-            <Height>0.6cm</Height>
+            <Height>0.78521cm</Height>
             <Width>7.80171cm</Width>
             <ZIndex>5</ZIndex>
             <Style>

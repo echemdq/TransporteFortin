@@ -50,14 +50,16 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>0.3175cm</Top>
-            <Left>16.32162cm</Left>
+            <Left>16.03058cm</Left>
             <Height>0.9175cm</Height>
-            <Width>2.97625cm</Width>
+            <Width>3.26729cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
