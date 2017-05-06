@@ -33,13 +33,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idbancosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bancoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bancosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.bancosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idbancosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bancoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancosBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +93,26 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
+            // idbancosDataGridViewTextBoxColumn
+            // 
+            this.idbancosDataGridViewTextBoxColumn.DataPropertyName = "Idbancos";
+            this.idbancosDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.idbancosDataGridViewTextBoxColumn.Name = "idbancosDataGridViewTextBoxColumn";
+            this.idbancosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idbancosDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // bancoDataGridViewTextBoxColumn
+            // 
+            this.bancoDataGridViewTextBoxColumn.DataPropertyName = "Banco";
+            this.bancoDataGridViewTextBoxColumn.HeaderText = "Banco";
+            this.bancoDataGridViewTextBoxColumn.Name = "bancoDataGridViewTextBoxColumn";
+            this.bancoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bancoDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // bancosBindingSource
+            // 
+            this.bancosBindingSource.DataSource = typeof(TransporteFortin.Bancos);
+            // 
             // button1
             // 
             this.button1.BackgroundImage = global::TransporteFortin.Properties.Resources.Undo;
@@ -138,26 +158,6 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // bancosBindingSource
-            // 
-            this.bancosBindingSource.DataSource = typeof(TransporteFortin.Bancos);
-            // 
-            // idbancosDataGridViewTextBoxColumn
-            // 
-            this.idbancosDataGridViewTextBoxColumn.DataPropertyName = "Idbancos";
-            this.idbancosDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.idbancosDataGridViewTextBoxColumn.Name = "idbancosDataGridViewTextBoxColumn";
-            this.idbancosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idbancosDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // bancoDataGridViewTextBoxColumn
-            // 
-            this.bancoDataGridViewTextBoxColumn.DataPropertyName = "Banco";
-            this.bancoDataGridViewTextBoxColumn.HeaderText = "Banco";
-            this.bancoDataGridViewTextBoxColumn.Name = "bancoDataGridViewTextBoxColumn";
-            this.bancoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bancoDataGridViewTextBoxColumn.Width = 63;
-            // 
             // frmBancos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,7 +173,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmBancos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmBancos";
+            this.Text = "ABM Bancos";
             this.Load += new System.EventHandler(this.frmBancos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancosBindingSource)).EndInit();

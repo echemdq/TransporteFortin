@@ -64,6 +64,8 @@
             this.rbfechadep = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.cmbEstados = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -397,7 +399,7 @@
             // 
             this.rbfechaemi.AutoSize = true;
             this.rbfechaemi.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.rbfechaemi.Location = new System.Drawing.Point(22, 52);
+            this.rbfechaemi.Location = new System.Drawing.Point(28, 52);
             this.rbfechaemi.Name = "rbfechaemi";
             this.rbfechaemi.Size = new System.Drawing.Size(106, 17);
             this.rbfechaemi.TabIndex = 167;
@@ -436,11 +438,36 @@
             this.label15.TabIndex = 169;
             this.label15.Text = "Numero Cheque";
             // 
+            // cmbEstados
+            // 
+            this.cmbEstados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstados.Enabled = false;
+            this.cmbEstados.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbEstados.FormattingEnabled = true;
+            this.cmbEstados.Location = new System.Drawing.Point(146, 102);
+            this.cmbEstados.Name = "cmbEstados";
+            this.cmbEstados.Size = new System.Drawing.Size(300, 21);
+            this.cmbEstados.TabIndex = 171;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.checkBox1.Location = new System.Drawing.Point(70, 106);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(64, 17);
+            this.checkBox1.TabIndex = 173;
+            this.checkBox1.Text = "Estado";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // frmCheques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 567);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cmbEstados);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.rbfechadep);
@@ -525,5 +552,7 @@
         private System.Windows.Forms.RadioButton rbfechadep;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cmbEstados;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

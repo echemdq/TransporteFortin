@@ -144,7 +144,7 @@
             this.Controls.Add(this.txtProveedor);
             this.Controls.Add(this.label1);
             this.Name = "frmMovProveedores";
-            this.Text = "frmMovProveedores";
+            this.Text = "Carga Movimientos Cta Cte Proveedores";
             this.Load += new System.EventHandler(this.frmMovProveedores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

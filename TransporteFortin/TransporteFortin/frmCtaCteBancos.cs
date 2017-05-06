@@ -13,8 +13,10 @@ namespace TransporteFortin
     public partial class frmCtaCteBancos : Form
     {
         int ptoventa = 0;
-        public frmCtaCteBancos(int talon)
+        int idusuario = 0;
+        public frmCtaCteBancos(int talon, int idusu)
         {
+            idusuario = idusu;
             ptoventa = talon;
             InitializeComponent();
         }
@@ -109,23 +111,39 @@ namespace TransporteFortin
         {
             try
             {
-                int filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
-                string la = Convert.ToString(dataGridView1[4, filaseleccionada].Value);
-                if (Convert.ToString(dataGridView1[4, filaseleccionada].Value).Length == 0)
+                Funciones f = new Funciones();
+                if (f.acceder(33, idusuario))
                 {
-                    DialogResult dialogResult = MessageBox.Show("Esta seguro de eliminar movimiento", "Eliminar movimiento", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
+                    int filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
+                    string la = Convert.ToString(dataGridView1[4, filaseleccionada].Value);
+                    if (Convert.ToString(dataGridView1[4, filaseleccionada].Value).Length == 0)
                     {
-                        Acceso_BD oa = new Acceso_BD();
-                        oa.ActualizarBD("delete from movbancos where idmovbancos = '" + Convert.ToString(dataGridView1[0, filaseleccionada].Value) + "'");
-                        MessageBox.Show("Movimiento eliminado correctamente");
-                        button1_Click(sender, e);
+                        DialogResult dialogResult = MessageBox.Show("Esta seguro de eliminar movimiento", "Eliminar movimiento", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            Acceso_BD oa = new Acceso_BD();
+                            oa.ActualizarBD("delete from movbancos where idmovbancos = '" + Convert.ToString(dataGridView1[0, filaseleccionada].Value) + "'");
+                            MessageBox.Show("Movimiento eliminado correctamente");
+                            button1_Click(sender, e);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Imposible eliminar movimiento no manual");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Imposible eliminar movimiento no manual");
-                }                
+                    if (idusuario == 0)
+                    {
+                        MessageBox.Show("Debe iniciar sesion para acceder");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Imposible acceder: usuario sin acceso");
+                    }
+                }
+                
             }
             catch (Exception ex)
             {

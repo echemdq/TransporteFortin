@@ -24,6 +24,9 @@ namespace TransporteFortin
             cmbcaja.DataSource = dt;
             cmbcaja.DisplayMember = "nrocaja";
             cmbcaja.ValueMember = "idcajas";
+            maskedTextBox1.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            maskedTextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            checkBox1.Checked = true;
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -640,7 +640,7 @@ namespace TransporteFortin
 
             if (f.acceder(26, idusuario))
             {
-                frmCtaCteBancos frm = new frmCtaCteBancos(talon);
+                frmCtaCteBancos frm = new frmCtaCteBancos(talon, idusuario);
                 frm.ShowDialog();
             }
             else

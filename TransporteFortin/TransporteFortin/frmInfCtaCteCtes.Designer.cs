@@ -60,7 +60,7 @@
             this.ClientSize = new System.Drawing.Size(1042, 393);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmInfCtaCteCtes";
-            this.Text = "frmInfCtaCteCtes";
+            this.Text = "Informe Cuenta Corriente Clientes";
             this.Load += new System.EventHandler(this.frmInfCtaCteCtes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CtaCteClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
