@@ -116,6 +116,7 @@
             this.checkBox1.TabIndex = 156;
             this.checkBox1.Text = "Filtra por fechas";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             // 
             // dataGridView1
             // 

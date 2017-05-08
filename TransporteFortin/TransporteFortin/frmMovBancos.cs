@@ -44,7 +44,7 @@ namespace TransporteFortin
             try
             {
                 Acceso_BD oacceso = new Acceso_BD();
-                oacceso.ActualizarBD("insert into movbancos (idcuentasbanco, idformasdepago, idconceptosbanco, descripcion, DoC, importe, fecha) values ('"+u.Idcuentasbanco+"', 0, '"+cmbConceptos.SelectedValue+"', '"+richTextBox1.Text+"', '"+concepto+"','"+txtValor.Text+"', now())");
+                oacceso.ActualizarBD("insert into movbancos (idcuentasbanco, idformasdepago, idconceptosbanco, descripcion, DoC, importe, fecha) values ('"+u.Idcuentasbanco+"', 0, '"+cmbConceptos.SelectedValue+"', '"+richTextBox1.Text+"', '"+concepto+"','"+txtValor.Text+"', '"+DateTime.Now.ToString("yyyy-MM-dd")+"')");
                 MessageBox.Show("Movimiento cargado exitosamente");
                 this.Close();
             }

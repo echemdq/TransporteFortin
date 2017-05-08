@@ -58,7 +58,7 @@ namespace TransporteFortin
                     {
                         haber = txtValor.Text;
                     }
-                    oacceso.ActualizarBD("insert into ctactefleteros (idfleteros, idempresas, fecha, fecactual, idconceptos, descripcion, debe, haber, ptoventa) values ('" + idfleteros + "','" + idempresas + "',now(),CURRENT_TIMESTAMP,'" + cmbConceptos.SelectedValue + "','" + richTextBox1.Text + "','" + debe + "','" + haber + "','"+ptoventa+"')");
+                    oacceso.ActualizarBD("insert into ctactefleteros (idfleteros, idempresas, fecha, fecactual, idconceptos, descripcion, debe, haber, ptoventa) values ('" + idfleteros + "','" + idempresas + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "',CURRENT_TIMESTAMP,'" + cmbConceptos.SelectedValue + "','" + richTextBox1.Text + "','" + debe + "','" + haber + "','" + ptoventa + "')");
                     MessageBox.Show("Movimiento cargado exitosamente");
                     this.Close();
                 }

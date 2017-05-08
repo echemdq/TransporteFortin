@@ -34,6 +34,10 @@ namespace TransporteFortin
             cmbBancos.DataSource = listat;
             cmbBancos.DisplayMember = "descripcion";
             cmbBancos.ValueMember = "idcuentasbanco";
+
+            maskedTextBox1.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            maskedTextBox2.Text = DateTime.Now.AddDays(30).ToString("dd/MM/yyyy");
+            checkBox1.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,10 +63,10 @@ namespace TransporteFortin
                     if (desde <= hasta)
                     {
                         Acceso_BD oa = new Acceso_BD();
-                        dataGridView1.DataSource = oa.leerDatos("select m.idmovbancos as id, date_format(m.fecha,'%d/%m/%Y') as Fecha, cb.concepto as Concepto, m.descripcion as Descripcion, case when f.idrecibos <> 0 then concat(cast(r.ptoventa as char), '-', cast(r.nro as char)) else concat(cast(r1.ptoventa as char), '-', cast(r1.nro as char)) end as 'OPago / Recibo', case when m.DoC = 'c' then m.importe else 0 end as Acreditado, case when m.DoC = 'd' then m.importe  else 0 end as Debitado from movbancos m left join conceptosbanco cb on m.idconceptosbanco = cb.idconceptosbanco left join formasdepago f on m.idformasdepago = f.idformasdepago left join recibos r on f.idrecibos = r.idrecibos left join recibos r1 on  f.idordenespago = r1.idrecibos where m.idcuentasbanco = '" + cmbBancos.SelectedValue + "' and m.fecha between '" + desde.ToString("yyyy-MM-dd") + "' and '" + hasta.ToString("yyyy-MM-dd") + "' order by m.fecha asc");
+                        dataGridView1.DataSource = oa.leerDatos("select 0 as id, '' as Fecha, 'SALDO ANTERIOR' as Concepto, '' as Descripcion, '' as 'OPago / Recibo', case when ((select sum(case when m.DoC = 'c' then m.importe else m.importe*(-1) end) from movbancos m where m.idcuentasbanco = '"+cmbBancos.SelectedValue+"' and m.fecha < '" + desde.ToString("yyyy-MM-dd") + "')) < 0 then 0 else (select sum(case when m.DoC = 'c' then m.importe else m.importe*(-1) end) from movbancos m where m.idcuentasbanco = '" + cmbBancos.SelectedValue + "' and m.fecha < '" + desde.ToString("yyyy-MM-dd") + "') end as Acreditado, case when ((select sum(case when m.DoC = 'd' then m.importe else m.importe*(-1) end) from movbancos m where m.idcuentasbanco = '" + cmbBancos.SelectedValue + "' and m.fecha < '" + desde.ToString("yyyy-MM-dd") + "')) < 0 then 0 else (select sum(case when m.DoC = 'd' then m.importe else m.importe*(-1) end) from movbancos m where m.idcuentasbanco = '" + cmbBancos.SelectedValue + "' and m.fecha < '" + desde.ToString("yyyy-MM-dd") + "') end as Debitado union select m.idmovbancos as id, date_format(m.fecha,'%d/%m/%Y') as Fecha, cb.concepto as Concepto, m.descripcion as Descripcion, case when f.idrecibos <> 0 then concat(cast(r.ptoventa as char), '-', cast(r.nro as char)) else concat(cast(r1.ptoventa as char), '-', cast(r1.nro as char)) end as 'OPago / Recibo', case when m.DoC = 'c' then m.importe else 0 end as Acreditado, case when m.DoC = 'd' then m.importe  else 0 end as Debitado from movbancos m left join conceptosbanco cb on m.idconceptosbanco = cb.idconceptosbanco left join formasdepago f on m.idformasdepago = f.idformasdepago left join recibos r on f.idrecibos = r.idrecibos left join recibos r1 on  f.idordenespago = r1.idrecibos where m.idcuentasbanco = '" + cmbBancos.SelectedValue + "' and m.fecha between '" + desde.ToString("yyyy-MM-dd") + "' and '" + hasta.ToString("yyyy-MM-dd") + "' order by fecha asc");
                         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                         dataGridView1.Columns[0].Visible = false;
-                        DataTable dt = oa.leerDatos("select sum(case when m.DoC = 'c' then m.importe else m.importe*(-1) end) as Acreditado from movbancos m where m.idcuentasbanco = '" + cmbBancos.SelectedValue + "' and m.fecha between '" + desde.ToString("yyyy-MM-dd") + "' and '" + hasta.ToString("yyyy-MM-dd") + "' ");
+                        DataTable dt = oa.leerDatos("select sum(case when m.DoC = 'c' then m.importe else m.importe*(-1) end) as Acreditado from movbancos m where m.idcuentasbanco = '" + cmbBancos.SelectedValue + "' and m.fecha <= '" + hasta.ToString("yyyy-MM-dd") + "' ");
                         foreach (DataRow dr in dt.Rows)
                         {
                             label1.Text = "Saldo: $"+Convert.ToString(dr["Acreditado"]);
