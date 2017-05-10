@@ -194,5 +194,10 @@ namespace TransporteFortin
                 buscar(u.Idproveedores);
             }
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

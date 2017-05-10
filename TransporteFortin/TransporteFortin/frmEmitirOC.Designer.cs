@@ -166,6 +166,7 @@
             // 
             // maskedTextBox1
             // 
+            this.maskedTextBox1.Enabled = false;
             this.maskedTextBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.Location = new System.Drawing.Point(757, 17);
             this.maskedTextBox1.Mask = "00/00/0000";
@@ -203,14 +204,15 @@
             // 
             // btnOrdenCte
             // 
+            this.btnOrdenCte.Enabled = false;
             this.btnOrdenCte.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrdenCte.Location = new System.Drawing.Point(697, 36);
+            this.btnOrdenCte.Location = new System.Drawing.Point(668, 36);
             this.btnOrdenCte.Name = "btnOrdenCte";
-            this.btnOrdenCte.Size = new System.Drawing.Size(154, 23);
+            this.btnOrdenCte.Size = new System.Drawing.Size(183, 23);
             this.btnOrdenCte.TabIndex = 1;
             this.btnOrdenCte.Text = "Ordenes Pendientes: ";
             this.btnOrdenCte.UseVisualStyleBackColor = true;
-            this.btnOrdenCte.Visible = false;
+            this.btnOrdenCte.Click += new System.EventHandler(this.btnOrdenCte_Click);
             // 
             // txtSaldoCte
             // 
@@ -612,14 +614,15 @@
             // 
             // btnOrdenFlet
             // 
+            this.btnOrdenFlet.Enabled = false;
             this.btnOrdenFlet.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrdenFlet.Location = new System.Drawing.Point(698, 52);
+            this.btnOrdenFlet.Location = new System.Drawing.Point(669, 52);
             this.btnOrdenFlet.Name = "btnOrdenFlet";
-            this.btnOrdenFlet.Size = new System.Drawing.Size(154, 23);
+            this.btnOrdenFlet.Size = new System.Drawing.Size(183, 23);
             this.btnOrdenFlet.TabIndex = 1;
             this.btnOrdenFlet.Text = "Ordenes Pendientes: ";
             this.btnOrdenFlet.UseVisualStyleBackColor = true;
-            this.btnOrdenFlet.Visible = false;
+            this.btnOrdenFlet.Click += new System.EventHandler(this.btnOrdenFlet_Click);
             // 
             // txtSaldoFlet
             // 

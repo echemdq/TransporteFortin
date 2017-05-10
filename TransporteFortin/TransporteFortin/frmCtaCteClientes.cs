@@ -14,8 +14,11 @@ namespace TransporteFortin
     {
         int ptoventa = 0;
         Clientes u = null;
-        public frmCtaCteClientes(int talon)
+
+        int idusuario = 0;
+        public frmCtaCteClientes(int talon, int idusu)
         {
+            idusuario = idusu;
             ptoventa = talon;
             InitializeComponent();
         }
@@ -57,6 +60,8 @@ namespace TransporteFortin
                                         dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                                         dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                                         dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                                        dataGridView1.Rows[x].Cells[6].Value = aux.Idctacteclientes;
+                                        dataGridView1.Columns[6].Visible = false;
                                         debe = debe + Convert.ToDouble(aux.Debe);
                                         haber = haber + Convert.ToDouble(aux.Haber);
                                         x++;
@@ -86,6 +91,9 @@ namespace TransporteFortin
                             dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+
+                            dataGridView1.Rows[x].Cells[6].Value = aux.Idctacteclientes;
+                            dataGridView1.Columns[6].Visible = false;
                             debe = debe + Convert.ToDouble(aux.Debe);
                             haber = haber + Convert.ToDouble(aux.Haber);
                             x++;
@@ -106,6 +114,23 @@ namespace TransporteFortin
                 u = frm.u;
                 if (u != null)
                 {
+                    Acceso_BD oa = new Acceso_BD();
+                    DataTable dt = oa.leerDatos("select count(*) as cant from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join tiposcamion t on f.idtiposcamion = t.idtiposcamion left join empresas e on f.idempresas = e.idempresas inner join sucursales s on s.idsucursales = o.idsucursales where  o.idclientes = '" + u.Idclientes + "' and o.valorizado = '0' and o.anulado = '0'");
+                    int cant = 0;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        cant = Convert.ToInt32(dr["cant"]);
+                    }
+                    if (cant > 0)
+                    {
+                        button5.Text = "Ord.Carga Pendientes " + cant.ToString();
+                        button5.Enabled = true;
+                    }
+                    else
+                    {
+                        button5.Text ="";
+                        button5.Enabled = false;
+                    }
                     lblId.Text = Convert.ToString(u.Idclientes);
                     txtCliente.Text = u.Cliente;
                     txtDomicilio.Text = u.Direccion;
@@ -125,13 +150,14 @@ namespace TransporteFortin
 
         private void frmCtaCteClientes_Load(object sender, EventArgs e)
         {
-            dataGridView1.ColumnCount = 6;
+            dataGridView1.ColumnCount = 7;
             dataGridView1.Columns[0].Name = "Fecha";
             dataGridView1.Columns[1].Name = "Concepto";
             dataGridView1.Columns[2].Name = "Descripcion";
             dataGridView1.Columns[3].Name = "Referencia";
             dataGridView1.Columns[4].Name = "Debe";
             dataGridView1.Columns[5].Name = "Haber";
+            dataGridView1.Columns[6].Name = "id";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -224,6 +250,50 @@ namespace TransporteFortin
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string where = "where  o.idclientes = '" + u.Idclientes + "' and o.valorizado = '0' and o.anulado = '0'";
+            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where);
+            frm.ShowDialog();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Funciones f = new Funciones();
+                if (f.acceder(34, idusuario))
+                {
+                    int filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
+                    string la = Convert.ToString(dataGridView1[6, filaseleccionada].Value);
+                    string desc = Convert.ToString(dataGridView1[2, filaseleccionada].Value);
+                    DialogResult dialogResult = MessageBox.Show("Esta seguro de editar descripcion " + desc, "Eliminar movimiento", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        frmDescripcion frm = new frmDescripcion(la, desc, 0);
+                        frm.ShowDialog();
+                    }
+                    button4_Click(sender, e);
+                }
+                else
+                {
+                    if (idusuario == 0)
+                    {
+                        MessageBox.Show("Debe iniciar sesion para acceder");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Imposible acceder: usuario sin acceso");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

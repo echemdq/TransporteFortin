@@ -15,9 +15,11 @@ namespace TransporteFortin
         Fleteros u = null;
         Empresas em = null;
         int ptoventa = 0;
+        int idusuario = 0;
         int idemp = 0;
-        public frmCtaCteFleteros(int pto)
+        public frmCtaCteFleteros(int pto, int idusu)
         {
+            idusuario = idusu;
             ptoventa = pto;
             InitializeComponent();
         }
@@ -65,6 +67,20 @@ namespace TransporteFortin
                 double debe = 0;
                 double haber = 0;
                 textBox1.Text = u.Empresas.Empresa;
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (Convert.ToString(row.Cells["Empresa"].Value) == textBox1.Text)
+                    {
+                        dataGridView2.CurrentCell = row.Cells["Empresa"];
+                        break;
+                    }
+                }
+                Acceso_BD oa = new Acceso_BD();
+                DataTable dt = oa.leerDatos("select (sum(debe)-sum(haber)) as saldo from ctactefleteros c where c.idempresas = '"+idemp+"'");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    textBox2.Text = Convert.ToString(dr["saldo"]);
+                }
                 txtCliente.Text = u.Fletero;
                 txtDomicilio.Text = u.Direccion;
                 txtTelefono.Text = u.Telefono;
@@ -102,6 +118,8 @@ namespace TransporteFortin
                                         dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                                         dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                                         dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                                        dataGridView1.Rows[x].Cells[6].Value = aux.Idctactefleteros;
+                                        dataGridView1.Columns[6].Visible = false;
                                         debe = debe + Convert.ToDouble(aux.Debe);
                                         haber = haber + Convert.ToDouble(aux.Haber);
                                         x++;
@@ -132,6 +150,8 @@ namespace TransporteFortin
                             dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                            dataGridView1.Rows[x].Cells[6].Value = aux.Idctactefleteros;
+                            dataGridView1.Columns[6].Visible = false;
                             debe = debe + Convert.ToDouble(aux.Debe);
                             haber = haber + Convert.ToDouble(aux.Haber);                            
                             x++;
@@ -150,11 +170,31 @@ namespace TransporteFortin
                 frmBuscaFleteros frm = new frmBuscaFleteros();
                 frm.ShowDialog();
                 u = frm.u;
-                dataGridView1.Rows.Clear();
-                dataGridView2.Rows.Clear();
-                buscar1();
-                buscar(u.Empresas.Idempresas);
+                if (u != null)
+                {
+                    Acceso_BD oa = new Acceso_BD();
+                    DataTable dt = oa.leerDatos("select count(*) as cant from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join tiposcamion t on f.idtiposcamion = t.idtiposcamion left join empresas e on f.idempresas = e.idempresas inner join sucursales s on s.idsucursales = o.idsucursales where  o.idfleteros = '" + u.Idfleteros + "' and o.valorizado = '0' and o.anulado = '0'");
+                    int cant = 0;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        cant = Convert.ToInt32(dr["cant"]);
+                    }
+                    if (cant > 0)
+                    {
+                        button5.Text = "Ord.Carga Pendientes " + cant.ToString();
+                        button5.Enabled = true;
+                    }
+                    else
+                    {
+                        button5.Text = "";
+                        button5.Enabled = false;
+                    }
 
+                    dataGridView1.Rows.Clear();
+                    dataGridView2.Rows.Clear();
+                    buscar1();
+                    buscar(u.Empresas.Idempresas);
+                }
             }
             catch (Exception ex)
             {
@@ -164,13 +204,14 @@ namespace TransporteFortin
 
         private void frmCtaCteFleteros_Load(object sender, EventArgs e)
         {
-            dataGridView1.ColumnCount = 6;
+            dataGridView1.ColumnCount = 7;
             dataGridView1.Columns[0].Name = "Fecha";
             dataGridView1.Columns[1].Name = "Concepto";
             dataGridView1.Columns[2].Name = "Descripcion";
             dataGridView1.Columns[3].Name = "Referencia";
             dataGridView1.Columns[4].Name = "Debe";
             dataGridView1.Columns[5].Name = "Haber";
+            dataGridView1.Columns[6].Name = "id";
 
             dataGridView2.ColumnCount = 4;
             dataGridView2.Columns[0].Name = "idfleteros";
@@ -225,7 +266,6 @@ namespace TransporteFortin
             dataGridView1.Rows.Clear();
             label2.Text = Convert.ToString(dataGridView2[3, filaseleccionada].Value);
             buscar(idempresa);
-            //u = new Fleteros(idfletero, documento, fletero, direccion, localidad, cp.ToString(), telefono, celular, fax, mail, emp, camion, tipoiv, chapacamion, chapaacoplado, cuit, ti);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -257,6 +297,55 @@ namespace TransporteFortin
                 label2.Text = "0.00";
                 buscar(u.Empresas.Idempresas);
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string where = "where  o.idfleteros = '" + u.Idfleteros + "' and o.valorizado = '0' and o.anulado = '0'";
+            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where);
+            frm.ShowDialog();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Funciones f = new Funciones();
+                if (f.acceder(35, idusuario))
+                {
+                    int filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
+                    string la = Convert.ToString(dataGridView1[6, filaseleccionada].Value);
+                    string desc = Convert.ToString(dataGridView1[2, filaseleccionada].Value);
+                    DialogResult dialogResult = MessageBox.Show("Esta seguro de editar descripcion " + desc, "Editar movimiento", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        
+                        frmDescripcion frm = new frmDescripcion(la, desc, 1);
+                        frm.ShowDialog();
+                    }
+                    dataGridView2_CellClick(sender, e);
+                }
+                else
+                {
+                    if (idusuario == 0)
+                    {
+                        MessageBox.Show("Debe iniciar sesion para acceder");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Imposible acceder: usuario sin acceso");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
         }
     }
 }

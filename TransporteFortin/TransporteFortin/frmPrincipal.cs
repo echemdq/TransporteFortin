@@ -222,7 +222,7 @@ namespace TransporteFortin
         {
             if (f.acceder(16, idusuario))
             {
-                frmCtaCteFleteros frm = new frmCtaCteFleteros(talon);
+                frmCtaCteFleteros frm = new frmCtaCteFleteros(talon, idusuario);
                 frm.ShowDialog();
             }
             else
@@ -289,7 +289,7 @@ namespace TransporteFortin
         {
             if (f.acceder(11, idusuario))
             {
-                frmCtaCteClientes frm = new frmCtaCteClientes(talon);
+                frmCtaCteClientes frm = new frmCtaCteClientes(talon,idusuario);
                 frm.ShowDialog();
             }
             else

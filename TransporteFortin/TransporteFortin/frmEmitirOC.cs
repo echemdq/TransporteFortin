@@ -18,6 +18,8 @@ namespace TransporteFortin
         int idusuario = 0;
         int idptoventa = 0;
         int idpuesto = 0;
+        Clientes u = null;
+        Fleteros f = null;
         public frmEmitirOC(int idorden, int idusu, int idpue, int idsuc, int talon)
         {
             InitializeComponent();
@@ -268,14 +270,31 @@ namespace TransporteFortin
             {
                 frmBuscaClientes frm = new frmBuscaClientes();
                 frm.ShowDialog();
-                Clientes u = frm.u;
+                u = frm.u;
                 if (u != null)
                 {
+                    Acceso_BD oa = new Acceso_BD();
+                    DataTable dt = oa.leerDatos("select count(*) as cant from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join tiposcamion t on f.idtiposcamion = t.idtiposcamion left join empresas e on f.idempresas = e.idempresas inner join sucursales s on s.idsucursales = o.idsucursales where  o.idclientes = '" + u.Idclientes + "' and o.valorizado = '0' and o.anulado = '0'");
+                    string where = "where  o.idclientes = '" + u.Idclientes + "' and o.valorizado = '0' and o.anulado = '0'";
+                    int cant = 0;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        cant = Convert.ToInt32(dr["cant"]);
+                    }
+                    if (cant > 0)
+                    {
+                        btnOrdenCte.Text = "Ord.Carga Pendientes " + cant.ToString();
+                        btnOrdenCte.Enabled = true;
+                    }
+                    else
+                    {
+                        btnOrdenCte.Text = "";
+                        btnOrdenCte.Enabled = false;
+                    }
                     lblCliente.Text = Convert.ToString(u.Idclientes);
                     lblDireccionCte.Text = u.Direccion;
                     txtCliente.Text = u.Cliente;
-                    Acceso_BD oa = new Acceso_BD();
-                    DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + u.Idclientes + "'");
+                    dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + u.Idclientes + "'");
                     foreach (DataRow dr in dt.Rows)
                     {
                         txtSaldoCte.Text = Convert.ToString(dr["saldo"]);
@@ -294,32 +313,48 @@ namespace TransporteFortin
             {
                 frmBuscaFleteros frm = new frmBuscaFleteros();
                 frm.ShowDialog();
-                Fleteros u = frm.u;
-                if (u != null)
+                f = frm.u;
+                if (f != null)
                 {
-                    lblFletero.Text = Convert.ToString(u.Idfleteros);
-                    lblEmpresa.Text = u.Empresas.Idempresas.ToString();
-                    txtEmpresa.Text = u.Empresas.Empresa;
-                    txtFletero.Text = u.Fletero;
-                    txtDomicilio.Text = u.Direccion;
-                    txtLocalidad.Text = u.Localidad;
-                    txtTelefono.Text = u.Telefono;
-                    txtCelular.Text = u.Celular;
-                    txtModelo.Text = u.Camion;
-                    cmbTipoCamion.SelectedValue = u.Tiposcamion.Idtiposcamion;
-                    txtCP.Text = u.Cp.ToString();
-                    txtChapaA.Text = u.Chapaacoplado;
-                    txtChapaC.Text = u.Chapacamion;
-                    txtDocumento.Text = u.Documento.ToString();
                     Acceso_BD oa = new Acceso_BD();
-                    DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctactefleteros  WHERE idfleteros = '" + u.Idfleteros + "' and idempresas = '" + u.Empresas.Idempresas + "'");
+                    DataTable dt = oa.leerDatos("select count(*) as cant from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join tiposcamion t on f.idtiposcamion = t.idtiposcamion left join empresas e on f.idempresas = e.idempresas inner join sucursales s on s.idsucursales = o.idsucursales where  o.idfleteros = '" + f.Idfleteros + "' and o.valorizado = '0' and o.anulado = '0'");
+                    int cant = 0;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        cant = Convert.ToInt32(dr["cant"]);
+                    }
+                    if (cant > 0)
+                    {
+                        btnOrdenFlet.Text = "Ord.Carga Pendientes " + cant.ToString();
+                        btnOrdenFlet.Enabled = true;
+                    }
+                    else
+                    {
+                        btnOrdenFlet.Text = "";
+                        btnOrdenFlet.Enabled = false;
+                    }
+                    lblFletero.Text = Convert.ToString(f.Idfleteros);
+                    lblEmpresa.Text = f.Empresas.Idempresas.ToString();
+                    txtEmpresa.Text = f.Empresas.Empresa;
+                    txtFletero.Text = f.Fletero;
+                    txtDomicilio.Text = f.Direccion;
+                    txtLocalidad.Text = f.Localidad;
+                    txtTelefono.Text = f.Telefono;
+                    txtCelular.Text = f.Celular;
+                    txtModelo.Text = f.Camion;
+                    cmbTipoCamion.SelectedValue = f.Tiposcamion.Idtiposcamion;
+                    txtCP.Text = f.Cp.ToString();
+                    txtChapaA.Text = f.Chapaacoplado;
+                    txtChapaC.Text = f.Chapacamion;
+                    txtDocumento.Text = f.Documento.ToString();
+                    dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctactefleteros  WHERE idfleteros = '" + f.Idfleteros + "' and idempresas = '" + f.Empresas.Idempresas + "'");
                     
                     foreach (DataRow dr in dt.Rows)
                     {
                         txtSaldoFlet.Text = Convert.ToString(dr["saldo"]);
                     }
 
-                    dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctactefleteros  WHERE idempresas = '" + u.Empresas.Idempresas + "'");
+                    dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctactefleteros  WHERE idempresas = '" + f.Empresas.Idempresas + "'");
 
                     foreach (DataRow dr in dt.Rows)
                     {
@@ -680,7 +715,7 @@ namespace TransporteFortin
                         }
                         else
                         {
-                            OrdenesCarga oc = new OrdenesCarga(0, "0", idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text), Convert.ToDecimal(txtIvaViaje.Text), Convert.ToDecimal(txtIVACte.Text), Convert.ToDecimal(txtComision.Text), Convert.ToDecimal(txtImporteCte.Text), richTextBox1.Text, 0, usuario, txtConceptoFact.Text);
+                            OrdenesCarga oc = new OrdenesCarga(0, "0", idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIvaViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIVACte.Text.Replace('.', ',')), Convert.ToDecimal(txtComision.Text.Replace('.', ',')), Convert.ToDecimal(txtImporteCte.Text.Replace('.', ',')), richTextBox1.Text, 0, usuario, txtConceptoFact.Text);
                             string nro = controlo.Agregar(oc);
                             oc.Nrocarga = nro;
                             frmImpOCarga frm = new frmImpOCarga(oc);
@@ -784,7 +819,7 @@ namespace TransporteFortin
                 }
                 else
                 {
-                    OrdenesCarga oc = new OrdenesCarga(idordencarga, "0", idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text), Convert.ToDecimal(txtIvaViaje.Text), Convert.ToDecimal(txtIVACte.Text), Convert.ToDecimal(txtComision.Text), Convert.ToDecimal(txtImporteCte.Text), richTextBox1.Text, 0, null, txtConceptoFact.Text);
+                    OrdenesCarga oc = new OrdenesCarga(idordencarga, "0", idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIvaViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIVACte.Text.Replace('.', ',')), Convert.ToDecimal(txtComision.Text.Replace('.', ',')), Convert.ToDecimal(txtImporteCte.Text.Replace('.', ',')), richTextBox1.Text, 0, null, txtConceptoFact.Text);
                     controlo.Modificar(oc);
                     MessageBox.Show("Orden de carga valorizada correctamente");
                     limpiar();
@@ -815,6 +850,20 @@ namespace TransporteFortin
                 txtValorUniCte.Enabled = true;
                 richTextBox1.Text = "";
             }
+        }
+
+        private void btnOrdenCte_Click(object sender, EventArgs e)
+        {
+            string where = "where  o.idclientes = '" + u.Idclientes + "' and o.valorizado = '0' and o.anulado = '0'";
+            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where);
+            frm.ShowDialog();
+        }
+
+        private void btnOrdenFlet_Click(object sender, EventArgs e)
+        {
+            string where = "where  o.idfleteros = '" + f.Idfleteros + "' and o.valorizado = '0' and o.anulado = '0'";
+            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where);
+            frm.ShowDialog();
         }
     }
 }
