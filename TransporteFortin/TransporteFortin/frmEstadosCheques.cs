@@ -125,9 +125,9 @@ namespace TransporteFortin
                 DialogResult dialogResult = MessageBox.Show("Esta seguro de eliminar el estado: " + novedad, "Eliminar estado", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    oa.ActualizarBD("delete from estadoscheques where idestadoscheques = '" + idnov + "'");
-                    MessageBox.Show("Estado Eliminado Correctamente");
-                    frmEstadosCheques_Load(sender, e);
+                    //oa.ActualizarBD("delete from estadoscheques where idestadoscheques = '" + idnov + "'");
+                    //MessageBox.Show("Estado Eliminado Correctamente");
+                    //frmEstadosCheques_Load(sender, e);
                 }
             }
             catch (Exception ex)

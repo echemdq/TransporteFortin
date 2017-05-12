@@ -110,6 +110,7 @@
             // 
             this.button1.BackgroundImage = global::TransporteFortin.Properties.Resources.Undo;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(241, 554);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(41, 38);
@@ -121,6 +122,7 @@
             // 
             this.btnEditar.BackgroundImage = global::TransporteFortin.Properties.Resources.Edit;
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.Enabled = false;
             this.btnEditar.Location = new System.Drawing.Point(194, 554);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(41, 38);
@@ -132,6 +134,7 @@
             // 
             this.btnGuardar.BackgroundImage = global::TransporteFortin.Properties.Resources.Save;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.Location = new System.Drawing.Point(147, 554);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(41, 38);
@@ -144,6 +147,7 @@
             this.btnNuevo.BackColor = System.Drawing.SystemColors.Control;
             this.btnNuevo.BackgroundImage = global::TransporteFortin.Properties.Resources.Document;
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevo.Enabled = false;
             this.btnNuevo.Location = new System.Drawing.Point(100, 554);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(41, 38);
