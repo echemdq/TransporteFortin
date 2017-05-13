@@ -100,7 +100,11 @@ namespace TransporteFortin
                         }
                     }
                 }
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0];
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                }
                 label8.Text = (debe - haber).ToString();
             }
         }
@@ -115,7 +119,7 @@ namespace TransporteFortin
                 if (u != null)
                 {
                     Acceso_BD oa = new Acceso_BD();
-                    DataTable dt = oa.leerDatos("select count(*) as cant from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join tiposcamion t on f.idtiposcamion = t.idtiposcamion left join empresas e on f.idempresas = e.idempresas inner join sucursales s on s.idsucursales = o.idsucursales where  o.idclientes = '" + u.Idclientes + "' and o.valorizado = '0' and o.anulado = '0'");
+                    DataTable dt = oa.leerDatos("select ifnull(count(*), 0) as cant from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join tiposcamion t on f.idtiposcamion = t.idtiposcamion left join empresas e on f.idempresas = e.idempresas inner join sucursales s on s.idsucursales = o.idsucursales where  o.idclientes = '" + u.Idclientes + "' and o.valorizado = '0' and o.anulado = '0'");
                     int cant = 0;
                     foreach (DataRow dr in dt.Rows)
                     {
@@ -150,6 +154,8 @@ namespace TransporteFortin
 
         private void frmCtaCteClientes_Load(object sender, EventArgs e)
         {
+            maskedTextBox1.Text = DateTime.Now.AddDays(-30).ToString("dd/MM/yyyy");
+            maskedTextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
             dataGridView1.ColumnCount = 7;
             dataGridView1.Columns[0].Name = "Fecha";
             dataGridView1.Columns[1].Name = "Concepto";
@@ -158,6 +164,7 @@ namespace TransporteFortin
             dataGridView1.Columns[4].Name = "Debe";
             dataGridView1.Columns[5].Name = "Haber";
             dataGridView1.Columns[6].Name = "id";
+            dataGridView1.Columns[6].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

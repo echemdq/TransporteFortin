@@ -53,10 +53,11 @@
             this.button5 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label36 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -251,6 +252,8 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(188, 169);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(101, 17);
@@ -308,6 +311,16 @@
             this.label7.TabIndex = 166;
             this.label7.Text = "Saldo";
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(258, 466);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(351, 13);
+            this.label36.TabIndex = 169;
+            this.label36.Text = "Hacer Doble Click sobre el concepto que se desea modificar";
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.Control;
@@ -343,21 +356,22 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // label36
+            // button6
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(258, 466);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(351, 13);
-            this.label36.TabIndex = 169;
-            this.label36.Text = "Hacer Doble Click sobre el concepto que se desea modificar";
+            this.button6.Location = new System.Drawing.Point(482, 482);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(84, 51);
+            this.button6.TabIndex = 170;
+            this.button6.Text = "EXPORTAR DATOS";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // frmCtaCteFleteros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 538);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label7);
@@ -426,5 +440,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button button6;
     }
 }

@@ -34,7 +34,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtcomefe = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnefect = new System.Windows.Forms.Button();
             this.txtEfectivo = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gbtransferencia = new System.Windows.Forms.GroupBox();
@@ -47,10 +46,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txttransf = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btntransf = new System.Windows.Forms.Button();
             this.cmbcuentatra = new System.Windows.Forms.ComboBox();
             this.gbcheqt = new System.Windows.Forms.GroupBox();
-            this.btncf = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtnrochequet = new System.Windows.Forms.TextBox();
             this.mskfechachequet = new System.Windows.Forms.MaskedTextBox();
@@ -62,7 +59,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cmbcuentaT = new System.Windows.Forms.ComboBox();
             this.gbchequep = new System.Windows.Forms.GroupBox();
-            this.btncp = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.txtnrochequep = new System.Windows.Forms.TextBox();
             this.mskfechacheqep = new System.Windows.Forms.MaskedTextBox();
@@ -75,6 +71,10 @@
             this.cmbcuentap = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btncp = new System.Windows.Forms.Button();
+            this.btntransf = new System.Windows.Forms.Button();
+            this.btnefect = new System.Windows.Forms.Button();
+            this.btncf = new System.Windows.Forms.Button();
             this.gbefectivo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbtransferencia.SuspendLayout();
@@ -145,18 +145,6 @@
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 140;
             this.label2.Text = "Importe";
-            // 
-            // btnefect
-            // 
-            this.btnefect.BackColor = System.Drawing.SystemColors.Control;
-            this.btnefect.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
-            this.btnefect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnefect.Location = new System.Drawing.Point(330, 15);
-            this.btnefect.Name = "btnefect";
-            this.btnefect.Size = new System.Drawing.Size(41, 38);
-            this.btnefect.TabIndex = 2;
-            this.btnefect.UseVisualStyleBackColor = false;
-            this.btnefect.Click += new System.EventHandler(this.btnefect_Click);
             // 
             // txtEfectivo
             // 
@@ -296,18 +284,6 @@
             this.label3.TabIndex = 150;
             this.label3.Text = "Banco";
             // 
-            // btntransf
-            // 
-            this.btntransf.BackColor = System.Drawing.SystemColors.Control;
-            this.btntransf.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
-            this.btntransf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btntransf.Location = new System.Drawing.Point(330, 35);
-            this.btntransf.Name = "btntransf";
-            this.btntransf.Size = new System.Drawing.Size(41, 38);
-            this.btntransf.TabIndex = 5;
-            this.btntransf.UseVisualStyleBackColor = false;
-            this.btntransf.Click += new System.EventHandler(this.btntransf_Click);
-            // 
             // cmbcuentatra
             // 
             this.cmbcuentatra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -337,18 +313,6 @@
             this.gbcheqt.TabIndex = 153;
             this.gbcheqt.TabStop = false;
             this.gbcheqt.Text = "CHEQUE TERCERO";
-            // 
-            // btncf
-            // 
-            this.btncf.BackColor = System.Drawing.SystemColors.Control;
-            this.btncf.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
-            this.btncf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncf.Location = new System.Drawing.Point(314, 54);
-            this.btncf.Name = "btncf";
-            this.btncf.Size = new System.Drawing.Size(41, 38);
-            this.btncf.TabIndex = 5;
-            this.btncf.UseVisualStyleBackColor = false;
-            this.btncf.Click += new System.EventHandler(this.btncf_Click);
             // 
             // label17
             // 
@@ -472,18 +436,6 @@
             this.gbchequep.TabStop = false;
             this.gbchequep.Text = "CHEQUE PROPIO";
             // 
-            // btncp
-            // 
-            this.btncp.BackColor = System.Drawing.SystemColors.Control;
-            this.btncp.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
-            this.btncp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncp.Location = new System.Drawing.Point(331, 52);
-            this.btncp.Name = "btncp";
-            this.btncp.Size = new System.Drawing.Size(41, 38);
-            this.btncp.TabIndex = 5;
-            this.btncp.UseVisualStyleBackColor = false;
-            this.btncp.Click += new System.EventHandler(this.btncp_Click);
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -605,6 +557,54 @@
             this.button1.Text = "Finalizar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btncp
+            // 
+            this.btncp.BackColor = System.Drawing.SystemColors.Control;
+            this.btncp.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
+            this.btncp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncp.Location = new System.Drawing.Point(331, 52);
+            this.btncp.Name = "btncp";
+            this.btncp.Size = new System.Drawing.Size(41, 38);
+            this.btncp.TabIndex = 5;
+            this.btncp.UseVisualStyleBackColor = false;
+            this.btncp.Click += new System.EventHandler(this.btncp_Click);
+            // 
+            // btntransf
+            // 
+            this.btntransf.BackColor = System.Drawing.SystemColors.Control;
+            this.btntransf.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
+            this.btntransf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btntransf.Location = new System.Drawing.Point(330, 35);
+            this.btntransf.Name = "btntransf";
+            this.btntransf.Size = new System.Drawing.Size(41, 38);
+            this.btntransf.TabIndex = 5;
+            this.btntransf.UseVisualStyleBackColor = false;
+            this.btntransf.Click += new System.EventHandler(this.btntransf_Click);
+            // 
+            // btnefect
+            // 
+            this.btnefect.BackColor = System.Drawing.SystemColors.Control;
+            this.btnefect.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
+            this.btnefect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnefect.Location = new System.Drawing.Point(330, 15);
+            this.btnefect.Name = "btnefect";
+            this.btnefect.Size = new System.Drawing.Size(41, 38);
+            this.btnefect.TabIndex = 2;
+            this.btnefect.UseVisualStyleBackColor = false;
+            this.btnefect.Click += new System.EventHandler(this.btnefect_Click);
+            // 
+            // btncf
+            // 
+            this.btncf.BackColor = System.Drawing.SystemColors.Control;
+            this.btncf.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
+            this.btncf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncf.Location = new System.Drawing.Point(314, 54);
+            this.btncf.Name = "btncf";
+            this.btncf.Size = new System.Drawing.Size(41, 38);
+            this.btncf.TabIndex = 5;
+            this.btncf.UseVisualStyleBackColor = false;
+            this.btncf.Click += new System.EventHandler(this.btncf_Click);
             // 
             // frmFormasPago
             // 

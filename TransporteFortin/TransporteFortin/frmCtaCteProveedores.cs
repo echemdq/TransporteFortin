@@ -91,7 +91,11 @@ namespace TransporteFortin
                             x++;
                         }
                     }
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    if (dataGridView1.Rows.Count > 0)
+                    {
+                        dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0];
+                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    }
                 }
                 label8.Text = (debe - haber).ToString();
             }
@@ -125,6 +129,8 @@ namespace TransporteFortin
 
         private void frmCtaCteProveedores_Load(object sender, EventArgs e)
         {
+            maskedTextBox1.Text = DateTime.Now.AddDays(-30).ToString("dd/MM/yyyy");
+            maskedTextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
             dataGridView1.ColumnCount = 6;
             dataGridView1.Columns[0].Name = "Fecha";
             dataGridView1.Columns[1].Name = "Concepto";

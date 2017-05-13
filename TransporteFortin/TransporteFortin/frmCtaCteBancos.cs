@@ -23,6 +23,7 @@ namespace TransporteFortin
 
         private void frmCtaCteBancos_Load(object sender, EventArgs e)
         {
+
             Acceso_BD oacceso = new Acceso_BD();
             DataTable dt = oacceso.leerDatos("select * from cuentasbanco order by descripcion asc");
             List<CuentasBanco> listat = new List<CuentasBanco>();
@@ -53,6 +54,10 @@ namespace TransporteFortin
                 {
                     label1.Text = "Saldo: $" + Convert.ToString(dr["Acreditado"]);
                 }
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0];
+                }
             }
             else
             {
@@ -70,6 +75,10 @@ namespace TransporteFortin
                         foreach (DataRow dr in dt.Rows)
                         {
                             label1.Text = "Saldo: $"+Convert.ToString(dr["Acreditado"]);
+                        }
+                        if (dataGridView1.Rows.Count > 0)
+                        {
+                            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0];
                         }
                     }
                     else

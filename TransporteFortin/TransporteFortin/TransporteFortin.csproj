@@ -265,6 +265,12 @@
     <Compile Include="frmEstadosCheques.Designer.cs">
       <DependentUpon>frmEstadosCheques.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmExpFleteros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExpFleteros.Designer.cs">
+      <DependentUpon>frmExpFleteros.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFleteros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,12 @@
     </Compile>
     <Compile Include="frmInformeFleteros.Designer.cs">
       <DependentUpon>frmInformeFleteros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoCheques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoCheques.Designer.cs">
+      <DependentUpon>frmIngresoCheques.cs</DependentUpon>
     </Compile>
     <Compile Include="frmIniciarSesion.cs">
       <SubType>Form</SubType>
@@ -528,6 +540,9 @@
     <EmbeddedResource Include="frmEstadosCheques.resx">
       <DependentUpon>frmEstadosCheques.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmExpFleteros.resx">
+      <DependentUpon>frmExpFleteros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFleteros.resx">
       <DependentUpon>frmFleteros.cs</DependentUpon>
     </EmbeddedResource>
@@ -560,6 +575,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInformeFleteros.resx">
       <DependentUpon>frmInformeFleteros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoCheques.resx">
+      <DependentUpon>frmIngresoCheques.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIniciarSesion.resx">
       <DependentUpon>frmIniciarSesion.cs</DependentUpon>

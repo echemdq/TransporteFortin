@@ -158,7 +158,14 @@ namespace TransporteFortin
                         }
                     }
                     label2.Text = (debe - haber).ToString();
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+                    if (dataGridView1.Rows.Count > 0)
+                    {
+                        dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0];
+
+
+                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    }
                 }
 
             }
@@ -204,6 +211,9 @@ namespace TransporteFortin
 
         private void frmCtaCteFleteros_Load(object sender, EventArgs e)
         {
+
+            maskedTextBox1.Text = DateTime.Now.AddDays(-30).ToString("dd/MM/yyyy");
+            maskedTextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
             dataGridView1.ColumnCount = 7;
             dataGridView1.Columns[0].Name = "Fecha";
             dataGridView1.Columns[1].Name = "Concepto";
@@ -212,7 +222,7 @@ namespace TransporteFortin
             dataGridView1.Columns[4].Name = "Debe";
             dataGridView1.Columns[5].Name = "Haber";
             dataGridView1.Columns[6].Name = "id";
-
+            dataGridView1.Columns[6].Visible = false;
             dataGridView2.ColumnCount = 4;
             dataGridView2.Columns[0].Name = "idfleteros";
             dataGridView2.Columns[1].Name = "idempresas";
@@ -346,6 +356,17 @@ namespace TransporteFortin
 
         private void button6_Click(object sender, EventArgs e)
         {
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            if (u != null && idemp != 0)
+            {
+                int filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
+
+                frmExpFleteros frm = new frmExpFleteros(u.Idfleteros, idemp);
+                frm.ShowDialog();
+            }
         }
     }
 }

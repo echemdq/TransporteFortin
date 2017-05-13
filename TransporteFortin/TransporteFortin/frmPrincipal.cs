@@ -738,5 +738,11 @@ namespace TransporteFortin
                 }
             }
         }
+
+        private void ingresoManualChequesTerceroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIngresoCheques frm = new frmIngresoCheques();
+            frm.ShowDialog();
+        }
     }
 }
