@@ -15,6 +15,8 @@ namespace TransporteFortin
         string consulta = "";
         ControladoraOrdenesCarga controlo = new ControladoraOrdenesCarga();
         int filaseleccionada = 0;
+        double totalviaje = 0;
+        double comision = 0;
         int idoc = 0;
         List<OrdenesCarga> lista = new List<OrdenesCarga>();
         public frmListaOrdenesCarga(string where)
@@ -70,13 +72,16 @@ namespace TransporteFortin
                     dataGridView1.Rows[x].Cells[6].Value = aux.Fleteros.Idfleteros;
                     dataGridView1.Rows[x].Cells[7].Value = aux.Fleteros.Fletero;
                     dataGridView1.Rows[x].Cells[8].Value = aux.Totalviaje;
+                    totalviaje = totalviaje + Convert.ToDouble(aux.Totalviaje);
                     dataGridView1.Rows[x].Cells[9].Value = aux.Comision;
+                    comision = comision + Convert.ToDouble(aux.Comision);
                     dataGridView1.Rows[x].Cells[10].Value = aux.Anulado;
                     dataGridView1.Rows[x].Cells[11].Value = aux.Valorizado;
                     x++;
                 }
             }
-
+            txtTotalViaje.Text = totalviaje.ToString();
+            txtComision.Text = comision.ToString();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
