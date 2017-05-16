@@ -207,7 +207,7 @@ namespace TransporteFortin
                     txtRecibimosDe.Text = u.Cliente;
                     txtEnConcepto.Text = cmbConceptos.Text;
                     Acceso_BD oa = new Acceso_BD();
-                    DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + u.Idclientes + "'");
+                    DataTable dt = oa.leerDatos("SELECT SUM(HABER-DEBE) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + u.Idclientes + "'");
                     foreach (DataRow dr in dt.Rows)
                     {
                         txtSaldo.Text = Convert.ToString(dr["saldo"]);

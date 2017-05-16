@@ -65,7 +65,7 @@ namespace TransporteFortin
                     txtEnConcepto.Text = cmbConceptos.Text;
                     buscar();
                     Acceso_BD oa = new Acceso_BD();
-                    DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM ctactefleteros WHERE idfleteros = '" + u.Idfleteros + "' and idempresas = '"+u.Empresas.Idempresas+"'");
+                    DataTable dt = oa.leerDatos("SELECT SUM(HABER-DEBE) as saldo FROM ctactefleteros WHERE idfleteros = '" + u.Idfleteros + "' and idempresas = '"+u.Empresas.Idempresas+"'");
                     cmbemp.SelectedValue = u.Empresas.Idempresas;
                     foreach (DataRow dr in dt.Rows)
                     {

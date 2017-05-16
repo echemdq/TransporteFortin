@@ -661,7 +661,7 @@ namespace TransporteFortin
 
             if (f.acceder(27, idusuario))
             {
-                frmCheques frm = new frmCheques(2);
+                frmCheques frm = new frmCheques(2, idusuario);
                 frm.ShowDialog();
             }
             else
@@ -681,7 +681,7 @@ namespace TransporteFortin
         {
             if (f.acceder(24, idusuario))
             {
-                frmCheques frm = new frmCheques(3);
+                frmCheques frm = new frmCheques(3, idusuario);
                 frm.ShowDialog();
             }
             else
@@ -702,7 +702,7 @@ namespace TransporteFortin
             
             if (f.acceder(25, idusuario))
             {
-                frmCheques frm = new frmCheques(4);
+                frmCheques frm = new frmCheques(4, idusuario);
             frm.ShowDialog();
             }
             else
@@ -741,8 +741,23 @@ namespace TransporteFortin
 
         private void ingresoManualChequesTerceroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmIngresoCheques frm = new frmIngresoCheques();
-            frm.ShowDialog();
+            if (f.acceder(37, idusuario))
+            {
+
+                frmIngresoCheques frm = new frmIngresoCheques();
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
         }
     }
 }

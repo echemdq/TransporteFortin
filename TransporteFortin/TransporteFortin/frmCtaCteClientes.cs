@@ -105,7 +105,7 @@ namespace TransporteFortin
                     dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0];
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
-                label8.Text = (debe - haber).ToString();
+                label8.Text = (haber - debe).ToString();
             }
         }
 

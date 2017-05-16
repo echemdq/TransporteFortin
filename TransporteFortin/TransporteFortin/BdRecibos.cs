@@ -63,22 +63,22 @@ namespace TransporteFortin
             //inserto en cuenta corriente
             if (dato.Clientes.Idclientes != 0)
             {
-                oacceso.ActualizarBD("insert into ctacteclientes (idclientes, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, fecha, idrecibos) values ('" + dato.Clientes.Idclientes + "','" + dato.Conceptos.Codigo + "','GS - Recibo Cobro','" + dato.Ptoventa + "',0,0,'" + dato.Importe.ToString().Replace(',', '.') + "',now(),'" + idrecibo + "')");
+                oacceso.ActualizarBD("insert into ctacteclientes (idclientes, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, fecha, idrecibos) values ('" + dato.Clientes.Idclientes + "','" + dato.Conceptos.Codigo + "','GS - Recibo Cobro','" + dato.Ptoventa + "',0,0,'" + dato.Importe.ToString().Replace(',', '.') + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + idrecibo + "')");
             }
             else if (dato.Fleteros.Idfleteros != 0)
             {
                 if (dato.Tipo == 0)
                 {
-                    oacceso.ActualizarBD("insert into ctactefleteros (idfleteros, idempresas, fecha, fecactual, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos, idordenescombustible) values ('" + dato.Fleteros.Idfleteros + "','" + dato.Fleteros.Empresas.Idempresas + "',now(),now(),'" + dato.Conceptos.Codigo + "','GS - Recibo Cobro','" + dato.Ptoventa + "',0,0,'" + dato.Importe.ToString().Replace(',', '.') + "','" + idrecibo + "',0)");
+                    oacceso.ActualizarBD("insert into ctactefleteros (idfleteros, idempresas, fecha, fecactual, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos, idordenescombustible) values ('" + dato.Fleteros.Idfleteros + "','" + dato.Fleteros.Empresas.Idempresas + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "',now(),'" + dato.Conceptos.Codigo + "','GS - Recibo Cobro','" + dato.Ptoventa + "',0,0,'" + dato.Importe.ToString().Replace(',', '.') + "','" + idrecibo + "',0)");
                 }
                 else
                 {
-                    oacceso.ActualizarBD("insert into ctactefleteros (idfleteros, idempresas, fecha, fecactual, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos, idordenescombustible) values ('" + dato.Fleteros.Idfleteros + "','" + dato.Fleteros.Empresas.Idempresas + "',now(),now(),'" + dato.Conceptos.Codigo + "','GS - Orden de Pago','" + dato.Ptoventa + "',0,'" + dato.Importe.ToString().Replace(',', '.') + "',0,'" + idrecibo + "',0)");
+                    oacceso.ActualizarBD("insert into ctactefleteros (idfleteros, idempresas, fecha, fecactual, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos, idordenescombustible) values ('" + dato.Fleteros.Idfleteros + "','" + dato.Fleteros.Empresas.Idempresas + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "',now(),'" + dato.Conceptos.Codigo + "','GS - Orden de Pago','" + dato.Ptoventa + "',0,'" + dato.Importe.ToString().Replace(',', '.') + "',0,'" + idrecibo + "',0)");
                 }
             }
             else if (dato.Proveedores.Idproveedores != 0)
             {
-                oacceso.ActualizarBD("insert into ctacteproveedores (idproveedores, idordenescombustible, idrecibos, fecha, idconceptos, descripcion, debe, haber, ptoventa) values ('" + dato.Proveedores.Idproveedores + "',0,'" + idrecibo + "', now(),'" + dato.Conceptos.Codigo + "','GS - Orden de Pago','" + dato.Importe.ToString().Replace(',', '.') + "',0,'" + dato.Ptoventa + "')");
+                oacceso.ActualizarBD("insert into ctacteproveedores (idproveedores, idordenescombustible, idrecibos, fecha, idconceptos, descripcion, debe, haber, ptoventa) values ('" + dato.Proveedores.Idproveedores + "',0,'" + idrecibo + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + dato.Conceptos.Codigo + "','GS - Orden de Pago','" + dato.Importe.ToString().Replace(',', '.') + "',0,'" + dato.Ptoventa + "')");
             }
 
 

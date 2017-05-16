@@ -29,7 +29,7 @@ namespace TransporteFortin
                 {
                     txtEmpresas.Text = u.Empresa;
                     Acceso_BD oacceso = new Acceso_BD();
-                    DataTable dt = oacceso.leerDatos("select (sum(debe)-sum(haber)) as saldo, f.fletero from ctactefleteros c inner join fleteros f on c.idfleteros = f.idfleteros where c.idempresas = '"+u.Idempresas+"' group by fletero");
+                    DataTable dt = oacceso.leerDatos("select (sum(DEBE)-sum(HABER)) as saldo, f.fletero from ctactefleteros c inner join fleteros f on c.idfleteros = f.idfleteros where c.idempresas = '"+u.Idempresas+"' group by fletero");
                     int x = 0;
                     dataGridView1.Rows.Clear();
                     if (dt.Rows.Count > 0)
@@ -60,7 +60,7 @@ namespace TransporteFortin
                             }
                             x++;
                         }
-                        label2.Text = (debe - haber).ToString();
+                        label2.Text = (haber - debe).ToString();
                     }
                 }
             }

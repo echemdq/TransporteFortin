@@ -29,7 +29,7 @@ namespace TransporteFortin
             if (u != null)
             {
                 Acceso_BD oacceso = new Acceso_BD();
-                DataTable dt = oacceso.leerDatos("select idfleteros, c.idempresas, ifnull(e.empresa, 'SIN EMPRESA') as empresa, sum(debe-haber) as saldo, case when c.idempresas = e.idempresas then 1 else 0 end as activo from ctactefleteros c left join empresas e on c.idempresas = e.idempresas where idfleteros = '" + u.Idfleteros + "' group by idfleteros, c.idempresas, empresa order by activo desc");
+                DataTable dt = oacceso.leerDatos("select idfleteros, c.idempresas, ifnull(e.empresa, 'SIN EMPRESA') as empresa, sum(haber-debe) as saldo, case when c.idempresas = e.idempresas then 1 else 0 end as activo from ctactefleteros c left join empresas e on c.idempresas = e.idempresas where idfleteros = '" + u.Idfleteros + "' group by idfleteros, c.idempresas, empresa order by activo desc");
                
                 int i = 0;
                 foreach (DataRow dr in dt.Rows)
@@ -76,7 +76,7 @@ namespace TransporteFortin
                     }
                 }
                 Acceso_BD oa = new Acceso_BD();
-                DataTable dt = oa.leerDatos("select (sum(debe)-sum(haber)) as saldo from ctactefleteros c where c.idempresas = '"+idemp+"'");
+                DataTable dt = oa.leerDatos("select (sum(haber)-sum(debe)) as saldo from ctactefleteros c where c.idempresas = '"+idemp+"'");
                 foreach (DataRow dr in dt.Rows)
                 {
                     textBox2.Text = Convert.ToString(dr["saldo"]);
@@ -157,7 +157,7 @@ namespace TransporteFortin
                             x++;
                         }
                     }
-                    label2.Text = (debe - haber).ToString();
+                    label2.Text = (haber - debe).ToString();
 
                     if (dataGridView1.Rows.Count > 0)
                     {
@@ -360,12 +360,29 @@ namespace TransporteFortin
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            if (u != null && idemp != 0)
+            Funciones f = new Funciones();
+            if (f.acceder(38, idusuario))
             {
-                int filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
-
-                frmExpFleteros frm = new frmExpFleteros(u.Idfleteros, idemp);
-                frm.ShowDialog();
+                if (u != null && idemp != 0)
+                {
+                    frmExpFleteros frm = new frmExpFleteros(u.Idfleteros, idemp, label2.Text, txtCliente.Text);
+                    frm.ShowDialog();
+                    dataGridView1.Rows.Clear();
+                    dataGridView2.Rows.Clear();
+                    buscar1();
+                    buscar(em.Idempresas);
+                }
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
             }
         }
     }

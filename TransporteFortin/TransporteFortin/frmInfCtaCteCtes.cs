@@ -32,7 +32,7 @@ namespace TransporteFortin
             if (ch == 0)
             {
                 CtaCteClientesBindingSource.DataSource = oa.leerDatos("select cli.cliente as Clientes, date_format(f.fecha,'%d/%m/%Y') as Fecha, c.descripcion as Conceptos, concat(f.descripcion, ' Nro ', case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end) as Descripcion, f.ptoventa, debe as Debe, haber as Haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end  as Clientes from ctacteclientes f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos left join clientes cli on f.idclientes = cli.idclientes where f.idclientes = '" + idcli + "'");
-                DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + idcli + "'");
+                DataTable dt = oa.leerDatos("SELECT SUM(HABER-DEBE) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + idcli + "'");
                 string saldo = "";
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -53,11 +53,11 @@ namespace TransporteFortin
                 DateTime desde;
                 DateTime hasta;
                 if (DateTime.TryParse(de, out desde) && DateTime.TryParse(ha, out hasta))
-                {
+                {                    
                     if (desde <= hasta)
                     {
-                        CtaCteClientesBindingSource.DataSource = oa.leerDatos("select cli.cliente as Clientes, date_format(f.fecha,'%d/%m/%Y') as Fecha, c.descripcion as Conceptos, concat(f.descripcion, ' Nro ', case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end) as Descripcion, f.ptoventa, debe as Debe, haber as Haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end  as Clientes from ctacteclientes f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos left join clientes cli on f.idclientes = cli.idclientes where f.idclientes = '" + idcli + "' and date_format(f.fecha,'%d/%m/%Y') between '" + de + "' and '" + ha + "'");
-                        DataTable dt = oa.leerDatos("SELECT SUM(DEBE-HABER) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + idcli + "'");
+                        CtaCteClientesBindingSource.DataSource = oa.leerDatos("select cli.cliente as Clientes, date_format(f.fecha,'%d/%m/%Y') as Fecha, c.descripcion as Conceptos, concat(f.descripcion, ' Nro ', case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end) as Descripcion, f.ptoventa, debe as Debe, haber as Haber, case when o.nrocarga is not null then concat(cast(o.nrocarga as char), '- Ordenes de Carga') else concat(cast(r.nro as char), '- Recibo') end  as Clientes from ctacteclientes f inner join conceptos c on f.idconceptos = c.codigo left join ordenescarga o on f.idordenescarga = o.idordenescarga left join recibos r on r.idrecibos = f.idrecibos left join clientes cli on f.idclientes = cli.idclientes where f.idclientes = '" + idcli + "' and f.fecha between '" + desde.ToString("yyyy-MM-dd") + "' and '" + hasta.ToString("yyyy-MM-dd") + "'");
+                        DataTable dt = oa.leerDatos("SELECT SUM(HABER-DEBE) as saldo FROM CTACTECLIENTES WHERE IDCLIENTES = '" + idcli + "'");
                         string saldo = "";
                         foreach (DataRow dr in dt.Rows)
                         {

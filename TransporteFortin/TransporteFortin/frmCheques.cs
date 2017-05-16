@@ -13,9 +13,11 @@ namespace TransporteFortin
     public partial class frmCheques : Form
     {
         int tipoc;
-        public frmCheques(int tipo)
+        int idusuario;
+        public frmCheques(int tipo, int idusu)
         {
             tipoc = tipo;
+            idusuario = idusu;
             InitializeComponent();
         }
 
@@ -134,21 +136,36 @@ namespace TransporteFortin
         {
             try
             {
-                int filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
-                int idfp = Convert.ToInt32(dataGridView1[13, filaseleccionada].Value);
-                if (txtEstado.Text == "En cartera")
+                Funciones f = new Funciones();
+                if (f.acceder(36, idusuario))
                 {
-                    DialogResult dialogResult = MessageBox.Show("Esta seguro de depositar el cheque: " + txtnro.Text + " con importe: $" + txtimporte.Text, "Depositar Cheque", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
+                    int filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
+                    int idfp = Convert.ToInt32(dataGridView1[13, filaseleccionada].Value);
+                    if (txtEstado.Text == "En cartera")
                     {
-                        frmDepositoCheque frm = new frmDepositoCheque(idfp, txtnro.Text, txtBanco.Text, txtimporte.Text, txtfechadep.Text);
-                        frm.ShowDialog();
-                        button4_Click(sender, e);
+                        DialogResult dialogResult = MessageBox.Show("Esta seguro de depositar el cheque: " + txtnro.Text + " con importe: $" + txtimporte.Text, "Depositar Cheque", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            frmDepositoCheque frm = new frmDepositoCheque(idfp, txtnro.Text, txtBanco.Text, txtimporte.Text, txtfechadep.Text);
+                            frm.ShowDialog();
+                            button4_Click(sender, e);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El estado del cheque no permite deposito");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El estado del cheque no permite deposito");
+                    if (idusuario == 0)
+                    {
+                        MessageBox.Show("Debe iniciar sesion para acceder");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Imposible acceder: usuario sin acceso");
+                    }
                 }
             }
             catch (Exception ex)
