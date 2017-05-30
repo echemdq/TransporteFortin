@@ -64,8 +64,8 @@ namespace TransporteFortin
             {
                 idemp = idem;
                 em = new Empresas(u.Empresas.Idempresas, u.Empresas.Empresa, "", "", "", "", "", "", "");
-                double debe = 0;
-                double haber = 0;
+                decimal debe = 0;
+                decimal haber = 0;
                 textBox1.Text = u.Empresas.Empresa;
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
@@ -76,7 +76,7 @@ namespace TransporteFortin
                     }
                 }
                 Acceso_BD oa = new Acceso_BD();
-                DataTable dt = oa.leerDatos("select (sum(haber)-sum(debe)) as saldo from ctactefleteros c where c.idempresas = '"+idemp+"'");
+                DataTable dt = oa.leerDatos("select (sum(haber)-sum(debe)) as saldo from ctactefleteros c where c.idempresas = '"+idemp+"' and c.idfleteros = '"+u.Idfleteros+"'");
                 foreach (DataRow dr in dt.Rows)
                 {
                     textBox2.Text = Convert.ToString(dr["saldo"]);
@@ -120,14 +120,14 @@ namespace TransporteFortin
                                         dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
                                         dataGridView1.Rows[x].Cells[6].Value = aux.Idctactefleteros;
                                         dataGridView1.Columns[6].Visible = false;
-                                        debe = debe + Convert.ToDouble(aux.Debe);
-                                        haber = haber + Convert.ToDouble(aux.Haber);
+                                        debe = debe + Convert.ToDecimal(aux.Debe);
+                                        haber = haber + Convert.ToDecimal(aux.Haber);
                                         x++;
                                     }
                                     else
                                     {
-                                        debe = debe + Convert.ToDouble(aux.Debe);
-                                        haber = haber + Convert.ToDouble(aux.Haber);
+                                        debe = debe + Convert.ToDecimal(aux.Debe);
+                                        haber = haber + Convert.ToDecimal(aux.Haber);
                                         dataGridView1.Rows.RemoveAt(x);
                                     }
                                 }
@@ -152,8 +152,8 @@ namespace TransporteFortin
                             dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
                             dataGridView1.Rows[x].Cells[6].Value = aux.Idctactefleteros;
                             dataGridView1.Columns[6].Visible = false;
-                            debe = debe + Convert.ToDouble(aux.Debe);
-                            haber = haber + Convert.ToDouble(aux.Haber);                            
+                            debe = debe + Convert.ToDecimal(aux.Debe);
+                            haber = haber + Convert.ToDecimal(aux.Haber);                            
                             x++;
                         }
                     }
