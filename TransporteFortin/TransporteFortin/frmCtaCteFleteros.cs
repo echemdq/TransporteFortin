@@ -236,12 +236,27 @@ namespace TransporteFortin
         {
             try
             {
-                frmMovFleteros frm = new frmMovFleteros("d", u, em, ptoventa);
-                frm.ShowDialog();
-                dataGridView1.Rows.Clear();
-                dataGridView2.Rows.Clear();
-                buscar1();
-                buscar(em.Idempresas);              
+                Funciones f = new Funciones();
+                if (f.acceder(39, idusuario))
+                {
+                    frmMovFleteros frm = new frmMovFleteros("d", u, em, ptoventa);
+                    frm.ShowDialog();
+                    dataGridView1.Rows.Clear();
+                    dataGridView2.Rows.Clear();
+                    buscar1();
+                    buscar(em.Idempresas);
+                }
+                else
+                {
+                    if (idusuario == 0)
+                    {
+                        MessageBox.Show("Debe iniciar sesion para acceder");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Imposible acceder: usuario sin acceso");
+                    }
+                }
             }
             catch (Exception EX)
             {
@@ -253,12 +268,27 @@ namespace TransporteFortin
         {
             try
             {
-                frmMovFleteros frm = new frmMovFleteros("c", u, em, ptoventa);
-                frm.ShowDialog();
-                dataGridView1.Rows.Clear();
-                dataGridView2.Rows.Clear();
-                buscar1();
-                buscar(em.Idempresas);  
+                Funciones f = new Funciones();
+                if (f.acceder(40, idusuario))
+                {
+                    frmMovFleteros frm = new frmMovFleteros("c", u, em, ptoventa);
+                    frm.ShowDialog();
+                    dataGridView1.Rows.Clear();
+                    dataGridView2.Rows.Clear();
+                    buscar1();
+                    buscar(em.Idempresas);
+                }
+                else
+                {
+                    if (idusuario == 0)
+                    {
+                        MessageBox.Show("Debe iniciar sesion para acceder");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Imposible acceder: usuario sin acceso");
+                    }
+                }
             }
             catch (Exception EX)
             {
@@ -312,7 +342,7 @@ namespace TransporteFortin
         private void button5_Click(object sender, EventArgs e)
         {
             string where = "where  o.idfleteros = '" + u.Idfleteros + "' and o.valorizado = '0' and o.anulado = '0'";
-            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where);
+            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where, idusuario);
             frm.ShowDialog();
         }
 

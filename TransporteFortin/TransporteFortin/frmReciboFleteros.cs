@@ -92,6 +92,7 @@ namespace TransporteFortin
             cmbConceptos.DataSource = listat;
             cmbConceptos.DisplayMember = "descripcion";
             cmbConceptos.ValueMember = "codigo";
+            cmbConceptos.SelectedIndex = -1;
 
             dt = oacceso.leerDatos("select * from cajas");
             cmbcaja.DataSource = dt;
@@ -245,7 +246,7 @@ namespace TransporteFortin
         {
             try
             {
-                if (u != null)
+                if (u != null && cmbConceptos.Text != "")
                 {
                     if (lista.Count > 0)
                     {
@@ -284,7 +285,7 @@ namespace TransporteFortin
                 }
                 else
                 {
-                    MessageBox.Show("Debe elegir un cliente al cual acreditar el pago");
+                    MessageBox.Show("Debe elegir un fletero al cual acreditar el pago y un concepto");
                 }
             }
             catch (Exception ex)

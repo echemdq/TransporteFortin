@@ -40,7 +40,10 @@
             this.emitirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arqueoCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.consultaChequeTercerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoManualChequesTerceroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.consultaTransferenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMBANCOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,9 +93,7 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ingresoManualChequesTerceroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.saldoClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -197,12 +198,29 @@
             this.arqueoCajaToolStripMenuItem.Text = "Arqueo Caja";
             this.arqueoCajaToolStripMenuItem.Click += new System.EventHandler(this.arqueoCajaToolStripMenuItem_Click);
             // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(245, 6);
+            // 
             // consultaChequeTercerosToolStripMenuItem
             // 
             this.consultaChequeTercerosToolStripMenuItem.Name = "consultaChequeTercerosToolStripMenuItem";
             this.consultaChequeTercerosToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.consultaChequeTercerosToolStripMenuItem.Text = "Consulta Cheque Terceros";
             this.consultaChequeTercerosToolStripMenuItem.Click += new System.EventHandler(this.consultaChequeTercerosToolStripMenuItem_Click);
+            // 
+            // ingresoManualChequesTerceroToolStripMenuItem
+            // 
+            this.ingresoManualChequesTerceroToolStripMenuItem.Name = "ingresoManualChequesTerceroToolStripMenuItem";
+            this.ingresoManualChequesTerceroToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.ingresoManualChequesTerceroToolStripMenuItem.Text = "Ingreso Manual Cheques Tercero";
+            this.ingresoManualChequesTerceroToolStripMenuItem.Click += new System.EventHandler(this.ingresoManualChequesTerceroToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(245, 6);
             // 
             // consultaTransferenciasToolStripMenuItem
             // 
@@ -260,6 +278,7 @@
             this.reciboToolStripMenuItem,
             this.consultaRecibosToolStripMenuItem,
             this.toolStripSeparator6,
+            this.saldoClientesToolStripMenuItem,
             this.informeGralClientesToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -565,22 +584,12 @@
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(52, 17);
             this.toolStripStatusLabel4.Text = "TALON: ";
             // 
-            // ingresoManualChequesTerceroToolStripMenuItem
+            // saldoClientesToolStripMenuItem
             // 
-            this.ingresoManualChequesTerceroToolStripMenuItem.Name = "ingresoManualChequesTerceroToolStripMenuItem";
-            this.ingresoManualChequesTerceroToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
-            this.ingresoManualChequesTerceroToolStripMenuItem.Text = "Ingreso Manual Cheques Tercero";
-            this.ingresoManualChequesTerceroToolStripMenuItem.Click += new System.EventHandler(this.ingresoManualChequesTerceroToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(245, 6);
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(245, 6);
+            this.saldoClientesToolStripMenuItem.Name = "saldoClientesToolStripMenuItem";
+            this.saldoClientesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.saldoClientesToolStripMenuItem.Text = "Saldo Clientes";
+            this.saldoClientesToolStripMenuItem.Click += new System.EventHandler(this.saldoClientesToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -593,8 +602,6 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transporte El Fortin";
@@ -674,6 +681,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripMenuItem ingresoManualChequesTerceroToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripMenuItem saldoClientesToolStripMenuItem;
     }
 }
 

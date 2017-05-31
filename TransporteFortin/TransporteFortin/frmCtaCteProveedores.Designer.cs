@@ -55,6 +55,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,7 +205,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 413);
+            this.label7.Location = new System.Drawing.Point(17, 438);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 38);
             this.label7.TabIndex = 129;
@@ -214,7 +215,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(175, 413);
+            this.label8.Location = new System.Drawing.Point(175, 438);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 38);
             this.label8.TabIndex = 128;
@@ -222,7 +223,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(662, 400);
+            this.button2.Location = new System.Drawing.Point(662, 425);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 51);
             this.button2.TabIndex = 127;
@@ -232,7 +233,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(572, 400);
+            this.button1.Location = new System.Drawing.Point(572, 425);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 51);
             this.button1.TabIndex = 126;
@@ -310,7 +311,7 @@
             // 
             this.button3.BackgroundImage = global::TransporteFortin.Properties.Resources.Printer;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.Location = new System.Drawing.Point(752, 400);
+            this.button3.Location = new System.Drawing.Point(752, 425);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 51);
             this.button3.TabIndex = 150;
@@ -329,11 +330,22 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(244, 402);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(351, 13);
+            this.label36.TabIndex = 170;
+            this.label36.Text = "Hacer Doble Click sobre el concepto que se desea modificar";
+            // 
             // frmCtaCteProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 480);
+            this.Controls.Add(this.label36);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -400,5 +412,6 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label36;
     }
 }

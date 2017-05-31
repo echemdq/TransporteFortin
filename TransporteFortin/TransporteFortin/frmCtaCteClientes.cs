@@ -262,7 +262,7 @@ namespace TransporteFortin
         private void button5_Click(object sender, EventArgs e)
         {
             string where = "where  o.idclientes = '" + u.Idclientes + "' and o.valorizado = '0' and o.anulado = '0'";
-            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where);
+            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where, idusuario);
             frm.ShowDialog();
         }
 

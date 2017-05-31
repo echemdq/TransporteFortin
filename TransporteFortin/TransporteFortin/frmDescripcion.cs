@@ -38,9 +38,14 @@ namespace TransporteFortin
                     oa.ActualizarBD("update ctacteclientes set descripcion = '" + txtConceptoFact.Text + "' where idctacteclientes = '" + ide + "'");
                     MessageBox.Show("Descripcion actualizada correctamente");
                 }
-                else
+                else if(tipo == 1)
                 {
                     oa.ActualizarBD("update ctactefleteros set descripcion = '" + txtConceptoFact.Text + "' where idctactefleteros = '" + ide + "'");
+                    MessageBox.Show("Descripcion actualizada correctamente");
+                }
+                else if(tipo == 2)
+                {
+                    oa.ActualizarBD("update ctacteproveedores set descripcion = '" + txtConceptoFact.Text + "' where idctacteproveedores = '" + ide + "'");
                     MessageBox.Show("Descripcion actualizada correctamente");
                 }
                 this.Close();

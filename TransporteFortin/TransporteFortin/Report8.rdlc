@@ -543,6 +543,7 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
+        <Left>0cm</Left>
         <Height>9.57125cm</Height>
         <Width>19cm</Width>
         <Style>
@@ -1092,7 +1093,8 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>9.60653cm</Top>
+        <Top>10.52781cm</Top>
+        <Left>0.00001cm</Left>
         <Height>9.43896cm</Height>
         <Width>19cm</Width>
         <ZIndex>1</ZIndex>
@@ -1103,7 +1105,7 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>7.51821in</Height>
+    <Height>7.92531in</Height>
     <Style />
   </Body>
   <Width>7.48032in</Width>

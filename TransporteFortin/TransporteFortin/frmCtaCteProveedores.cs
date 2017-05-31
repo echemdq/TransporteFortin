@@ -13,9 +13,11 @@ namespace TransporteFortin
     public partial class frmCtaCteProveedores : Form
     {
         Proveedores u = null;
+        int idusuario = 0;
         int ptoventa = 0;
-        public frmCtaCteProveedores(int pto)
+        public frmCtaCteProveedores(int pto,int idusu)
         {
+            idusuario = idusu;
             InitializeComponent();
             ptoventa = pto;
         }
@@ -57,6 +59,7 @@ namespace TransporteFortin
                                         dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                                         dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                                         dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                                        dataGridView1.Rows[x].Cells[6].Value = aux.Idctacteproveedores;
                                         debe = debe + Convert.ToDouble(aux.Debe);
                                         haber = haber + Convert.ToDouble(aux.Haber);
                                         x++;
@@ -86,6 +89,7 @@ namespace TransporteFortin
                             dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
+                            dataGridView1.Rows[x].Cells[6].Value = aux.Idctacteproveedores;
                             debe = debe + Convert.ToDouble(aux.Debe);
                             haber = haber + Convert.ToDouble(aux.Haber);
                             x++;
@@ -131,13 +135,15 @@ namespace TransporteFortin
         {
             maskedTextBox1.Text = DateTime.Now.AddDays(-30).ToString("dd/MM/yyyy");
             maskedTextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            dataGridView1.ColumnCount = 6;
+            dataGridView1.ColumnCount = 7;
             dataGridView1.Columns[0].Name = "Fecha";
             dataGridView1.Columns[1].Name = "Concepto";
             dataGridView1.Columns[2].Name = "Descripcion";
             dataGridView1.Columns[3].Name = "Referencia";
             dataGridView1.Columns[4].Name = "Debe";
             dataGridView1.Columns[5].Name = "Haber";
+            dataGridView1.Columns[6].Name = "id";
+            dataGridView1.Columns[6].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -203,7 +209,40 @@ namespace TransporteFortin
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                Funciones f = new Funciones();
+                if (f.acceder(41, idusuario))
+                {
+                    int filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
+                    string la = Convert.ToString(dataGridView1[6, filaseleccionada].Value);
+                    string desc = Convert.ToString(dataGridView1[2, filaseleccionada].Value);
+                    DialogResult dialogResult = MessageBox.Show("Esta seguro de editar descripcion " + desc, "Editar movimiento", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
 
+                        frmDescripcion frm = new frmDescripcion(la, desc, 2);
+                        frm.ShowDialog();
+                    }
+                    dataGridView1.Rows.Clear();
+                    buscar(u.Idproveedores);
+                }
+                else
+                {
+                    if (idusuario == 0)
+                    {
+                        MessageBox.Show("Debe iniciar sesion para acceder");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Imposible acceder: usuario sin acceso");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

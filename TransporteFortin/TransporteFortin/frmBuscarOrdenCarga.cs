@@ -12,8 +12,10 @@ namespace TransporteFortin
 {
     public partial class frmBuscarOrdenCarga : Form
     {
-        public frmBuscarOrdenCarga()
+        int idusuario = 0;
+        public frmBuscarOrdenCarga(int idusu)
         {
+            idusuario = idusu;
             InitializeComponent();
         }
 
@@ -243,7 +245,7 @@ namespace TransporteFortin
                         MessageBox.Show("La fecha desde debe ser menor a la de hasta");
                     }
                 }
-                frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where);
+                frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where, idusuario);
                 frm.ShowDialog();
             }
             catch (Exception ex)

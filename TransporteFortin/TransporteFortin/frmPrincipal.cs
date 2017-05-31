@@ -112,8 +112,16 @@ namespace TransporteFortin
             
             if (f.acceder(5, idusuario))
             {
-                frmEmitirOC frm = new frmEmitirOC(0, idusuario, puesto, sucursal, talon);
-                frm.ShowDialog();
+                if (f.acceder(43, idusuario))
+                {
+                    frmEmitirOC frm = new frmEmitirOC(0, idusuario, puesto, sucursal, talon, 1);
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    frmEmitirOC frm = new frmEmitirOC(0, idusuario, puesto, sucursal, talon, 0);
+                    frm.ShowDialog();
+                }
             }
             else
             {
@@ -133,7 +141,7 @@ namespace TransporteFortin
             
             if (f.acceder(6, idusuario))
             {
-                frmBuscarOrdenCarga frm = new frmBuscarOrdenCarga();
+                frmBuscarOrdenCarga frm = new frmBuscarOrdenCarga(idusuario);
                 frm.ShowDialog();
             }
             else
@@ -269,7 +277,7 @@ namespace TransporteFortin
             if (f.acceder(19, idusuario))
             {
 
-                frmCtaCteProveedores frm = new frmCtaCteProveedores(talon);
+                frmCtaCteProveedores frm = new frmCtaCteProveedores(talon, Convert.ToInt32(idusuario));
                 frm.ShowDialog();
             }
             else
@@ -745,6 +753,27 @@ namespace TransporteFortin
             {
 
                 frmIngresoCheques frm = new frmIngresoCheques();
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
+        }
+
+        private void saldoClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (f.acceder(42, idusuario))
+            {
+
+                frmSaldoClientes frm = new frmSaldoClientes();
                 frm.ShowDialog();
             }
             else

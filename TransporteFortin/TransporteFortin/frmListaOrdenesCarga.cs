@@ -18,9 +18,11 @@ namespace TransporteFortin
         double totalviaje = 0;
         double comision = 0;
         int idoc = 0;
+        int idusuario = 0;
         List<OrdenesCarga> lista = new List<OrdenesCarga>();
-        public frmListaOrdenesCarga(string where)
+        public frmListaOrdenesCarga(string where, int idusu)
         {
+            idusuario = idusu;
             InitializeComponent();
             consulta = where;
         }
@@ -122,10 +124,22 @@ namespace TransporteFortin
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmEmitirOC frm = new frmEmitirOC(idoc,0,0,0,0);
-            frm.ShowDialog();
-            dataGridView1.Rows.Clear();
-            frmListaOrdenesCarga_Load(sender, e);
+            Funciones f = new Funciones();
+            if (f.acceder(43, idusuario))
+            {
+                frmEmitirOC frm = new frmEmitirOC(idoc, 0, 0, 0, 0, 1);
+                frm.ShowDialog();
+                dataGridView1.Rows.Clear();
+                frmListaOrdenesCarga_Load(sender, e);
+            }
+            else
+            {
+                frmEmitirOC frm = new frmEmitirOC(idoc, 0, 0, 0, 0, 0);
+                frm.ShowDialog();
+                dataGridView1.Rows.Clear();
+                frmListaOrdenesCarga_Load(sender, e);
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

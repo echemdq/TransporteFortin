@@ -18,10 +18,12 @@ namespace TransporteFortin
         int idusuario = 0;
         int idptoventa = 0;
         int idpuesto = 0;
+        int destino = 0;
         Clientes u = null;
         Fleteros f = null;
-        public frmEmitirOC(int idorden, int idusu, int idpue, int idsuc, int talon)
+        public frmEmitirOC(int idorden, int idusu, int idpue, int idsuc, int talon, int dest)
         {
+            destino = dest;
             InitializeComponent();
             idordencarga = idorden;
             idusuario = idusu;
@@ -33,6 +35,11 @@ namespace TransporteFortin
 
         private void frmEmitirOC_Load(object sender, EventArgs e)
         {
+            if (destino == 0)
+            {
+                chkPagoDest.Checked = true;
+                chkPagoDest.Enabled = false;
+            }
             if (idordencarga == 0)
             {
                 button3.Enabled = false;
@@ -813,16 +820,46 @@ namespace TransporteFortin
                 }
                 int valorizado = 1;
                 Unidades unidad = new Unidades(Convert.ToInt32(cmbUnidades.SelectedValue), "");
+
                 if (txtCantidad.Text == "" || txtValorUni.Text == "" || txtValorUniCte.Text == "" || txtPorcentaje.Text == "" || txtValorFijo.Text == "" || Convert.ToDecimal(txtTotalViaje.Text) <= 0)
                 {
                     MessageBox.Show("Debe completar todos los campos para valorizar y calcular el importe del viaje");
                 }
                 else
                 {
-                    OrdenesCarga oc = new OrdenesCarga(idordencarga, "0", idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIvaViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIVACte.Text.Replace('.', ',')), Convert.ToDecimal(txtComision.Text.Replace('.', ',')), Convert.ToDecimal(txtImporteCte.Text.Replace('.', ',')), richTextBox1.Text, 0, null, txtConceptoFact.Text);
-                    controlo.Modificar(oc);
-                    MessageBox.Show("Orden de carga valorizada correctamente");
-                    limpiar();
+                    Acceso_BD oa = new Acceso_BD();
+                    DataTable dt = oa.leerDatos("select idempresas from fleteros where idfleteros = '"+fletero.Idfleteros+"'");
+                    int idempresas = 0;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        idempresas = Convert.ToInt32(dr["idempresas"]);
+                    }
+                    if (idempresas == empresa.Idempresas)
+                    {
+                        OrdenesCarga oc = new OrdenesCarga(idordencarga, "0", idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIvaViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIVACte.Text.Replace('.', ',')), Convert.ToDecimal(txtComision.Text.Replace('.', ',')), Convert.ToDecimal(txtImporteCte.Text.Replace('.', ',')), richTextBox1.Text, 0, null, txtConceptoFact.Text);
+                        controlo.Modificar(oc);
+                        MessageBox.Show("Orden de carga valorizada correctamente");
+                        limpiar();
+                    }
+                    else
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Difiere empresa de Orden de carga con actual del fletero, desea actualizar la Orden de carga a empresa actual ?", "Valorizar", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {                            
+                            empresa.Idempresas = idempresas;
+                            OrdenesCarga oc = new OrdenesCarga(idordencarga, "0", idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIvaViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIVACte.Text.Replace('.', ',')), Convert.ToDecimal(txtComision.Text.Replace('.', ',')), Convert.ToDecimal(txtImporteCte.Text.Replace('.', ',')), richTextBox1.Text, 0, null, txtConceptoFact.Text);
+                            controlo.Modificar(oc);
+                            MessageBox.Show("Orden de carga valorizada correctamente");
+                            limpiar();
+                        }
+                        else
+                        {
+                            OrdenesCarga oc = new OrdenesCarga(idordencarga, "0", idptoventa, idpuesto, Convert.ToDateTime(maskedTextBox1.Text), sucursales, cliente, fletero, empresa, txtRetiraPor.Text, txtProductos.Text, txtOrigen.Text, txtDestino.Text, Convert.ToDecimal(txtValorDec.Text.Replace('.', ',')), valorizado, unidad, Convert.ToDecimal(txtCantidad.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUni.Text.Replace('.', ',')), Convert.ToDecimal(txtValorUniCte.Text.Replace('.', ',')), tipocom, valorcomision, pagodest, Convert.ToDecimal(txtTotalViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIvaViaje.Text.Replace('.', ',')), Convert.ToDecimal(txtIVACte.Text.Replace('.', ',')), Convert.ToDecimal(txtComision.Text.Replace('.', ',')), Convert.ToDecimal(txtImporteCte.Text.Replace('.', ',')), richTextBox1.Text, 0, null, txtConceptoFact.Text);
+                            controlo.Modificar(oc);
+                            MessageBox.Show("Orden de carga valorizada correctamente");
+                            limpiar();
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -855,14 +892,14 @@ namespace TransporteFortin
         private void btnOrdenCte_Click(object sender, EventArgs e)
         {
             string where = "where  o.idclientes = '" + u.Idclientes + "' and o.valorizado = '0' and o.anulado = '0'";
-            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where);
+            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where, idusuario);
             frm.ShowDialog();
         }
 
         private void btnOrdenFlet_Click(object sender, EventArgs e)
         {
             string where = "where  o.idfleteros = '" + f.Idfleteros + "' and o.valorizado = '0' and o.anulado = '0'";
-            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where);
+            frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where, idusuario);
             frm.ShowDialog();
         }
     }

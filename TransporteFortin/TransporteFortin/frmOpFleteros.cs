@@ -82,7 +82,7 @@ namespace TransporteFortin
         private void frmReciboFleteros_Load(object sender, EventArgs e)
         {
             Acceso_BD oacceso = new Acceso_BD();
-            DataTable dt = oacceso.leerDatos("select * from conceptoscc where doc = 'c' and grupo = 1 order by descripcion asc");
+            DataTable dt = oacceso.leerDatos("select * from conceptoscc where doc = 'd' and grupo = 1 order by descripcion asc");
             List<Conceptos> listat = new List<Conceptos>();
             foreach (DataRow dr in dt.Rows)
             {
@@ -92,6 +92,7 @@ namespace TransporteFortin
             cmbConceptos.DataSource = listat;
             cmbConceptos.DisplayMember = "descripcion";
             cmbConceptos.ValueMember = "codigo";
+            cmbConceptos.SelectedIndex = -1;
 
             dt = oacceso.leerDatos("select * from cajas");
             cmbcaja.DataSource = dt;
@@ -245,7 +246,7 @@ namespace TransporteFortin
         {
             try
             {
-                if (u != null)
+                if (u != null && cmbConceptos.Text != "")
                 {
                     if (lista.Count > 0)
                     {
@@ -284,7 +285,7 @@ namespace TransporteFortin
                 }
                 else
                 {
-                    MessageBox.Show("Debe elegir un cliente al cual acreditar el pago");
+                    MessageBox.Show("Debe elegir un fletero al cual emitir el pago y el concepto");
                 }
             }
             catch (Exception ex)
