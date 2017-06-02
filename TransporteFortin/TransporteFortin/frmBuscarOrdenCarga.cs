@@ -13,9 +13,11 @@ namespace TransporteFortin
     public partial class frmBuscarOrdenCarga : Form
     {
         int idusuario = 0;
-        public frmBuscarOrdenCarga(int idusu)
+        int idsucursales = 0;
+        public frmBuscarOrdenCarga(int idusu, int idsuc)
         {
             idusuario = idusu;
+            idsucursales = idsuc;
             InitializeComponent();
         }
 
@@ -23,17 +25,37 @@ namespace TransporteFortin
         {
             mskHasta.Text = DateTime.Today.ToString("dd/MM/yyyy");
             Acceso_BD oacceso = new Acceso_BD();
-            DataTable dt = oacceso.leerDatos("select * from sucursales order by sucursal asc");
-            List<Sucursales> listat = new List<Sucursales>();
-            foreach (DataRow dr in dt.Rows)
+            Funciones f = new Funciones();
+            DataTable dt = new DataTable();
+            if (f.acceder(44, idusuario))
             {
-                Sucursales t = new Sucursales(Convert.ToInt32(dr["idsucursales"]), Convert.ToString(dr["sucursal"]));
-                listat.Add(t);
+                dt = oacceso.leerDatos("select * from sucursales order by sucursal asc");
+                List<Sucursales> listat = new List<Sucursales>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Sucursales t = new Sucursales(Convert.ToInt32(dr["idsucursales"]), Convert.ToString(dr["sucursal"]));
+                    listat.Add(t);
+                }
+                cmbSucursal.DataSource = listat;
+                cmbSucursal.DisplayMember = "sucursal";
+                cmbSucursal.ValueMember = "idsucursales";
+                cmbSucursal.SelectedIndex = -1;
             }
-            cmbSucursal.DataSource = listat;
-            cmbSucursal.DisplayMember = "sucursal";
-            cmbSucursal.ValueMember = "idsucursales";
-            cmbSucursal.SelectedIndex = -1;
+            else
+            {
+                dt = oacceso.leerDatos("select * from sucursales where idsucursales = '" + idsucursales + "' order by sucursal asc");
+                List<Sucursales> listat = new List<Sucursales>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Sucursales t = new Sucursales(Convert.ToInt32(dr["idsucursales"]), Convert.ToString(dr["sucursal"]));
+                    listat.Add(t);
+                }
+                cmbSucursal.DataSource = listat;
+                cmbSucursal.DisplayMember = "sucursal";
+                cmbSucursal.ValueMember = "idsucursales";
+            }
+            
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

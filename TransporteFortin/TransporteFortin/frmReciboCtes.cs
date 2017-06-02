@@ -47,7 +47,7 @@ namespace TransporteFortin
             cmbConceptos.ValueMember = "codigo";
             cmbConceptos.SelectedIndex = -1;
 
-            dt = oacceso.leerDatos("select * from cajas");
+            dt = oacceso.leerDatos("select * from cajas where idsucursales ='"+sucursal+"'");
             cmbcaja.DataSource = dt;
             cmbcaja.DisplayMember = "nrocaja";
             cmbcaja.ValueMember = "idcajas";

@@ -141,7 +141,7 @@ namespace TransporteFortin
             
             if (f.acceder(6, idusuario))
             {
-                frmBuscarOrdenCarga frm = new frmBuscarOrdenCarga(idusuario);
+                frmBuscarOrdenCarga frm = new frmBuscarOrdenCarga(idusuario, sucursal);
                 frm.ShowDialog();
             }
             else
@@ -731,7 +731,7 @@ namespace TransporteFortin
             
             if (f.acceder(23, idusuario))
             {
-                frmCajas frm = new frmCajas();
+                frmCajas frm = new frmCajas(sucursal, idusuario);
                 frm.ShowDialog();
             }
             else

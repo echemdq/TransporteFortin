@@ -12,21 +12,40 @@ namespace TransporteFortin
 {
     public partial class frmCajas : Form
     {
-        public frmCajas()
+        int idsucursal = 0;
+        int idusuario = 0;
+        public frmCajas(int idsuc, int idusu)
         {
+            idsucursal = idsuc;
+            idusuario = idusu;
             InitializeComponent();
         }
 
         private void frmCajas_Load(object sender, EventArgs e)
         {
-            Acceso_BD oacceso = new Acceso_BD();
-            DataTable dt = oacceso.leerDatos("select * from cajas");
-            cmbcaja.DataSource = dt;
-            cmbcaja.DisplayMember = "nrocaja";
-            cmbcaja.ValueMember = "idcajas";
-            maskedTextBox1.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            maskedTextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            checkBox1.Checked = true;
+            Funciones f = new Funciones();
+            if (f.acceder(44, idusuario))
+            {
+                Acceso_BD oacceso = new Acceso_BD();
+                DataTable dt = oacceso.leerDatos("select * from cajas");
+                cmbcaja.DataSource = dt;
+                cmbcaja.DisplayMember = "nrocaja";
+                cmbcaja.ValueMember = "idcajas";
+                maskedTextBox1.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                maskedTextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                checkBox1.Checked = true;
+            }
+            else
+            {
+                Acceso_BD oacceso = new Acceso_BD();
+                DataTable dt = oacceso.leerDatos("select * from cajas where idsucursales ='" + idsucursal + "'");
+                cmbcaja.DataSource = dt;
+                cmbcaja.DisplayMember = "nrocaja";
+                cmbcaja.ValueMember = "idcajas";
+                maskedTextBox1.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                maskedTextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                checkBox1.Checked = true;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
