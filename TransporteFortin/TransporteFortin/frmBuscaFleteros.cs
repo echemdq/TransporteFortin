@@ -21,8 +21,8 @@ namespace TransporteFortin
 
         private void btnTraer_Click(object sender, EventArgs e)
         {
-            if (txtCliente.Text != "")
-            {
+            //if (txtCliente.Text != "")
+            //{
                 dataGridView1.Rows.Clear();
                 string d1 = "";
                 string d2 = "";
@@ -43,7 +43,7 @@ namespace TransporteFortin
                         }
                         else
                         {
-                            d2 += " and fletero like '%" + d1 + "%' ";
+                            d2 += " and c.localidad like '%" + d1 + "%' ";
                         }
                         a = false;
                     }
@@ -64,7 +64,7 @@ namespace TransporteFortin
                             }
                             else
                             {
-                                d2 += " and fletero like '%" + d1 + "%' ";
+                                d2 += " and c.localidad like '%" + d1 + "%' ";
 
                             }
                         }
@@ -75,7 +75,12 @@ namespace TransporteFortin
                     }
                     cant++;
                 }
-                List<Fleteros> lista = controlf.BuscarEspecial(d2);
+                int j = 0;
+                if (checkBox1.Checked)
+                {
+                    j = Convert.ToInt32(cmbTipoCamion.SelectedValue);
+                }
+                List<Fleteros> lista = controlf.BuscarEspecial(d2, j);
                 int i = 0;
                 foreach (Fleteros aux in lista)
                 {
@@ -108,14 +113,31 @@ namespace TransporteFortin
                         dataGridView1.Rows[x].Cells[18].Value = aux.Comentario;
                         x++;
                     }
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    
                 }
                 
-            }
+            //}
+
+
+
+
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void frmBuscaFleteros_Load(object sender, EventArgs e)
         {
+            Acceso_BD oacceso = new Acceso_BD();
+            DataTable dt = oacceso.leerDatos("select * from tiposcamion order by detalle asc");
+            List<TiposCamion> listat = new List<TiposCamion>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                TiposCamion t = new TiposCamion(Convert.ToInt32(dr["idtiposcamion"]), Convert.ToString(dr["detalle"]));
+                listat.Add(t);
+            }
+            cmbTipoCamion.DataSource = listat;
+            cmbTipoCamion.DisplayMember = "detalle";
+            cmbTipoCamion.ValueMember = "idtiposcamion";
+            cmbTipoCamion.SelectedIndex = 0;
             dataGridView1.ColumnCount = 19;
             dataGridView1.Columns[0].Name = "idfleteros";
             dataGridView1.Columns[1].Name = "Fletero";

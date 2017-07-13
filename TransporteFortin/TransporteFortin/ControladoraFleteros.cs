@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TransporteFortin
 {
-    public class ControladoraFleteros : IDAO<Fleteros>
+    public class ControladoraFleteros
     {
         BdFleteros bd = new BdFleteros();
         public void Agregar(Fleteros dato)
@@ -29,9 +29,9 @@ namespace TransporteFortin
             throw new NotImplementedException();
         }
 
-        public List<Fleteros> BuscarEspecial(string dato)
+        public List<Fleteros> BuscarEspecial(string dato, int dato1)
         {
-            return bd.BuscarEspecial(dato);
+            return bd.BuscarEspecial(dato, dato1);
         }
 
         public void Modificar(Fleteros dato)

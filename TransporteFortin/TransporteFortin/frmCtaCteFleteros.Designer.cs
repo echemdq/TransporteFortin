@@ -196,6 +196,7 @@
             this.dataGridView2.Size = new System.Drawing.Size(438, 115);
             this.dataGridView2.TabIndex = 108;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // label3
             // 
@@ -300,6 +301,7 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(124, 21);
             this.textBox2.TabIndex = 165;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label7
             // 

@@ -58,6 +58,7 @@
             this.reciboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaRecibosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.saldoClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeGralClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,7 +94,6 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.saldoClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -326,6 +326,13 @@
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(182, 6);
+            // 
+            // saldoClientesToolStripMenuItem
+            // 
+            this.saldoClientesToolStripMenuItem.Name = "saldoClientesToolStripMenuItem";
+            this.saldoClientesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.saldoClientesToolStripMenuItem.Text = "Saldo Clientes";
+            this.saldoClientesToolStripMenuItem.Click += new System.EventHandler(this.saldoClientesToolStripMenuItem_Click);
             // 
             // informeGralClientesToolStripMenuItem
             // 
@@ -583,13 +590,6 @@
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(52, 17);
             this.toolStripStatusLabel4.Text = "TALON: ";
-            // 
-            // saldoClientesToolStripMenuItem
-            // 
-            this.saldoClientesToolStripMenuItem.Name = "saldoClientesToolStripMenuItem";
-            this.saldoClientesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.saldoClientesToolStripMenuItem.Text = "Saldo Clientes";
-            this.saldoClientesToolStripMenuItem.Click += new System.EventHandler(this.saldoClientesToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 

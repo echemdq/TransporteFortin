@@ -902,5 +902,10 @@ namespace TransporteFortin
             frmListaOrdenesCarga frm = new frmListaOrdenesCarga(where, idusuario);
             frm.ShowDialog();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

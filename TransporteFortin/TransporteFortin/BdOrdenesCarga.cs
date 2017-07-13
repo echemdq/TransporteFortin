@@ -68,7 +68,7 @@ namespace TransporteFortin
 
         public List<OrdenesCarga> BuscarEspecial(string dato)
         {            
-            DataTable dt = oacceso.leerDatos("select o.observaciones as ob, o.valordeclarado as valord, o.cantidad as cant, o.pagodestino as pagod, f.direccion as dir, o.porcuentade as porcuenta, o.productos as prod, o.origen as origen, o.destino as destino, t.detalle as tipo, f.chapacamion as chapacamion, f.camion as camion, f.chapaacoplado as chapaacoplado, e.empresa as empresa, e.telefono as teemp, idusuarios, idordenescarga, o.ptoventa, nrocarga, o.idsucursales, sucursal, fecha, o.idclientes, c.cliente, o.idfleteros, f.fletero, totalviaje, comision, anulado, valorizado from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join tiposcamion t on f.idtiposcamion = t.idtiposcamion left join empresas e on f.idempresas = e.idempresas inner join sucursales s on s.idsucursales = o.idsucursales "+dato); 
+            DataTable dt = oacceso.leerDatos("select o.observaciones as ob, o.valordeclarado as valord, o.cantidad as cant, o.pagodestino as pagod, f.direccion as dir, o.porcuentade as porcuenta, o.productos as prod, o.origen as origen, o.destino as destino, t.detalle as tipo, f.chapacamion as chapacamion, f.camion as camion, f.chapaacoplado as chapaacoplado, e.empresa as empresa, e.telefono as teemp, idusuarios, idordenescarga, o.ptoventa, nrocarga, o.idsucursales, sucursal, fecha, o.idclientes, c.cliente, o.idfleteros, f.fletero, totalviaje, comision, anulado, valorizado from ordenescarga o inner join clientes c on o.idclientes = c.idclientes inner join fleteros f on f.idfleteros = o.idfleteros inner join tiposcamion t on f.idtiposcamion = t.idtiposcamion left join empresas e on f.idempresas = e.idempresas inner join sucursales s on s.idsucursales = o.idsucursales "+dato + " order by o.fecha"); 
             Clientes c = null;
             Fleteros f = null;
             Empresas e = null;
@@ -99,22 +99,22 @@ namespace TransporteFortin
 
                 if (dato.Totalviaje > 0 && dato.Pagodestino == 0)
                 {
-                    oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','999','GS - Orden de Carga - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','0','" + dato.Totalviaje.ToString().Replace(',', '.') + "','0')");
+                    oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + DateTime.Today.ToString("yyyy-MM-dd") + "','999','GS - Orden de Carga - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','0','" + dato.Totalviaje.ToString().Replace(',', '.') + "','0')");
                     if (dato.Ivaviaje > 0)
                     {
-                        oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','17','GS - IVA - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','0','" + dato.Ivaviaje.ToString().Replace(',', '.') + "','0')");
+                        oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + DateTime.Today.ToString("yyyy-MM-dd") + "','17','GS - IVA - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','0','" + dato.Ivaviaje.ToString().Replace(',', '.') + "','0')");
                     }
                 }
                 if (dato.Comision > 0)
                 {
-                    oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','948','GS - Comision - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Comision.ToString().Replace(',', '.') + "','0','0')");
+                    oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + DateTime.Today.ToString("yyyy-MM-dd") + "','948','GS - Comision - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Comision.ToString().Replace(',', '.') + "','0','0')");
                 }
                 if (dato.Importecliente > 0 && dato.Pagodestino == 0)
                 {
-                    oacceso.ActualizarBD("insert into ctacteclientes(idclientes, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, fecha) values('" + dato.Clientes.Idclientes + "','949','GS - Orden de Carga - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Importecliente.ToString().Replace(',', '.') + "','0','" + dato.Fecha.ToString("yyyy-MM-dd") + "')");
+                    oacceso.ActualizarBD("insert into ctacteclientes(idclientes, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, fecha) values('" + dato.Clientes.Idclientes + "','949','GS - Orden de Carga - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Importecliente.ToString().Replace(',', '.') + "','0','" + DateTime.Today.ToString("yyyy-MM-dd") + "')");
                     if (dato.Ivacliente > 0)
                     {
-                        oacceso.ActualizarBD("insert into ctacteclientes(idclientes, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, fecha) values('" + dato.Clientes.Idclientes + "','15','GS - IVA - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Ivacliente.ToString().Replace(',', '.') + "','0','" + dato.Fecha.ToString("yyyy-MM-dd") + "')");
+                        oacceso.ActualizarBD("insert into ctacteclientes(idclientes, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, fecha) values('" + dato.Clientes.Idclientes + "','15','GS - IVA - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Ivacliente.ToString().Replace(',', '.') + "','0','" + DateTime.Today.ToString("yyyy-MM-dd") + "')");
                     }
                 }
             }

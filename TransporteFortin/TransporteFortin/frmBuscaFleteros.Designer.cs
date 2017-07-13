@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnTraer = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cmbTipoCamion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +46,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 55);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(757, 265);
@@ -55,9 +57,9 @@
             // 
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCliente.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(163, 15);
+            this.txtCliente.Location = new System.Drawing.Point(229, 15);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(463, 21);
+            this.txtCliente.Size = new System.Drawing.Size(416, 21);
             this.txtCliente.TabIndex = 32;
             this.txtCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCliente_KeyPress);
             // 
@@ -67,27 +69,50 @@
             this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 13);
+            this.label1.Size = new System.Drawing.Size(207, 13);
             this.label1.TabIndex = 34;
-            this.label1.Text = "Numero de Documento";
+            this.label1.Text = "Numero de Documento o Localidad";
             // 
             // btnTraer
             // 
             this.btnTraer.BackColor = System.Drawing.SystemColors.Control;
             this.btnTraer.BackgroundImage = global::TransporteFortin.Properties.Resources.Symbol_Check;
             this.btnTraer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTraer.Location = new System.Drawing.Point(651, 4);
+            this.btnTraer.Location = new System.Drawing.Point(651, 12);
             this.btnTraer.Name = "btnTraer";
             this.btnTraer.Size = new System.Drawing.Size(41, 38);
             this.btnTraer.TabIndex = 33;
             this.btnTraer.UseVisualStyleBackColor = false;
             this.btnTraer.Click += new System.EventHandler(this.btnTraer_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.checkBox1.Location = new System.Drawing.Point(451, 47);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(98, 17);
+            this.checkBox1.TabIndex = 36;
+            this.checkBox1.Text = "Tipo Camion";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // cmbTipoCamion
+            // 
+            this.cmbTipoCamion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoCamion.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.cmbTipoCamion.FormattingEnabled = true;
+            this.cmbTipoCamion.Location = new System.Drawing.Point(229, 43);
+            this.cmbTipoCamion.Name = "cmbTipoCamion";
+            this.cmbTipoCamion.Size = new System.Drawing.Size(216, 21);
+            this.cmbTipoCamion.TabIndex = 96;
+            // 
             // frmBuscaFleteros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 329);
+            this.Controls.Add(this.cmbTipoCamion);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTraer);
             this.Controls.Add(this.txtCliente);
@@ -111,5 +136,7 @@
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox cmbTipoCamion;
     }
 }

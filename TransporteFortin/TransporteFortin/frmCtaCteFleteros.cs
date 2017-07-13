@@ -76,7 +76,8 @@ namespace TransporteFortin
                     }
                 }
                 Acceso_BD oa = new Acceso_BD();
-                DataTable dt = oa.leerDatos("select (sum(haber)-sum(debe)) as saldo from ctactefleteros c where c.idempresas = '"+idemp+"' and c.idfleteros = '"+u.Idfleteros+"'");
+                           //DataTable dt = oa.leerDatos("select (sum(haber)-sum(debe)) as saldo from ctactefleteros c where c.idempresas = '"+idemp+"' and c.idfleteros = '"+u.Idfleteros+"'");
+                DataTable dt = oa.leerDatos("select (sum(haber)-sum(debe)) as saldo from ctactefleteros c where c.idempresas = '" + idemp + "'");
                 foreach (DataRow dr in dt.Rows)
                 {
                     textBox2.Text = Convert.ToString(dr["saldo"]);
@@ -239,7 +240,7 @@ namespace TransporteFortin
                 Funciones f = new Funciones();
                 if (f.acceder(39, idusuario))
                 {
-                    frmMovFleteros frm = new frmMovFleteros("d", u, em, ptoventa);
+                    frmMovFleteros frm = new frmMovFleteros("d", u, u.Empresas, ptoventa);
                     frm.ShowDialog();
                     dataGridView1.Rows.Clear();
                     dataGridView2.Rows.Clear();
@@ -271,7 +272,7 @@ namespace TransporteFortin
                 Funciones f = new Funciones();
                 if (f.acceder(40, idusuario))
                 {
-                    frmMovFleteros frm = new frmMovFleteros("c", u, em, ptoventa);
+                    frmMovFleteros frm = new frmMovFleteros("c", u, u.Empresas, ptoventa);
                     frm.ShowDialog();
                     dataGridView1.Rows.Clear();
                     dataGridView2.Rows.Clear();
@@ -303,6 +304,7 @@ namespace TransporteFortin
             int idfletero = Convert.ToInt32(dataGridView2[0, filaseleccionada].Value);
             int idempresa = Convert.ToInt32(dataGridView2[1, filaseleccionada].Value);
             u.Empresas.Empresa = Convert.ToString(dataGridView2[2, filaseleccionada].Value);
+            u.Empresas.Idempresas = idempresa;
             dataGridView1.Rows.Clear();
             label2.Text = Convert.ToString(dataGridView2[3, filaseleccionada].Value);
             buscar(idempresa);
@@ -414,6 +416,16 @@ namespace TransporteFortin
                     MessageBox.Show("Imposible acceder: usuario sin acceso");
                 }
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
