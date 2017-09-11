@@ -252,6 +252,7 @@ namespace TransporteFortin
                     {
                         Conceptos conc = new Conceptos(Convert.ToInt32(cmbConceptos.SelectedValue), "", "");
                         Fleteros flet = u;
+                        flet.Empresas.Idempresas = Convert.ToInt32(cmbemp.SelectedValue);
                         Clientes cli = new Clientes(0, "", "", "", "", "", "", "", "", "", "", null, "");
                         Proveedores prov = new Proveedores(0, "", "", "", 0, "", "", "", "", "", "", null, "", 0);
                         Sucursales suc = new Sucursales(sucursal, "");

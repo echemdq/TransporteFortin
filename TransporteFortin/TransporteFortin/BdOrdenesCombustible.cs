@@ -45,7 +45,19 @@ namespace TransporteFortin
 
         public List<OrdenesCombustible> BuscarEspecial(string dato)
         {
-            throw new NotImplementedException();
+            DataTable dt = oacceso.leerDatos("select o.idordenescombustible, o.ptoventa, o.nro, o.fecha, o.idproveedores, p.proveedor, o.idfleteros, f.fletero, f.chapacamion, o.litros, o.preciocombustible from ordenescombustible o left join proveedores p on o.idproveedores = p.idproveedores left join fleteros f on o.idfleteros = f.idfleteros "+dato + " order by o.fecha"); 
+            Proveedores p = null;
+            Fleteros f = null;
+            OrdenesCombustible o = null;
+            List<OrdenesCombustible> lista = new List<OrdenesCombustible>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                p = new Proveedores(Convert.ToInt32(dr["idproveedores"]), Convert.ToString(dr["proveedor"]), "", "", 0, "", "", "", "", "", "", null, "", 0);
+                f = new Fleteros(Convert.ToInt32(dr["idfleteros"]), 0, Convert.ToString(dr["fletero"]), "", "", "", "", "", "", "", null, "", null, Convert.ToString(dr["chapacamion"]), "", "", null, "");
+                o = new OrdenesCombustible(Convert.ToInt32(dr["idordenescombustible"]), Convert.ToString(dr["nro"]), Convert.ToDateTime(dr["fecha"]), p, f, Convert.ToDecimal(dr["preciocombustible"]), Convert.ToDecimal(dr["litros"]), Convert.ToInt32(dr["ptoventa"]));
+                lista.Add(o);
+            }
+            return lista;
         }
 
         public void Modificar(OrdenesCombustible dato)

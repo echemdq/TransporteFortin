@@ -789,6 +789,46 @@ namespace TransporteFortin
             }
         }
 
+        private void consultaOrdenDePagoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (f.acceder(31, idusuario))
+            {
+                frmConsultaRecibos frm = new frmConsultaRecibos(talon, 1, 2);
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (f.acceder(6, idusuario))
+            {
+                frmBuscarOrdenComb frm = new frmBuscarOrdenComb(idusuario, sucursal);
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
+        }
+
         }
     }
 

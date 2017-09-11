@@ -31,7 +31,7 @@ namespace TransporteFortin
 
         public List<OrdenesCombustible> BuscarEspecial(string dato)
         {
-            throw new NotImplementedException();
+            return bd.BuscarEspecial(dato);
         }
 
         public void Modificar(OrdenesCombustible dato)

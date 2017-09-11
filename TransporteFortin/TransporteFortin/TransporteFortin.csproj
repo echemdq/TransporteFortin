@@ -163,6 +163,12 @@
     <Compile Include="frmBuscarOrdenCarga.Designer.cs">
       <DependentUpon>frmBuscarOrdenCarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarOrdenComb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarOrdenComb.Designer.cs">
+      <DependentUpon>frmBuscarOrdenComb.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBuscaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +367,12 @@
     <Compile Include="frmCtaCteBancos.Designer.cs">
       <DependentUpon>frmCtaCteBancos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListaOrdenesComb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaOrdenesComb.Designer.cs">
+      <DependentUpon>frmListaOrdenesComb.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMovBancos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -495,6 +507,9 @@
     <EmbeddedResource Include="frmBuscarOrdenCarga.resx">
       <DependentUpon>frmBuscarOrdenCarga.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarOrdenComb.resx">
+      <DependentUpon>frmBuscarOrdenComb.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBuscaUsuarios.resx">
       <DependentUpon>frmBuscaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -593,6 +608,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCtaCteBancos.resx">
       <DependentUpon>frmCtaCteBancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaOrdenesComb.resx">
+      <DependentUpon>frmListaOrdenesComb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMovBancos.resx">
       <DependentUpon>frmMovBancos.cs</DependentUpon>
