@@ -258,5 +258,10 @@ namespace TransporteFortin
                 txtPesosLetras.Text = enletras(txtTotal.Text);
             }
         }
+
+        private void cmbConceptos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtEnConcepto.Text = cmbConceptos.Text;
+        }
     }
 }

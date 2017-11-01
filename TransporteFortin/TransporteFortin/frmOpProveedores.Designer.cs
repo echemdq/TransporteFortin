@@ -225,6 +225,7 @@
             this.cmbConceptos.Name = "cmbConceptos";
             this.cmbConceptos.Size = new System.Drawing.Size(281, 21);
             this.cmbConceptos.TabIndex = 140;
+            this.cmbConceptos.SelectedIndexChanged += new System.EventHandler(this.cmbConceptos_SelectedIndexChanged);
             // 
             // label2
             // 

@@ -199,7 +199,7 @@ namespace TransporteFortin
                             recibimosde = txtCliente.Text;
                             txtImporte.Text = Convert.ToString(dr["importe"]);
                             total = txtImporte.Text;
-                            concepto = Convert.ToString("concepto");
+                            concepto = Convert.ToString(dr["concepto"]);
                             mskDesde.Text = Convert.ToString(dr["fecha"]);
                             cantidadde = enletras(total);  
                             richTextBox1.Text = Convert.ToString(dr["comentarios"]);
