@@ -38,6 +38,7 @@
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesCombustibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emitirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arqueoCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
@@ -95,7 +96,7 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saldoFleterosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -154,14 +155,14 @@
             // emitirToolStripMenuItem
             // 
             this.emitirToolStripMenuItem.Name = "emitirToolStripMenuItem";
-            this.emitirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.emitirToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.emitirToolStripMenuItem.Text = "Emitir";
             this.emitirToolStripMenuItem.Click += new System.EventHandler(this.emitirToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
@@ -177,9 +178,16 @@
             // emitirToolStripMenuItem1
             // 
             this.emitirToolStripMenuItem1.Name = "emitirToolStripMenuItem1";
-            this.emitirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.emitirToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.emitirToolStripMenuItem1.Text = "Emitir";
             this.emitirToolStripMenuItem1.Click += new System.EventHandler(this.emitirToolStripMenuItem1_Click);
+            // 
+            // consultarToolStripMenuItem1
+            // 
+            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem1.Text = "Consultar";
+            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // cajasToolStripMenuItem
             // 
@@ -388,6 +396,7 @@
             this.ordenDePagoToolStripMenuItem1,
             this.consultaOrdenDePagoToolStripMenuItem,
             this.toolStripSeparator7,
+            this.saldoFleterosToolStripMenuItem,
             this.informeGralFleterosToolStripMenuItem});
             this.fleterosToolStripMenuItem.Name = "fleterosToolStripMenuItem";
             this.fleterosToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -602,12 +611,12 @@
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(52, 17);
             this.toolStripStatusLabel4.Text = "TALON: ";
             // 
-            // consultarToolStripMenuItem1
+            // saldoFleterosToolStripMenuItem
             // 
-            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.consultarToolStripMenuItem1.Text = "Consultar";
-            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
+            this.saldoFleterosToolStripMenuItem.Name = "saldoFleterosToolStripMenuItem";
+            this.saldoFleterosToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.saldoFleterosToolStripMenuItem.Text = "Saldo Fleteros";
+            this.saldoFleterosToolStripMenuItem.Click += new System.EventHandler(this.saldoFleterosToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -702,6 +711,7 @@
         private System.Windows.Forms.ToolStripMenuItem saldoClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaOrdenDePagoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem saldoFleterosToolStripMenuItem;
     }
 }
 

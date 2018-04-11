@@ -469,6 +469,12 @@
     <Compile Include="frmSaldoEmpresas.Designer.cs">
       <DependentUpon>frmSaldoEmpresas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSaldoFleteros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSaldoFleteros.Designer.cs">
+      <DependentUpon>frmSaldoFleteros.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -659,6 +665,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSaldoEmpresas.resx">
       <DependentUpon>frmSaldoEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSaldoFleteros.resx">
+      <DependentUpon>frmSaldoFleteros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>

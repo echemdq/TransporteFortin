@@ -24,6 +24,7 @@ namespace TransporteFortin
             {
                 idoc = Convert.ToInt32(dr["idordenescarga"]);
             }
+            
            if (dato.Valorizado == 1)
            {
 
@@ -38,6 +39,13 @@ namespace TransporteFortin
                if (dato.Comision > 0)
                {
                    oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','948','GS - Comision - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + idoc + "','" + dato.Comision.ToString().Replace(',', '.') + "','0','0')");
+                   dt = oacceso.leerDatos("select valor from configuraciones where detalle = 'seguro'");
+                   decimal seguro = 0;
+                   foreach (DataRow dr in dt.Rows)
+                   {
+                       seguro = Convert.ToDecimal(dr["valor"]);
+                   }
+                   oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','3','GS - Seguro de carga - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + idoc + "','"+seguro+"','0','0')");
                }
                if (dato.Importecliente > 0 && dato.Pagodestino == 0)
                {
@@ -108,6 +116,13 @@ namespace TransporteFortin
                 if (dato.Comision > 0)
                 {
                     oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + DateTime.Today.ToString("yyyy-MM-dd") + "','948','GS - Comision - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','" + dato.Comision.ToString().Replace(',', '.') + "','0','0')");
+                    DataTable dt = oacceso.leerDatos("select valor from configuraciones where detalle = 'seguro'");
+                    decimal seguro = 0;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        seguro = Convert.ToDecimal(dr["valor"]);
+                    }
+                    oacceso.ActualizarBD("insert into ctactefleteros(idfleteros, idempresas, fecha, idconceptos, descripcion, ptoventa, idordenescarga, debe, haber, idrecibos) values('" + dato.Fleteros.Idfleteros + "','" + dato.Empresas.Idempresas + "','" + dato.Fecha.ToString("yyyy-MM-dd") + "','3','GS - Seguro de carga - " + dato.Clientes.Cliente + "','" + dato.Ptoventa + "','" + dato.Idordenescarga + "','"+seguro+"','0','0')");
                 }
                 if (dato.Importecliente > 0 && dato.Pagodestino == 0)
                 {

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TransporteFortin
 {
-    public partial class frmSaldoClientes : Form
+    public partial class frmSaldoFleteros : Form
     {
-        public frmSaldoClientes()
+        public frmSaldoFleteros()
         {
             InitializeComponent();
         }
@@ -24,9 +24,9 @@ namespace TransporteFortin
                 Acceso_BD oa = new Acceso_BD();
                 if (radioButton1.Checked)
                 {
-                    DataTable dt = oa.leerDatos("select cliente as Cliente, telefono as Telefono, celular as Celular, ifnull((select (sum(haber)-sum(debe)) from ctacteclientes c where  c.idclientes = f.idclientes),0) as Saldo  from clientes f having Saldo <> 0");
+                    DataTable dt = oa.leerDatos("select fletero as Fletero, telefono as Telefono, celular as Celular, ifnull((select (sum(haber)-sum(debe)) from ctactefleteros c where  c.idfleteros = f.idfleteros),0) as Saldo  from fleteros f having Saldo <> 0");
                     dataGridView1.DataSource = dt;
-                    dt = oa.leerDatos("select sum(ifnull((select (sum(haber)-sum(debe)) from ctacteclientes c where  c.idclientes = f.idclientes),0)) as Saldo  from clientes f having Saldo <> 0");
+                    dt = oa.leerDatos("select sum(ifnull((select (sum(haber)-sum(debe)) from ctactefleteros c where  c.idfleteros = f.idfleteros),0)) as Saldo  from fleteros f having Saldo <> 0");
                     foreach (DataRow dr in dt.Rows)
                     {
                         label2.Text = Convert.ToString(dr["Saldo"]);
@@ -34,9 +34,9 @@ namespace TransporteFortin
                 }
                 else
                 {
-                    DataTable dt = oa.leerDatos("select cliente as Cliente, telefono as Telefono, celular as Celular, ifnull((select (sum(haber)-sum(debe)) from ctacteclientes c where  c.idclientes = f.idclientes),0) as Saldo  from clientes f");
+                    DataTable dt = oa.leerDatos("select fletero as Fletero, telefono as Telefono, celular as Celular, ifnull((select (sum(haber)-sum(debe)) from ctactefleteros c where  c.idfleteros = f.idfleteros),0) as Saldo  from fleteros f");
                     dataGridView1.DataSource = dt;
-                    dt = oa.leerDatos("select sum(ifnull((select (sum(haber)-sum(debe)) from ctacteclientes c where  c.idclientes = f.idclientes),0)) as Saldo  from clientes f");
+                    dt = oa.leerDatos("select sum(ifnull((select (sum(haber)-sum(debe)) from ctactefleteros c where  c.idfleteros = f.idfleteros),0)) as Saldo  from fleteros f");
                     foreach (DataRow dr in dt.Rows)
                     {
                         label2.Text = Convert.ToString(dr["Saldo"]);
@@ -47,11 +47,6 @@ namespace TransporteFortin
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void frmSaldoClientes_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

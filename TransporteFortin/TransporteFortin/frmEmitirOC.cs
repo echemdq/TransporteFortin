@@ -97,10 +97,17 @@ namespace TransporteFortin
                 cmbUnidades.ValueMember = "idunidades";
                 cmbUnidades.SelectedIndex = 0;
 
-                dt = oacceso.leerDatos("select * from configuraciones where detalle = 'porcentaje'");
+                dt = oacceso.leerDatos("select * from configuraciones");
                 foreach (DataRow dr in dt.Rows)
                 {
-                    txtPorcentaje.Text = Convert.ToString(dr["valor"]);
+                    if (Convert.ToString(dr["detalle"]) == "porcentaje")
+                    {
+                        txtPorcentaje.Text = Convert.ToString(dr["valor"]);
+                    }
+                    else if (Convert.ToString(dr["detalle"]) == "seguro")
+                    {
+                        txtseg.Text = "$ " + Convert.ToDecimal(dr["valor"]);
+                    }
                 }
             }
             else
@@ -177,10 +184,17 @@ namespace TransporteFortin
                     txtProductos.Text = Convert.ToString(dr["productos"]);
                     txtValorDec.Text = Convert.ToString(dr["valordeclarado"]);
                     maskedTextBox1.Text = Convert.ToDateTime(dr["fecha"]).ToString("dd/MM/yyyy");
-                    dt = oacceso.leerDatos("select * from configuraciones where detalle = 'porcentaje'");
+                    dt = oacceso.leerDatos("select * from configuraciones");
                     foreach (DataRow dr1 in dt.Rows)
                     {
-                        txtPorcentaje.Text = Convert.ToString(dr1["valor"]);
+                        if (Convert.ToString(dr1["detalle"]) == "porcentaje")
+                        {
+                            txtPorcentaje.Text = Convert.ToString(dr1["valor"]);
+                        }
+                        else if (Convert.ToString(dr1["detalle"]) == "seguro")
+                        {
+                            txtseg.Text = "$ " + Convert.ToDecimal(dr1["valor"]);
+                        }
                     }
                     if (valorizado != 0)
                     {

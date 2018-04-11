@@ -829,6 +829,27 @@ namespace TransporteFortin
             }
         }
 
+        private void saldoFleterosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            if (f.acceder(45, idusuario))
+            {
+                frmSaldoFleteros frm = new frmSaldoFleteros();
+                frm.ShowDialog();
+            }
+            else
+            {
+                if (idusuario == 0)
+                {
+                    MessageBox.Show("Debe iniciar sesion para acceder");
+                }
+                else
+                {
+                    MessageBox.Show("Imposible acceder: usuario sin acceso");
+                }
+            }
+        }
+
         }
     }
 

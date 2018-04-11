@@ -121,6 +121,8 @@
             this.label28 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.txtseg = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupboxflet.SuspendLayout();
@@ -781,6 +783,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.txtseg);
+            this.groupBox6.Controls.Add(this.label34);
             this.groupBox6.Controls.Add(this.txtConceptoFact);
             this.groupBox6.Controls.Add(this.label32);
             this.groupBox6.Controls.Add(this.txtIVACte);
@@ -800,7 +804,7 @@
             this.groupBox6.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.groupBox6.Location = new System.Drawing.Point(7, 434);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(697, 182);
+            this.groupBox6.Size = new System.Drawing.Size(697, 192);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
@@ -809,7 +813,7 @@
             // 
             this.txtConceptoFact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConceptoFact.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConceptoFact.Location = new System.Drawing.Point(138, 155);
+            this.txtConceptoFact.Location = new System.Drawing.Point(138, 167);
             this.txtConceptoFact.Name = "txtConceptoFact";
             this.txtConceptoFact.Size = new System.Drawing.Size(544, 21);
             this.txtConceptoFact.TabIndex = 120;
@@ -817,7 +821,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(9, 157);
+            this.label32.Location = new System.Drawing.Point(9, 169);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(126, 13);
             this.label32.TabIndex = 119;
@@ -828,7 +832,7 @@
             this.txtIVACte.BackColor = System.Drawing.Color.White;
             this.txtIVACte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIVACte.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtIVACte.Location = new System.Drawing.Point(567, 120);
+            this.txtIVACte.Location = new System.Drawing.Point(567, 105);
             this.txtIVACte.Name = "txtIVACte";
             this.txtIVACte.Size = new System.Drawing.Size(115, 25);
             this.txtIVACte.TabIndex = 3;
@@ -840,7 +844,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(493, 126);
+            this.label31.Location = new System.Drawing.Point(493, 111);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(72, 13);
             this.label31.TabIndex = 118;
@@ -852,7 +856,7 @@
             this.txtImporteCte.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtImporteCte.Enabled = false;
             this.txtImporteCte.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtImporteCte.Location = new System.Drawing.Point(567, 93);
+            this.txtImporteCte.Location = new System.Drawing.Point(567, 84);
             this.txtImporteCte.Name = "txtImporteCte";
             this.txtImporteCte.Size = new System.Drawing.Size(115, 18);
             this.txtImporteCte.TabIndex = 117;
@@ -863,7 +867,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(468, 97);
+            this.label29.Location = new System.Drawing.Point(468, 88);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(97, 13);
             this.label29.TabIndex = 116;
@@ -875,7 +879,7 @@
             this.txtComision.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComision.Enabled = false;
             this.txtComision.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtComision.Location = new System.Drawing.Point(567, 66);
+            this.txtComision.Location = new System.Drawing.Point(567, 62);
             this.txtComision.Name = "txtComision";
             this.txtComision.Size = new System.Drawing.Size(115, 18);
             this.txtComision.TabIndex = 115;
@@ -887,7 +891,7 @@
             this.txtIvaViaje.BackColor = System.Drawing.Color.White;
             this.txtIvaViaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIvaViaje.Font = new System.Drawing.Font("Verdana", 11F);
-            this.txtIvaViaje.Location = new System.Drawing.Point(567, 36);
+            this.txtIvaViaje.Location = new System.Drawing.Point(567, 34);
             this.txtIvaViaje.Name = "txtIvaViaje";
             this.txtIvaViaje.Size = new System.Drawing.Size(115, 25);
             this.txtIvaViaje.TabIndex = 2;
@@ -922,7 +926,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(505, 67);
+            this.label26.Location = new System.Drawing.Point(505, 63);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(60, 13);
             this.label26.TabIndex = 111;
@@ -932,7 +936,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(504, 41);
+            this.label27.Location = new System.Drawing.Point(504, 39);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(61, 13);
             this.label27.TabIndex = 110;
@@ -1140,9 +1144,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(8, 635);
+            this.richTextBox1.Location = new System.Drawing.Point(8, 642);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(853, 69);
+            this.richTextBox1.Size = new System.Drawing.Size(853, 64);
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "";
             // 
@@ -1150,7 +1154,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(5, 619);
+            this.label28.Location = new System.Drawing.Point(5, 629);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(113, 13);
             this.label28.TabIndex = 113;
@@ -1175,6 +1179,29 @@
             this.button3.Text = "VALORIZAR";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtseg
+            // 
+            this.txtseg.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtseg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtseg.Enabled = false;
+            this.txtseg.Font = new System.Drawing.Font("Verdana", 11F);
+            this.txtseg.Location = new System.Drawing.Point(567, 136);
+            this.txtseg.Name = "txtseg";
+            this.txtseg.Size = new System.Drawing.Size(115, 18);
+            this.txtseg.TabIndex = 122;
+            this.txtseg.Text = "$0,00";
+            this.txtseg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(479, 138);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(87, 13);
+            this.label34.TabIndex = 121;
+            this.label34.Text = "Seguro Carga";
             // 
             // frmEmitirOC
             // 
@@ -1319,5 +1346,7 @@
         private System.Windows.Forms.TextBox txtConceptoFact;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtseg;
+        private System.Windows.Forms.Label label34;
     }
 }
