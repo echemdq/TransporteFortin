@@ -20,6 +20,7 @@ namespace TransporteFortin
         public frmPrincipal()
         {
             InitializeComponent();
+            button1.BackColor = Color.White;
         }
 
         private void aBMClientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -848,6 +849,51 @@ namespace TransporteFortin
                     MessageBox.Show("Imposible acceder: usuario sin acceso");
                 }
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (idusuario != 0)
+            {
+                Acceso_BD oacceso = new Acceso_BD();
+                DataTable dt = new DataTable();
+                dt = oacceso.leerDatos("select count(*) as contador from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = '"+idusuario+"' where c.estado = 0 and cv.idcargaspendientesv is null");
+                int x = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    x = Convert.ToInt32(dr["contador"]);
+                }
+                if (x > 0)
+                {
+                    timer2.Enabled = true;
+                    button1.Text = "Cargas Pendientes (" + x + ")";
+                }
+                else
+                {
+                    timer2.Enabled = false;
+                    button1.BackColor = Color.White;
+                    button1.Text = "Cargas Pendientes (0)";
+                }
+            }
+        }
+
+        private void frmPrincipal_Activated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (button1.BackColor == Color.Red)
+            {
+                button1.BackColor = Color.White;
+            }
+            else
+            {
+                button1.BackColor = Color.Red;
+            }
+
+            
         }
 
         }
