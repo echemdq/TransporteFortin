@@ -127,6 +127,12 @@
     <Compile Include="Fleteros.cs" />
     <Compile Include="FormasDePago.cs" />
     <Compile Include="FormasPago.cs" />
+    <Compile Include="frmAgregaCargap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregaCargap.Designer.cs">
+      <DependentUpon>frmAgregaCargap.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBancos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -501,6 +507,9 @@
     <Compile Include="Unidades.cs" />
     <Compile Include="Usuarios.cs" />
     <EmbeddedResource Include="Copia de Report6.rdlc" />
+    <EmbeddedResource Include="frmAgregaCargap.resx">
+      <DependentUpon>frmAgregaCargap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBancos.resx">
       <DependentUpon>frmBancos.cs</DependentUpon>
     </EmbeddedResource>

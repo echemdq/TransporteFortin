@@ -231,5 +231,37 @@ namespace TransporteFortin
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int filaseleccionada = Convert.ToInt32(this.dataGridView1.CurrentRow.Index);
+                
+                if (Convert.ToString(dataGridView1[9, filaseleccionada].Value) == "Pendiente")
+                {
+                    string id = Convert.ToString(dataGridView1[0, filaseleccionada].Value);
+                    DialogResult dialogResult = MessageBox.Show("Esta seguro de tomar carga pendiente", "Tomar Carga Pendiente", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        oacceso.ActualizarBD("update cargaspendientes set estado = 2, fechar = now(), tomador = " + idu + " where idcargaspendientes = '" + id + "'");
+                        dataGridView1.Rows.Clear();
+                        button4_Click(sender, e);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmAgregaCargap frm = new frmAgregaCargap(idu);
+            frm.ShowDialog();
+            dataGridView1.Rows.Clear();
+            button4_Click(sender, e);
+        }
     }
 }
