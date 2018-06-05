@@ -13,7 +13,7 @@ namespace TransporteFortin
     public partial class frmAgregaCargap : Form
     {
         int idusuario = 0;
-        Empresas u = null;
+        Clientes u = null;
         public frmAgregaCargap(int idusu)
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace TransporteFortin
                 if (idusuario != 0)
                 {
                     Acceso_BD oacceso = new Acceso_BD();
-                    oacceso.ActualizarBD("insert into cargaspendientes (origen, destino, observaciones, idempresas, creador) values ('" + txtCliente.Text + "', '" + txtDomicilio.Text + "', '" + txtcomentario.Text + "', '" + u.Idempresas + "', '" + idusuario + "')");
+                    oacceso.ActualizarBD("insert into cargaspendientes (origen, destino, observaciones, idempresas, creador) values ('" + txtCliente.Text + "', '" + txtDomicilio.Text + "', '" + txtcomentario.Text + "', '" + u.Idclientes + "', '" + idusuario + "')");
                     MessageBox.Show("Nueva notificacion creada");
                     this.Close();
                 }
@@ -47,12 +47,12 @@ namespace TransporteFortin
         {
             try
             {
-                frmBuscaEmpresas frm = new frmBuscaEmpresas();
+                frmBuscaClientes frm = new frmBuscaClientes();
                 frm.ShowDialog();
                 u = frm.u;
                 if (u != null)
                 {
-                    textBox1.Text = u.Empresa;
+                    textBox1.Text = u.Cliente;
                 }
             }
             catch (Exception ex)

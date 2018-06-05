@@ -27,7 +27,7 @@ namespace TransporteFortin
             if (radioButton1.Checked)
             {
 
-                DataTable dt = oacceso.leerDatos("select ifnull(cv.idcargaspendientesv, 0) as visto, c.idcargaspendientes as id, e.empresa as empresa, c.origen as origen, c.destino as destino, c.observaciones as obs, CASE    WHEN c.estado = 0 THEN 'Pendiente'    WHEN c.estado = 1 THEN 'Tomado'    ELSE 'Anulado' END as estado, u.usuario as creador, u1.usuario as tomador, c.fechac as fechac, c.fechar as fechar from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = " + idu + " left join empresas e on c.idempresas = e.idempresas left join usuarios u on c.creador = u.idusuarios left join usuarios u1 on c.tomador = u1.idusuarios where c.estado = 0 order by c.idcargaspendientes desc");
+                DataTable dt = oacceso.leerDatos("select ifnull(cv.idcargaspendientesv, 0) as visto, c.idcargaspendientes as id, e.cliente as empresa, c.origen as origen, c.destino as destino, c.observaciones as obs, CASE    WHEN c.estado = 0 THEN 'Pendiente'    WHEN c.estado = 1 THEN 'Tomado'    ELSE 'Anulado' END as estado, u.usuario as creador, u1.usuario as tomador, c.fechac as fechac, c.fechar as fechar from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = " + idu + " left join clientes e on c.idempresas = e.idclientes left join usuarios u on c.creador = u.idusuarios left join usuarios u1 on c.tomador = u1.idusuarios where c.estado = 0 order by c.idcargaspendientes desc");
                 i = dt.Rows.Count;
                 int x = 0;
                 if (i > 0)
@@ -52,7 +52,7 @@ namespace TransporteFortin
             }
             else if (radioButton2.Checked)
             {
-                DataTable dt = oacceso.leerDatos("select ifnull(cv.idcargaspendientesv, 0) as visto, c.idcargaspendientes as id, e.empresa as empresa, c.origen as origen, c.destino as destino, c.observaciones as obs, CASE    WHEN c.estado = 0 THEN 'Pendiente'    WHEN c.estado = 1 THEN 'Tomado'    ELSE 'Anulado' END as estado, u.usuario as creador, u1.usuario as tomador, c.fechac as fechac, c.fechar as fechar from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = " + idu + " left join empresas e on c.idempresas = e.idempresas left join usuarios u on c.creador = u.idusuarios left join usuarios u1 on c.tomador = u1.idusuarios where c.estado = 1 order by c.idcargaspendientes desc");
+                DataTable dt = oacceso.leerDatos("select ifnull(cv.idcargaspendientesv, 0) as visto, c.idcargaspendientes as id, e.cliente as empresa, c.origen as origen, c.destino as destino, c.observaciones as obs, CASE    WHEN c.estado = 0 THEN 'Pendiente'    WHEN c.estado = 1 THEN 'Tomado'    ELSE 'Anulado' END as estado, u.usuario as creador, u1.usuario as tomador, c.fechac as fechac, c.fechar as fechar from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = " + idu + " left join clientes e on c.idempresas = e.idclientes left join usuarios u on c.creador = u.idusuarios left join usuarios u1 on c.tomador = u1.idusuarios where c.estado = 1 order by c.idcargaspendientes desc");
                 i = dt.Rows.Count;
                 int x = 0;
                 if (i > 0)
@@ -77,7 +77,7 @@ namespace TransporteFortin
             }
             else if (radioButton3.Checked)
             {
-                DataTable dt = oacceso.leerDatos("select ifnull(cv.idcargaspendientesv, 0) as visto, c.idcargaspendientes as id, e.empresa as empresa, c.origen as origen, c.destino as destino, c.observaciones as obs, CASE    WHEN c.estado = 0 THEN 'Pendiente'    WHEN c.estado = 1 THEN 'Tomado'    ELSE 'Anulado' END as estado, u.usuario as creador, u1.usuario as tomador, c.fechac as fechac, c.fechar as fechar from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = " + idu + "  left join empresas e on c.idempresas = e.idempresas left join usuarios u on c.creador = u.idusuarios left join usuarios u1 on c.tomador = u1.idusuarios where c.estado = 2 order by c.idcargaspendientes desc");
+                DataTable dt = oacceso.leerDatos("select ifnull(cv.idcargaspendientesv, 0) as visto, c.idcargaspendientes as id, e.cliente as empresa, c.origen as origen, c.destino as destino, c.observaciones as obs, CASE    WHEN c.estado = 0 THEN 'Pendiente'    WHEN c.estado = 1 THEN 'Tomado'    ELSE 'Anulado' END as estado, u.usuario as creador, u1.usuario as tomador, c.fechac as fechac, c.fechar as fechar from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = " + idu + "  left join clientes e on c.idempresas = e.idclientes left join usuarios u on c.creador = u.idusuarios left join usuarios u1 on c.tomador = u1.idusuarios where c.estado = 2 order by c.idcargaspendientes desc");
                 i = dt.Rows.Count;
                 int x = 0;
                 if (i > 0)
@@ -102,7 +102,7 @@ namespace TransporteFortin
             }
             else if (radioButton4.Checked)
             {
-                DataTable dt = oacceso.leerDatos("select ifnull(cv.idcargaspendientesv, 0) as visto, c.idcargaspendientes as id, e.empresa as empresa, c.origen as origen, c.destino as destino, c.observaciones as obs, CASE    WHEN c.estado = 0 THEN 'Pendiente'    WHEN c.estado = 1 THEN 'Tomado'    ELSE 'Anulado' END as estado, u.usuario as creador, u1.usuario as tomador, c.fechac as fechac, c.fechar as fechar from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = " + idu + " left join empresas e on c.idempresas = e.idempresas left join usuarios u on c.creador = u.idusuarios left join usuarios u1 on c.tomador = u1.idusuarios order by c.idcargaspendientes desc");
+                DataTable dt = oacceso.leerDatos("select ifnull(cv.idcargaspendientesv, 0) as visto, c.idcargaspendientes as id, e.cliente as empresa, c.origen as origen, c.destino as destino, c.observaciones as obs, CASE    WHEN c.estado = 0 THEN 'Pendiente'    WHEN c.estado = 1 THEN 'Tomado'    ELSE 'Anulado' END as estado, u.usuario as creador, u1.usuario as tomador, c.fechac as fechac, c.fechar as fechar from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = " + idu + " left join clientes e on c.idempresas = e.idclientes left join usuarios u on c.creador = u.idusuarios left join usuarios u1 on c.tomador = u1.idusuarios order by c.idcargaspendientes desc");
                 i = dt.Rows.Count;
                 int x = 0;
                 if (i > 0)
@@ -132,7 +132,7 @@ namespace TransporteFortin
         {
             dataGridView1.ColumnCount = 11;
             dataGridView1.Columns[0].Name = "idcargaspendientes";
-            dataGridView1.Columns[1].Name = "Empresa";
+            dataGridView1.Columns[1].Name = "Cliente";
             dataGridView1.Columns[2].Name = "Origen";
             dataGridView1.Columns[3].Name = "Destino";
             dataGridView1.Columns[4].Name = "Observaciones";
@@ -145,7 +145,7 @@ namespace TransporteFortin
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[10].Visible = false;
 
-            DataTable dt = oacceso.leerDatos("select ifnull(cv.idcargaspendientesv, 0) as visto, c.idcargaspendientes as id, e.empresa as empresa, c.origen as origen, c.destino as destino, c.observaciones as obs, CASE    WHEN c.estado = 0 THEN 'Pendiente'    WHEN c.estado = 1 THEN 'Tomado'    ELSE 'Anulado' END as estado, u.usuario as creador, u1.usuario as tomador, c.fechac as fechac, c.fechar as fechar from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = " + idu + " left join empresas e on c.idempresas = e.idempresas left join usuarios u on c.creador = u.idusuarios left join usuarios u1 on c.tomador = u1.idusuarios where c.estado = 0 and cv.idcargaspendientesv is null order by c.idcargaspendientes desc");
+            DataTable dt = oacceso.leerDatos("select ifnull(cv.idcargaspendientesv, 0) as visto, c.idcargaspendientes as id, e.cliente as empresa, c.origen as origen, c.destino as destino, c.observaciones as obs, CASE    WHEN c.estado = 0 THEN 'Pendiente'    WHEN c.estado = 1 THEN 'Tomado'    ELSE 'Anulado' END as estado, u.usuario as creador, u1.usuario as tomador, c.fechac as fechac, c.fechar as fechar from cargaspendientes c left join cargaspendientesv cv on c.idcargaspendientes = cv.idcargaspendientes and cv.idusuarios = " + idu + " left join clientes e on c.idempresas = e.idclientes left join usuarios u on c.creador = u.idusuarios left join usuarios u1 on c.tomador = u1.idusuarios where c.estado = 0 and cv.idcargaspendientesv is null order by c.idcargaspendientes desc");
             i = dt.Rows.Count;
             int x = 0;
             if (i > 0)
