@@ -53,7 +53,9 @@ namespace TransporteFortin
                         }
                         x++;
                     }
-                    dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    //dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView1.Columns[3].Width = 175;
+                    dataGridView1.Columns[2].Width = 175;
                 }
             }
         }
@@ -165,7 +167,9 @@ namespace TransporteFortin
                         dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0];
 
 
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                        //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                        dataGridView1.Columns[3].Width = 175;
+                        dataGridView1.Columns[2].Width = 175;
                     }
                 }
 

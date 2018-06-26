@@ -27,8 +27,11 @@ namespace TransporteFortin
         {
             if (u != null)
             {
+                
                 ControladoraCtaCteClientes controlc = new ControladoraCtaCteClientes();
-                List<CtaCteClientes> lista = controlc.BuscarEspecial(u.Idclientes.ToString());
+                List<CtaCteClientes> lista = new List<CtaCteClientes>();
+                lista = null;
+                lista = controlc.BuscarEspecial(u.Idclientes.ToString());
                 int i = 0;
                 double debe = 0;
                 double haber = 0;
@@ -103,7 +106,9 @@ namespace TransporteFortin
                 if (dataGridView1.Rows.Count > 0)
                 {
                     dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0];
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView1.Columns[3].Width = 175;
+                    dataGridView1.Columns[2].Width = 175;
                 }
                 label8.Text = (haber - debe).ToString();
             }
