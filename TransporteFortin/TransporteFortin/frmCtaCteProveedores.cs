@@ -29,8 +29,8 @@ namespace TransporteFortin
                 ControladoraCtaCteProveedores controlc = new ControladoraCtaCteProveedores();
                 List<CtaCteProveedores> lista = controlc.BuscarEspecial(u.Idproveedores.ToString());
                 int i = 0;
-                double debe = 0;
-                double haber = 0;
+                decimal debe = 0;
+                decimal haber = 0;
                 foreach (CtaCteProveedores aux in lista)
                 {
                     i++;
@@ -44,14 +44,14 @@ namespace TransporteFortin
                         if (checkBox1.Checked)
                         {
                             DateTime desde;
-                            DateTime hasta;
+                            DateTime hasta;                            
                             if (DateTime.TryParse(maskedTextBox1.Text, out desde) && DateTime.TryParse(maskedTextBox2.Text, out hasta))
                             {
                                 if (desde <= hasta)
                                 {
                                     if (aux.Fecha.Date >= desde.Date && aux.Fecha.Date <= hasta.Date)
                                     {
-                                        dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
+                                        dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.Date;
                                         dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
                                         dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
                                         dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescomb.Nro;
@@ -60,14 +60,14 @@ namespace TransporteFortin
                                         dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                                         dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
                                         dataGridView1.Rows[x].Cells[6].Value = aux.Idctacteproveedores;
-                                        debe = debe + Convert.ToDouble(aux.Debe);
-                                        haber = haber + Convert.ToDouble(aux.Haber);
+                                        debe = debe + Convert.ToDecimal(aux.Debe);
+                                        haber = haber + Convert.ToDecimal(aux.Haber);
                                         x++;
                                     }
                                     else
                                     {
-                                        debe = debe + Convert.ToDouble(aux.Debe);
-                                        haber = haber + Convert.ToDouble(aux.Haber);
+                                        debe = debe + Convert.ToDecimal(aux.Debe);
+                                        haber = haber + Convert.ToDecimal(aux.Haber);
                                         dataGridView1.Rows.RemoveAt(x);
                                     }
                                 }
@@ -81,7 +81,7 @@ namespace TransporteFortin
                         }
                         else
                         {
-                            dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.ToString("dd/MM/yyyy");
+                            dataGridView1.Rows[x].Cells[0].Value = aux.Fecha.Date;
                             dataGridView1.Rows[x].Cells[1].Value = aux.Conceptos.Descripcion;
                             dataGridView1.Rows[x].Cells[2].Value = aux.Descripcion;
                             dataGridView1.Rows[x].Cells[3].Value = aux.Ptoventa + "-" + aux.Ordenescomb.Nro;
@@ -90,8 +90,8 @@ namespace TransporteFortin
                             dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dataGridView1.Rows[x].Cells[5].Value = aux.Haber;
                             dataGridView1.Rows[x].Cells[6].Value = aux.Idctacteproveedores;
-                            debe = debe + Convert.ToDouble(aux.Debe);
-                            haber = haber + Convert.ToDouble(aux.Haber);
+                            debe = debe + Convert.ToDecimal(aux.Debe);
+                            haber = haber + Convert.ToDecimal(aux.Haber);
                             x++;
                         }
                     }

@@ -110,7 +110,7 @@ namespace TransporteFortin
                     dataGridView1.Columns[3].Width = 175;
                     dataGridView1.Columns[2].Width = 175;
                 }
-                label8.Text = (haber - debe).ToString();
+                label8.Text = Convert.ToDouble(haber - debe).ToString();
             }
         }
 
