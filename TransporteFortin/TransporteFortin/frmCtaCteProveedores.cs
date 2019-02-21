@@ -202,7 +202,7 @@ namespace TransporteFortin
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (u != null && checkBox1.Checked)
+            if (u != null)
             {
                 dataGridView1.Rows.Clear();
                 buscar(u.Idproveedores);
