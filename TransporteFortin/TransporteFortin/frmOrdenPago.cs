@@ -54,5 +54,10 @@ namespace TransporteFortin
             this.reportViewer1.LocalReport.SetParameters(p6);
             this.reportViewer1.RefreshReport();
         }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,6 +41,7 @@ namespace TransporteFortin
             maskedTextBox1.Enabled = false;
             cmbTipoCamion.Enabled = false;
             cmbTipoIva.Enabled = false;
+            txtcomentario.Enabled = false;
         }
 
         public void habilitar()
@@ -65,6 +66,7 @@ namespace TransporteFortin
             txtChapaC.Enabled = true;
             txtChapaA.Enabled = true;
             maskedTextBox1.Enabled = true;
+            txtcomentario.Enabled = true;
         }
 
         public void limpiar()
@@ -86,6 +88,7 @@ namespace TransporteFortin
             txtChapaA.Text = "";
             txtEmpresa.Text = "";
             maskedTextBox1.Text = "";
+            txtcomentario.Text = "";
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.FormasDePagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.FormasDePagoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // FormasDePagoBindingSource
+            // 
+            this.FormasDePagoBindingSource.DataSource = typeof(TransporteFortin.FormasDePago);
             // 
             // reportViewer1
             // 
@@ -46,10 +50,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(629, 352);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // FormasDePagoBindingSource
-            // 
-            this.FormasDePagoBindingSource.DataSource = typeof(TransporteFortin.FormasDePago);
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // frmOrdenPago
             // 

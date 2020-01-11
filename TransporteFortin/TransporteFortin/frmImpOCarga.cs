@@ -126,6 +126,7 @@ namespace TransporteFortin
                 this.reportViewer1.LocalReport.SetParameters(p24);
                 this.reportViewer1.RefreshReport();
             }
+            this.reportViewer1.RefreshReport();
         }
     }
 }
