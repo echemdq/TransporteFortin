@@ -52,6 +52,8 @@ namespace TransporteFortin
         }
         public Acceso_BD()
         {
+
+
             //buscarEnXML();
             if (tipo == "sql")
             {
@@ -67,6 +69,7 @@ namespace TransporteFortin
                 server = sv;
                 cn1 = new MySqlConnection("Server=" + server + ";" + "DATABASE=" + database + ";" + "User ID=" + Uid + ";" + "PASSWORD=" + Password + ";");
             }
+
         }
 
         public void buscarEnXML()
