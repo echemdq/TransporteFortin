@@ -44,7 +44,7 @@ namespace TransporteFortin
             set { Acceso_BD.uid = value; }
         }
         //static string password = "Pa21rA*";
-        static string password = "romeo1";
+        static string password = "643841romEo**";
         public static string Password
         {
             get { return Acceso_BD.password; }
@@ -63,7 +63,7 @@ namespace TransporteFortin
             else
             {
                 uid = "root";
-                password = "romeo1";
+                password = "643841romEo*";
                 database = "transportefortin";
                 //server = "elfortin.no-ip.info";
                 server = sv;
